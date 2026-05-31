@@ -112,10 +112,7 @@ class GameViewModel: ObservableObject {
     func place(shape: GameShape, at row: Int, col: Int) {
         guard canPlace(shape: shape, at: row, col: col) else { return }
         
-        if isSoundEnabled {
-            SoundManager.instance.playSound(name: "focus")
-        }
-        
+        if isSoundEnabled { SoundManager.instance.playSound(name: "focus") }
         if isVibrationEnabled { triggerPlacementFeedback(style: .light) }
         
         for block in shape.blocks {
@@ -156,7 +153,6 @@ class GameViewModel: ObservableObject {
             combo += 1
             let points = (linesCleared * 100 + (combo - 1) * 50) * linesCleared
             
-            // Show popup immediately
             let popup = ScorePopup(score: points, position: CGPoint(x: CGFloat(lastCol) * 40, y: CGFloat(lastRow) * 40))
             popups.append(popup)
             DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) { self.popups.removeAll { $0.id == popup.id } }
@@ -169,64 +165,17 @@ class GameViewModel: ObservableObject {
                 }
             }
 
-            // Sequential removal animation
-            // Collect all coordinates to clear
             var coords: [ (Int, Int) ] = []
             for r in rowsToClear { for c in 0..<8 { coords.append((r, c)) } }
             for c in colsToClear { for r in 0..<8 { if !rowsToClear.contains(r) { coords.append((r, c)) } } }
-            
-            // Sort them to look "ordered"
             coords.sort { $0.0 == $1.0 ? $0.1 < $1.1 : $0.0 < $1.0 }
             
             for coord in coords {
-                try? await Task.sleep(nanoseconds: 30_000_000) // 30ms delay
+                try? await Task.sleep(nanoseconds: 25_000_000)
                 grid[coord.0][coord.1] = nil
                 if isVibrationEnabled { triggerPlacementFeedback(style: .soft) }
                 if isSoundEnabled { SoundManager.instance.playSound(name: "crystal") }
             }
-        } else { combo = 0 }
-    }
-        if let index = currentShapes.firstIndex(where: { $0?.id == shape.id }) {
-            currentShapes[index] = nil
-        }
-        clearLines(at: row, col: col)
-        if currentShapes.allSatisfy({ $0 == nil }) { startNewRound() }
-        checkGameOver()
-    }
-    
-    private func triggerPlacementFeedback() {
-        #if os(iOS)
-        let generator = UIImpactFeedbackGenerator(style: .medium)
-        generator.impactOccurred()
-        #endif
-    }
-    
-    private func clearLines(at lastRow: Int, col lastCol: Int) {
-        var rowsToClear: [Int] = []
-        var colsToClear: [Int] = []
-        for r in 0..<8 { if grid[r].allSatisfy({ $0 != nil }) { rowsToClear.append(r) } }
-        for c in 0..<8 {
-            var full = true
-            for r in 0..<8 { if grid[r][c] == nil { full = false; break } }
-            if full { colsToClear.append(c) }
-        }
-        
-        let linesCleared = rowsToClear.count + colsToClear.count
-        if linesCleared > 0 {
-            combo += 1
-            let points = (linesCleared * 100 + (combo - 1) * 50) * linesCleared
-            withAnimation(.spring()) {
-                score += points
-                if score > highscore {
-                    highscore = score
-                    UserDefaults.standard.set(highscore, forKey: "highscore")
-                }
-            }
-            let popup = ScorePopup(score: points, position: CGPoint(x: CGFloat(lastCol) * 40, y: CGFloat(lastRow) * 40))
-            popups.append(popup)
-            DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) { self.popups.removeAll { $0.id == popup.id } }
-            for r in rowsToClear { for c in 0..<8 { grid[r][c] = nil } }
-            for c in colsToClear { for r in 0..<8 { grid[r][c] = nil } }
         } else { combo = 0 }
     }
     
@@ -298,17 +247,10 @@ struct SplashScreen: View {
             .scaleEffect(scale)
         }
         .onAppear {
-            withAnimation(.easeIn(duration: 1.0)) {
-                opacity = 1.0
-                scale = 1.0
-            }
+            withAnimation(.easeIn(duration: 1.0)) { opacity = 1.0; scale = 1.0 }
             DispatchQueue.main.asyncAfter(deadline: .now() + 2.5) {
-                withAnimation(.easeOut(duration: 0.5)) {
-                    opacity = 0.0
-                }
-                DispatchQueue.main.asyncAfter(deadline: .now() + 0.6) {
-                    onFinished()
-                }
+                withAnimation(.easeOut(duration: 0.5)) { opacity = 0.0 }
+                DispatchQueue.main.asyncAfter(deadline: .now() + 0.6) { onFinished() }
             }
         }
     }
@@ -323,46 +265,31 @@ struct ContentView: View {
     
     var body: some View {
         ZStack {
-            if isSplashActive {
-                SplashScreen { isSplashActive = false }
-            } else {
-                gameContent
-                    .preferredColorScheme(vm.isDarkMode ? .dark : .light)
-            }
+            if isSplashActive { SplashScreen { isSplashActive = false } }
+            else { gameContent.preferredColorScheme(vm.isDarkMode ? .dark : .light) }
         }
     }
     
     var gameContent: some View {
         ZStack {
-            (vm.isDarkMode ? Color(red: 0.02, green: 0.04, blue: 0.08) : Color(red: 0.95, green: 0.96, blue: 0.98))
-                .ignoresSafeArea()
-            
+            (vm.isDarkMode ? Color(red: 0.02, green: 0.04, blue: 0.08) : Color(red: 0.95, green: 0.96, blue: 0.98)).ignoresSafeArea()
             VStack(spacing: 15) {
                 HStack {
                     Spacer()
                     Button { showingSettings = true } label: {
-                        Image(systemName: "gearshape.fill")
-                            .font(.title3).foregroundStyle(vm.isDarkMode ? .white : .black)
+                        Image(systemName: "gearshape.fill").font(.title3).foregroundStyle(vm.isDarkMode ? .white : .black)
                             .padding(12).background(vm.isDarkMode ? Color.white.opacity(0.1) : Color.black.opacity(0.05), in: Circle())
                     }
                 }.padding(.horizontal, 20).padding(.top, 10)
                 
                 VStack(spacing: 2) {
-                    Text("\(vm.t("record")): \(vm.highscore)")
-                        .font(.system(size: 14, weight: .bold, design: .rounded))
-                        .foregroundStyle(.orange.opacity(0.8))
-                    
-                    Text(vm.t("score"))
-                        .font(.system(size: 12, weight: .bold, design: .rounded))
-                        .foregroundStyle(.gray)
-                    
-                    Text("\(vm.score)")
-                        .font(.system(size: 48, weight: .black, design: .rounded))
+                    Text("\(vm.t("record")): \(vm.highscore)").font(.system(size: 14, weight: .bold, design: .rounded)).foregroundStyle(.orange.opacity(0.8))
+                    Text(vm.t("score")).font(.system(size: 12, weight: .bold, design: .rounded)).foregroundStyle(.gray)
+                    Text("\(vm.score)").font(.system(size: 48, weight: .black, design: .rounded))
                         .foregroundStyle(vm.score >= vm.highscore && vm.score > 0 ? .orange : (vm.isDarkMode ? .white : .black))
                         .shadow(color: vm.score >= vm.highscore && vm.score > 0 ? .red.opacity(0.3) : .clear, radius: 8)
                         .scaleEffect(vm.score >= vm.highscore && vm.score > 0 ? 1.05 + sin(flamePhase) * 0.03 : 1.0)
-                }
-                .onAppear { withAnimation(.easeInOut(duration: 0.5).repeatForever()) { flamePhase = .pi * 2 } }
+                }.onAppear { withAnimation(.easeInOut(duration: 0.5).repeatForever()) { flamePhase = .pi * 2 } }
                 
                 HStack {
                     ZStack {
@@ -370,9 +297,7 @@ struct ContentView: View {
                             VStack(spacing: -2) {
                                 Text(vm.t("combo")).font(.system(size: 8, weight: .bold, design: .rounded))
                                 Text("x\(vm.combo)").font(.system(size: 18, weight: .black, design: .rounded))
-                            }
-                            .foregroundStyle(vm.comboColor).padding(6).background(vm.comboColor.opacity(0.1), in: RoundedRectangle(cornerRadius: 10))
-                            .transition(.scale.combined(with: .opacity))
+                            }.foregroundStyle(vm.comboColor).padding(6).background(vm.comboColor.opacity(0.1), in: RoundedRectangle(cornerRadius: 10)).transition(.scale.combined(with: .opacity))
                         }
                     }.frame(width: 60)
                     Spacer().frame(width: 60)
@@ -382,14 +307,11 @@ struct ContentView: View {
                     GridView(grid: vm.grid, preview: vm.previewInfo, canPlace: vm.canPlace, isDarkMode: vm.isDarkMode)
                         .background(GeometryReader { geo in Color.clear.onAppear { gridRect = geo.frame(in: .global) }
                             .onChange(of: geo.frame(in: .global)) { _, newFrame in gridRect = newFrame } })
-                    
                     ForEach(vm.popups) { popup in
-                        Text("+\(popup.score)").font(.system(size: 20, weight: .black, design: .rounded))
-                            .foregroundStyle(.orange).shadow(radius: 2).position(x: popup.position.x + 20, y: popup.position.y + 20)
-                            .transition(.asymmetric(insertion: .scale, removal: .move(edge: .top).combined(with: .opacity)))
+                        Text("+\(popup.score)").font(.system(size: 20, weight: .black, design: .rounded)).foregroundStyle(.orange).shadow(radius: 2)
+                            .position(x: popup.position.x + 20, y: popup.position.y + 20).transition(.asymmetric(insertion: .scale, removal: .move(edge: .top).combined(with: .opacity)))
                     }
-                }
-                .padding(16).background(vm.isDarkMode ? Color.white.opacity(0.03) : Color.black.opacity(0.02), in: RoundedRectangle(cornerRadius: 20)).padding(.horizontal, 16)
+                }.padding(16).background(vm.isDarkMode ? Color.white.opacity(0.03) : Color.black.opacity(0.02), in: RoundedRectangle(cornerRadius: 20)).padding(.horizontal, 16)
                 
                 HStack(spacing: 15) {
                     ForEach(vm.currentShapes.indices, id: \.self) { i in
@@ -402,8 +324,7 @@ struct ContentView: View {
                 }.padding(.horizontal, 20)
                 Spacer()
             }
-        }
-        .sheet(isPresented: $showingSettings) { GameSettingsMenuView(vm: vm) }
+        }.sheet(isPresented: $showingSettings) { GameSettingsMenuView(vm: vm) }
         .overlay { if vm.isGameOver { gameOverOverlay } }
     }
     
@@ -412,21 +333,14 @@ struct ContentView: View {
             Color.black.opacity(0.95).ignoresSafeArea()
             VStack(spacing: 40) {
                 ZStack {
-                    ForEach(0..<10) { i in
-                        Circle().fill(Color.orange.opacity(0.3))
-                            .frame(width: 200, height: 200).blur(radius: 50)
-                            .offset(x: CGFloat.random(in: -100...100), y: CGFloat.random(in: -100...100))
-                    }
+                    ForEach(0..<10) { i in Circle().fill(Color.orange.opacity(0.3)).frame(width: 200, height: 200).blur(radius: 50).offset(x: CGFloat.random(in: -100...100), y: CGFloat.random(in: -100...100)) }
                 }
-                
                 VStack(spacing: 10) {
                     Text(vm.t("gameover")).font(.system(size: 44, weight: .black, design: .rounded)).foregroundStyle(.white).multilineTextAlignment(.center)
                     Text("\(vm.score)").font(.system(size: 80, weight: .black, design: .rounded)).foregroundStyle(.orange)
                 }
-                
                 Button { withAnimation { vm.reset() } } label: {
-                    Text(vm.t("tryagain")).font(.title3.bold()).foregroundStyle(.white).padding(.horizontal, 50).padding(.vertical, 20)
-                        .background(Color.blue, in: Capsule()).shadow(color: .blue.opacity(0.4), radius: 15)
+                    Text(vm.t("tryagain")).font(.title3.bold()).foregroundStyle(.white).padding(.horizontal, 50).padding(.vertical, 20).background(Color.blue, in: Capsule()).shadow(color: .blue.opacity(0.4), radius: 15)
                 }
             }
         }.transition(.opacity.combined(with: .scale))
@@ -436,7 +350,6 @@ struct ContentView: View {
 struct GameSettingsMenuView: View {
     @ObservedObject var vm: GameViewModel
     @Environment(\.dismiss) var dismiss
-    
     var body: some View {
         NavigationStack {
             List {
@@ -446,19 +359,13 @@ struct GameSettingsMenuView: View {
                 }
                 Section(vm.t("appearance")) {
                     Toggle(vm.t("darkmode"), isOn: $vm.isDarkMode)
-                    Picker(vm.t("language"), selection: $vm.language) {
-                        ForEach(Language.allCases) { lang in
-                            Text(lang.name).tag(lang)
-                        }
-                    }
+                    Picker(vm.t("language"), selection: $vm.language) { ForEach(Language.allCases) { lang in Text(lang.name).tag(lang) } }
                 }
                 Section(vm.t("about")) {
-                    Text("Version 1.4.0").foregroundStyle(.gray)
+                    Text("Version 1.5.0").foregroundStyle(.gray)
                     Text("Block Blast - developed by YUKU team.").font(.caption).foregroundStyle(.gray)
                 }
-            }
-            .navigationTitle(vm.t("settings")).navigationBarTitleDisplayMode(.inline)
-            .toolbar { ToolbarItem(placement: .topBarTrailing) { Button(vm.t("done")) { dismiss() } } }
+            }.navigationTitle(vm.t("settings")).navigationBarTitleDisplayMode(.inline).toolbar { ToolbarItem(placement: .topBarTrailing) { Button(vm.t("done")) { dismiss() } } }
         }
     }
 }
@@ -468,7 +375,6 @@ struct GridView: View {
     let preview: (row: Int, col: Int, shape: GameShape)?
     let canPlace: (GameShape, Int, Int) -> Bool
     let isDarkMode: Bool
-    
     var body: some View {
         AspectRatioContainer(aspectRatio: 1) {
             ZStack {
@@ -520,7 +426,6 @@ struct DraggableShapeView: View {
     let onDrop: (Int, Int) -> Void
     @State private var offset = CGSize.zero
     @State private var isDragging = false
-    
     var body: some View {
         ShapePreview(shape: shape, scale: isDragging ? 0.85 : 0.6)
             .offset(offset).zIndex(isDragging ? 10 : 1)
