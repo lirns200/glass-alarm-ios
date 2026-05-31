@@ -1,0 +1,92 @@
+import Foundation
+import UserNotifications
+
+@MainActor
+final class AlarmStore: ObservableObject {
+    @Published private(set) var alarms: [Alarm] = []
+    @Published private(set) var authorizationStatus: UNAuthorizationStatus = .notDetermined
+
+    private let storageKey = "savedAlarms"
+    private let scheduler = NotificationScheduler()
+
+    func bootstrap() async {
+        load()
+        await refreshAuthorizationStatus()
+
+        if alarms.isEmpty {
+            let morning = Alarm(title: "Morning glass", hour: 7, minute: 30, repeatDays: [.monday, .tuesday, .wednesday, .thursday, .friday], ringtone: .sunrise)
+            let focus = Alarm(title: "Focus start", hour: 9, minute: 0, repeatDays: [.monday, .tuesday, .wednesday, .thursday, .friday], ringtone: .pulse)
+            alarms = [morning, focus]
+            save()
+        }
+
+        await rescheduleEnabledAlarms()
+    }
+
+    func requestNotifications() async {
+        _ = try? await UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .sound, .badge])
+        await refreshAuthorizationStatus()
+        await rescheduleEnabledAlarms()
+    }
+
+    func add(_ alarm: Alarm) async {
+        alarms.append(alarm)
+        sortAndSave()
+        await scheduleIfNeeded(alarm)
+    }
+
+    func update(_ alarm: Alarm) async {
+        guard let index = alarms.firstIndex(where: { $0.id == alarm.id }) else { return }
+        alarms[index] = alarm
+        sortAndSave()
+        await scheduler.cancel(alarm)
+        await scheduleIfNeeded(alarm)
+    }
+
+    func delete(_ alarm: Alarm) async {
+        alarms.removeAll { $0.id == alarm.id }
+        save()
+        await scheduler.cancel(alarm)
+    }
+
+    func setEnabled(_ alarm: Alarm, isEnabled: Bool) async {
+        var edited = alarm
+        edited.isEnabled = isEnabled
+        await update(edited)
+    }
+
+    private func scheduleIfNeeded(_ alarm: Alarm) async {
+        guard alarm.isEnabled, authorizationStatus == .authorized || authorizationStatus == .provisional else { return }
+        await scheduler.schedule(alarm)
+    }
+
+    private func rescheduleEnabledAlarms() async {
+        await scheduler.cancelAll(alarms)
+        for alarm in alarms where alarm.isEnabled {
+            await scheduleIfNeeded(alarm)
+        }
+    }
+
+    private func refreshAuthorizationStatus() async {
+        let settings = await UNUserNotificationCenter.current().notificationSettings()
+        authorizationStatus = settings.authorizationStatus
+    }
+
+    private func load() {
+        guard let data = UserDefaults.standard.data(forKey: storageKey),
+              let decoded = try? JSONDecoder().decode([Alarm].self, from: data) else {
+            return
+        }
+        alarms = decoded.sorted { $0.timeText < $1.timeText }
+    }
+
+    private func sortAndSave() {
+        alarms.sort { $0.timeText < $1.timeText }
+        save()
+    }
+
+    private func save() {
+        guard let data = try? JSONEncoder().encode(alarms) else { return }
+        UserDefaults.standard.set(data, forKey: storageKey)
+    }
+}
