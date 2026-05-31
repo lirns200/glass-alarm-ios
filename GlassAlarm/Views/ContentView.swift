@@ -79,7 +79,7 @@ struct ContentView: View {
             ForEach(alarmStore.alarms) { alarm in
                 AlarmRow(
                     alarm: alarm,
-                    onToggle: { enabled in
+                    toggle: { enabled in
                         Task {
                             await alarmStore.setEnabled(
                                 alarm,
@@ -87,7 +87,7 @@ struct ContentView: View {
                             )
                         }
                     },
-                    onDelete: {
+                    delete: {
                         Task {
                             await alarmStore.delete(alarm)
                         }
