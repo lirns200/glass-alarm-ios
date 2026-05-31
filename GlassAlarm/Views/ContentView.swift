@@ -196,7 +196,8 @@ class GameViewModel: ObservableObject {
 }
 
 struct SplashScreen: View {
-    @State private var opacity = 0.0, scale = 0.8
+    @State private var opacity = 0.0
+    @State private var scale = 0.8
     let onFinished: () -> Void
     var body: some View {
         ZStack {
