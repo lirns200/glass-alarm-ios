@@ -11,6 +11,10 @@ struct ContentView: View {
         AppTheme(rawValue: selectedTheme) ?? .system
     }
 
+    private var nextEnabledAlarm: Alarm? {
+        alarmStore.alarms.first { $0.isEnabled }
+    }
+
     var body: some View {
         NavigationStack {
             ZStack {
@@ -28,7 +32,7 @@ struct ContentView: View {
 
                         ThemePicker(selectedTheme: $selectedTheme)
 
-                        AnimatedClockCard(nextAlarm: alarmStore.alarms.first(where: \.isEnabled))
+                        AnimatedClockCard(nextAlarm: nextEnabledAlarm)
 
                         LazyVStack(spacing: 12) {
                             ForEach(alarmStore.alarms) { alarm in

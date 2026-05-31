@@ -15,13 +15,13 @@ struct NotificationScheduler {
     }
 
     func cancel(_ alarm: Alarm) async {
-        let identifiers = identifiers(for: alarm)
-        UNUserNotificationCenter.current().removePendingNotificationRequests(withIdentifiers: notificationIds)
+        let ids = identifiers(for: alarm)
+        UNUserNotificationCenter.current().removePendingNotificationRequests(withIdentifiers: ids)
     }
 
     func cancelAll(_ alarms: [Alarm]) async {
         let notificationIds = alarms.flatMap { identifiers(for: $0) }
-        UNUserNotificationCenter.current().removePendingNotificationRequests(withIdentifiers: identifiers)
+        UNUserNotificationCenter.current().removePendingNotificationRequests(withIdentifiers: notificationIds)
     }
 
     private func addRequest(for alarm: Alarm, weekday: Weekday?) async {

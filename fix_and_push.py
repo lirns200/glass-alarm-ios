@@ -1,45 +1,85 @@
 from pathlib import Path
 import subprocess
 
-root = Path(r"C:\Users\sivma\Documents\Codex\2026-05-31\build-macos-apps-plugin-build-macos\outputs\GlassAlarm")
+root = Path(".")
 
-# ---------- NotificationScheduler ----------
+# -------------------------
+# NotificationScheduler.swift
+# -------------------------
 
-notif = root / "GlassAlarm" / "Services" / "NotificationScheduler.swift"
+scheduler = root / "GlassAlarm" / "Services" / "NotificationScheduler.swift"
 
-text = notif.read_text(encoding="utf-8")
+text = scheduler.read_text(encoding="utf-8")
 
 text = text.replace(
-'let identifiers = alarms.flatMap { identifiers(for: $0) }',
-'let notificationIds = alarms.flatMap { identifiers(for: $0) }'
+'''func cancel(_ alarm: Alarm) async {
+        let identifiers = identifiers(for: alarm)
+        UNUserNotificationCenter.current().removePendingNotificationRequests(withIdentifiers: notificationIds)
+    }''',
+'''func cancel(_ alarm: Alarm) async {
+        let ids = identifiers(for: alarm)
+        UNUserNotificationCenter.current().removePendingNotificationRequests(withIdentifiers: ids)
+    }'''
 )
 
 text = text.replace(
-'removePendingNotificationRequests(withIdentifiers: identifiers)',
-'removePendingNotificationRequests(withIdentifiers: notificationIds)',
-1
+'''func cancelAll(_ alarms: [Alarm]) async {
+        let notificationIds = alarms.flatMap { identifiers(for: $0) }
+        UNUserNotificationCenter.current().removePendingNotificationRequests(withIdentifiers: identifiers)
+    }''',
+'''func cancelAll(_ alarms: [Alarm]) async {
+        let notificationIds = alarms.flatMap { identifiers(for: $0) }
+        UNUserNotificationCenter.current().removePendingNotificationRequests(withIdentifiers: notificationIds)
+    }'''
 )
 
-notif.write_text(text, encoding="utf-8")
+scheduler.write_text(text, encoding="utf-8")
 
-# ---------- ContentView ----------
+# -------------------------
+# ContentView.swift
+# -------------------------
 
 content = root / "GlassAlarm" / "Views" / "ContentView.swift"
 
 text = content.read_text(encoding="utf-8")
 
+if "private var nextEnabledAlarm" not in text:
+    text = text.replace(
+'''private var theme: AppTheme {
+        AppTheme(rawValue: selectedTheme) ?? .system
+    }''',
+'''private var theme: AppTheme {
+        AppTheme(rawValue: selectedTheme) ?? .system
+    }
+
+    private var nextEnabledAlarm: Alarm? {
+        alarmStore.alarms.first { $0.isEnabled }
+    }'''
+    )
+
 text = text.replace(
-r'AnimatedClockCard(nextAlarm: alarmStore.alarms.first(where: .isEnabled))',
-'''let nextAlarm = alarmStore.alarms.first(where: { $0.isEnabled })
-AnimatedClockCard(nextAlarm: nextAlarm)'''
+'AnimatedClockCard(nextAlarm: alarmStore.alarms.first(where: \\.isEnabled))',
+'AnimatedClockCard(nextAlarm: nextEnabledAlarm)'
 )
 
 content.write_text(text, encoding="utf-8")
 
-print("Files patched")
+print("Swift files fixed")
 
-subprocess.run(["git", "add", "."], cwd=root)
-subprocess.run(["git", "commit", "-m", "fix ios build"], cwd=root)
-subprocess.run(["git", "push"], cwd=root)
+# -------------------------
+# Git
+# -------------------------
+
+commands = [
+    ["git", "add", "."],
+    ["git", "commit", "-m", "fix ios compile errors"],
+    ["git", "push"]
+]
+
+for cmd in commands:
+    try:
+        subprocess.run(cmd, check=True)
+    except:
+        pass
 
 print("Done")
