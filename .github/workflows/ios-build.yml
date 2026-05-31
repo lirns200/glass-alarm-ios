@@ -250,7 +250,7 @@ jobs:
 
             if [ "$USE_SIGNING" = "true" ]; then
               # For signed builds, use archive
-              BUILD_CMD="$BUILD_CMD -archivePath ../build/App.xcarchive archive"
+              BUILD_CMD="$BUILD_CMD -archivePath ${GITHUB_WORKSPACE}/build/App.xcarchive archive"
             else
               # For unsigned builds, use faster 'build' action
               BUILD_CMD="$BUILD_CMD CODE_SIGNING_ALLOWED=NO build"
@@ -260,10 +260,12 @@ jobs:
             eval $BUILD_CMD
           fi
 
-          # Create IPA
+          # Create IPA in a stable absolute output directory
+          OUTPUT_DIR="${GITHUB_WORKSPACE}/build"
+          mkdir -p "$OUTPUT_DIR"
+
           if [ "$USE_SIGNING" = "true" ]; then
             # For signed builds, use xcodebuild -exportArchive
-            cd ..
             printf '%s\n' \
               '<?xml version="1.0" encoding="UTF-8"?>' \
               '<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">' \
@@ -274,15 +276,15 @@ jobs:
               '    <key>signingStyle</key>' \
               '    <string>automatic</string>' \
               '</dict>' \
-              '</plist>' > ExportOptions.plist
+              '</plist>' > "$OUTPUT_DIR/ExportOptions.plist"
             xcodebuild -exportArchive \
-              -archivePath build/App.xcarchive \
-              -exportOptionsPlist ExportOptions.plist \
-              -exportPath build/export
+              -archivePath "$OUTPUT_DIR/App.xcarchive" \
+              -exportOptionsPlist "$OUTPUT_DIR/ExportOptions.plist" \
+              -exportPath "$OUTPUT_DIR/export"
 
             # Move IPA to expected location
-            mv build/export/*.ipa "build/$BUILD_ID.ipa"
-            echo "Created signed IPA: build/$BUILD_ID.ipa"
+            mv "$OUTPUT_DIR"/export/*.ipa "$OUTPUT_DIR/$BUILD_ID.ipa"
+            echo "Created signed IPA: $OUTPUT_DIR/$BUILD_ID.ipa"
           else
             # For unsigned builds, find .app and create IPA
             if [ "$PROJECT_TYPE" = "flutter" ]; then
@@ -298,20 +300,24 @@ jobs:
               exit 1
             fi
             echo "Found app at: $APP_PATH"
-            cd ..
-            mkdir -p build/Payload
-            cp -R "$APP_PATH" build/Payload/
-            cd build
-            zip -rq "$BUILD_ID.ipa" Payload
-            rm -rf Payload
-            echo "Created unsigned IPA: build/$BUILD_ID.ipa"
+
+            PAYLOAD_DIR="$OUTPUT_DIR/Payload"
+            mkdir -p "$PAYLOAD_DIR"
+            cp -R "$APP_PATH" "$PAYLOAD_DIR/"
+
+            (
+              cd "$OUTPUT_DIR"
+              zip -rq "$BUILD_ID.ipa" Payload
+            )
+            rm -rf "$PAYLOAD_DIR"
+            echo "Created unsigned IPA: $OUTPUT_DIR/$BUILD_ID.ipa"
           fi
 
       - name: Upload IPA artifact
         uses: actions/upload-artifact@v4
         with:
           name: ipa
-          path: build/*.ipa
+          path: ${{ github.workspace }}/build/*.ipa
           retention-days: 7
           if-no-files-found: error
 
@@ -348,7 +354,7 @@ jobs:
           else
             echo "- **Signing:** Unsigned (sign locally with AltStore/Sideloadly)" >> $GITHUB_STEP_SUMMARY
           fi
-          if [ -f build/*.ipa ]; then
-            IPA_PATH=$(find build -name "*.ipa" -type f | head -1)
+          if find "${GITHUB_WORKSPACE}/build" -maxdepth 1 -name "*.ipa" -type f | grep -q .; then
+            IPA_PATH=$(find "${GITHUB_WORKSPACE}/build" -maxdepth 1 -name "*.ipa" -type f | head -1)
             echo "- **IPA Size:** $(ls -lh "$IPA_PATH" | awk '{print $5}')" >> $GITHUB_STEP_SUMMARY
           fi
