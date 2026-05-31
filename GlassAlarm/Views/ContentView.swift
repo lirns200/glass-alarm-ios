@@ -486,10 +486,13 @@ struct AspectRatioContainer<Content: View>: View {
 }
 
 struct DraggableShapeView: View {
-    let shape: GameShape, gridRect: CGRect, gridSize: Int
+    let shape: GameShape
+    let gridRect: CGRect
+    let gridSize: Int
     let onHover: (Int, Int, GameShape?) -> Void
     let onDrop: (Int, Int) -> Void
-    @State private var offset = CGSize.zero, isDragging = false
+    @State private var offset = CGSize.zero
+    @State private var isDragging = false
     var body: some View {
         ShapePreview(shape: shape, scale: isDragging ? 0.7 : 0.5)
             .offset(offset).zIndex(isDragging ? 10 : 1)
