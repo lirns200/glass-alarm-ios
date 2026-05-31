@@ -37,9 +37,12 @@ final class AlarmStore: ObservableObject {
 
     func update(_ alarm: Alarm) async {
         guard let index = alarms.firstIndex(where: { $0.id == alarm.id }) else { return }
+        let previous = alarms[index]
         alarms[index] = alarm
         sortAndSave()
-        await scheduler.cancel(alarm)
+
+        // Cancel old identifiers first (important when repeat days changed)
+        await scheduler.cancel(previous)
         await scheduleIfNeeded(alarm)
     }
 
@@ -55,8 +58,14 @@ final class AlarmStore: ObservableObject {
         await update(edited)
     }
 
+    func appBecameActive() async {
+        await refreshAuthorizationStatus()
+        await rescheduleEnabledAlarms()
+    }
+
     private func scheduleIfNeeded(_ alarm: Alarm) async {
-        guard alarm.isEnabled, authorizationStatus == .authorized || authorizationStatus == .provisional else { return }
+        let canNotify = authorizationStatus == .authorized || authorizationStatus == .provisional
+        guard alarm.isEnabled, canNotify else { return }
         await scheduler.schedule(alarm)
     }
 

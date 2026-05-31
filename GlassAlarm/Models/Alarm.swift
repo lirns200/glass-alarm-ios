@@ -54,27 +54,71 @@ struct Alarm: Identifiable, Codable, Equatable {
         return ordered.map(\.shortTitle).joined(separator: " ")
     }
 
-    var timeUntilText: String {
-        let now = Date()
-        let calendar = Calendar.current
-        
+    func nextTriggerDate(from now: Date = Date(), calendar: Calendar = .current) -> Date? {
         var components = DateComponents()
         components.hour = hour
         components.minute = minute
-        
-        guard let alarmDate = calendar.nextDate(after: now, matching: components, matchingPolicy: .nextTime) else {
+        components.second = 0
+
+        if repeatDays.isEmpty {
+            return calendar.nextDate(
+                after: now,
+                matching: components,
+                matchingPolicy: .nextTime,
+                repeatedTimePolicy: .first,
+                direction: .forward
+            )
+        }
+
+        var nearestDate: Date?
+        for weekday in repeatDays {
+            var weekdayComponents = components
+            weekdayComponents.weekday = weekday.rawValue
+
+            guard let candidate = calendar.nextDate(
+                after: now,
+                matching: weekdayComponents,
+                matchingPolicy: .nextTime,
+                repeatedTimePolicy: .first,
+                direction: .forward
+            ) else {
+                continue
+            }
+
+            if let nearestDate {
+                if candidate < nearestDate {
+                    nearestDate = candidate
+                }
+            } else {
+                nearestDate = candidate
+            }
+        }
+
+        return nearestDate
+    }
+
+    var timeUntilText: String {
+        let now = Date()
+        let calendar = Calendar.current
+
+        guard let nextDate = nextTriggerDate(from: now, calendar: calendar) else {
             return ""
         }
-        
-        let diff = calendar.dateComponents([.hour, .minute], from: now, to: alarmDate)
-        let hours = diff.hour ?? 0
-        let minutes = diff.minute ?? 0
-        
+
+        let diff = calendar.dateComponents([.day, .hour, .minute], from: now, to: nextDate)
+        let days = max(0, diff.day ?? 0)
+        let hours = max(0, diff.hour ?? 0)
+        let minutes = max(0, diff.minute ?? 0)
+
+        if days > 0 {
+            return "Через \(days) д \(hours) ч"
+        }
+
         if hours > 0 {
             return "Через \(hours) ч \(minutes) мин"
-        } else {
-            return "Через \(minutes) мин"
         }
+
+        return "Через \(minutes) мин"
     }
 }
 

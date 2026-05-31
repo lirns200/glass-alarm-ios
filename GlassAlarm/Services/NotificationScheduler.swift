@@ -27,22 +27,36 @@ struct NotificationScheduler {
     private func addRequest(for alarm: Alarm, weekday: Weekday?) async {
         let content = UNMutableNotificationContent()
         content.title = alarm.title.isEmpty ? "Будильник" : alarm.title
-        content.body = "Пора просыпаться! (\(alarm.timeUntilText))"
+        content.body = "Пора просыпаться!"
         content.sound = sound(for: alarm.ringtone)
         content.interruptionLevel = .timeSensitive // Чтобы уведомление пробивалось через "Фокусирование"
+        content.userInfo = [
+            "alarmId": alarm.id.uuidString,
+            "vibrates": alarm.vibrates
+        ]
 
-        var components = DateComponents()
-        components.hour = alarm.hour
-        components.minute = alarm.minute
+        let trigger: UNCalendarNotificationTrigger
+
         if let weekday {
+            var components = DateComponents()
             components.weekday = weekday.rawValue
+            components.hour = alarm.hour
+            components.minute = alarm.minute
+            components.second = 0
+            trigger = UNCalendarNotificationTrigger(dateMatching: components, repeats: true)
+        } else {
+            guard let nextDate = alarm.nextTriggerDate() else { return }
+            let components = Calendar.current.dateComponents([.year, .month, .day, .hour, .minute, .second], from: nextDate)
+            trigger = UNCalendarNotificationTrigger(dateMatching: components, repeats: false)
         }
 
-        let repeats = weekday != nil
-        let trigger = UNCalendarNotificationTrigger(dateMatching: components, repeats: repeats)
         let request = UNNotificationRequest(identifier: identifier(for: alarm, weekday: weekday), content: content, trigger: trigger)
 
-        try? await UNUserNotificationCenter.current().add(request)
+        do {
+            try await UNUserNotificationCenter.current().add(request)
+        } catch {
+            print("Failed to schedule alarm \(alarm.id): \(error.localizedDescription)")
+        }
     }
 
     private func sound(for ringtone: AlarmRingtone) -> UNNotificationSound {
