@@ -23,6 +23,8 @@
 		11111111111111111111110E /* pulse.wav in Resources */ = {isa = PBXBuildFile; fileRef = 11111111111111111111100E /* pulse.wav */; };
 		11111111111111111111110F /* sunrise.wav in Resources */ = {isa = PBXBuildFile; fileRef = 11111111111111111111100F /* sunrise.wav */; };
 		111111111111111111111110 /* focus.wav in Resources */ = {isa = PBXBuildFile; fileRef = 111111111111111111111010 /* focus.wav */; };
+		111111111111111111111111 /* HapticsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 111111111111111111111012 /* HapticsService.swift */; };
+		111111111111111111111112 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 111111111111111111111013 /* SettingsView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -43,6 +45,8 @@
 		11111111111111111111100F /* sunrise.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = sunrise.wav; sourceTree = "<group>"; };
 		111111111111111111111010 /* focus.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = focus.wav; sourceTree = "<group>"; };
 		111111111111111111111011 /* GlassAlarm.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GlassAlarm.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		111111111111111111111012 /* HapticsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HapticsService.swift; sourceTree = "<group>"; };
+		111111111111111111111013 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -116,6 +120,7 @@
 			isa = PBXGroup;
 			children = (
 				111111111111111111111005 /* NotificationScheduler.swift */,
+				111111111111111111111012 /* HapticsService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -136,6 +141,7 @@
 				111111111111111111111009 /* AlarmEditorView.swift */,
 				11111111111111111111100A /* AnimatedClockCard.swift */,
 				11111111111111111111100B /* GlassBackground.swift */,
+				111111111111111111111013 /* SettingsView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -235,6 +241,8 @@
 				111111111111111111111109 /* AlarmEditorView.swift in Sources */,
 				11111111111111111111110A /* AnimatedClockCard.swift in Sources */,
 				11111111111111111111110B /* GlassBackground.swift in Sources */,
+				111111111111111111111111 /* HapticsService.swift in Sources */,
+				111111111111111111111112 /* SettingsView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

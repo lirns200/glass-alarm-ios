@@ -158,6 +158,33 @@ jobs:
         run: |
           set -e
 
+          run_build_cmd() {
+            local cmd="$1"
+            local log_file="${GITHUB_WORKSPACE}/build/xcodebuild.log"
+
+            mkdir -p "${GITHUB_WORKSPACE}/build"
+            rm -f "$log_file"
+
+            set +e
+            eval "$cmd" 2>&1 | tee "$log_file"
+            local build_exit=${PIPESTATUS[0]}
+            set -e
+
+            if [ "$build_exit" -ne 0 ]; then
+              echo "::group::xcodebuild last 200 lines"
+              tail -n 200 "$log_file" || true
+              echo "::endgroup::"
+
+              local first_error
+              first_error=$(grep -m1 "error:" "$log_file" || true)
+              if [ -n "$first_error" ]; then
+                echo "::error::$first_error"
+              fi
+
+              exit "$build_exit"
+            fi
+          }
+
           # Navigate to iOS project
           cd "$IOS_PATH"
 
@@ -187,6 +214,13 @@ jobs:
 
           # Use custom DerivedData path for caching
           DERIVED_DATA_PATH="${GITHUB_WORKSPACE}/DerivedData"
+
+          echo "Project type: $PROJECT_TYPE"
+          echo "Workspace: ${WORKSPACE:-<none>}"
+          echo "Project: ${PROJECT:-<none>}"
+          echo "Scheme: ${SCHEME:-<none>}"
+          echo "iOS path: $IOS_PATH"
+          xcodebuild -version
 
           if [ "$PROJECT_TYPE" = "flutter" ]; then
             cd ..
@@ -224,40 +258,11 @@ jobs:
             BUILD_CMD="$BUILD_CMD build"
 
             echo "Running: $BUILD_CMD"
-            eval $BUILD_CMD
-          else
-            BUILD_CMD="xcodebuild"
-            if [ -n "$WORKSPACE" ]; then
-              BUILD_CMD="$BUILD_CMD -workspace $WORKSPACE"
-            elif [ -n "$PROJECT" ]; then
-              BUILD_CMD="$BUILD_CMD -project $PROJECT"
-            fi
+            run_build_cmd "$BUILD_CMD"
 
-            BUILD_CMD="$BUILD_CMD -scheme $SCHEME"
-            BUILD_CMD="$BUILD_CMD -configuration $CONFIGURATION"
-            BUILD_CMD="$BUILD_CMD -destination 'generic/platform=iOS'"
-            BUILD_CMD="$BUILD_CMD -derivedDataPath $DERIVED_DATA_PATH"
-
-            # Speed optimization flags
-            BUILD_CMD="$BUILD_CMD COMPILER_INDEX_STORE_ENABLE=NO"
-            BUILD_CMD="$BUILD_CMD DEBUG_INFORMATION_FORMAT=dwarf"
-            BUILD_CMD="$BUILD_CMD ONLY_ACTIVE_ARCH=YES"
-
-            # Xcode 16+ native compilation caching
-            BUILD_CMD="$BUILD_CMD SWIFT_ENABLE_COMPILE_CACHE=YES"
-            BUILD_CMD="$BUILD_CMD CLANG_ENABLE_COMPILE_CACHE=YES"
-
-            if [ "$USE_SIGNING" = "true" ]; then
-              # For signed builds, use archive
-              BUILD_CMD="$BUILD_CMD -archivePath ${GITHUB_WORKSPACE}/build/App.xcarchive archive"
-            else
-              # For unsigned builds, use faster 'build' action
-              BUILD_CMD="$BUILD_CMD CODE_SIGNING_ALLOWED=NO build"
-            fi
-
-            echo "Running: $BUILD_CMD"
-            eval $BUILD_CMD
           fi
+
+          xcodebuild -showBuildSettings -project "${PROJECT}" -scheme "$SCHEME" -configuration "$CONFIGURATION" | grep -E "PRODUCT_BUNDLE_IDENTIFIER|IPHONEOS_DEPLOYMENT_TARGET|SWIFT_VERSION|SDKROOT" || true
 
           # Create IPA in a stable absolute output directory
           OUTPUT_DIR="${GITHUB_WORKSPACE}/build"

@@ -3,16 +3,17 @@ import UserNotifications
 
 struct ContentView: View {
     @EnvironmentObject private var alarmStore: AlarmStore
+    @AppStorage(AppSettingsKeys.selectedTheme) private var selectedTheme = AppTheme.dark.rawValue
     @State private var showingEditor = false
     @State private var editingAlarm: Alarm?
     @State private var refreshID = UUID()
-    
+
     private let timer = Timer.publish(every: 30, on: .main, in: .common).autoconnect()
 
     var body: some View {
         NavigationStack {
             ZStack {
-                GlassBackground(theme: .system)
+                GlassBackground(theme: currentTheme)
 
                 ScrollView {
                     VStack(spacing: 18) {
@@ -79,6 +80,14 @@ struct ContentView: View {
             .navigationTitle("Стеклянный Будильник")
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {
+                ToolbarItem(placement: .topBarLeading) {
+                    NavigationLink {
+                        SettingsView()
+                    } label: {
+                        Image(systemName: "slider.horizontal.3")
+                    }
+                }
+
                 ToolbarItem(placement: .topBarTrailing) {
                     Button {
                         showingEditor = true
@@ -93,6 +102,7 @@ struct ContentView: View {
                         await alarmStore.add(alarm)
                     }
                 }
+                .environmentObject(alarmStore)
             }
             .sheet(item: $editingAlarm) { alarm in
                 AlarmEditorView(mode: .edit(alarm)) { edited in
@@ -100,10 +110,15 @@ struct ContentView: View {
                         await alarmStore.update(edited)
                     }
                 }
+                .environmentObject(alarmStore)
             }
             .onReceive(timer) { _ in
                 refreshID = UUID()
             }
         }
+    }
+
+    private var currentTheme: AppTheme {
+        AppTheme(rawValue: selectedTheme) ?? .dark
     }
 }

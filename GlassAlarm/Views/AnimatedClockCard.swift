@@ -31,9 +31,10 @@ struct AnimatedClockCard: View {
                     Text(nextAlarm?.timeText ?? "--:--")
                         .font(.system(size: 42, weight: .bold, design: .rounded))
                         .monospacedDigit()
+                        .foregroundStyle(.white)
                     Text(nextAlarm == nil ? "Нет активных" : "Следующий")
                         .font(.caption)
-                        .foregroundStyle(.secondary)
+                        .foregroundStyle(.white.opacity(0.82))
                 }
             }
             .padding(.top, 8)
@@ -41,7 +42,7 @@ struct AnimatedClockCard: View {
             VStack(spacing: 4) {
                 Text(nextAlarm?.repeatText ?? "Нажмите +, чтобы создать")
                     .font(.subheadline.weight(.medium))
-                    .foregroundStyle(.secondary)
+                    .foregroundStyle(.white.opacity(0.82))
                 
                 if let nextAlarm {
                     Text(nextAlarm.timeUntilText)

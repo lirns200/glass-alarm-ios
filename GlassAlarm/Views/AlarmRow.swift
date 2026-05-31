@@ -12,6 +12,7 @@ struct AlarmRow: View {
                     Text(alarm.timeText)
                         .font(.system(size: 44, weight: .semibold, design: .rounded))
                         .monospacedDigit()
+                        .foregroundStyle(.white)
                     
                     if alarm.isEnabled {
                         Text(alarm.timeUntilText)
@@ -27,9 +28,12 @@ struct AlarmRow: View {
                     Label(alarm.title.isEmpty ? "Будильник" : alarm.title, systemImage: "bell.fill")
                     Text(alarm.repeatText)
                     Text(alarm.ringtone.title)
+                    if alarm.vibrates {
+                        Image(systemName: "iphone.radiowaves.left.and.right")
+                    }
                 }
                 .font(.caption)
-                .foregroundStyle(.secondary)
+                .foregroundStyle(.white.opacity(0.85))
                 .lineLimit(1)
             }
 

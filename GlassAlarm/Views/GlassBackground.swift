@@ -53,9 +53,9 @@ struct GlassBackground: View {
     private var backgroundColors: [Color] {
         switch theme {
         case .light:
-            return [.white, .white]
+            return [Color(red: 0.94, green: 0.96, blue: 1.0), .white]
         case .dark:
-            return [.black, .black]
+            return [Color(red: 0.02, green: 0.02, blue: 0.04), Color(red: 0.0, green: 0.0, blue: 0.0)]
         case .system:
             return [Color(red: 0.05, green: 0.05, blue: 0.05), .black]
         }
@@ -82,11 +82,19 @@ struct BlobView: View {
 extension View {
     func glassCard() -> some View {
         self
+            .background(
+                LinearGradient(
+                    colors: [Color.white.opacity(0.12), Color.white.opacity(0.04)],
+                    startPoint: .topLeading,
+                    endPoint: .bottomTrailing
+                ),
+                in: RoundedRectangle(cornerRadius: 20, style: .continuous)
+            )
             .background(.ultraThinMaterial, in: RoundedRectangle(cornerRadius: 20, style: .continuous))
             .overlay {
                 RoundedRectangle(cornerRadius: 20, style: .continuous)
-                    .stroke(.white.opacity(0.15), lineWidth: 0.5)
+                    .stroke(.white.opacity(0.2), lineWidth: 0.7)
             }
-            .shadow(color: .black.opacity(0.1), radius: 10, x: 0, y: 5)
+            .shadow(color: .black.opacity(0.28), radius: 16, x: 0, y: 8)
     }
 }

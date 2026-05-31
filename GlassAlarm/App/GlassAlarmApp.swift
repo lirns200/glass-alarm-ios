@@ -1,9 +1,11 @@
 import SwiftUI
 import UserNotifications
-import AudioToolbox
-import UIKit
 
 class AppDelegate: NSObject, UNUserNotificationCenterDelegate {
+    private var defaultVibration: Bool {
+        UserDefaults.standard.object(forKey: AppSettingsKeys.defaultVibration) as? Bool ?? true
+    }
+
     func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification, withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
         triggerVibrationIfNeeded(userInfo: notification.request.content.userInfo)
         completionHandler([.banner, .list, .sound, .badge])
@@ -15,13 +17,10 @@ class AppDelegate: NSObject, UNUserNotificationCenterDelegate {
     }
 
     private func triggerVibrationIfNeeded(userInfo: [AnyHashable: Any]) {
-        let vibrates = userInfo["vibrates"] as? Bool ?? true
+        let vibrates = userInfo["vibrates"] as? Bool ?? defaultVibration
         guard vibrates else { return }
 
-        AudioServicesPlaySystemSound(kSystemSoundID_Vibrate)
-        let feedback = UINotificationFeedbackGenerator()
-        feedback.prepare()
-        feedback.notificationOccurred(.warning)
+        HapticsService.playAlarmPreview()
     }
 }
 
@@ -29,7 +28,7 @@ class AppDelegate: NSObject, UNUserNotificationCenterDelegate {
 struct GlassAlarmApp: App {
     @Environment(\.scenePhase) private var scenePhase
     @StateObject private var alarmStore = AlarmStore()
-    @AppStorage("selectedTheme") private var selectedTheme = AppTheme.system.rawValue
+    @AppStorage(AppSettingsKeys.selectedTheme) private var selectedTheme = AppTheme.dark.rawValue
     private let appDelegate = AppDelegate()
 
     init() {

@@ -54,6 +54,9 @@ struct NotificationScheduler {
 
         do {
             try await UNUserNotificationCenter.current().add(request)
+            #if DEBUG
+            print("Scheduled alarm at \(DateFormatters.alarmTimeWithSeconds.string(from: trigger.nextTriggerDate() ?? Date())) id=\(request.identifier)")
+            #endif
         } catch {
             print("Failed to schedule alarm \(alarm.id): \(error.localizedDescription)")
         }

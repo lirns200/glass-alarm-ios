@@ -1,5 +1,11 @@
 import SwiftUI
 
+enum AppSettingsKeys {
+    static let selectedTheme = "selectedTheme"
+    static let defaultRingtone = "defaultRingtone"
+    static let defaultVibration = "defaultVibration"
+}
+
 enum AppTheme: String, CaseIterable, Identifiable {
     case system
     case light
@@ -9,9 +15,9 @@ enum AppTheme: String, CaseIterable, Identifiable {
 
     var title: String {
         switch self {
-        case .system: return "Auto"
-        case .light: return "White"
-        case .dark: return "Black"
+        case .system: return "Система"
+        case .light: return "Светлая"
+        case .dark: return "Тёмная"
         }
     }
 

@@ -1,5 +1,7 @@
 import Foundation
 import UserNotifications
+import AVFoundation
+import AudioToolbox
 
 @MainActor
 final class AlarmStore: ObservableObject {
@@ -8,6 +10,7 @@ final class AlarmStore: ObservableObject {
 
     private let storageKey = "savedAlarms"
     private let scheduler = NotificationScheduler()
+    private var audioPlayer: AVAudioPlayer?
 
     func bootstrap() async {
         load()
@@ -67,6 +70,34 @@ final class AlarmStore: ObservableObject {
         let canNotify = authorizationStatus == .authorized || authorizationStatus == .provisional
         guard alarm.isEnabled, canNotify else { return }
         await scheduler.schedule(alarm)
+    }
+
+    func previewRingtone(_ ringtone: AlarmRingtone) {
+        stopRingtonePreview()
+
+        guard let soundName = ringtone.notificationSoundName,
+              let url = Bundle.main.url(forResource: soundName.replacingOccurrences(of: ".wav", with: ""), withExtension: "wav") else {
+            AudioServicesPlaySystemSound(1005)
+            return
+        }
+
+        do {
+            audioPlayer = try AVAudioPlayer(contentsOf: url)
+            audioPlayer?.prepareToPlay()
+            audioPlayer?.play()
+        } catch {
+            print("Failed to preview ringtone: \(error.localizedDescription)")
+            AudioServicesPlaySystemSound(1005)
+        }
+    }
+
+    func stopRingtonePreview() {
+        audioPlayer?.stop()
+        audioPlayer = nil
+    }
+
+    func previewVibration() {
+        HapticsService.playAlarmPreview()
     }
 
     private func rescheduleEnabledAlarms() async {
