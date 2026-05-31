@@ -121,7 +121,7 @@ struct ContentView: View {
     
     var body: some View {
         ZStack {
-            Color(red: 0.05, green: 0.07, blue: 0.1).ignoresSafeArea()
+            Color(red: 0.02, green: 0.04, blue: 0.08).ignoresSafeArea()
             
             VStack(spacing: 20) {
                 // Header
