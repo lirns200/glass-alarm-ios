@@ -36,6 +36,12 @@ struct GameShape: Identifiable {
     }
 }
 
+struct ScorePopup: Identifiable {
+    let id = UUID()
+    let score: Int
+    let position: CGPoint
+}
+
 @MainActor
 class GameViewModel: ObservableObject {
     @Published var grid: [[Color?]] = Array(repeating: Array(repeating: nil, count: 8), count: 8)
@@ -44,6 +50,7 @@ class GameViewModel: ObservableObject {
     @Published var isGameOver: Bool = false
     @Published var combo: Int = 0
     @Published var previewInfo: (row: Int, col: Int, shape: GameShape)?
+    @Published var popups: [ScorePopup] = []
     
     // Settings
     @Published var isSoundEnabled: Bool = true
@@ -56,6 +63,29 @@ class GameViewModel: ObservableObject {
     
     func toggleDarkMode() {
         isDarkMode.toggle()
+    }
+    
+    func startNewRound() {
+        currentShapes = [GameShape.random(), GameShape.random(), GameShape.random()]
+    }
+    
+    func setPreview(row: Int, col: Int, shape: GameShape?) {
+        if let shape = shape {
+            previewInfo = (row, col, shape)
+        } else {
+            previewInfo = nil
+        }
+    }
+    
+    func canPlace(shape: GameShape, at row: Int, col: Int) -> Bool {
+        for block in shape.blocks {
+            let r = row + Int(block.y)
+            let c = col + Int(block.x)
+            if r < 0 || r >= 8 || c < 0 || c >= 8 || grid[r][c] != nil {
+                return false
+            }
+        }
+        return true
     }
     
     func place(shape: GameShape, at row: Int, col: Int) {
@@ -75,7 +105,7 @@ class GameViewModel: ObservableObject {
             currentShapes[index] = nil
         }
         
-        clearLines()
+        clearLines(at: row, col: col)
         
         if currentShapes.allSatisfy({ $0 == nil }) {
             startNewRound()
@@ -88,25 +118,42 @@ class GameViewModel: ObservableObject {
         let generator = UIImpactFeedbackGenerator(style: .medium)
         generator.impactOccurred()
         #endif
-        // Sound logic would usually go here with AVFoundation
     }
     
-    private func clearLines() {
+    private func clearLines(at lastRow: Int, col lastCol: Int) {
         var rowsToClear: [Int] = []
         var colsToClear: [Int] = []
+        
         for r in 0..<8 { if grid[r].allSatisfy({ $0 != nil }) { rowsToClear.append(r) } }
         for c in 0..<8 {
             var full = true
             for r in 0..<8 { if grid[r][c] == nil { full = false; break } }
             if full { colsToClear.append(c) }
         }
+        
         let linesCleared = rowsToClear.count + colsToClear.count
         if linesCleared > 0 {
             combo += 1
-            score += (linesCleared * 10 + (combo - 1) * 5) * linesCleared
+            let points = (linesCleared * 100 + (combo - 1) * 50) * linesCleared
+            
+            withAnimation(.spring()) {
+                score += points
+            }
+            
+            // Add popup near the placement
+            let popup = ScorePopup(score: points, position: CGPoint(x: CGFloat(lastCol) * 40, y: CGFloat(lastRow) * 40))
+            popups.append(popup)
+            
+            // Remove popup after delay
+            DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
+                self.popups.removeAll { $0.id == popup.id }
+            }
+            
             for r in rowsToClear { for c in 0..<8 { grid[r][c] = nil } }
             for c in colsToClear { for r in 0..<8 { grid[r][c] = nil } }
-        } else { combo = 0 }
+        } else {
+            combo = 0
+        }
     }
     
     private func checkGameOver() {
@@ -122,7 +169,16 @@ class GameViewModel: ObservableObject {
     
     func reset() {
         grid = Array(repeating: Array(repeating: nil, count: 8), count: 8)
-        score = 0; combo = 0; isGameOver = false; startNewRound()
+        score = 0
+        combo = 0
+        isGameOver = false
+        startNewRound()
+    }
+    
+    var comboColor: Color {
+        if combo <= 1 { return .gray }
+        if combo <= 5 { return .yellow }
+        return .red
     }
 }
 
@@ -136,43 +192,55 @@ struct ContentView: View {
             (vm.isDarkMode ? Color(red: 0.02, green: 0.04, blue: 0.08) : Color(red: 0.95, green: 0.96, blue: 0.98))
                 .ignoresSafeArea()
             
-            VStack(spacing: 15) {
-                // Header with Settings Button
+            VStack(spacing: 20) {
+                // Settings Button Top Right
                 HStack {
                     Spacer()
                     Button {
                         showingSettings = true
                     } label: {
                         Image(systemName: "gearshape.fill")
-                            .font(.title2)
+                            .font(.title3)
                             .foregroundStyle(vm.isDarkMode ? .white : .black)
-                            .padding(10)
+                            .padding(12)
                             .background(vm.isDarkMode ? Color.white.opacity(0.1) : Color.black.opacity(0.05), in: Circle())
                     }
                 }
-                .padding(.horizontal, 24)
+                .padding(.horizontal, 20)
                 .padding(.top, 10)
                 
-                // Score in center
-                VStack(spacing: 5) {
-                    Text("SCORE")
-                        .font(.system(.caption, design: .rounded))
-                        .bold()
-                        .foregroundStyle(.gray)
-                    Text("\(vm.score)")
-                        .font(.system(size: 54, weight: .black, design: .rounded))
-                        .foregroundStyle(vm.isDarkMode ? .white : .black)
-                    
-                    if vm.combo > 0 {
-                        Text("COMBO x\(vm.combo)")
-                            .font(.headline.bold())
-                            .foregroundStyle(.orange)
-                            .padding(.horizontal, 12)
-                            .padding(.vertical, 4)
-                            .background(Color.orange.opacity(0.1), in: Capsule())
+                // Centered Score & Combo
+                HStack(spacing: 20) {
+                    // Combo Left
+                    ZStack {
+                        if vm.combo > 1 {
+                            VStack(spacing: -2) {
+                                Text("COMBO")
+                                    .font(.system(size: 10, weight: .bold, design: .rounded))
+                                Text("x\(vm.combo)")
+                                    .font(.system(size: 24, weight: .black, design: .rounded))
+                            }
+                            .foregroundStyle(vm.comboColor)
+                            .padding(8)
+                            .background(vm.comboColor.opacity(0.1), in: RoundedRectangle(cornerRadius: 12))
+                            .transition(.scale.combined(with: .opacity))
+                        }
                     }
+                    .frame(width: 80)
+                    
+                    // Score Center
+                    VStack(spacing: 2) {
+                        Text("SCORE")
+                            .font(.system(size: 12, weight: .bold, design: .rounded))
+                            .foregroundStyle(.gray)
+                        Text("\(vm.score)")
+                            .font(.system(size: 48, weight: .black, design: .rounded))
+                            .foregroundStyle(vm.isDarkMode ? .white : .black)
+                            .contentTransition(.numericText())
+                    }
+                    
+                    Spacer().frame(width: 80) // Balance for combo
                 }
-                .frame(maxWidth: .infinity)
                 
                 // Grid
                 ZStack {
@@ -187,9 +255,19 @@ struct ContentView: View {
                                 }
                             }
                         )
+                    
+                    // Floating scores
+                    ForEach(vm.popups) { popup in
+                        Text("+\(popup.score)")
+                            .font(.system(size: 24, weight: .black, design: .rounded))
+                            .foregroundStyle(.orange)
+                            .shadow(radius: 2)
+                            .position(x: popup.position.x + 20, y: popup.position.y + 20)
+                            .transition(.asymmetric(insertion: .scale, removal: .move(edge: .top).combined(with: .opacity)))
+                    }
                 }
                 .padding(16)
-                .background(vm.isDarkMode ? Color.white.opacity(0.03) : Color.black.opacity(0.02), in: RoundedRectangle(cornerRadius: 16))
+                .background(vm.isDarkMode ? Color.white.opacity(0.03) : Color.black.opacity(0.02), in: RoundedRectangle(cornerRadius: 20))
                 .padding(.horizontal, 16)
                 
                 // Shapes
@@ -214,7 +292,7 @@ struct ContentView: View {
             }
         }
         .sheet(isPresented: $showingSettings) {
-            SettingsView(vm: vm)
+            GameSettingsMenuView(vm: vm)
         }
         .overlay {
             if vm.isGameOver {
@@ -225,12 +303,12 @@ struct ContentView: View {
     
     var gameOverOverlay: some View {
         ZStack {
-            Color.black.opacity(0.85).ignoresSafeArea()
+            Color.black.opacity(0.9).ignoresSafeArea()
             VStack(spacing: 30) {
                 Text("GAME OVER").font(.system(size: 54, weight: .black, design: .rounded)).foregroundStyle(.white)
                 VStack(spacing: 8) {
-                    Text("Score").font(.headline).foregroundStyle(.gray)
-                    Text("\(vm.score)").font(.system(size: 48, weight: .bold, design: .rounded)).foregroundStyle(.white)
+                    Text("Total Score").font(.headline).foregroundStyle(.gray)
+                    Text("\(vm.score)").font(.system(size: 64, weight: .bold, design: .rounded)).foregroundStyle(.white)
                 }
                 Button {
                     withAnimation { vm.reset() }
@@ -239,16 +317,16 @@ struct ContentView: View {
                         .font(.title3.bold())
                         .foregroundStyle(.white)
                         .padding(.horizontal, 50)
-                        .padding(.vertical, 18)
+                        .padding(.vertical, 20)
                         .background(Color.blue, in: Capsule())
-                        .shadow(color: .blue.opacity(0.4), radius: 10)
+                        .shadow(color: .blue.opacity(0.4), radius: 15)
                 }
             }
         }
     }
 }
 
-struct SettingsView: View {
+struct GameSettingsMenuView: View {
     @ObservedObject var vm: GameViewModel
     @Environment(\.dismiss) var dismiss
     
@@ -256,7 +334,7 @@ struct SettingsView: View {
         NavigationStack {
             List {
                 Section("GAMEPLAY") {
-                    Toggle("Sound", isOn: $vm.isSoundEnabled)
+                    Toggle("Sound Effects", isOn: $vm.isSoundEnabled)
                     Toggle("Vibration", isOn: $vm.isVibrationEnabled)
                 }
                 
@@ -268,9 +346,9 @@ struct SettingsView: View {
                     HStack {
                         Text("Version")
                         Spacer()
-                        Text("1.2.0 Preview").foregroundStyle(.gray)
+                        Text("1.3.0").foregroundStyle(.gray)
                     }
-                    Text("Block Blast is a puzzle game where you match blocks to clear lines.")
+                    Text("Block Blast is a logic puzzle where you need to clear the field by building lines.")
                         .font(.caption)
                         .foregroundStyle(.gray)
                 }
@@ -307,7 +385,6 @@ struct GridView: View {
                                             .stroke(isDarkMode ? Color.white.opacity(0.05) : Color.black.opacity(0.03), lineWidth: 1)
                                     )
                                     .scaleEffect(grid[r][c] != nil ? 1.0 : 0.95)
-                                    .animation(.spring(response: 0.3, dampingFraction: 0.6), value: grid[r][c] != nil)
                             }
                         }
                     }
@@ -368,7 +445,7 @@ struct DraggableShapeView: View {
     @State private var isDragging = false
     
     var body: some View {
-        ShapePreview(shape: shape, scale: isDragging ? 1.0 : 0.55)
+        ShapePreview(shape: shape, scale: isDragging ? 1.0 : 0.6)
             .offset(offset)
             .zIndex(isDragging ? 10 : 1)
             .gesture(
@@ -378,7 +455,7 @@ struct DraggableShapeView: View {
                             isDragging = true
                         }
                         
-                        // Move shape above finger, no tilt/extra scale
+                        // Simple subtle offset upward
                         offset = CGSize(width: value.translation.width, height: value.translation.height - 100)
                         
                         let hoverPoint = CGPoint(x: value.location.x, y: value.location.y - 100)
