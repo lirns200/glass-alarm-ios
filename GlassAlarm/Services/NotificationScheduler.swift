@@ -2,6 +2,8 @@ import Foundation
 import UserNotifications
 
 struct NotificationScheduler {
+    private let testNotificationIdentifier = "glass-alarm-test"
+
     func schedule(_ alarm: Alarm) async {
         await cancel(alarm)
 
@@ -22,6 +24,29 @@ struct NotificationScheduler {
     func cancelAll(_ alarms: [Alarm]) async {
         let notificationIds = alarms.flatMap { identifiers(for: $0) }
         UNUserNotificationCenter.current().removePendingNotificationRequests(withIdentifiers: notificationIds)
+    }
+
+    func scheduleTestNotification(after seconds: TimeInterval = 5) async {
+        UNUserNotificationCenter.current().removePendingNotificationRequests(withIdentifiers: [testNotificationIdentifier])
+
+        let content = UNMutableNotificationContent()
+        content.title = "Тест будильника"
+        content.body = "Если вы это видите, уведомления работают"
+        content.sound = .default
+        content.interruptionLevel = .timeSensitive
+        content.userInfo = [
+            "alarmId": "test",
+            "vibrates": true
+        ]
+
+        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: max(1, seconds), repeats: false)
+        let request = UNNotificationRequest(identifier: testNotificationIdentifier, content: content, trigger: trigger)
+
+        do {
+            try await UNUserNotificationCenter.current().add(request)
+        } catch {
+            print("Failed to schedule test notification: \(error.localizedDescription)")
+        }
     }
 
     private func addRequest(for alarm: Alarm, weekday: Weekday?) async {

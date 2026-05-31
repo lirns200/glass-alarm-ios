@@ -26,10 +26,11 @@ final class AlarmStore: ObservableObject {
         await rescheduleEnabledAlarms()
     }
 
-    func requestNotifications() async {
-        _ = try? await UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .sound, .badge])
-        await refreshAuthorizationStatus()
+    @discardableResult
+    func requestNotifications() async -> Bool {
+        let granted = await ensureNotificationAuthorization()
         await rescheduleEnabledAlarms()
+        return granted
     }
 
     func add(_ alarm: Alarm) async {
@@ -67,8 +68,9 @@ final class AlarmStore: ObservableObject {
     }
 
     private func scheduleIfNeeded(_ alarm: Alarm) async {
+        guard alarm.isEnabled else { return }
         let canNotify = authorizationStatus == .authorized || authorizationStatus == .provisional
-        guard alarm.isEnabled, canNotify else { return }
+        guard canNotify || await ensureNotificationAuthorization() else { return }
         await scheduler.schedule(alarm)
     }
 
@@ -100,16 +102,38 @@ final class AlarmStore: ObservableObject {
         HapticsService.playAlarmPreview()
     }
 
+    func scheduleTestNotification(after seconds: TimeInterval = 5) async -> Bool {
+        let granted = await ensureNotificationAuthorization()
+        guard granted else { return false }
+        await scheduler.scheduleTestNotification(after: seconds)
+        return true
+    }
+
     private func rescheduleEnabledAlarms() async {
         await scheduler.cancelAll(alarms)
+
+        let canNotify = authorizationStatus == .authorized || authorizationStatus == .provisional
+        guard canNotify || await ensureNotificationAuthorization() else { return }
+
         for alarm in alarms where alarm.isEnabled {
-            await scheduleIfNeeded(alarm)
+            await scheduler.schedule(alarm)
         }
     }
 
     private func refreshAuthorizationStatus() async {
         let settings = await UNUserNotificationCenter.current().notificationSettings()
         authorizationStatus = settings.authorizationStatus
+    }
+
+    private func ensureNotificationAuthorization() async -> Bool {
+        let canNotify = authorizationStatus == .authorized || authorizationStatus == .provisional
+        if canNotify {
+            return true
+        }
+
+        let granted = (try? await UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .sound, .badge])) ?? false
+        await refreshAuthorizationStatus()
+        return granted || authorizationStatus == .authorized || authorizationStatus == .provisional
     }
 
     private func load() {

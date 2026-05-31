@@ -5,6 +5,8 @@ struct SettingsView: View {
     @AppStorage(AppSettingsKeys.selectedTheme) private var selectedTheme = AppTheme.dark.rawValue
     @AppStorage(AppSettingsKeys.defaultRingtone) private var defaultRingtone = AlarmRingtone.crystal.rawValue
     @AppStorage(AppSettingsKeys.defaultVibration) private var defaultVibration = true
+    @State private var statusMessage: String?
+    @State private var isSchedulingTest = false
 
     var body: some View {
         ZStack {
@@ -15,6 +17,14 @@ struct SettingsView: View {
                     themeCard
                     defaultAlarmCard
                     testCard
+                    if let statusMessage {
+                        Text(statusMessage)
+                            .font(.footnote)
+                            .foregroundStyle(.white.opacity(0.82))
+                            .frame(maxWidth: .infinity, alignment: .leading)
+                            .padding(12)
+                            .glassCard()
+                    }
                 }
                 .padding(20)
                 .padding(.bottom, 28)
@@ -115,6 +125,24 @@ struct SettingsView: View {
                     .background(Color.white.opacity(0.12), in: RoundedRectangle(cornerRadius: 12, style: .continuous))
             }
             .buttonStyle(.plain)
+
+            Button {
+                Task { @MainActor in
+                    isSchedulingTest = true
+                    let ok = await alarmStore.scheduleTestNotification(after: 5)
+                    isSchedulingTest = false
+                    statusMessage = ok
+                        ? "Тестовое уведомление будет через 5 секунд"
+                        : "Разреши уведомления в настройках iOS, иначе будильник не сработает"
+                }
+            } label: {
+                Label(isSchedulingTest ? "Планирую тест..." : "Тест звонка через 5 секунд", systemImage: "alarm")
+                    .frame(maxWidth: .infinity, alignment: .leading)
+                    .padding(10)
+                    .background(Color.white.opacity(0.12), in: RoundedRectangle(cornerRadius: 12, style: .continuous))
+            }
+            .buttonStyle(.plain)
+            .disabled(isSchedulingTest)
 
             Button {
                 alarmStore.stopRingtonePreview()

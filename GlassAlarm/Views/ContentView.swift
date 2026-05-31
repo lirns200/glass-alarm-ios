@@ -20,7 +20,9 @@ struct ContentView: View {
                         
                         if alarmStore.authorizationStatus == .denied || alarmStore.authorizationStatus == .notDetermined {
                             Button {
-                                Task { await alarmStore.requestNotifications() }
+                                Task {
+                                    _ = await alarmStore.requestNotifications()
+                                }
                             } label: {
                                 HStack {
                                     VStack(alignment: .leading, spacing: 2) {

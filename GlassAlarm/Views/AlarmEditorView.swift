@@ -70,6 +70,7 @@ struct AlarmEditorView: View {
                             .environment(\.locale, Locale(identifier: "ru_RU"))
                             .environment(\.colorScheme, .dark)
                             .tint(.white)
+                            .colorMultiply(.white)
                             .frame(maxWidth: .infinity)
                             .padding(.vertical, 6)
                     }
