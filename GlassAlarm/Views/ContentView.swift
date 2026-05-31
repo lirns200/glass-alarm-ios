@@ -1,4 +1,21 @@
 import SwiftUI
+import AVFoundation
+
+// Sound Manager
+class SoundManager {
+    static let instance = SoundManager()
+    private var player: AVAudioPlayer?
+    
+    func playSound(name: String) {
+        guard let url = Bundle.main.url(forResource: name, withExtension: "wav") else { return }
+        do {
+            player = try AVAudioPlayer(contentsOf: url)
+            player?.play()
+        } catch {
+            print("Error playing sound: \(error.localizedDescription)")
+        }
+    }
+}
 
 enum Language: String, CaseIterable, Identifiable {
     case english = "en"
@@ -94,13 +111,81 @@ class GameViewModel: ObservableObject {
     
     func place(shape: GameShape, at row: Int, col: Int) {
         guard canPlace(shape: shape, at: row, col: col) else { return }
-        if isVibrationEnabled { triggerPlacementFeedback() }
+        
+        if isSoundEnabled {
+            SoundManager.instance.playSound(name: "focus")
+        }
+        
+        if isVibrationEnabled { triggerPlacementFeedback(style: .light) }
         
         for block in shape.blocks {
             let r = row + Int(block.y)
             let c = col + Int(block.x)
             grid[r][c] = shape.color
         }
+        if let index = currentShapes.firstIndex(where: { $0?.id == shape.id }) {
+            currentShapes[index] = nil
+        }
+        
+        Task {
+            await clearLinesSequential(at: row, col: col)
+            if currentShapes.allSatisfy({ $0 == nil }) { startNewRound() }
+            checkGameOver()
+        }
+    }
+    
+    private func triggerPlacementFeedback(style: UIImpactFeedbackGenerator.FeedbackStyle = .medium) {
+        #if os(iOS)
+        let generator = UIImpactFeedbackGenerator(style: style)
+        generator.impactOccurred()
+        #endif
+    }
+    
+    private func clearLinesSequential(at lastRow: Int, col lastCol: Int) async {
+        var rowsToClear: [Int] = []
+        var colsToClear: [Int] = []
+        for r in 0..<8 { if grid[r].allSatisfy({ $0 != nil }) { rowsToClear.append(r) } }
+        for c in 0..<8 {
+            var full = true
+            for r in 0..<8 { if grid[r][c] == nil { full = false; break } }
+            if full { colsToClear.append(c) }
+        }
+        
+        let linesCleared = rowsToClear.count + colsToClear.count
+        if linesCleared > 0 {
+            combo += 1
+            let points = (linesCleared * 100 + (combo - 1) * 50) * linesCleared
+            
+            // Show popup immediately
+            let popup = ScorePopup(score: points, position: CGPoint(x: CGFloat(lastCol) * 40, y: CGFloat(lastRow) * 40))
+            popups.append(popup)
+            DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) { self.popups.removeAll { $0.id == popup.id } }
+
+            withAnimation(.spring()) {
+                score += points
+                if score > highscore {
+                    highscore = score
+                    UserDefaults.standard.set(highscore, forKey: "highscore")
+                }
+            }
+
+            // Sequential removal animation
+            // Collect all coordinates to clear
+            var coords: [ (Int, Int) ] = []
+            for r in rowsToClear { for c in 0..<8 { coords.append((r, c)) } }
+            for c in colsToClear { for r in 0..<8 { if !rowsToClear.contains(r) { coords.append((r, c)) } } }
+            
+            // Sort them to look "ordered"
+            coords.sort { $0.0 == $1.0 ? $0.1 < $1.1 : $0.0 < $1.0 }
+            
+            for coord in coords {
+                try? await Task.sleep(nanoseconds: 30_000_000) // 30ms delay
+                grid[coord.0][coord.1] = nil
+                if isVibrationEnabled { triggerPlacementFeedback(style: .soft) }
+                if isSoundEnabled { SoundManager.instance.playSound(name: "crystal") }
+            }
+        } else { combo = 0 }
+    }
         if let index = currentShapes.firstIndex(where: { $0?.id == shape.id }) {
             currentShapes[index] = nil
         }
@@ -242,6 +327,7 @@ struct ContentView: View {
                 SplashScreen { isSplashActive = false }
             } else {
                 gameContent
+                    .preferredColorScheme(vm.isDarkMode ? .dark : .light)
             }
         }
     }
@@ -271,10 +357,10 @@ struct ContentView: View {
                         .foregroundStyle(.gray)
                     
                     Text("\(vm.score)")
-                        .font(.system(size: 64, weight: .black, design: .rounded))
+                        .font(.system(size: 48, weight: .black, design: .rounded))
                         .foregroundStyle(vm.score >= vm.highscore && vm.score > 0 ? .orange : (vm.isDarkMode ? .white : .black))
-                        .shadow(color: vm.score >= vm.highscore && vm.score > 0 ? .red.opacity(0.5) : .clear, radius: 10)
-                        .scaleEffect(vm.score >= vm.highscore && vm.score > 0 ? 1.1 + sin(flamePhase) * 0.05 : 1.0)
+                        .shadow(color: vm.score >= vm.highscore && vm.score > 0 ? .red.opacity(0.3) : .clear, radius: 8)
+                        .scaleEffect(vm.score >= vm.highscore && vm.score > 0 ? 1.05 + sin(flamePhase) * 0.03 : 1.0)
                 }
                 .onAppear { withAnimation(.easeInOut(duration: 0.5).repeatForever()) { flamePhase = .pi * 2 } }
                 
@@ -282,14 +368,14 @@ struct ContentView: View {
                     ZStack {
                         if vm.combo > 1 {
                             VStack(spacing: -2) {
-                                Text(vm.t("combo")).font(.system(size: 10, weight: .bold, design: .rounded))
-                                Text("x\(vm.combo)").font(.system(size: 24, weight: .black, design: .rounded))
+                                Text(vm.t("combo")).font(.system(size: 8, weight: .bold, design: .rounded))
+                                Text("x\(vm.combo)").font(.system(size: 18, weight: .black, design: .rounded))
                             }
-                            .foregroundStyle(vm.comboColor).padding(8).background(vm.comboColor.opacity(0.1), in: RoundedRectangle(cornerRadius: 12))
+                            .foregroundStyle(vm.comboColor).padding(6).background(vm.comboColor.opacity(0.1), in: RoundedRectangle(cornerRadius: 10))
                             .transition(.scale.combined(with: .opacity))
                         }
-                    }.frame(width: 80)
-                    Spacer().frame(width: 80)
+                    }.frame(width: 60)
+                    Spacer().frame(width: 60)
                 }
                 
                 ZStack {
@@ -298,7 +384,7 @@ struct ContentView: View {
                             .onChange(of: geo.frame(in: .global)) { _, newFrame in gridRect = newFrame } })
                     
                     ForEach(vm.popups) { popup in
-                        Text("+\(popup.score)").font(.system(size: 28, weight: .black, design: .rounded))
+                        Text("+\(popup.score)").font(.system(size: 20, weight: .black, design: .rounded))
                             .foregroundStyle(.orange).shadow(radius: 2).position(x: popup.position.x + 20, y: popup.position.y + 20)
                             .transition(.asymmetric(insertion: .scale, removal: .move(edge: .top).combined(with: .opacity)))
                     }
@@ -436,13 +522,13 @@ struct DraggableShapeView: View {
     @State private var isDragging = false
     
     var body: some View {
-        ShapePreview(shape: shape, scale: isDragging ? 1.0 : 0.6)
+        ShapePreview(shape: shape, scale: isDragging ? 0.85 : 0.6)
             .offset(offset).zIndex(isDragging ? 10 : 1)
             .gesture(DragGesture(coordinateSpace: .global)
                 .onChanged { value in
-                    isDragging = true
-                    offset = CGSize(width: value.translation.width, height: value.translation.height - 100)
-                    let hoverPoint = CGPoint(x: value.location.x, y: value.location.y - 100)
+                    withAnimation(.easeOut(duration: 0.1)) { isDragging = true }
+                    offset = CGSize(width: value.translation.width, height: value.translation.height - 80)
+                    let hoverPoint = CGPoint(x: value.location.x, y: value.location.y - 80)
                     if gridRect.contains(hoverPoint) {
                         let cellSize = gridRect.width / 8
                         let localX = hoverPoint.x - gridRect.minX
@@ -453,7 +539,7 @@ struct DraggableShapeView: View {
                     } else { onHover(0, 0, nil) }
                 }
                 .onEnded { value in
-                    let dropPoint = CGPoint(x: value.location.x, y: value.location.y - 100)
+                    let dropPoint = CGPoint(x: value.location.x, y: value.location.y - 80)
                     if gridRect.contains(dropPoint) {
                         let cellSize = gridRect.width / 8
                         let localX = dropPoint.x - gridRect.minX
