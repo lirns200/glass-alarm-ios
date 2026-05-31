@@ -3,12 +3,7 @@ import UserNotifications
 import AudioToolbox
 import UIKit
 
-class AppDelegate: NSObject, UIApplicationDelegate, UNUserNotificationCenterDelegate {
-    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]? = nil) -> Bool {
-        UNUserNotificationCenter.current().delegate = self
-        return true
-    }
-
+class AppDelegate: NSObject, UNUserNotificationCenterDelegate {
     func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification, withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
         triggerVibrationIfNeeded(userInfo: notification.request.content.userInfo)
         completionHandler([.banner, .list, .sound, .badge])
@@ -33,9 +28,13 @@ class AppDelegate: NSObject, UIApplicationDelegate, UNUserNotificationCenterDele
 @main
 struct GlassAlarmApp: App {
     @Environment(\.scenePhase) private var scenePhase
-    @UIApplicationDelegateAdaptor(AppDelegate.self) private var appDelegate
     @StateObject private var alarmStore = AlarmStore()
     @AppStorage("selectedTheme") private var selectedTheme = AppTheme.system.rawValue
+    private let appDelegate = AppDelegate()
+
+    init() {
+        UNUserNotificationCenter.current().delegate = appDelegate
+    }
 
     var body: some Scene {
         WindowGroup {
