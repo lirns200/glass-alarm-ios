@@ -74,6 +74,10 @@ class GameViewModel: ObservableObject {
     
     func place(shape: GameShape, at row: Int, col: Int) {
         guard canPlace(shape: shape, at: row, col: col) else { return }
+        
+        // Trigger Haptic & Sound (pseudo-logic for iOS)
+        triggerPlacementFeedback()
+        
         for block in shape.blocks {
             let r = row + Int(block.y)
             let c = col + Int(block.x)
@@ -87,6 +91,14 @@ class GameViewModel: ObservableObject {
             startNewRound()
         }
         checkGameOver()
+    }
+    
+    private func triggerPlacementFeedback() {
+        #if os(iOS)
+        let generator = UIImpactFeedbackGenerator(style: .medium)
+        generator.impactOccurred()
+        #endif
+        // Sound logic would usually go here with AVFoundation
     }
     
     private func clearLines() {
@@ -236,8 +248,14 @@ struct GridView: View {
                     ForEach(0..<8, id: \.self) { r in
                         HStack(spacing: 4) {
                             ForEach(0..<8, id: \.self) { c in
-                                RoundedRectangle(cornerRadius: 4)
+                                RoundedRectangle(cornerRadius: 6)
                                     .fill(grid[r][c] ?? Color.white.opacity(0.08))
+                                    .overlay(
+                                        RoundedRectangle(cornerRadius: 6)
+                                            .stroke(Color.white.opacity(0.05), lineWidth: 1)
+                                    )
+                                    .scaleEffect(grid[r][c] != nil ? 1.0 : 0.95)
+                                    .animation(.spring(response: 0.3, dampingFraction: 0.6), value: grid[r][c] != nil)
                             }
                         }
                     }
@@ -296,57 +314,60 @@ struct DraggableShapeView: View {
     
     @State private var offset = CGSize.zero
     @State private var isDragging = false
+    @State private var jellyScale: CGFloat = 1.0
+    @State private var jellyRotation: Double = 0
     
     var body: some View {
-        ShapePreview(shape: shape, scale: isDragging ? 1.0 : 0.55)
+        ShapePreview(shape: shape, scale: (isDragging ? 1.1 : 0.6) * jellyScale)
+            .rotationEffect(.degrees(jellyRotation))
             .offset(offset)
             .zIndex(isDragging ? 10 : 1)
             .gesture(
                 DragGesture(coordinateSpace: .global)
                     .onChanged { value in
                         if !isDragging {
-                            isDragging = true
+                            withAnimation(.interactiveSpring(response: 0.3, dampingFraction: 0.4, blendDuration: 0)) {
+                                isDragging = true
+                                jellyScale = 1.2
+                            }
                         }
-                        // Offset it up so it's visible above the finger
-                        offset = CGSize(width: value.translation.width, height: value.translation.height - 80)
                         
-                        // Calculate hover position
-                        // We use the finger location and adjust for the fact that the shape is offset upwards
-                        let hoverPoint = CGPoint(x: value.location.x, y: value.location.y - 80)
+                        // Jelly lean effect
+                        let dragX = value.translation.width
+                        withAnimation(.interactiveSpring()) {
+                            jellyRotation = Double(dragX / 15)
+                            offset = CGSize(width: value.translation.width, height: value.translation.height - 100)
+                        }
                         
+                        let hoverPoint = CGPoint(x: value.location.x, y: value.location.y - 100)
                         if gridRect.contains(hoverPoint) {
                             let cellSize = gridRect.width / 8
                             let localX = hoverPoint.x - gridRect.minX
                             let localY = hoverPoint.y - gridRect.minY
-                            
-                            // Align the shape so it feels like it's being held by its "center"
-                            // For simplicity, we align the top-left block (0,0) to the nearest cell
                             let col = Int(round((localX - cellSize/2) / cellSize))
                             let row = Int(round((localY - cellSize/2) / cellSize))
-                            
                             onHover(row, col, shape)
                         } else {
                             onHover(0, 0, nil)
                         }
                     }
                     .onEnded { value in
-                        let dropPoint = CGPoint(x: value.location.x, y: value.location.y - 80)
-                        
+                        let dropPoint = CGPoint(x: value.location.x, y: value.location.y - 100)
                         if gridRect.contains(dropPoint) {
                             let cellSize = gridRect.width / 8
                             let localX = dropPoint.x - gridRect.minX
                             let localY = dropPoint.y - gridRect.minY
-                            
                             let col = Int(round((localX - cellSize/2) / cellSize))
                             let row = Int(round((localY - cellSize/2) / cellSize))
-                            
                             onDrop(row, col)
                         }
                         
                         onHover(0, 0, nil)
-                        withAnimation(.spring(response: 0.3, dampingFraction: 0.7)) {
+                        withAnimation(.spring(response: 0.4, dampingFraction: 0.5)) {
                             offset = .zero
                             isDragging = false
+                            jellyScale = 1.0
+                            jellyRotation = 0
                         }
                     }
             )
