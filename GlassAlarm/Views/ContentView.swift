@@ -252,70 +252,156 @@ struct ModeSelectorView: View {
 
 struct ContentView: View {
     @StateObject private var vm = GameViewModel()
-    @State private var gridRect: CGRect = .zero, showingSettings = false, showingModes = false, isSplashActive = true, flamePhase = 0.0
+    @State private var gridRect: CGRect = .zero
+    @State private var showingSettings = false
+    @State private var showingModes = false
+    @State private var isSplashActive = true
+    @State private var flamePhase = 0.0
+    
     var body: some View {
         ZStack {
-            if isSplashActive { SplashScreen { isSplashActive = false } }
-            else { gameContent.preferredColorScheme(vm.isDarkMode ? .dark : .light) }
+            if isSplashActive {
+                SplashScreen { isSplashActive = false }
+            } else {
+                gameContent
+                    .preferredColorScheme(vm.isDarkMode ? .dark : .light)
+            }
         }
     }
+    
     var gameContent: some View {
         ZStack {
-            (vm.isDarkMode ? Color(red: 0.02, green: 0.04, blue: 0.08) : Color(red: 0.95, green: 0.96, blue: 0.98)).ignoresSafeArea()
+            (vm.isDarkMode ? Color(red: 0.02, green: 0.04, blue: 0.08) : Color(red: 0.95, green: 0.96, blue: 0.98))
+                .ignoresSafeArea()
+            
             VStack(spacing: 10) {
+                // Header
                 HStack {
-                    Button { showingModes = true } label: {
-                        Image(systemName: "square.grid.3x3.fill").font(.title3).foregroundStyle(vm.isDarkMode ? .white : .black)
-                            .padding(12).background(vm.isDarkMode ? Color.white.opacity(0.1) : Color.black.opacity(0.05), in: Circle())
+                    Button {
+                        showingModes = true
+                    } label: {
+                        Image(systemName: "square.grid.3x3.fill")
+                            .font(.title3)
+                            .foregroundStyle(vm.isDarkMode ? .white : .black)
+                            .padding(12)
+                            .background(vm.isDarkMode ? Color.white.opacity(0.1) : Color.black.opacity(0.05), in: Circle())
                     }
+                    
                     Spacer()
-                    Button { showingSettings = true } label: {
-                        Image(systemName: "gearshape.fill").font(.title3).foregroundStyle(vm.isDarkMode ? .white : .black)
-                            .padding(12).background(vm.isDarkMode ? Color.white.opacity(0.1) : Color.black.opacity(0.05), in: Circle())
+                    
+                    Button {
+                        showingSettings = true
+                    } label: {
+                        Image(systemName: "gearshape.fill")
+                            .font(.title3)
+                            .foregroundStyle(vm.isDarkMode ? .white : .black)
+                            .padding(12)
+                            .background(vm.isDarkMode ? Color.white.opacity(0.1) : Color.black.opacity(0.05), in: Circle())
                     }
-                }.padding(.horizontal, 20).padding(.top, 10)
+                }
+                .padding(.horizontal, 20)
+                .padding(.top, 10)
                 
+                // Centered Score & Record
                 VStack(spacing: 4) {
-                    Text("\(vm.t("record")): \(vm.highscore)").font(.system(size: 14, weight: .bold, design: .rounded)).foregroundStyle(.orange.opacity(0.8))
+                    Text("\(vm.t("record")): \(vm.highscore)")
+                        .font(.system(size: 14, weight: .bold, design: .rounded))
+                        .foregroundStyle(.orange.opacity(0.8))
+                    
                     HStack(spacing: 15) {
-                        if vm.combo > 1 {
-                            VStack(spacing: -2) {
-                                Text(vm.t("combo")).font(.system(size: 8, weight: .bold, design: .rounded))
-                                Text("x\(vm.combo)").font(.system(size: 18, weight: .black, design: .rounded))
-                            }.foregroundStyle(vm.comboColor).padding(6).background(vm.comboColor.opacity(0.1), in: RoundedRectangle(cornerRadius: 10))
+                        // Combo Indicator (now clearly positioned)
+                        ZStack {
+                            if vm.combo > 1 {
+                                VStack(spacing: -2) {
+                                    Text(vm.t("combo"))
+                                        .font(.system(size: 8, weight: .bold, design: .rounded))
+                                    Text("x\(vm.combo)")
+                                        .font(.system(size: 18, weight: .black, design: .rounded))
+                                }
+                                .foregroundStyle(vm.comboColor)
+                                .padding(6)
+                                .background(vm.comboColor.opacity(0.1), in: RoundedRectangle(cornerRadius: 10))
+                            }
                         }
-                        Text("\(vm.score)").font(.system(size: 48, weight: .black, design: .rounded))
+                        .frame(width: 60)
+                        
+                        // Score with "Fire" effect if beating record
+                        Text("\(vm.score)")
+                            .font(.system(size: 48, weight: .black, design: .rounded))
                             .foregroundStyle(vm.score >= vm.highscore && vm.score > 0 ? .orange : (vm.isDarkMode ? .white : .black))
                             .shadow(color: vm.score >= vm.highscore && vm.score > 0 ? .red.opacity(0.4) : .clear, radius: 8)
                             .scaleEffect(vm.score >= vm.highscore && vm.score > 0 ? 1.05 + sin(flamePhase) * 0.03 : 1.0)
-                        if vm.combo > 1 { Spacer().frame(width: 40) } // Balance
+                        
+                        // Balance for the combo element
+                        Spacer().frame(width: 60)
                     }
-                }.onAppear { withAnimation(.easeInOut(duration: 0.5).repeatForever()) { flamePhase = .pi * 2 } }
+                }
+                .onAppear {
+                    withAnimation(.easeInOut(duration: 0.5).repeatForever()) {
+                        flamePhase = .pi * 2
+                    }
+                }
                 
+                // Grid
                 ZStack {
                     GridView(grid: vm.grid, size: vm.gridSize, preview: vm.previewInfo, canPlace: vm.canPlace, isDarkMode: vm.isDarkMode)
-                        .background(GeometryReader { geo in Color.clear.onAppear { gridRect = geo.frame(in: .global) }
-                            .onChange(of: geo.frame(in: .global)) { _, newFrame in gridRect = newFrame } })
+                        .background(
+                            GeometryReader { geo in
+                                Color.clear.onAppear {
+                                    gridRect = geo.frame(in: .global)
+                                }
+                                .onChange(of: geo.frame(in: .global)) { _, newFrame in
+                                    gridRect = newFrame
+                                }
+                            }
+                        )
+                    
+                    // Floating scores
                     ForEach(vm.popups) { popup in
-                        Text("+\(popup.score)").font(.system(size: 20, weight: .black, design: .rounded)).foregroundStyle(.orange).shadow(radius: 2)
-                            .position(x: popup.position.x + 20, y: popup.position.y + 20).transition(.asymmetric(insertion: .scale, removal: .move(edge: .top).combined(with: .opacity)))
+                        Text("+\(popup.score)")
+                            .font(.system(size: 20, weight: .black, design: .rounded))
+                            .foregroundStyle(.orange)
+                            .shadow(radius: 2)
+                            .position(x: popup.position.x + 20, y: popup.position.y + 20)
+                            .transition(.asymmetric(insertion: .scale, removal: .move(edge: .top).combined(with: .opacity)))
                     }
-                }.padding(12).background(vm.isDarkMode ? Color.white.opacity(0.03) : Color.black.opacity(0.02), in: RoundedRectangle(cornerRadius: 20)).padding(.horizontal, 16)
+                }
+                .padding(12)
+                .background(vm.isDarkMode ? Color.white.opacity(0.03) : Color.black.opacity(0.02), in: RoundedRectangle(cornerRadius: 20))
+                .padding(.horizontal, 16)
                 
+                // Shapes
                 HStack(spacing: 10) {
                     ForEach(vm.currentShapes.indices, id: \.self) { i in
                         ZStack {
                             if let shape = vm.currentShapes[i] {
-                                DraggableShapeView(shape: shape, gridRect: gridRect, gridSize: vm.gridSize, onHover: { r, c, s in vm.setPreview(row: r, col: c, shape: s) }) { row, col in vm.place(shape: shape, at: row, col: col) }
+                                DraggableShapeView(shape: shape, gridRect: gridRect, gridSize: vm.gridSize, onHover: { r, c, s in
+                                    vm.setPreview(row: r, col: c, shape: s)
+                                }) { row, col in
+                                    vm.place(shape: shape, at: row, col: col)
+                                }
                             }
-                        }.frame(maxWidth: .infinity).frame(height: 100)
+                        }
+                        .frame(maxWidth: .infinity)
+                        .frame(height: 100)
                     }
-                }.padding(.horizontal, 20)
+                }
+                .padding(.horizontal, 20)
+                
                 Spacer()
             }
-        }.sheet(isPresented: $showingSettings) { GameSettingsMenuView(vm: vm) }
-        .sheet(isPresented: $showingModes) { ModeSelectorView(vm: vm) }
-        .overlay { if vm.isGameOver { gameOverOverlay } }
+        }
+        .sheet(isPresented: $showingSettings) {
+            GameSettingsMenuView(vm: vm)
+        }
+        .sheet(isPresented: $showingModes) {
+            ModeSelectorView(vm: vm)
+        }
+        .overlay {
+            if vm.isGameOver {
+                gameOverOverlay
+            }
+        }
     }
     
     var gameOverOverlay: some View {
