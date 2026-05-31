@@ -7,7 +7,16 @@ class SoundManager {
     private var player: AVAudioPlayer?
     
     func playSound(name: String) {
-        guard let url = Bundle.main.url(forResource: name, withExtension: "wav") else { return }
+        // Fallback to haptics if sound file is missing or generic
+        #if os(iOS)
+        let generator = UIImpactFeedbackGenerator(style: .medium)
+        generator.impactOccurred()
+        #endif
+        
+        guard let url = Bundle.main.url(forResource: name, withExtension: "wav") else { 
+            print("Sound file \(name).wav not found")
+            return 
+        }
         do {
             player = try AVAudioPlayer(contentsOf: url)
             player?.play()
@@ -98,7 +107,29 @@ class GameViewModel: ObservableObject {
     }
     
     func startNewRound() {
-        currentShapes = [GameShape.random(for: gridSize), GameShape.random(for: gridSize), GameShape.random(for: gridSize)]
+        var shapes: [GameShape?] = []
+        for _ in 0..<3 {
+            var shape = GameShape.random(for: gridSize)
+            // Try to find a shape that can actually be placed at least somewhere
+            var attempts = 0
+            while attempts < 10 && !canPlaceSomewhere(shape) {
+                shape = GameShape.random(for: gridSize)
+                attempts += 1
+            }
+            shapes.append(shape)
+        }
+        currentShapes = shapes
+    }
+    
+    private func canPlaceSomewhere(_ shape: GameShape) -> Bool {
+        for r in 0..<gridSize {
+            for c in 0..<gridSize {
+                if canPlace(shape: shape, at: r, col: c) {
+                    return true
+                }
+            }
+        }
+        return false
     }
     
     func setPreview(row: Int, col: Int, shape: GameShape?) {
@@ -239,11 +270,12 @@ struct ModeSelectorView: View {
         }
     }
     func gridIcon(size: Int) -> some View {
-        VStack(spacing: 2) {
-            ForEach(0..<min(size, 4), id: \.self) { _ in
+        let displaySize = min(size, 6)
+        return VStack(spacing: 2) {
+            ForEach(0..<displaySize, id: \.self) { _ in
                 HStack(spacing: 2) {
-                    ForEach(0..<min(size, 4), id: \.self) { _ in
-                        RoundedRectangle(cornerRadius: 2).fill(.blue.opacity(0.5)).frame(width: 10, height: 10)
+                    ForEach(0..<displaySize, id: \.self) { _ in
+                        RoundedRectangle(cornerRadius: 1).fill(.blue.opacity(0.5)).frame(width: CGFloat(40/displaySize), height: CGFloat(40/displaySize))
                     }
                 }
             }
