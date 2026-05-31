@@ -1,7 +1,6 @@
 import SwiftUI
 import UserNotifications
 import AudioToolbox
-import UIKit
 
 class AppDelegate: NSObject, UNUserNotificationCenterDelegate {
     func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification, withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
