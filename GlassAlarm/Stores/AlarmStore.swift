@@ -115,7 +115,9 @@ final class AlarmStore: ObservableObject {
         await scheduler.cancelAll(alarms)
 
         let canNotify = authorizationStatus == .authorized || authorizationStatus == .provisional
-        guard canNotify || await ensureNotificationAuthorization() else { return }
+        if !canNotify {
+            guard await ensureNotificationAuthorization() else { return }
+        }
 
         for alarm in alarms where alarm.isEnabled {
             await scheduler.schedule(alarm)
