@@ -43,9 +43,18 @@ class GameViewModel: ObservableObject {
     @Published var score: Int = 0
     @Published var isGameOver: Bool = false
     @Published var combo: Int = 0
+    @Published var previewInfo: (row: Int, col: Int, shape: GameShape)?
     
     init() {
         startNewRound()
+    }
+    
+    func setPreview(row: Int, col: Int, shape: GameShape?) {
+        if let shape = shape {
+            previewInfo = (row, col, shape)
+        } else {
+            previewInfo = nil
+        }
     }
     
     func startNewRound() {
@@ -145,7 +154,7 @@ struct ContentView: View {
                 
                 // Grid
                 ZStack {
-                    GridView(grid: vm.grid)
+                    GridView(grid: vm.grid, preview: vm.previewInfo, canPlace: vm.canPlace)
                         .background(
                             GeometryReader { geo in
                                 Color.clear.onAppear {
@@ -166,7 +175,9 @@ struct ContentView: View {
                     ForEach(vm.currentShapes.indices, id: \.self) { i in
                         ZStack {
                             if let shape = vm.currentShapes[i] {
-                                DraggableShapeView(shape: shape, gridRect: gridRect) { row, col in
+                                DraggableShapeView(shape: shape, gridRect: gridRect, onHover: { r, c, s in
+                                    vm.setPreview(row: r, col: c, shape: s)
+                                }) { row, col in
                                     vm.place(shape: shape, at: row, col: col)
                                 }
                             }
@@ -214,15 +225,43 @@ struct ContentView: View {
 
 struct GridView: View {
     let grid: [[Color?]]
+    let preview: (row: Int, col: Int, shape: GameShape)?
+    let canPlace: (GameShape, Int, Int) -> Bool
     
     var body: some View {
         AspectRatioContainer(aspectRatio: 1) {
-            VStack(spacing: 4) {
-                ForEach(0..<8, id: \.self) { r in
-                    HStack(spacing: 4) {
-                        ForEach(0..<8, id: \.self) { c in
-                            RoundedRectangle(cornerRadius: 4)
-                                .fill(grid[r][c] ?? Color.white.opacity(0.08))
+            ZStack {
+                // Base Grid
+                VStack(spacing: 4) {
+                    ForEach(0..<8, id: \.self) { r in
+                        HStack(spacing: 4) {
+                            ForEach(0..<8, id: \.self) { c in
+                                RoundedRectangle(cornerRadius: 4)
+                                    .fill(grid[r][c] ?? Color.white.opacity(0.08))
+                            }
+                        }
+                    }
+                }
+                
+                // Preview Layer
+                if let p = preview {
+                    let isPossible = canPlace(p.shape, p.row, p.col)
+                    VStack(spacing: 4) {
+                        ForEach(0..<8, id: \.self) { r in
+                            HStack(spacing: 4) {
+                                ForEach(0..<8, id: \.self) { c in
+                                    let isPreviewBlock = p.shape.blocks.contains { block in
+                                        Int(block.y) + p.row == r && Int(block.x) + p.col == c
+                                    }
+                                    
+                                    if isPreviewBlock {
+                                        RoundedRectangle(cornerRadius: 4)
+                                            .fill(isPossible ? p.shape.color.opacity(0.5) : Color.red.opacity(0.3))
+                                    } else {
+                                        Color.clear
+                                    }
+                                }
+                            }
                         }
                     }
                 }
@@ -252,6 +291,7 @@ struct AspectRatioContainer<Content: View>: View {
 struct DraggableShapeView: View {
     let shape: GameShape
     let gridRect: CGRect
+    let onHover: (Int, Int, GameShape?) -> Void
     let onDrop: (Int, Int) -> Void
     
     @State private var offset = CGSize.zero
@@ -267,6 +307,51 @@ struct DraggableShapeView: View {
                         if !isDragging {
                             isDragging = true
                         }
+                        // Offset it up so it's visible above the finger
+                        offset = CGSize(width: value.translation.width, height: value.translation.height - 80)
+                        
+                        // Calculate hover position
+                        // We use the finger location and adjust for the fact that the shape is offset upwards
+                        let hoverPoint = CGPoint(x: value.location.x, y: value.location.y - 80)
+                        
+                        if gridRect.contains(hoverPoint) {
+                            let cellSize = gridRect.width / 8
+                            let localX = hoverPoint.x - gridRect.minX
+                            let localY = hoverPoint.y - gridRect.minY
+                            
+                            // Align the shape so it feels like it's being held by its "center"
+                            // For simplicity, we align the top-left block (0,0) to the nearest cell
+                            let col = Int(round((localX - cellSize/2) / cellSize))
+                            let row = Int(round((localY - cellSize/2) / cellSize))
+                            
+                            onHover(row, col, shape)
+                        } else {
+                            onHover(0, 0, nil)
+                        }
+                    }
+                    .onEnded { value in
+                        let dropPoint = CGPoint(x: value.location.x, y: value.location.y - 80)
+                        
+                        if gridRect.contains(dropPoint) {
+                            let cellSize = gridRect.width / 8
+                            let localX = dropPoint.x - gridRect.minX
+                            let localY = dropPoint.y - gridRect.minY
+                            
+                            let col = Int(round((localX - cellSize/2) / cellSize))
+                            let row = Int(round((localY - cellSize/2) / cellSize))
+                            
+                            onDrop(row, col)
+                        }
+                        
+                        onHover(0, 0, nil)
+                        withAnimation(.spring(response: 0.3, dampingFraction: 0.7)) {
+                            offset = .zero
+                            isDragging = false
+                        }
+                    }
+            )
+    }
+}
                         // Offset it up a bit so it's visible above the finger
                         offset = CGSize(width: value.translation.width, height: value.translation.height - 60)
                     }
