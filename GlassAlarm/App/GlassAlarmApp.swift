@@ -29,6 +29,7 @@ struct GlassAlarmApp: App {
     @Environment(\.scenePhase) private var scenePhase
     @StateObject private var alarmStore = AlarmStore()
     @AppStorage(AppSettingsKeys.selectedTheme) private var selectedTheme = AppTheme.dark.rawValue
+    @AppStorage(AppSettingsKeys.didForceDarkThemeV1) private var didForceDarkThemeV1 = false
     private let appDelegate = AppDelegate()
 
     init() {
@@ -41,6 +42,7 @@ struct GlassAlarmApp: App {
                 .environmentObject(alarmStore)
                 .preferredColorScheme(AppTheme(rawValue: selectedTheme)?.colorScheme)
                 .task {
+                    enforceDarkThemeMigrationIfNeeded()
                     await alarmStore.bootstrap()
                 }
                 .onChange(of: scenePhase) { _, newPhase in
@@ -50,5 +52,11 @@ struct GlassAlarmApp: App {
                     }
                 }
         }
+    }
+
+    private func enforceDarkThemeMigrationIfNeeded() {
+        guard !didForceDarkThemeV1 else { return }
+        selectedTheme = AppTheme.dark.rawValue
+        didForceDarkThemeV1 = true
     }
 }

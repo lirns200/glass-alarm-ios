@@ -4,6 +4,7 @@ enum AppSettingsKeys {
     static let selectedTheme = "selectedTheme"
     static let defaultRingtone = "defaultRingtone"
     static let defaultVibration = "defaultVibration"
+    static let didForceDarkThemeV1 = "didForceDarkThemeV1"
 }
 
 enum AppTheme: String, CaseIterable, Identifiable {
