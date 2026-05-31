@@ -26,7 +26,7 @@ class AppDelegate: NSObject, UNUserNotificationCenterDelegate {
 
 @main
 struct GlassAlarmApp: App {
-    private static let buildUniqueId = "3b1e21544df65cd9fd8a9ecdd78db212"
+    private static let buildUniqueId = "222b9896343ddc25af7d44910dd78e90"
     // Unique build identifier to ensure different binary weight
     private static let buildUniqueId = "BUILD_ID_2d9f4e8b1c2a3d4e5f6g7h8i9j0k"
     
