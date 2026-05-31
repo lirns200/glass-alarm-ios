@@ -65,17 +65,18 @@ class GameViewModel: ObservableObject {
             triggerPlacementFeedback()
         }
         
-        if isSoundEnabled {
-            // Sound logic would be here
-        }
+        for block in shape.blocks {
             let r = row + Int(block.y)
             let c = col + Int(block.x)
             grid[r][c] = shape.color
         }
+        
         if let index = currentShapes.firstIndex(where: { $0?.id == shape.id }) {
             currentShapes[index] = nil
         }
+        
         clearLines()
+        
         if currentShapes.allSatisfy({ $0 == nil }) {
             startNewRound()
         }
