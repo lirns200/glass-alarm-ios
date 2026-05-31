@@ -1,0 +1,16 @@
+{
+  "project": "новый тест проект",
+  "platform": "ios",
+  "github": {
+    "owner": "lirns200",
+    "repo": "glass-alarm-ios"
+  },
+  "ios": {
+    "scheme": "новый тест проект"
+  },
+  "flutter": {
+    "watch": {}
+  },
+  "reactNative": {},
+  "mobai": {}
+}
