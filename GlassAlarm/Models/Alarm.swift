@@ -43,50 +43,73 @@ struct Alarm: Identifiable, Codable, Equatable {
 
     var repeatText: String {
         if repeatDays.isEmpty {
-            return "Once"
+            return "Один раз"
         }
 
         let ordered = Weekday.allCases.filter { repeatDays.contains($0) }
         if ordered.count == Weekday.allCases.count {
-            return "Every day"
+            return "Каждый день"
         }
 
         return ordered.map(\.shortTitle).joined(separator: " ")
     }
+
+    var timeUntilText: String {
+        let now = Date()
+        let calendar = Calendar.current
+        
+        var components = DateComponents()
+        components.hour = hour
+        components.minute = minute
+        
+        guard let alarmDate = calendar.nextDate(after: now, matching: components, matchingPolicy: .nextTime) else {
+            return ""
+        }
+        
+        let diff = calendar.dateComponents([.hour, .minute], from: now, to: alarmDate)
+        let hours = diff.hour ?? 0
+        let minutes = diff.minute ?? 0
+        
+        if hours > 0 {
+            return "Через \(hours) ч \(minutes) мин"
+        } else {
+            return "Через \(minutes) мин"
+        }
+    }
 }
 
 enum Weekday: Int, CaseIterable, Codable, Identifiable {
-    case sunday = 1
     case monday = 2
     case tuesday = 3
     case wednesday = 4
     case thursday = 5
     case friday = 6
     case saturday = 7
+    case sunday = 1
 
     var id: Int { rawValue }
 
     var title: String {
         switch self {
-        case .monday: return "Monday"
-        case .tuesday: return "Tuesday"
-        case .wednesday: return "Wednesday"
-        case .thursday: return "Thursday"
-        case .friday: return "Friday"
-        case .saturday: return "Saturday"
-        case .sunday: return "Sunday"
+        case .monday: return "Понедельник"
+        case .tuesday: return "Вторник"
+        case .wednesday: return "Среда"
+        case .thursday: return "Четверг"
+        case .friday: return "Пятница"
+        case .saturday: return "Суббота"
+        case .sunday: return "Воскресенье"
         }
     }
 
     var shortTitle: String {
         switch self {
-        case .monday: return "Mon"
-        case .tuesday: return "Tue"
-        case .wednesday: return "Wed"
-        case .thursday: return "Thu"
-        case .friday: return "Fri"
-        case .saturday: return "Sat"
-        case .sunday: return "Sun"
+        case .monday: return "Пн"
+        case .tuesday: return "Вт"
+        case .wednesday: return "Ср"
+        case .thursday: return "Чт"
+        case .friday: return "Пт"
+        case .saturday: return "Сб"
+        case .sunday: return "Вс"
         }
     }
 }
@@ -102,11 +125,11 @@ enum AlarmRingtone: String, CaseIterable, Codable, Identifiable {
 
     var title: String {
         switch self {
-        case .crystal: return "Crystal"
-        case .pulse: return "Pulse"
-        case .sunrise: return "Sunrise"
-        case .focus: return "Focus"
-        case .classic: return "Classic"
+        case .crystal: return "Кристалл"
+        case .pulse: return "Пульс"
+        case .sunrise: return "Рассвет"
+        case .focus: return "Фокус"
+        case .classic: return "Классика"
         }
     }
 

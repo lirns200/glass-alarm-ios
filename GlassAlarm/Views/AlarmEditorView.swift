@@ -7,8 +7,8 @@ struct AlarmEditorView: View {
 
         var title: String {
             switch self {
-            case .create: return "New Alarm"
-            case .edit: return "Edit Alarm"
+            case .create: return "Новый будильник"
+            case .edit: return "Изменить"
             }
         }
     }
@@ -32,7 +32,7 @@ struct AlarmEditorView: View {
 
         switch mode {
         case .create:
-            _title = State(initialValue: "Alarm")
+            _title = State(initialValue: "Будильник")
             _time = State(initialValue: .now.addingTimeInterval(3600))
             _repeatDays = State(initialValue: [])
             _ringtone = State(initialValue: .crystal)
@@ -57,25 +57,25 @@ struct AlarmEditorView: View {
 
                 Form {
                     Section {
-                        DatePicker("Time", selection: $time, displayedComponents: .hourAndMinute)
+                        DatePicker("Время", selection: $time, displayedComponents: .hourAndMinute)
                             .datePickerStyle(.wheel)
                             .labelsHidden()
                             .frame(maxWidth: .infinity)
                     }
                     .listRowBackground(Color.clear)
 
-                    Section("Label") {
-                        TextField("Alarm title", text: $title)
-                        Toggle("Enabled", isOn: $isEnabled)
-                        Toggle("Vibration", isOn: $vibrates)
+                    Section("Название") {
+                        TextField("Назовите будильник", text: $title)
+                        Toggle("Включен", isOn: $isEnabled)
+                        Toggle("Вибрация", isOn: $vibrates)
                     }
 
-                    Section("Repeat") {
+                    Section("Повтор") {
                         RepeatDaysPicker(selection: $repeatDays)
                     }
 
-                    Section("Ringtone") {
-                        Picker("Ringtone", selection: $ringtone) {
+                    Section("Рингтон") {
+                        Picker("Рингтон", selection: $ringtone) {
                             ForEach(AlarmRingtone.allCases) { ringtone in
                                 Text(ringtone.title).tag(ringtone)
                             }
@@ -88,10 +88,10 @@ struct AlarmEditorView: View {
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {
                 ToolbarItem(placement: .cancellationAction) {
-                    Button("Cancel") { dismiss() }
+                    Button("Отмена") { dismiss() }
                 }
                 ToolbarItem(placement: .confirmationAction) {
-                    Button("Save") {
+                    Button("Сохранить") {
                         save(makeAlarm())
                         dismiss()
                     }

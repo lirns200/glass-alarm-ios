@@ -31,17 +31,28 @@ struct AnimatedClockCard: View {
                     Text(nextAlarm?.timeText ?? "--:--")
                         .font(.system(size: 42, weight: .bold, design: .rounded))
                         .monospacedDigit()
-                    Text(nextAlarm == nil ? "No active alarm" : "Next alarm")
+                    Text(nextAlarm == nil ? "Нет активных" : "Следующий")
                         .font(.caption)
                         .foregroundStyle(.secondary)
                 }
             }
             .padding(.top, 8)
 
-            Text(nextAlarm?.repeatText ?? "Tap + to create one")
-                .font(.subheadline.weight(.medium))
-                .foregroundStyle(.secondary)
-                .padding(.bottom, 8)
+            VStack(spacing: 4) {
+                Text(nextAlarm?.repeatText ?? "Нажмите +, чтобы создать")
+                    .font(.subheadline.weight(.medium))
+                    .foregroundStyle(.secondary)
+                
+                if let nextAlarm {
+                    Text(nextAlarm.timeUntilText)
+                        .font(.caption2.bold())
+                        .foregroundStyle(.accent)
+                        .padding(.horizontal, 8)
+                        .padding(.vertical, 4)
+                        .background(Color.accentColor.opacity(0.12), in: Capsule())
+                }
+            }
+            .padding(.bottom, 8)
         }
         .frame(maxWidth: .infinity)
         .padding(18)

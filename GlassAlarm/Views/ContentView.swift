@@ -5,6 +5,9 @@ struct ContentView: View {
     @EnvironmentObject private var alarmStore: AlarmStore
     @State private var showingEditor = false
     @State private var editingAlarm: Alarm?
+    @State private var refreshID = UUID()
+    
+    private let timer = Timer.publish(every: 30, on: .main, in: .common).autoconnect()
 
     var body: some View {
         NavigationStack {
@@ -13,10 +16,37 @@ struct ContentView: View {
 
                 ScrollView {
                     VStack(spacing: 18) {
+                        
+                        if alarmStore.authorizationStatus == .denied || alarmStore.authorizationStatus == .notDetermined {
+                            Button {
+                                Task { await alarmStore.requestNotifications() }
+                            } label: {
+                                HStack {
+                                    VStack(alignment: .leading, spacing: 2) {
+                                        Text("Уведомления выключены")
+                                            .font(.headline)
+                                        Text("Включите их, чтобы будильник мог звенеть")
+                                            .font(.caption)
+                                    }
+                                    Spacer()
+                                    Text("Включить")
+                                        .font(.subheadline.bold())
+                                        .padding(.horizontal, 12)
+                                        .padding(.vertical, 6)
+                                        .background(Color.accentColor, in: Capsule())
+                                        .foregroundStyle(.white)
+                                }
+                                .padding()
+                                .glassCard()
+                            }
+                            .buttonStyle(.plain)
+                            .padding(.bottom, 8)
+                        }
 
                         AnimatedClockCard(
                             nextAlarm: alarmStore.alarms.first { $0.isEnabled }
                         )
+                        .id(refreshID)
 
                         LazyVStack(spacing: 12) {
                             ForEach(alarmStore.alarms) { alarm in
@@ -46,7 +76,7 @@ struct ContentView: View {
                     .padding(.bottom, 96)
                 }
             }
-            .navigationTitle("Glass Alarm")
+            .navigationTitle("Стеклянный Будильник")
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {
                 ToolbarItem(placement: .topBarTrailing) {
@@ -70,6 +100,9 @@ struct ContentView: View {
                         await alarmStore.update(edited)
                     }
                 }
+            }
+            .onReceive(timer) { _ in
+                refreshID = UUID()
             }
         }
     }

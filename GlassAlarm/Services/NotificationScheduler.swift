@@ -26,9 +26,10 @@ struct NotificationScheduler {
 
     private func addRequest(for alarm: Alarm, weekday: Weekday?) async {
         let content = UNMutableNotificationContent()
-        content.title = alarm.title.isEmpty ? "Alarm" : alarm.title
-        content.body = alarm.repeatText
+        content.title = alarm.title.isEmpty ? "Будильник" : alarm.title
+        content.body = "Пора просыпаться! (\(alarm.timeUntilText))"
         content.sound = sound(for: alarm.ringtone)
+        content.interruptionLevel = .timeSensitive // Чтобы уведомление пробивалось через "Фокусирование"
 
         var components = DateComponents()
         components.hour = alarm.hour

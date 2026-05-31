@@ -8,12 +8,23 @@ struct AlarmRow: View {
     var body: some View {
         HStack(spacing: 16) {
             VStack(alignment: .leading, spacing: 8) {
-                Text(alarm.timeText)
-                    .font(.system(size: 44, weight: .semibold, design: .rounded))
-                    .monospacedDigit()
+                VStack(alignment: .leading, spacing: 4) {
+                    Text(alarm.timeText)
+                        .font(.system(size: 44, weight: .semibold, design: .rounded))
+                        .monospacedDigit()
+                    
+                    if alarm.isEnabled {
+                        Text(alarm.timeUntilText)
+                            .font(.caption2.bold())
+                            .foregroundStyle(.accent)
+                            .padding(.horizontal, 6)
+                            .padding(.vertical, 2)
+                            .background(Color.accentColor.opacity(0.1), in: Capsule())
+                    }
+                }
 
                 HStack(spacing: 8) {
-                    Label(alarm.title.isEmpty ? "Alarm" : alarm.title, systemImage: "bell.fill")
+                    Label(alarm.title.isEmpty ? "Будильник" : alarm.title, systemImage: "bell.fill")
                     Text(alarm.repeatText)
                     Text(alarm.ringtone.title)
                 }
@@ -24,7 +35,7 @@ struct AlarmRow: View {
 
             Spacer()
 
-            Toggle("Enabled", isOn: Binding(
+            Toggle("Включен", isOn: Binding(
                 get: { alarm.isEnabled },
                 set: { toggle($0) }
             ))
@@ -36,7 +47,7 @@ struct AlarmRow: View {
                     .frame(width: 34, height: 34)
             }
             .buttonStyle(.borderless)
-            .accessibilityLabel("Delete alarm")
+            .accessibilityLabel("Удалить")
         }
         .padding(18)
         .opacity(alarm.isEnabled ? 1 : 0.52)
