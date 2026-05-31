@@ -16,11 +16,11 @@ struct NotificationScheduler {
 
     func cancel(_ alarm: Alarm) async {
         let identifiers = identifiers(for: alarm)
-        UNUserNotificationCenter.current().removePendingNotificationRequests(withIdentifiers: identifiers)
+        UNUserNotificationCenter.current().removePendingNotificationRequests(withIdentifiers: notificationIds)
     }
 
     func cancelAll(_ alarms: [Alarm]) async {
-        let identifiers = alarms.flatMap { identifiers(for: $0) }
+        let notificationIds = alarms.flatMap { identifiers(for: $0) }
         UNUserNotificationCenter.current().removePendingNotificationRequests(withIdentifiers: identifiers)
     }
 
