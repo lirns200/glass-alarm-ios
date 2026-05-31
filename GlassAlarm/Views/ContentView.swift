@@ -45,40 +45,29 @@ class GameViewModel: ObservableObject {
     @Published var combo: Int = 0
     @Published var previewInfo: (row: Int, col: Int, shape: GameShape)?
     
+    // Settings
+    @Published var isSoundEnabled: Bool = true
+    @Published var isVibrationEnabled: Bool = true
+    @Published var isDarkMode: Bool = true
+    
     init() {
         startNewRound()
     }
     
-    func setPreview(row: Int, col: Int, shape: GameShape?) {
-        if let shape = shape {
-            previewInfo = (row, col, shape)
-        } else {
-            previewInfo = nil
-        }
-    }
-    
-    func startNewRound() {
-        currentShapes = [GameShape.random(), GameShape.random(), GameShape.random()]
-    }
-    
-    func canPlace(shape: GameShape, at row: Int, col: Int) -> Bool {
-        for block in shape.blocks {
-            let r = row + Int(block.y)
-            let c = col + Int(block.x)
-            if r < 0 || r >= 8 || c < 0 || c >= 8 || grid[r][c] != nil {
-                return false
-            }
-        }
-        return true
+    func toggleDarkMode() {
+        isDarkMode.toggle()
     }
     
     func place(shape: GameShape, at row: Int, col: Int) {
         guard canPlace(shape: shape, at: row, col: col) else { return }
         
-        // Trigger Haptic & Sound (pseudo-logic for iOS)
-        triggerPlacementFeedback()
+        if isVibrationEnabled {
+            triggerPlacementFeedback()
+        }
         
-        for block in shape.blocks {
+        if isSoundEnabled {
+            // Sound logic would be here
+        }
             let r = row + Int(block.y)
             let c = col + Int(block.x)
             grid[r][c] = shape.color
@@ -139,34 +128,54 @@ class GameViewModel: ObservableObject {
 struct ContentView: View {
     @StateObject private var vm = GameViewModel()
     @State private var gridRect: CGRect = .zero
+    @State private var showingSettings = false
     
     var body: some View {
         ZStack {
-            Color(red: 0.02, green: 0.04, blue: 0.08).ignoresSafeArea()
+            (vm.isDarkMode ? Color(red: 0.02, green: 0.04, blue: 0.08) : Color(red: 0.95, green: 0.96, blue: 0.98))
+                .ignoresSafeArea()
             
-            VStack(spacing: 20) {
-                // Header
+            VStack(spacing: 15) {
+                // Header with Settings Button
                 HStack {
-                    VStack(alignment: .leading) {
-                        Text("BLOCK BLAST").font(.system(.caption, design: .rounded)).bold().foregroundStyle(.gray)
-                        Text("\(vm.score)").font(.system(size: 44, weight: .black, design: .rounded)).foregroundStyle(.white)
-                    }
                     Spacer()
-                    if vm.combo > 0 {
-                        VStack {
-                            Text("COMBO").font(.caption.bold()).foregroundStyle(.orange)
-                            Text("x\(vm.combo)").font(.title2.bold()).foregroundStyle(.orange)
-                        }
-                        .padding(10)
-                        .background(Color.orange.opacity(0.1), in: RoundedRectangle(cornerRadius: 12))
+                    Button {
+                        showingSettings = true
+                    } label: {
+                        Image(systemName: "gearshape.fill")
+                            .font(.title2)
+                            .foregroundStyle(vm.isDarkMode ? .white : .black)
+                            .padding(10)
+                            .background(vm.isDarkMode ? Color.white.opacity(0.1) : Color.black.opacity(0.05), in: Circle())
                     }
                 }
                 .padding(.horizontal, 24)
                 .padding(.top, 10)
                 
+                // Score in center
+                VStack(spacing: 5) {
+                    Text("SCORE")
+                        .font(.system(.caption, design: .rounded))
+                        .bold()
+                        .foregroundStyle(.gray)
+                    Text("\(vm.score)")
+                        .font(.system(size: 54, weight: .black, design: .rounded))
+                        .foregroundStyle(vm.isDarkMode ? .white : .black)
+                    
+                    if vm.combo > 0 {
+                        Text("COMBO x\(vm.combo)")
+                            .font(.headline.bold())
+                            .foregroundStyle(.orange)
+                            .padding(.horizontal, 12)
+                            .padding(.vertical, 4)
+                            .background(Color.orange.opacity(0.1), in: Capsule())
+                    }
+                }
+                .frame(maxWidth: .infinity)
+                
                 // Grid
                 ZStack {
-                    GridView(grid: vm.grid, preview: vm.previewInfo, canPlace: vm.canPlace)
+                    GridView(grid: vm.grid, preview: vm.previewInfo, canPlace: vm.canPlace, isDarkMode: vm.isDarkMode)
                         .background(
                             GeometryReader { geo in
                                 Color.clear.onAppear {
@@ -179,7 +188,7 @@ struct ContentView: View {
                         )
                 }
                 .padding(16)
-                .background(Color.white.opacity(0.03), in: RoundedRectangle(cornerRadius: 16))
+                .background(vm.isDarkMode ? Color.white.opacity(0.03) : Color.black.opacity(0.02), in: RoundedRectangle(cornerRadius: 16))
                 .padding(.horizontal, 16)
                 
                 // Shapes
@@ -202,6 +211,9 @@ struct ContentView: View {
                 
                 Spacer()
             }
+        }
+        .sheet(isPresented: $showingSettings) {
+            SettingsView(vm: vm)
         }
         .overlay {
             if vm.isGameOver {
@@ -235,10 +247,49 @@ struct ContentView: View {
     }
 }
 
+struct SettingsView: View {
+    @ObservedObject var vm: GameViewModel
+    @Environment(\.dismiss) var dismiss
+    
+    var body: some View {
+        NavigationStack {
+            List {
+                Section("GAMEPLAY") {
+                    Toggle("Sound", isOn: $vm.isSoundEnabled)
+                    Toggle("Vibration", isOn: $vm.isVibrationEnabled)
+                }
+                
+                Section("APPEARANCE") {
+                    Toggle("Dark Mode", isOn: $vm.isDarkMode)
+                }
+                
+                Section("ABOUT") {
+                    HStack {
+                        Text("Version")
+                        Spacer()
+                        Text("1.2.0 Preview").foregroundStyle(.gray)
+                    }
+                    Text("Block Blast is a puzzle game where you match blocks to clear lines.")
+                        .font(.caption)
+                        .foregroundStyle(.gray)
+                }
+            }
+            .navigationTitle("Settings")
+            .navigationBarTitleDisplayMode(.inline)
+            .toolbar {
+                ToolbarItem(placement: .topBarTrailing) {
+                    Button("Done") { dismiss() }
+                }
+            }
+        }
+    }
+}
+
 struct GridView: View {
     let grid: [[Color?]]
     let preview: (row: Int, col: Int, shape: GameShape)?
     let canPlace: (GameShape, Int, Int) -> Bool
+    let isDarkMode: Bool
     
     var body: some View {
         AspectRatioContainer(aspectRatio: 1) {
@@ -249,10 +300,10 @@ struct GridView: View {
                         HStack(spacing: 4) {
                             ForEach(0..<8, id: \.self) { c in
                                 RoundedRectangle(cornerRadius: 6)
-                                    .fill(grid[r][c] ?? Color.white.opacity(0.08))
+                                    .fill(grid[r][c] ?? (isDarkMode ? Color.white.opacity(0.08) : Color.black.opacity(0.05)))
                                     .overlay(
                                         RoundedRectangle(cornerRadius: 6)
-                                            .stroke(Color.white.opacity(0.05), lineWidth: 1)
+                                            .stroke(isDarkMode ? Color.white.opacity(0.05) : Color.black.opacity(0.03), lineWidth: 1)
                                     )
                                     .scaleEffect(grid[r][c] != nil ? 1.0 : 0.95)
                                     .animation(.spring(response: 0.3, dampingFraction: 0.6), value: grid[r][c] != nil)
@@ -273,7 +324,7 @@ struct GridView: View {
                                     }
                                     
                                     if isPreviewBlock {
-                                        RoundedRectangle(cornerRadius: 4)
+                                        RoundedRectangle(cornerRadius: 6)
                                             .fill(isPossible ? p.shape.color.opacity(0.5) : Color.red.opacity(0.3))
                                     } else {
                                         Color.clear
@@ -314,30 +365,20 @@ struct DraggableShapeView: View {
     
     @State private var offset = CGSize.zero
     @State private var isDragging = false
-    @State private var jellyScale: CGFloat = 1.0
-    @State private var jellyRotation: Double = 0
     
     var body: some View {
-        ShapePreview(shape: shape, scale: (isDragging ? 1.1 : 0.6) * jellyScale)
-            .rotationEffect(.degrees(jellyRotation))
+        ShapePreview(shape: shape, scale: isDragging ? 1.0 : 0.55)
             .offset(offset)
             .zIndex(isDragging ? 10 : 1)
             .gesture(
                 DragGesture(coordinateSpace: .global)
                     .onChanged { value in
                         if !isDragging {
-                            withAnimation(.interactiveSpring(response: 0.3, dampingFraction: 0.4, blendDuration: 0)) {
-                                isDragging = true
-                                jellyScale = 1.2
-                            }
+                            isDragging = true
                         }
                         
-                        // Jelly lean effect
-                        let dragX = value.translation.width
-                        withAnimation(.interactiveSpring()) {
-                            jellyRotation = Double(dragX / 15)
-                            offset = CGSize(width: value.translation.width, height: value.translation.height - 100)
-                        }
+                        // Move shape above finger, no tilt/extra scale
+                        offset = CGSize(width: value.translation.width, height: value.translation.height - 100)
                         
                         let hoverPoint = CGPoint(x: value.location.x, y: value.location.y - 100)
                         if gridRect.contains(hoverPoint) {
@@ -363,11 +404,9 @@ struct DraggableShapeView: View {
                         }
                         
                         onHover(0, 0, nil)
-                        withAnimation(.spring(response: 0.4, dampingFraction: 0.5)) {
+                        withAnimation(.spring(response: 0.3, dampingFraction: 0.7)) {
                             offset = .zero
                             isDragging = false
-                            jellyScale = 1.0
-                            jellyRotation = 0
                         }
                     }
             )
