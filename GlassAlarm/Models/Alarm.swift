@@ -163,7 +163,7 @@ enum AlarmRingtone: String, CaseIterable, Codable, Identifiable {
     case crystal
     case pulse
     case sunrise
-    case focus
+    case pup
     case classic
 
     var id: String { rawValue }
@@ -173,7 +173,7 @@ enum AlarmRingtone: String, CaseIterable, Codable, Identifiable {
         case .crystal: return "Кристалл"
         case .pulse: return "Пульс"
         case .sunrise: return "Рассвет"
-        case .focus: return "Фокус"
+        case .pup: return "Пуп"
         case .classic: return "Классика"
         }
     }
@@ -183,7 +183,7 @@ enum AlarmRingtone: String, CaseIterable, Codable, Identifiable {
         case .crystal: return "crystal.wav"
         case .pulse: return "pulse.wav"
         case .sunrise: return "sunrise.wav"
-        case .focus: return "focus.wav"
+        case .pup: return "pup.wav"
         case .classic: return nil
         }
     }
