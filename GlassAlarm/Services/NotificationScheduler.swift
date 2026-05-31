@@ -4,6 +4,34 @@ import UserNotifications
 struct NotificationScheduler {
     private let testNotificationIdentifier = "glass-alarm-test"
     private let staticStatusIdentifier = "glass-alarm-status"
+    private let alarmCategoryIdentifier = "ALARM_CATEGORY"
+
+    init() {
+        setupNotificationCategories()
+    }
+
+    private func setupNotificationCategories() {
+        let stopAction = UNNotificationAction(
+            identifier: "STOP_ACTION",
+            title: "ВЫКЛЮЧИТЬ",
+            options: [.destructive]
+        )
+        
+        let snoozeAction = UNNotificationAction(
+            identifier: "SNOOZE_ACTION",
+            title: "ПОДРЕМАТЬ (9 мин)",
+            options: []
+        )
+        
+        let category = UNNotificationCategory(
+            identifier: alarmCategoryIdentifier,
+            actions: [stopAction, snoozeAction],
+            intentIdentifiers: [],
+            options: [.customDismissAction]
+        )
+        
+        UNUserNotificationCenter.current().setNotificationCategories([category])
+    }
 
     func updateStaticStatus(nextAlarm: Alarm?) async {
         UNUserNotificationCenter.current().removePendingNotificationRequests(withIdentifiers: [staticStatusIdentifier])
@@ -74,7 +102,8 @@ struct NotificationScheduler {
         content.title = alarm.title.isEmpty ? "Будильник" : alarm.title
         content.body = "Пора просыпаться!"
         content.sound = sound(for: alarm.ringtone)
-        content.interruptionLevel = .timeSensitive // Чтобы уведомление пробивалось через "Фокусирование"
+        content.interruptionLevel = .critical // Пробивает беззвучный режим
+        content.categoryIdentifier = alarmCategoryIdentifier // Добавляет кнопки Выключить/Позже
         content.userInfo = [
             "alarmId": alarm.id.uuidString,
             "vibrates": alarm.vibrates
