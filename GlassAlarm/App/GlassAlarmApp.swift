@@ -26,7 +26,7 @@ class AppDelegate: NSObject, UNUserNotificationCenterDelegate {
 
 @main
 struct GlassAlarmApp: App {
-    private static let buildUniqueId = "5dd2b605afef1abc1943cc4c1f85bab5"
+    private static let buildUniqueId = "45c8859b48bdf691e2ec17ba2e915f28"
     
     @Environment(\.scenePhase) private var scenePhase
     @StateObject private var alarmStore = AlarmStore()

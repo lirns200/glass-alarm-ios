@@ -17,6 +17,7 @@ struct GlassBackground: View {
                     BlobView(color: .blue.opacity(theme == .dark ? 0.05 : 0.1), size: 500, x: drift ? 0.5 : 0.6, y: drift ? 0.1 : 0.9)
                 }
                 .blur(radius: theme == .dark ? 95 : 80)
+                .allowsHitTesting(false)
             }
             .ignoresSafeArea()
             .onAppear {
@@ -36,6 +37,19 @@ struct GlassBackground: View {
                         path.move(to: CGPoint(x: x + offset, y: 0))
                         path.addLine(to: CGPoint(x: x - offset, y: size.height))
                     }
+
+                    for y in stride(from: -spacing, through: size.height + spacing, by: spacing) {
+                        let offset = cos(seconds * 0.38 + Double(y) * 0.018) * 8
+                        path.move(to: CGPoint(x: 0, y: y + offset))
+                        path.addLine(to: CGPoint(x: size.width, y: size.height))
+                    }
+
+                    context.stroke(path, with: .color(.white.opacity(theme == .dark ? 0.03 : 0.055)), lineWidth: 1)
+                }
+                .ignoresSafeArea()
+                .allowsHitTesting(false)
+            }
+
 
                     for y in stride(from: -spacing, through: size.height + spacing, by: spacing) {
                         let offset = cos(seconds * 0.38 + Double(y) * 0.018) * 8
