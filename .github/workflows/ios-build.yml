@@ -232,9 +232,9 @@ jobs:
               flutter build ios --release --no-codesign
             fi
             cd "$IOS_PATH"
-          elif [ "$PROJECT_TYPE" = "reactnative" ] || [ "$PROJECT_TYPE" = "expo" ]; then
-            # Use xcodebuild directly for React Native/Expo
-            echo "Building React Native iOS ($CONFIGURATION)..."
+          else
+            # Native, React Native, or Expo
+            echo "Building iOS ($PROJECT_TYPE) ($CONFIGURATION)..."
             BUILD_CMD="xcodebuild"
             if [ -n "$WORKSPACE" ]; then
               BUILD_CMD="$BUILD_CMD -workspace $WORKSPACE"
@@ -242,11 +242,13 @@ jobs:
               BUILD_CMD="$BUILD_CMD -project $PROJECT"
             fi
 
-            # Auto-detect scheme from workspace name (e.g., MyApp.xcworkspace -> MyApp)
-            if [ -n "$WORKSPACE" ]; then
-              SCHEME=$(basename "$WORKSPACE" .xcworkspace)
-            elif [ -n "$PROJECT" ]; then
-              SCHEME=$(basename "$PROJECT" .xcodeproj)
+            # For React Native/Expo, auto-detect scheme if not provided
+            if [ -z "$SCHEME" ] && { [ "$PROJECT_TYPE" = "reactnative" ] || [ "$PROJECT_TYPE" = "expo" ]; }; then
+              if [ -n "$WORKSPACE" ]; then
+                SCHEME=$(basename "$WORKSPACE" .xcworkspace)
+              elif [ -n "$PROJECT" ]; then
+                SCHEME=$(basename "$PROJECT" .xcodeproj)
+              fi
             fi
 
             BUILD_CMD="$BUILD_CMD -scheme $SCHEME"
@@ -259,7 +261,6 @@ jobs:
 
             echo "Running: $BUILD_CMD"
             run_build_cmd "$BUILD_CMD"
-
           fi
 
           xcodebuild -showBuildSettings -project "${PROJECT}" -scheme "$SCHEME" -configuration "$CONFIGURATION" | grep -E "PRODUCT_BUNDLE_IDENTIFIER|IPHONEOS_DEPLOYMENT_TARGET|SWIFT_VERSION|SDKROOT" || true
