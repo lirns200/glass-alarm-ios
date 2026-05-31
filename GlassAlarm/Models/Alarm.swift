@@ -74,6 +74,7 @@ struct Alarm: Identifiable, Codable, Equatable {
         for weekday in repeatDays {
             var weekdayComponents = components
             weekdayComponents.weekday = weekday.rawValue
+            weekdayComponents.second = 0
 
             guard let candidate = calendar.nextDate(
                 after: now,
@@ -85,8 +86,8 @@ struct Alarm: Identifiable, Codable, Equatable {
                 continue
             }
 
-            if let nearestDate {
-                if candidate < nearestDate {
+            if let currentNearest = nearestDate {
+                if candidate < currentNearest {
                     nearestDate = candidate
                 }
             } else {
