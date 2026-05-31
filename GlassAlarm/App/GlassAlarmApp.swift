@@ -2,31 +2,45 @@ import SwiftUI
 import UserNotifications
 
 class AppDelegate: NSObject, UNUserNotificationCenterDelegate {
+    var alarmStore: AlarmStore?
+
     private var defaultVibration: Bool {
         UserDefaults.standard.object(forKey: AppSettingsKeys.defaultVibration) as? Bool ?? true
     }
 
     func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification, withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
-        triggerVibrationIfNeeded(userInfo: notification.request.content.userInfo)
+        handleAlarmNotification(userInfo: notification.request.content.userInfo)
         completionHandler([.banner, .list, .sound, .badge])
     }
 
     func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse, withCompletionHandler completionHandler: @escaping () -> Void) {
-        triggerVibrationIfNeeded(userInfo: response.notification.request.content.userInfo)
+        handleAlarmNotification(userInfo: response.notification.request.content.userInfo)
         completionHandler()
+    }
+
+    private func handleAlarmNotification(userInfo: [AnyHashable: Any]) {
+        triggerVibrationIfNeeded(userInfo: userInfo)
+        
+        // Попытка найти будильник по ID и показать его на весь экран
+        if let idString = userInfo["alarmId"] as? String,
+           let id = UUID(uuidString: idString),
+           let alarm = alarmStore?.alarms.first(where: { $0.id == id }) {
+            DispatchQueue.main.async {
+                self.alarmStore?.activeAlarm = alarm
+            }
+        }
     }
 
     private func triggerVibrationIfNeeded(userInfo: [AnyHashable: Any]) {
         let vibrates = userInfo["vibrates"] as? Bool ?? defaultVibration
         guard vibrates else { return }
-
         HapticsService.playAlarmPreview()
     }
 }
 
 @main
 struct GlassAlarmApp: App {
-    private static let buildUniqueId = "0956fe23395d61cf781743eb1b73d2c0"
+    private static let buildUniqueId = "864a5c07da590f27a8a2055fb5040c57"
     
     @Environment(\.scenePhase) private var scenePhase
     @StateObject private var alarmStore = AlarmStore()
@@ -44,6 +58,7 @@ struct GlassAlarmApp: App {
                 .environmentObject(alarmStore)
                 .preferredColorScheme(AppTheme(rawValue: selectedTheme)?.colorScheme)
                 .task {
+                    appDelegate.alarmStore = alarmStore
                     enforceDarkThemeMigrationIfNeeded()
                     await alarmStore.bootstrap()
                 }

@@ -7,6 +7,7 @@ import AVFoundation
 class AlarmStore: ObservableObject {
     @Published var alarms: [Alarm] = []
     @Published var authorizationStatus: UNAuthorizationStatus = .notDetermined
+    @Published var activeAlarm: Alarm? // Состояние для полноэкранного режима
 
     private let storageKey = "saved_alarms"
     private let scheduler = NotificationScheduler()
