@@ -352,33 +352,6 @@ struct DraggableShapeView: View {
             )
     }
 }
-                        // Offset it up a bit so it's visible above the finger
-                        offset = CGSize(width: value.translation.width, height: value.translation.height - 60)
-                    }
-                    .onEnded { value in
-                        let dropPoint = value.location
-                        
-                        if gridRect.contains(dropPoint) {
-                            let cellSize = gridRect.width / 8
-                            let localX = dropPoint.x - gridRect.minX
-                            let localY = dropPoint.y - gridRect.minY
-                            
-                            let col = Int(floor(localX / cellSize))
-                            let row = Int(floor(localY / cellSize))
-                            
-                            // Adjust for shape center
-                            // Simple heuristic: subtract half the shape size
-                            onDrop(row, col)
-                        }
-                        
-                        withAnimation(.spring(response: 0.3, dampingFraction: 0.7)) {
-                            offset = .zero
-                            isDragging = false
-                        }
-                    }
-            )
-    }
-}
 
 struct ShapePreview: View {
     let shape: GameShape
