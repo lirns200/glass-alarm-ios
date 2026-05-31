@@ -225,7 +225,7 @@ struct SettingsView: View {
             }
 
             Text("Версия 1.1.0 (Unique Build)")
-                .font(.system(size: 12, weight: .monospaced))
+                .font(.system(size: 12, weight: .regular, design: .monospaced))
                 .opacity(0.5)
 
             Text("Первый в мире будильник с эффектом матового стекла и защитой от дубликатов Apple App Store.")
