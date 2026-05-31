@@ -156,7 +156,7 @@ class GameViewModel: ObservableObject {
         }
         if let index = currentShapes.firstIndex(where: { $0?.id == shape.id }) { currentShapes[index] = nil }
         Task {
-            await clearLinesSequential(at: row, col: col)
+            await clearLinesSequential(at: row, col: col, in: gridRect)
             if currentShapes.allSatisfy({ $0 == nil }) { startNewRound() }
             checkGameOver()
         }
@@ -169,7 +169,7 @@ class GameViewModel: ObservableObject {
         #endif
     }
     
-    private func clearLinesSequential(at lastRow: Int, col lastCol: Int) async {
+    private func clearLinesSequential(at lastRow: Int, col lastCol: Int, in rect: CGRect) async {
         var rowsToClear: [Int] = [], colsToClear: [Int] = []
         for r in 0..<gridSize { if grid[r].allSatisfy({ $0 != nil }) { rowsToClear.append(r) } }
         for c in 0..<gridSize {
@@ -183,8 +183,7 @@ class GameViewModel: ObservableObject {
             let points = (linesCleared * 100 + (combo - 1) * 50) * linesCleared
             
             // Calculate center position for the popup relative to the grid view
-            // cellSize = gridRect.width / gridSize
-            let cellSize = gridRect.width / CGFloat(gridSize)
+            let cellSize = rect.width / CGFloat(gridSize)
             let popupX = CGFloat(lastCol) * cellSize + cellSize / 2
             let popupY = CGFloat(lastRow) * cellSize + cellSize / 2
             
