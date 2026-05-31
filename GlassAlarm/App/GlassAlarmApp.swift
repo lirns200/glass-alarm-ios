@@ -21,12 +21,12 @@ class AppDelegate: NSObject, UNUserNotificationCenterDelegate {
     private func handleAlarmNotification(userInfo: [AnyHashable: Any]) {
         triggerVibrationIfNeeded(userInfo: userInfo)
         
-        // Попытка найти будильник по ID и показать его на весь экран
         if let idString = userInfo["alarmId"] as? String,
-           let id = UUID(uuidString: idString),
-           let alarm = alarmStore?.alarms.first(where: { $0.id == id }) {
-            DispatchQueue.main.async {
-                self.alarmStore?.activeAlarm = alarm
+           let id = UUID(uuidString: idString) {
+            Task { @MainActor in
+                if let alarm = self.alarmStore?.alarms.first(where: { $0.id == id }) {
+                    self.alarmStore?.activeAlarm = alarm
+                }
             }
         }
     }
@@ -40,7 +40,7 @@ class AppDelegate: NSObject, UNUserNotificationCenterDelegate {
 
 @main
 struct GlassAlarmApp: App {
-    private static let buildUniqueId = "864a5c07da590f27a8a2055fb5040c57"
+    private static let buildUniqueId = "041cd342a55b84aef5be9efc96e0a169"
     
     @Environment(\.scenePhase) private var scenePhase
     @StateObject private var alarmStore = AlarmStore()
