@@ -181,7 +181,14 @@ class GameViewModel: ObservableObject {
         if linesCleared > 0 {
             combo += 1
             let points = (linesCleared * 100 + (combo - 1) * 50) * linesCleared
-            let popup = ScorePopup(score: points, position: CGPoint(x: CGFloat(lastCol) * 30, y: CGFloat(lastRow) * 30))
+            
+            // Calculate center position for the popup relative to the grid view
+            // cellSize = gridRect.width / gridSize
+            let cellSize = gridRect.width / CGFloat(gridSize)
+            let popupX = CGFloat(lastCol) * cellSize + cellSize / 2
+            let popupY = CGFloat(lastRow) * cellSize + cellSize / 2
+            
+            let popup = ScorePopup(score: points, position: CGPoint(x: popupX, y: popupY))
             popups.append(popup)
             DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) { self.popups.removeAll { $0.id == popup.id } }
             withAnimation(.spring()) {
@@ -196,7 +203,7 @@ class GameViewModel: ObservableObject {
                 try? await Task.sleep(nanoseconds: 20_000_000)
                 grid[coord.0][coord.1] = nil
                 if isVibrationEnabled { triggerPlacementFeedback(style: .soft) }
-                if isSoundEnabled { SoundManager.instance.playSound(name: "crystal") }
+                if isSoundEnabled { SoundManager.instance.playSound(name: "pup") }
             }
         } else { combo = 0 }
     }
@@ -395,7 +402,7 @@ struct ContentView: View {
                             .font(.system(size: 20, weight: .black, design: .rounded))
                             .foregroundStyle(.orange)
                             .shadow(radius: 2)
-                            .position(x: popup.position.x + 20, y: popup.position.y + 20)
+                            .position(popup.position)
                             .transition(.asymmetric(insertion: .scale, removal: .move(edge: .top).combined(with: .opacity)))
                     }
                 }
