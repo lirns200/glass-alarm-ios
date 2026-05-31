@@ -146,7 +146,7 @@ class GameViewModel: ObservableObject {
         return true
     }
     
-    func place(shape: GameShape, at row: Int, col: Int) {
+    func place(shape: GameShape, at row: Int, col: Int, in rect: CGRect) {
         guard canPlace(shape: shape, at: row, col: col) else { return }
         if isSoundEnabled { SoundManager.instance.playSound(name: "pup") }
         if isVibrationEnabled { triggerPlacementFeedback(style: .light) }
@@ -156,7 +156,7 @@ class GameViewModel: ObservableObject {
         }
         if let index = currentShapes.firstIndex(where: { $0?.id == shape.id }) { currentShapes[index] = nil }
         Task {
-            await clearLinesSequential(at: row, col: col, in: gridRect)
+            await clearLinesSequential(at: row, col: col, in: rect)
             if currentShapes.allSatisfy({ $0 == nil }) { startNewRound() }
             checkGameOver()
         }
@@ -417,7 +417,7 @@ struct ContentView: View {
                                 DraggableShapeView(shape: shape, gridRect: gridRect, gridSize: vm.gridSize, onHover: { r, c, s in
                                     vm.setPreview(row: r, col: c, shape: s)
                                 }) { row, col in
-                                    vm.place(shape: shape, at: row, col: col)
+                                    vm.place(shape: shape, at: row, col: col, in: gridRect)
                                 }
                             }
                         }
