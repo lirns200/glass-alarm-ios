@@ -16,7 +16,7 @@ struct AlarmRow: View {
                     if alarm.isEnabled {
                         Text(alarm.timeUntilText)
                             .font(.caption2.bold())
-                            .foregroundStyle(.accent)
+                            .foregroundStyle(Color.accentColor)
                             .padding(.horizontal, 6)
                             .padding(.vertical, 2)
                             .background(Color.accentColor.opacity(0.1), in: Capsule())

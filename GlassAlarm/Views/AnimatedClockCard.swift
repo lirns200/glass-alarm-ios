@@ -46,7 +46,7 @@ struct AnimatedClockCard: View {
                 if let nextAlarm {
                     Text(nextAlarm.timeUntilText)
                         .font(.caption2.bold())
-                        .foregroundStyle(.accent)
+                        .foregroundStyle(Color.accentColor)
                         .padding(.horizontal, 8)
                         .padding(.vertical, 4)
                         .background(Color.accentColor.opacity(0.12), in: Capsule())
