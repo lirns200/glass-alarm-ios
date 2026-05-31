@@ -70,7 +70,9 @@ final class AlarmStore: ObservableObject {
     private func scheduleIfNeeded(_ alarm: Alarm) async {
         guard alarm.isEnabled else { return }
         let canNotify = authorizationStatus == .authorized || authorizationStatus == .provisional
-        guard canNotify || await ensureNotificationAuthorization() else { return }
+        if !canNotify {
+            guard await ensureNotificationAuthorization() else { return }
+        }
         await scheduler.schedule(alarm)
     }
 
