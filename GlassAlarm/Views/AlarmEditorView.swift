@@ -61,12 +61,13 @@ struct AlarmEditorView: View {
         NavigationStack {
             ZStack {
                 GlassBackground(theme: currentTheme)
+                    .zIndex(0)
 
                 ScrollView {
                     VStack(spacing: 20) {
                         // Time Picker Section
                         VStack(spacing: 0) {
-                            DatePicker("Время", selection: $time, displayedComponents: .hourAndMinute)
+                            DatePicker("", selection: $time, displayedComponents: .hourAndMinute)
                                 .datePickerStyle(.wheel)
                                 .labelsHidden()
                                 .environment(\.locale, Locale(identifier: "ru_RU"))
@@ -76,7 +77,7 @@ struct AlarmEditorView: View {
                         }
                         .padding(.vertical, 10)
                         .glassCard()
-                        .zIndex(10) // Ensure picker is above other elements
+                        .zIndex(5)
 
                         // General Settings
                         VStack(spacing: 16) {
