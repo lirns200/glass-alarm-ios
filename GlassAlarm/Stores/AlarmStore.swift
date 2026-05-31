@@ -1,35 +1,28 @@
 import Foundation
+import SwiftUI
 import UserNotifications
 import AVFoundation
-import AudioToolbox
 
 @MainActor
-final class AlarmStore: ObservableObject {
-    @Published private(set) var alarms: [Alarm] = []
-    @Published private(set) var authorizationStatus: UNAuthorizationStatus = .notDetermined
+class AlarmStore: ObservableObject {
+    @Published var alarms: [Alarm] = []
+    @Published var authorizationStatus: UNAuthorizationStatus = .notDetermined
 
-    private let storageKey = "savedAlarms"
+    private let storageKey = "saved_alarms"
     private let scheduler = NotificationScheduler()
     private var audioPlayer: AVAudioPlayer?
 
-    func bootstrap() async {
+    init() {
         load()
-        await refreshAuthorizationStatus()
-
-        if alarms.isEmpty {
-            let morning = Alarm(title: "Morning glass", hour: 7, minute: 30, repeatDays: [.monday, .tuesday, .wednesday, .thursday, .friday], ringtone: .sunrise)
-            let focus = Alarm(title: "Focus start", hour: 9, minute: 0, repeatDays: [.monday, .tuesday, .wednesday, .thursday, .friday], ringtone: .pulse)
-            alarms = [morning, focus]
-            save()
-        }
-
-        await rescheduleEnabledAlarms()
     }
 
-    @discardableResult
+    func bootstrap() async {
+        await refreshAuthorizationStatus()
+    }
+
     func requestNotifications() async -> Bool {
         let granted = await ensureNotificationAuthorization()
-        await rescheduleEnabledAlarms()
+        await refreshAuthorizationStatus()
         return granted
     }
 
@@ -41,60 +34,36 @@ final class AlarmStore: ObservableObject {
     }
 
     func update(_ alarm: Alarm) async {
-        if let index = alarms.firstIndex(where: { $0.id == alarm.id }) {
-            alarms[index] = alarm
-            sortAndSave()
-            await scheduleIfNeeded(alarm)
-            await updateStaticStatusNotification()
-        }
-    }
-
-    func delete(_ alarm: Alarm) async {
-        alarms.removeAll { $0.id == alarm.id }
-        save()
-        await scheduler.cancel(alarm)
-        await updateStaticStatusNotification()
-    }
-
-    func setEnabled(_ alarm: Alarm, isEnabled: Bool) async {
-        var edited = alarm
-        edited.isEnabled = isEnabled
-        await update(edited)
-    }
-
-    func appBecameActive() async {
-        await refreshAuthorizationStatus()
-        await rescheduleEnabledAlarms()
-        await updateStaticStatusNotification()
-    }
-
-
-    func update(_ alarm: Alarm) async {
         guard let index = alarms.firstIndex(where: { $0.id == alarm.id }) else { return }
         let previous = alarms[index]
         alarms[index] = alarm
         sortAndSave()
 
-        // Cancel old identifiers first (important when repeat days changed)
+        // Cancel old identifiers first
         await scheduler.cancel(previous)
         await scheduleIfNeeded(alarm)
+        await updateStaticStatusNotification()
     }
 
     func delete(_ alarm: Alarm) async {
         alarms.removeAll { $0.id == alarm.id }
         save()
         await scheduler.cancel(alarm)
+        await updateStaticStatusNotification()
     }
 
     func setEnabled(_ alarm: Alarm, isEnabled: Bool) async {
-        var edited = alarm
-        edited.isEnabled = isEnabled
-        await update(edited)
+        if let index = alarms.firstIndex(where: { $0.id == alarm.id }) {
+            var edited = alarms[index]
+            edited.isEnabled = isEnabled
+            await update(edited)
+        }
     }
 
     func appBecameActive() async {
         await refreshAuthorizationStatus()
         await rescheduleEnabledAlarms()
+        await updateStaticStatusNotification()
     }
 
     private func scheduleIfNeeded(_ alarm: Alarm) async {
@@ -104,6 +73,11 @@ final class AlarmStore: ObservableObject {
             guard await ensureNotificationAuthorization() else { return }
         }
         await scheduler.schedule(alarm)
+    }
+
+    private func updateStaticStatusNotification() async {
+        let next = alarms.filter { $0.isEnabled }.first
+        await scheduler.updateStaticStatus(nextAlarm: next)
     }
 
     func previewRingtone(_ ringtone: AlarmRingtone) {
@@ -181,11 +155,6 @@ final class AlarmStore: ObservableObject {
     private func sortAndSave() {
         alarms.sort { $0.timeText < $1.timeText }
         save()
-    }
-
-    private func updateStaticStatusNotification() async {
-        let next = alarms.filter { $0.isEnabled }.first
-        await scheduler.updateStaticStatus(nextAlarm: next)
     }
 
     private func save() {
