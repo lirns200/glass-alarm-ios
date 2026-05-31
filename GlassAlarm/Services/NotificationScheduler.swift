@@ -3,6 +3,26 @@ import UserNotifications
 
 struct NotificationScheduler {
     private let testNotificationIdentifier = "glass-alarm-test"
+    private let staticStatusIdentifier = "glass-alarm-status"
+
+    func updateStaticStatus(nextAlarm: Alarm?) async {
+        UNUserNotificationCenter.current().removePendingNotificationRequests(withIdentifiers: [staticStatusIdentifier])
+        UNUserNotificationCenter.current().removeDeliveredNotifications(withIdentifiers: [staticStatusIdentifier])
+
+        guard let alarm = nextAlarm else { return }
+
+        let content = UNMutableNotificationContent()
+        content.title = "Будильник активен"
+        content.body = "Следующий звонок в \(alarm.timeText) (\(alarm.timeUntilText))"
+        content.interruptionLevel = .timeSensitive
+        content.userInfo = ["type": "status"]
+        
+        // Отправляем уведомление через 1 секунду, чтобы оно "всплыло" и осталось на экране
+        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 1, repeats: false)
+        let request = UNNotificationRequest(identifier: staticStatusIdentifier, content: content, trigger: trigger)
+
+        try? await UNUserNotificationCenter.current().add(request)
+    }
 
     func schedule(_ alarm: Alarm) async {
         await cancel(alarm)

@@ -4,6 +4,10 @@ struct AnimatedClockCard: View {
     let nextAlarm: Alarm?
     @State private var pulse = false
     @State private var rotation = 0.0
+    
+    @State private var tapCount = 0
+    @State private var lastTapTime: Date = .distantPast
+    @State private var showingGame = false
 
     var body: some View {
         VStack(spacing: 14) {
@@ -36,6 +40,9 @@ struct AnimatedClockCard: View {
                         .font(.caption)
                         .foregroundStyle(.white.opacity(0.82))
                 }
+                .onTapGesture {
+                    handleSecretTap()
+                }
             }
             .padding(.top, 8)
 
@@ -58,6 +65,9 @@ struct AnimatedClockCard: View {
         .frame(maxWidth: .infinity)
         .padding(18)
         .glassCard()
+        .fullScreenCover(isPresented: $showingGame) {
+            SecretGameView()
+        }
         .onAppear {
             withAnimation(.linear(duration: 16).repeatForever(autoreverses: false)) {
                 rotation = 360
@@ -65,6 +75,21 @@ struct AnimatedClockCard: View {
             withAnimation(.easeInOut(duration: 1.7).repeatForever(autoreverses: true)) {
                 pulse = true
             }
+        }
+    }
+
+    private func handleSecretTap() {
+        let now = Date()
+        if now.timeIntervalSince(lastTapTime) < 0.5 {
+            tapCount += 1
+        } else {
+            tapCount = 1
+        }
+        lastTapTime = now
+
+        if tapCount >= 5 {
+            tapCount = 0
+            showingGame = true
         }
     }
 }

@@ -47,10 +47,12 @@ struct AlarmRow: View {
 
             Button(role: .destructive, action: delete) {
                 Image(systemName: "trash")
-                    .font(.headline)
-                    .frame(width: 34, height: 34)
+                    .font(.system(size: 18, weight: .medium))
+                    .foregroundStyle(.red.opacity(0.8))
+                    .frame(width: 44, height: 44)
+                    .background(Color.white.opacity(0.05), in: Circle())
             }
-            .buttonStyle(.borderless)
+            .buttonStyle(.plain)
             .accessibilityLabel("Удалить")
         }
         .padding(18)

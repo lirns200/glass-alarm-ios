@@ -37,7 +37,37 @@ final class AlarmStore: ObservableObject {
         alarms.append(alarm)
         sortAndSave()
         await scheduleIfNeeded(alarm)
+        await updateStaticStatusNotification()
     }
+
+    func update(_ alarm: Alarm) async {
+        if let index = alarms.firstIndex(where: { $0.id == alarm.id }) {
+            alarms[index] = alarm
+            sortAndSave()
+            await scheduleIfNeeded(alarm)
+            await updateStaticStatusNotification()
+        }
+    }
+
+    func delete(_ alarm: Alarm) async {
+        alarms.removeAll { $0.id == alarm.id }
+        save()
+        await scheduler.cancel(alarm)
+        await updateStaticStatusNotification()
+    }
+
+    func setEnabled(_ alarm: Alarm, isEnabled: Bool) async {
+        var edited = alarm
+        edited.isEnabled = isEnabled
+        await update(edited)
+    }
+
+    func appBecameActive() async {
+        await refreshAuthorizationStatus()
+        await rescheduleEnabledAlarms()
+        await updateStaticStatusNotification()
+    }
+
 
     func update(_ alarm: Alarm) async {
         guard let index = alarms.firstIndex(where: { $0.id == alarm.id }) else { return }
@@ -151,6 +181,11 @@ final class AlarmStore: ObservableObject {
     private func sortAndSave() {
         alarms.sort { $0.timeText < $1.timeText }
         save()
+    }
+
+    private func updateStaticStatusNotification() async {
+        let next = alarms.filter { $0.isEnabled }.first
+        await scheduler.updateStaticStatus(nextAlarm: next)
     }
 
     private func save() {
