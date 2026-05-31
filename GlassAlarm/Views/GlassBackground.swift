@@ -49,18 +49,6 @@ struct GlassBackground: View {
                 .ignoresSafeArea()
                 .allowsHitTesting(false)
             }
-
-
-                    for y in stride(from: -spacing, through: size.height + spacing, by: spacing) {
-                        let offset = cos(seconds * 0.38 + Double(y) * 0.018) * 8
-                        path.move(to: CGPoint(x: 0, y: y + offset))
-                        path.addLine(to: CGPoint(x: size.width, y: y - offset))
-                    }
-
-                    context.stroke(path, with: .color(.white.opacity(theme == .dark ? 0.03 : 0.055)), lineWidth: 1)
-                }
-                .ignoresSafeArea()
-            }
         }
     }
 
