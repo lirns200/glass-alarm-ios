@@ -165,7 +165,7 @@ struct AlarmActiveView: View {
                     Image(systemName: "alarm.fill")
                         .font(.system(size: 80))
                         .foregroundStyle(Color.accentColor)
-                        .symbolEffect(.bounce, options: .repeat(.infinite), value: animate)
+                        .symbolEffect(.bounce, value: animate)
                     
                     Text(alarm.title.isEmpty ? "БУДИЛЬНИК" : alarm.title.uppercased())
                         .font(.system(size: 24, weight: .black, design: .rounded))
