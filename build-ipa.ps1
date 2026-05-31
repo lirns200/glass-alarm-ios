@@ -76,8 +76,14 @@ if (-not $Signed) {
 Write-Section "Starting iOS build"
 "Command: .\\builder.exe $($buildArgs -join ' ')"
 
-$builderOutput = & $builderPath @buildArgs 2>&1
-$exitCode = $LASTEXITCODE
+$previousErrorAction = $ErrorActionPreference
+$ErrorActionPreference = "Continue"
+try {
+    $builderOutput = & $builderPath @buildArgs 2>&1 | ForEach-Object { $_.ToString() }
+    $exitCode = $LASTEXITCODE
+} finally {
+    $ErrorActionPreference = $previousErrorAction
+}
 
 $builderOutput | ForEach-Object { $_ }
 
