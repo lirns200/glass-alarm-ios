@@ -148,7 +148,7 @@ class GameViewModel: ObservableObject {
     
     func place(shape: GameShape, at row: Int, col: Int) {
         guard canPlace(shape: shape, at: row, col: col) else { return }
-        if isSoundEnabled { SoundManager.instance.playSound(name: "focus") }
+        if isSoundEnabled { SoundManager.instance.playSound(name: "pup") }
         if isVibrationEnabled { triggerPlacementFeedback(style: .light) }
         for block in shape.blocks {
             let r = row + Int(block.y), c = col + Int(block.x)
@@ -525,14 +525,21 @@ struct DraggableShapeView: View {
     let onDrop: (Int, Int) -> Void
     @State private var offset = CGSize.zero
     @State private var isDragging = false
+    
+    private var dragScale: CGFloat {
+        let cellSize = gridRect.width / CGFloat(gridSize)
+        return cellSize / 30.0 // Adjusted for 30px base block size
+    }
+    
     var body: some View {
-        ShapePreview(shape: shape, scale: isDragging ? 0.7 : 0.5)
+        ShapePreview(shape: shape, scale: isDragging ? dragScale : 0.5)
             .offset(offset).zIndex(isDragging ? 10 : 1)
             .gesture(DragGesture(coordinateSpace: .global)
                 .onChanged { value in
                     isDragging = true
-                    offset = CGSize(width: value.translation.width, height: value.translation.height - 80)
-                    let hoverPoint = CGPoint(x: value.location.x, y: value.location.y - 80)
+                    // Lift the shape 120 points above the finger for better visibility
+                    offset = CGSize(width: value.translation.width, height: value.translation.height - 120)
+                    let hoverPoint = CGPoint(x: value.location.x, y: value.location.y - 120)
                     if gridRect.contains(hoverPoint) {
                         let cellSize = gridRect.width / CGFloat(gridSize)
                         let col = Int(round((hoverPoint.x - gridRect.minX - cellSize/2) / cellSize))
@@ -541,7 +548,7 @@ struct DraggableShapeView: View {
                     } else { onHover(0, 0, nil) }
                 }
                 .onEnded { value in
-                    let dropPoint = CGPoint(x: value.location.x, y: value.location.y - 80)
+                    let dropPoint = CGPoint(x: value.location.x, y: value.location.y - 120)
                     if gridRect.contains(dropPoint) {
                         let cellSize = gridRect.width / CGFloat(gridSize)
                         let col = Int(round((dropPoint.x - gridRect.minX - cellSize/2) / cellSize))
