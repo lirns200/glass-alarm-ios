@@ -76,6 +76,7 @@ struct AlarmEditorView: View {
                         }
                         .padding(.vertical, 10)
                         .glassCard()
+                        .zIndex(10) // Ensure picker is above other elements
 
                         // General Settings
                         VStack(spacing: 16) {

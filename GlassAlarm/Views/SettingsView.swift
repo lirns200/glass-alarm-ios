@@ -72,6 +72,7 @@ struct SettingsView: View {
                                 .foregroundStyle(Color.accentColor)
                         }
                     }
+                    .contentShape(Rectangle()) // Make entire row tappable
                     .padding(10)
                     .background(Color.white.opacity(theme.rawValue == selectedTheme ? 0.18 : 0.08), in: RoundedRectangle(cornerRadius: 12, style: .continuous))
                 }
