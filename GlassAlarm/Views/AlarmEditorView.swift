@@ -62,66 +62,101 @@ struct AlarmEditorView: View {
             ZStack {
                 GlassBackground(theme: currentTheme)
 
-                Form {
-                    Section("Время") {
-                        DatePicker("Время", selection: $time, displayedComponents: .hourAndMinute)
-                            .datePickerStyle(.wheel)
-                            .labelsHidden()
-                            .environment(\.locale, Locale(identifier: "ru_RU"))
-                            .environment(\.colorScheme, .dark)
-                            .tint(.white)
-                            .colorMultiply(.white)
-                            .frame(maxWidth: .infinity)
-                            .padding(.vertical, 6)
-                    }
-                    .listRowBackground(Color.black.opacity(0.55))
+                ScrollView {
+                    VStack(spacing: 20) {
+                        // Time Picker Section
+                        VStack(spacing: 0) {
+                            DatePicker("Время", selection: $time, displayedComponents: .hourAndMinute)
+                                .datePickerStyle(.wheel)
+                                .labelsHidden()
+                                .environment(\.locale, Locale(identifier: "ru_RU"))
+                                .environment(\.colorScheme, .dark)
+                                .frame(maxWidth: .infinity)
+                                .scaleEffect(1.1)
+                        }
+                        .padding(.vertical, 10)
+                        .glassCard()
 
-                    Section("Название") {
-                        TextField("Назовите будильник", text: $title)
-                            .foregroundStyle(.white)
-
-                        Toggle("Включен", isOn: $isEnabled)
+                        // General Settings
+                        VStack(spacing: 16) {
+                            HStack {
+                                Image(systemName: "pencil")
+                                TextField("Название", text: $title)
+                                    .multilineTextAlignment(.trailing)
+                            }
+                            
+                            Divider().background(Color.white.opacity(0.2))
+                            
+                            Toggle(isOn: $isEnabled) {
+                                Label("Включен", systemImage: "power")
+                            }
                             .tint(Color.accentColor)
 
-                        Toggle("Вибрация", isOn: $vibrates)
+                            Toggle(isOn: $vibrates) {
+                                Label("Вибрация", systemImage: "iphone.radiowaves.left.and.right")
+                            }
                             .tint(Color.accentColor)
-                    }
-                    .listRowBackground(Color.black.opacity(0.45))
+                        }
+                        .padding(16)
+                        .glassCard()
 
-                    Section("Повтор") {
-                        RepeatDaysPicker(selection: $repeatDays)
-                    }
-                    .listRowBackground(Color.black.opacity(0.45))
+                        // Repeat Section
+                        VStack(alignment: .leading, spacing: 12) {
+                            Label("Повторять", systemImage: "calendar")
+                                .font(.headline)
+                            
+                            RepeatDaysPicker(selection: $repeatDays)
+                        }
+                        .padding(16)
+                        .glassCard()
 
-                    Section("Рингтон") {
-                        Picker("Рингтон", selection: $ringtone) {
-                            ForEach(AlarmRingtone.allCases) { ringtone in
-                                Text(ringtone.title).tag(ringtone)
+                        // Ringtone Section
+                        VStack(alignment: .leading, spacing: 12) {
+                            HStack {
+                                Label("Рингтон", systemImage: "music.note")
+                                    .font(.headline)
+                                Spacer()
+                                Picker("Звук", selection: $ringtone) {
+                                    ForEach(AlarmRingtone.allCases) { ringtone in
+                                        Text(ringtone.title).tag(ringtone)
+                                    }
+                                }
+                                .pickerStyle(.menu)
+                                .tint(.white.opacity(0.8))
+                                .onChange(of: ringtone) { _, newRingtone in
+                                    alarmStore.previewRingtone(newRingtone)
+                                }
+                            }
+
+                            HStack(spacing: 12) {
+                                Button {
+                                    alarmStore.previewRingtone(ringtone)
+                                } label: {
+                                    Label("Играть", systemImage: "play.fill")
+                                        .frame(maxWidth: .infinity)
+                                        .padding(.vertical, 10)
+                                        .background(Color.white.opacity(0.1), in: RoundedRectangle(cornerRadius: 10))
+                                }
+                                .buttonStyle(.plain)
+
+                                Button {
+                                    alarmStore.stopRingtonePreview()
+                                } label: {
+                                    Label("Стоп", systemImage: "stop.fill")
+                                        .frame(maxWidth: .infinity)
+                                        .padding(.vertical, 10)
+                                        .background(Color.white.opacity(0.1), in: RoundedRectangle(cornerRadius: 10))
+                                }
+                                .buttonStyle(.plain)
                             }
                         }
-                        .tint(.white)
-                        .onChange(of: ringtone) { _, newRingtone in
-                            alarmStore.previewRingtone(newRingtone)
-                        }
-
-                        Button {
-                            alarmStore.previewRingtone(ringtone)
-                        } label: {
-                            Label("Прослушать", systemImage: "play.circle.fill")
-                                .foregroundStyle(.white)
-                        }
-
-                        Button {
-                            alarmStore.stopRingtonePreview()
-                        } label: {
-                            Label("Остановить", systemImage: "stop.fill")
-                                .foregroundStyle(.white)
-                        }
+                        .padding(16)
+                        .glassCard()
                     }
-                    .listRowBackground(Color.black.opacity(0.45))
+                    .padding(20)
+                    .padding(.bottom, 30)
                 }
-                .scrollContentBackground(.hidden)
-                .tint(.white)
+                .scrollIndicators(.hidden)
                 .foregroundStyle(.white)
             }
             .navigationTitle(mode.title)
