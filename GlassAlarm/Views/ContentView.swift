@@ -132,7 +132,7 @@ struct ContentView: View {
                             Color.clear.onAppear {
                                 gridRect = geo.frame(in: .global)
                             }
-                            .onChange(of: geo.frame(in: .global)) { _, newFrame in
+                            .onChange(of: geo.frame(in: .global)) { newFrame in
                                 gridRect = newFrame
                             }
                         }
