@@ -1,0 +1,4 @@
+[2026-05-31T15:40:52.248820] STEP: Starting iOS build
+CMD: C:\Users\sivma\Documents\Codex\2026-05-31\build-macos-apps-plugin-build-macos\outputs\GlassAlarm\builder.exe ios build -o C:\Users\sivma\Documents\Codex\2026-05-31\build-macos-apps-plugin-build-macos\outputs\GlassAlarm\ipa_build_workspace\run-20260531-154052\artifacts --unsigned
+
+

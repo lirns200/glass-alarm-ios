@@ -1,0 +1,6 @@
+❌ Build: Failed (37s)
+Error: workflow failed with conclusion: failure
+Error: build failed: workflow failed with conclusion: failure
+Failed step: 13 - Build IPA
+[FAILURE] Process completed with exit code 65.
+[FAILURE] error: /Users/runner/work/glass-alarm-ios/glass-alarm-ios/GlassAlarm/Resources/crystal.wav: No such file or directory (in target 'GlassAlarm' from project 'GlassAlarm')

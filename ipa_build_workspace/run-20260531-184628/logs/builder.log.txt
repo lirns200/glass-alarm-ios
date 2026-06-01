@@ -1,0 +1,80 @@
+[2026-05-31T18:46:28.643314] STEP: check git repo
+CMD: git rev-parse --is-inside-work-tree
+
+true
+
+Exit code: 0
+
+[2026-05-31T18:46:28.667457] STEP: check origin remote
+CMD: git remote get-url origin
+
+https://github.com/lirns200/glass-alarm-ios.git
+
+Exit code: 0
+
+[2026-05-31T18:46:28.690248] STEP: git add
+CMD: git add -A .github builder.json GlassAlarm GlassAlarm.xcodeproj buildIPA.py build_ipa.py build_ipa_wizard.cmd
+
+warning: in the working copy of 'GlassAlarm/App/GlassAlarmApp.swift', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'GlassAlarm/Views/ContentView.swift', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'builder.json', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'GlassAlarm/Models/GameLogic.swift', LF will be replaced by CRLF the next time Git touches it
+
+Exit code: 0
+
+[2026-05-31T18:46:28.721337] STEP: git diff --cached
+CMD: git diff --cached --name-only
+
+GlassAlarm/App/GlassAlarmApp.swift
+GlassAlarm/Models/GameLogic.swift
+GlassAlarm/Views/ContentView.swift
+builder.json
+
+Exit code: 0
+
+[2026-05-31T18:46:28.744095] STEP: git commit
+CMD: git commit -m chore: auto sync ipa build files (2026-05-31 18:46:28)
+
+[main 2ef5d52] chore: auto sync ipa build files (2026-05-31 18:46:28)
+ 4 files changed, 286 insertions(+), 254 deletions(-)
+ create mode 100644 GlassAlarm/Models/GameLogic.swift
+
+Exit code: 0
+
+[2026-05-31T18:46:28.797093] STEP: get current branch
+CMD: git rev-parse --abbrev-ref HEAD
+
+main
+
+Exit code: 0
+
+[2026-05-31T18:46:28.819299] STEP: git push
+CMD: git push origin main
+
+To https://github.com/lirns200/glass-alarm-ios.git
+   11b5d39..2ef5d52  main -> main
+
+Exit code: 0
+
+[2026-05-31T18:46:31.726625] STEP: builder ios build
+CMD: C:\Users\sivma\Documents\Codex\2026-05-31\build-macos-apps-plugin-build-macos\outputs\GlassAlarm\builder.exe ios build -o C:\Users\sivma\Documents\Codex\2026-05-31\build-macos-apps-plugin-build-macos\outputs\GlassAlarm\ipa_build_workspace\run-20260531-184628\artifacts --unsigned
+
+
+🏗️  Builder - Remote iOS Build
+   Build ID: 3ffd61aa
+
+
+🚀  Trigger: Triggering GitHub Actions build...
+✅ Trigger: Workflow triggered (2s)
+
+⏳  Start: Waiting for workflow to start...
+✅ Start: Workflow started (run #26717093587) (3s)
+
+🔨  Build: Building... (this may take several minutes)
+❌ Build: Failed (43s)
+   Error: workflow failed with conclusion: failure
+   Logs: https://github.com/lirns200/glass-alarm-ios/actions/runs/26717093587
+Error: build failed: workflow failed with conclusion: failure
+
+Exit code: 1
+

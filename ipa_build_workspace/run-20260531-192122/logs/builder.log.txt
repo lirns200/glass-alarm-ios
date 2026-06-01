@@ -1,0 +1,73 @@
+[2026-05-31T19:21:22.104546] STEP: check git repo
+CMD: git rev-parse --is-inside-work-tree
+
+true
+
+Exit code: 0
+
+[2026-05-31T19:21:22.128592] STEP: check origin remote
+CMD: git remote get-url origin
+
+https://github.com/lirns200/glass-alarm-ios.git
+
+Exit code: 0
+
+[2026-05-31T19:21:22.151283] STEP: git add
+CMD: git add -A .github builder.json GlassAlarm GlassAlarm.xcodeproj buildIPA.py build_ipa.py build_ipa_wizard.cmd
+
+warning: in the working copy of 'GlassAlarm/Views/ContentView.swift', LF will be replaced by CRLF the next time Git touches it
+
+Exit code: 0
+
+[2026-05-31T19:21:22.178151] STEP: git diff --cached
+CMD: git diff --cached --name-only
+
+GlassAlarm/Views/ContentView.swift
+
+Exit code: 0
+
+[2026-05-31T19:21:22.202105] STEP: git commit
+CMD: git commit -m chore: auto sync ipa build files (2026-05-31 19:21:22)
+
+[main 720ab89] chore: auto sync ipa build files (2026-05-31 19:21:22)
+ 1 file changed, 4 insertions(+), 3 deletions(-)
+
+Exit code: 0
+
+[2026-05-31T19:21:22.250470] STEP: get current branch
+CMD: git rev-parse --abbrev-ref HEAD
+
+main
+
+Exit code: 0
+
+[2026-05-31T19:21:22.273524] STEP: git push
+CMD: git push origin main
+
+To https://github.com/lirns200/glass-alarm-ios.git
+   33b9529..720ab89  main -> main
+
+Exit code: 0
+
+[2026-05-31T19:21:24.965918] STEP: builder ios build
+CMD: C:\Users\sivma\Documents\Codex\2026-05-31\build-macos-apps-plugin-build-macos\outputs\GlassAlarm\builder.exe ios build -o C:\Users\sivma\Documents\Codex\2026-05-31\build-macos-apps-plugin-build-macos\outputs\GlassAlarm\ipa_build_workspace\run-20260531-192122\artifacts --unsigned
+
+
+🏗️  Builder - Remote iOS Build
+   Build ID: ea617046
+
+
+🚀  Trigger: Triggering GitHub Actions build...
+✅ Trigger: Workflow triggered (2s)
+
+⏳  Start: Waiting for workflow to start...
+✅ Start: Workflow started (run #26717913226) (3s)
+
+🔨  Build: Building... (this may take several minutes)
+❌ Build: Failed (43s)
+   Error: workflow failed with conclusion: failure
+   Logs: https://github.com/lirns200/glass-alarm-ios/actions/runs/26717913226
+Error: build failed: workflow failed with conclusion: failure
+
+Exit code: 1
+

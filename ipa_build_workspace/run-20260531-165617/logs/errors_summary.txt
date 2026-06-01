@@ -1,0 +1,6 @@
+❌ Build: Failed (1m0s)
+Error: workflow failed with conclusion: failure
+Error: build failed: workflow failed with conclusion: failure
+Failed step: 13 - Build IPA
+[FAILURE] Process completed with exit code 65.
+[FAILURE] /Users/runner/work/glass-alarm-ios/glass-alarm-ios/GlassAlarm/Stores/AlarmStore.swift:73:28: error: 'await' cannot appear to the right of a non-assignment operator

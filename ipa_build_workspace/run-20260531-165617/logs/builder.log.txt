@@ -1,0 +1,73 @@
+[2026-05-31T16:56:17.648214] STEP: check git repo
+CMD: git rev-parse --is-inside-work-tree
+
+true
+
+Exit code: 0
+
+[2026-05-31T16:56:17.673577] STEP: check origin remote
+CMD: git remote get-url origin
+
+https://github.com/lirns200/glass-alarm-ios.git
+
+Exit code: 0
+
+[2026-05-31T16:56:17.696994] STEP: git add
+CMD: git add -A .github builder.json GlassAlarm GlassAlarm.xcodeproj buildIPA.py build_ipa.py build_ipa_wizard.cmd
+
+
+Exit code: 0
+
+[2026-05-31T16:56:17.738599] STEP: git diff --cached
+CMD: git diff --cached --name-only
+
+GlassAlarm/App/GlassAlarmApp.swift
+GlassAlarm/Resources/crystal.wav
+
+Exit code: 0
+
+[2026-05-31T16:56:17.763723] STEP: git commit
+CMD: git commit -m chore: auto sync ipa build files (2026-05-31 16:56:17)
+
+[main a754b0f] chore: auto sync ipa build files (2026-05-31 16:56:17)
+ 2 files changed, 1 insertion(+), 3 deletions(-)
+
+Exit code: 0
+
+[2026-05-31T16:56:17.818851] STEP: get current branch
+CMD: git rev-parse --abbrev-ref HEAD
+
+main
+
+Exit code: 0
+
+[2026-05-31T16:56:17.841803] STEP: git push
+CMD: git push origin main
+
+To https://github.com/lirns200/glass-alarm-ios.git
+   4357f7e..a754b0f  main -> main
+
+Exit code: 0
+
+[2026-05-31T16:56:20.959038] STEP: builder ios build
+CMD: C:\Users\sivma\Documents\Codex\2026-05-31\build-macos-apps-plugin-build-macos\outputs\GlassAlarm\builder.exe ios build -o C:\Users\sivma\Documents\Codex\2026-05-31\build-macos-apps-plugin-build-macos\outputs\GlassAlarm\ipa_build_workspace\run-20260531-165617\artifacts --unsigned
+
+
+🏗️  Builder - Remote iOS Build
+   Build ID: 9d6ad861
+
+
+🚀  Trigger: Triggering GitHub Actions build...
+✅ Trigger: Workflow triggered (2s)
+
+⏳  Start: Waiting for workflow to start...
+✅ Start: Workflow started (run #26714566523) (3s)
+
+🔨  Build: Building... (this may take several minutes)
+❌ Build: Failed (1m0s)
+   Error: workflow failed with conclusion: failure
+   Logs: https://github.com/lirns200/glass-alarm-ios/actions/runs/26714566523
+Error: build failed: workflow failed with conclusion: failure
+
+Exit code: 1
+

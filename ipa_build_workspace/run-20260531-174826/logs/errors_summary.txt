@@ -1,0 +1,6 @@
+❌ Build: Failed (54s)
+Error: workflow failed with conclusion: failure
+Error: build failed: workflow failed with conclusion: failure
+Failed step: 13 - Build IPA
+[FAILURE] Process completed with exit code 65.
+[FAILURE] /Users/runner/work/glass-alarm-ios/glass-alarm-ios/GlassAlarm/App/GlassAlarmApp.swift:27:36: error: main actor-isolated property 'alarms' can not be referenced from a nonisolated context

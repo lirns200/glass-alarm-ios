@@ -1,0 +1,22 @@
+{
+  "timestamp": "2026-05-31T19:35:15.917267",
+  "status": "failed",
+  "exit_code": 1,
+  "project_dir": "C:\\Users\\sivma\\Documents\\Codex\\2026-05-31\\build-macos-apps-plugin-build-macos\\outputs\\GlassAlarm",
+  "builder_path": "C:\\Users\\sivma\\Documents\\Codex\\2026-05-31\\build-macos-apps-plugin-build-macos\\outputs\\GlassAlarm\\builder.exe",
+  "workspace_dir": "C:\\Users\\sivma\\Documents\\Codex\\2026-05-31\\build-macos-apps-plugin-build-macos\\outputs\\GlassAlarm\\ipa_build_workspace",
+  "run_dir": "C:\\Users\\sivma\\Documents\\Codex\\2026-05-31\\build-macos-apps-plugin-build-macos\\outputs\\GlassAlarm\\ipa_build_workspace\\run-20260531-193309",
+  "artifacts_dir": "C:\\Users\\sivma\\Documents\\Codex\\2026-05-31\\build-macos-apps-plugin-build-macos\\outputs\\GlassAlarm\\ipa_build_workspace\\run-20260531-193309\\artifacts",
+  "builder_log": "C:\\Users\\sivma\\Documents\\Codex\\2026-05-31\\build-macos-apps-plugin-build-macos\\outputs\\GlassAlarm\\ipa_build_workspace\\run-20260531-193309\\logs\\builder.log.txt",
+  "diagnostics_log": "C:\\Users\\sivma\\Documents\\Codex\\2026-05-31\\build-macos-apps-plugin-build-macos\\outputs\\GlassAlarm\\ipa_build_workspace\\run-20260531-193309\\logs\\github_diagnostics.log.txt",
+  "errors_log": "C:\\Users\\sivma\\Documents\\Codex\\2026-05-31\\build-macos-apps-plugin-build-macos\\outputs\\GlassAlarm\\ipa_build_workspace\\run-20260531-193309\\logs\\errors_summary.txt",
+  "output_dir": "C:\\Users\\sivma\\Documents\\Codex\\2026-05-31\\build-macos-apps-plugin-build-macos\\outputs\\GlassAlarm\\dist",
+  "latest_ipa": null,
+  "copied_to": null,
+  "run_context": null,
+  "errors": [
+    "❌ Start: Failed (2m4s)",
+    "Error: timed out waiting for workflow to start",
+    "Error: workflow failed to start: timed out waiting for workflow to start"
+  ]
+}

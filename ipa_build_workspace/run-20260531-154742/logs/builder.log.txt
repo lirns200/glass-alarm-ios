@@ -1,0 +1,104 @@
+[2026-05-31T15:47:42.856185] STEP: builder ios build
+CMD: C:\Users\sivma\Documents\Codex\2026-05-31\build-macos-apps-plugin-build-macos\outputs\GlassAlarm\builder.exe ios build -o C:\Users\sivma\Documents\Codex\2026-05-31\build-macos-apps-plugin-build-macos\outputs\GlassAlarm\ipa_build_workspace\run-20260531-154742\artifacts --unsigned
+
+
+🏗️  Builder - Remote iOS Build
+   Build ID: 147c03de
+
+
+🚀  Trigger: Triggering GitHub Actions build...
+✅ Trigger: Workflow triggered (2s)
+
+⏳  Start: Waiting for workflow to start...
+✅ Start: Workflow started (run #26713031905) (3s)
+
+🔨  Build: Building... (this may take several minutes)
+✅ Build: Build completed successfully (1m40s)
+
+⬇️  Download: Downloading IPA artifact...
+⬇️  Download: [░░░░░░░░░░░░░░░░░░░░] 0% (0.0/1.2 MB)
+⬇️  Download: [░░░░░░░░░░░░░░░░░░░░] 1% (0.0/1.2 MB)
+⬇️  Download: [░░░░░░░░░░░░░░░░░░░░] 2% (0.0/1.2 MB)
+⬇️  Download: [░░░░░░░░░░░░░░░░░░░░] 3% (0.0/1.2 MB)
+⬇️  Download: [█░░░░░░░░░░░░░░░░░░░] 5% (0.1/1.2 MB)
+⬇️  Download: [█░░░░░░░░░░░░░░░░░░░] 6% (0.1/1.2 MB)
+⬇️  Download: [█░░░░░░░░░░░░░░░░░░░] 7% (0.1/1.2 MB)
+⬇️  Download: [█░░░░░░░░░░░░░░░░░░░] 9% (0.1/1.2 MB)
+⬇️  Download: [██░░░░░░░░░░░░░░░░░░] 10% (0.1/1.2 MB)
+⬇️  Download: [██░░░░░░░░░░░░░░░░░░] 11% (0.1/1.2 MB)
+⬇️  Download: [██░░░░░░░░░░░░░░░░░░] 13% (0.2/1.2 MB)
+⬇️  Download: [██░░░░░░░░░░░░░░░░░░] 14% (0.2/1.2 MB)
+⬇️  Download: [███░░░░░░░░░░░░░░░░░] 15% (0.2/1.2 MB)
+⬇️  Download: [███░░░░░░░░░░░░░░░░░] 17% (0.2/1.2 MB)
+⬇️  Download: [███░░░░░░░░░░░░░░░░░] 18% (0.2/1.2 MB)
+⬇️  Download: [████░░░░░░░░░░░░░░░░] 20% (0.2/1.2 MB)
+⬇️  Download: [████░░░░░░░░░░░░░░░░] 21% (0.2/1.2 MB)
+⬇️  Download: [████░░░░░░░░░░░░░░░░] 22% (0.3/1.2 MB)
+⬇️  Download: [████░░░░░░░░░░░░░░░░] 24% (0.3/1.2 MB)
+⬇️  Download: [█████░░░░░░░░░░░░░░░] 25% (0.3/1.2 MB)
+⬇️  Download: [█████░░░░░░░░░░░░░░░] 26% (0.3/1.2 MB)
+⬇️  Download: [█████░░░░░░░░░░░░░░░] 28% (0.3/1.2 MB)
+⬇️  Download: [█████░░░░░░░░░░░░░░░] 29% (0.3/1.2 MB)
+⬇️  Download: [██████░░░░░░░░░░░░░░] 30% (0.4/1.2 MB)
+⬇️  Download: [██████░░░░░░░░░░░░░░] 32% (0.4/1.2 MB)
+⬇️  Download: [██████░░░░░░░░░░░░░░] 33% (0.4/1.2 MB)
+⬇️  Download: [██████░░░░░░░░░░░░░░] 34% (0.4/1.2 MB)
+⬇️  Download: [███████░░░░░░░░░░░░░] 36% (0.4/1.2 MB)
+⬇️  Download: [███████░░░░░░░░░░░░░] 37% (0.4/1.2 MB)
+⬇️  Download: [███████░░░░░░░░░░░░░] 38% (0.5/1.2 MB)
+⬇️  Download: [████████░░░░░░░░░░░░] 40% (0.5/1.2 MB)
+⬇️  Download: [████████░░░░░░░░░░░░] 41% (0.5/1.2 MB)
+⬇️  Download: [████████░░░░░░░░░░░░] 42% (0.5/1.2 MB)
+⬇️  Download: [████████░░░░░░░░░░░░] 44% (0.5/1.2 MB)
+⬇️  Download: [█████████░░░░░░░░░░░] 45% (0.5/1.2 MB)
+⬇️  Download: [█████████░░░░░░░░░░░] 46% (0.5/1.2 MB)
+⬇️  Download: [█████████░░░░░░░░░░░] 48% (0.6/1.2 MB)
+⬇️  Download: [█████████░░░░░░░░░░░] 49% (0.6/1.2 MB)
+⬇️  Download: [██████████░░░░░░░░░░] 50% (0.6/1.2 MB)
+⬇️  Download: [██████████░░░░░░░░░░] 52% (0.6/1.2 MB)
+⬇️  Download: [██████████░░░░░░░░░░] 53% (0.6/1.2 MB)
+⬇️  Download: [██████████░░░░░░░░░░] 54% (0.6/1.2 MB)
+⬇️  Download: [███████████░░░░░░░░░] 56% (0.7/1.2 MB)
+⬇️  Download: [███████████░░░░░░░░░] 57% (0.7/1.2 MB)
+⬇️  Download: [███████████░░░░░░░░░] 58% (0.7/1.2 MB)
+⬇️  Download: [████████████░░░░░░░░] 60% (0.7/1.2 MB)
+⬇️  Download: [████████████░░░░░░░░] 61% (0.7/1.2 MB)
+⬇️  Download: [████████████░░░░░░░░] 62% (0.7/1.2 MB)
+⬇️  Download: [████████████░░░░░░░░] 64% (0.7/1.2 MB)
+⬇️  Download: [█████████████░░░░░░░] 65% (0.8/1.2 MB)
+⬇️  Download: [█████████████░░░░░░░] 66% (0.8/1.2 MB)
+⬇️  Download: [█████████████░░░░░░░] 68% (0.8/1.2 MB)
+⬇️  Download: [█████████████░░░░░░░] 69% (0.8/1.2 MB)
+⬇️  Download: [██████████████░░░░░░] 70% (0.8/1.2 MB)
+⬇️  Download: [██████████████░░░░░░] 72% (0.8/1.2 MB)
+⬇️  Download: [██████████████░░░░░░] 73% (0.9/1.2 MB)
+⬇️  Download: [██████████████░░░░░░] 74% (0.9/1.2 MB)
+⬇️  Download: [███████████████░░░░░] 76% (0.9/1.2 MB)
+⬇️  Download: [███████████████░░░░░] 77% (0.9/1.2 MB)
+⬇️  Download: [███████████████░░░░░] 78% (0.9/1.2 MB)
+⬇️  Download: [████████████████░░░░] 80% (0.9/1.2 MB)
+⬇️  Download: [████████████████░░░░] 81% (1.0/1.2 MB)
+⬇️  Download: [████████████████░░░░] 82% (1.0/1.2 MB)
+⬇️  Download: [████████████████░░░░] 84% (1.0/1.2 MB)
+⬇️  Download: [█████████████████░░░] 85% (1.0/1.2 MB)
+⬇️  Download: [█████████████████░░░] 86% (1.0/1.2 MB)
+⬇️  Download: [█████████████████░░░] 88% (1.0/1.2 MB)
+⬇️  Download: [█████████████████░░░] 89% (1.0/1.2 MB)
+⬇️  Download: [██████████████████░░] 90% (1.1/1.2 MB)
+⬇️  Download: [██████████████████░░] 92% (1.1/1.2 MB)
+⬇️  Download: [██████████████████░░] 93% (1.1/1.2 MB)
+⬇️  Download: [██████████████████░░] 94% (1.1/1.2 MB)
+⬇️  Download: [███████████████████░] 96% (1.1/1.2 MB)
+⬇️  Download: [███████████████████░] 97% (1.1/1.2 MB)
+⬇️  Download: [███████████████████░] 98% (1.2/1.2 MB)
+⬇️  Download: [████████████████████] 100% (1.2/1.2 MB)
+✅ Download: IPA downloaded (1.17 MB) (1m42s)
+
+⬇️  Download: ✨ Downloaded while job still running (status: in_progress)
+✨ Build complete! Total time: 1m43s
+
+IPA: C:\Users\sivma\Documents\Codex\2026-05-31\build-macos-apps-plugin-build-macos\outputs\GlassAlarm\ipa_build_workspace\run-20260531-154742\artifacts\GlassAlarm-147c03de.ipa
+Workflow: https://github.com/lirns200/glass-alarm-ios/actions/runs/26713031905
+
+Exit code: 0
+

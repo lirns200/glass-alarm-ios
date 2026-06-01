@@ -1,0 +1,29 @@
+{
+  "timestamp": "2026-05-31T19:22:11.224784",
+  "status": "failed",
+  "exit_code": 1,
+  "project_dir": "C:\\Users\\sivma\\Documents\\Codex\\2026-05-31\\build-macos-apps-plugin-build-macos\\outputs\\GlassAlarm",
+  "builder_path": "C:\\Users\\sivma\\Documents\\Codex\\2026-05-31\\build-macos-apps-plugin-build-macos\\outputs\\GlassAlarm\\builder.exe",
+  "workspace_dir": "C:\\Users\\sivma\\Documents\\Codex\\2026-05-31\\build-macos-apps-plugin-build-macos\\outputs\\GlassAlarm\\ipa_build_workspace",
+  "run_dir": "C:\\Users\\sivma\\Documents\\Codex\\2026-05-31\\build-macos-apps-plugin-build-macos\\outputs\\GlassAlarm\\ipa_build_workspace\\run-20260531-192122",
+  "artifacts_dir": "C:\\Users\\sivma\\Documents\\Codex\\2026-05-31\\build-macos-apps-plugin-build-macos\\outputs\\GlassAlarm\\ipa_build_workspace\\run-20260531-192122\\artifacts",
+  "builder_log": "C:\\Users\\sivma\\Documents\\Codex\\2026-05-31\\build-macos-apps-plugin-build-macos\\outputs\\GlassAlarm\\ipa_build_workspace\\run-20260531-192122\\logs\\builder.log.txt",
+  "diagnostics_log": "C:\\Users\\sivma\\Documents\\Codex\\2026-05-31\\build-macos-apps-plugin-build-macos\\outputs\\GlassAlarm\\ipa_build_workspace\\run-20260531-192122\\logs\\github_diagnostics.log.txt",
+  "errors_log": "C:\\Users\\sivma\\Documents\\Codex\\2026-05-31\\build-macos-apps-plugin-build-macos\\outputs\\GlassAlarm\\ipa_build_workspace\\run-20260531-192122\\logs\\errors_summary.txt",
+  "output_dir": "C:\\Users\\sivma\\Documents\\Codex\\2026-05-31\\build-macos-apps-plugin-build-macos\\outputs\\GlassAlarm\\dist",
+  "latest_ipa": null,
+  "copied_to": null,
+  "run_context": {
+    "run_url": "https://github.com/lirns200/glass-alarm-ios/actions/runs/26717913226",
+    "run_id": "26717913226",
+    "repo": "lirns200/glass-alarm-ios"
+  },
+  "errors": [
+    "❌ Build: Failed (43s)",
+    "Error: workflow failed with conclusion: failure",
+    "Error: build failed: workflow failed with conclusion: failure",
+    "Failed step: 13 - Build IPA",
+    "[FAILURE] Process completed with exit code 65.",
+    "[FAILURE] /Users/runner/work/glass-alarm-ios/glass-alarm-ios/GlassAlarm/Views/ContentView.swift:251:8: error: invalid redeclaration of 'SettingsView'"
+  ]
+}

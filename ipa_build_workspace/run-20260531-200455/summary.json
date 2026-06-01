@@ -1,0 +1,22 @@
+{
+  "timestamp": "2026-05-31T20:06:52.542117",
+  "status": "success",
+  "exit_code": 0,
+  "project_dir": "C:\\Users\\sivma\\Documents\\Codex\\2026-05-31\\build-macos-apps-plugin-build-macos\\outputs\\GlassAlarm",
+  "builder_path": "C:\\Users\\sivma\\Documents\\Codex\\2026-05-31\\build-macos-apps-plugin-build-macos\\outputs\\GlassAlarm\\builder.exe",
+  "workspace_dir": "C:\\Users\\sivma\\Documents\\Codex\\2026-05-31\\build-macos-apps-plugin-build-macos\\outputs\\GlassAlarm\\ipa_build_workspace",
+  "run_dir": "C:\\Users\\sivma\\Documents\\Codex\\2026-05-31\\build-macos-apps-plugin-build-macos\\outputs\\GlassAlarm\\ipa_build_workspace\\run-20260531-200455",
+  "artifacts_dir": "C:\\Users\\sivma\\Documents\\Codex\\2026-05-31\\build-macos-apps-plugin-build-macos\\outputs\\GlassAlarm\\ipa_build_workspace\\run-20260531-200455\\artifacts",
+  "builder_log": "C:\\Users\\sivma\\Documents\\Codex\\2026-05-31\\build-macos-apps-plugin-build-macos\\outputs\\GlassAlarm\\ipa_build_workspace\\run-20260531-200455\\logs\\builder.log.txt",
+  "diagnostics_log": "C:\\Users\\sivma\\Documents\\Codex\\2026-05-31\\build-macos-apps-plugin-build-macos\\outputs\\GlassAlarm\\ipa_build_workspace\\run-20260531-200455\\logs\\github_diagnostics.log.txt",
+  "errors_log": "C:\\Users\\sivma\\Documents\\Codex\\2026-05-31\\build-macos-apps-plugin-build-macos\\outputs\\GlassAlarm\\ipa_build_workspace\\run-20260531-200455\\logs\\errors_summary.txt",
+  "output_dir": "C:\\Users\\sivma\\Documents\\Codex\\2026-05-31\\build-macos-apps-plugin-build-macos\\outputs\\GlassAlarm\\dist",
+  "latest_ipa": "C:\\Users\\sivma\\Documents\\Codex\\2026-05-31\\build-macos-apps-plugin-build-macos\\outputs\\GlassAlarm\\ipa_build_workspace\\run-20260531-200455\\artifacts\\GlassAlarm-0479390b.ipa",
+  "copied_to": "C:\\Users\\sivma\\Documents\\Codex\\2026-05-31\\build-macos-apps-plugin-build-macos\\outputs\\GlassAlarm\\dist\\GlassAlarm-0479390b.ipa",
+  "run_context": {
+    "run_url": "https://github.com/lirns200/glass-alarm-ios/actions/runs/26718927091",
+    "run_id": "26718927091",
+    "repo": "lirns200/glass-alarm-ios"
+  },
+  "errors": []
+}

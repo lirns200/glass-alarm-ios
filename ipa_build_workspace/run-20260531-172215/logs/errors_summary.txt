@@ -1,0 +1,6 @@
+❌ Build: Failed (43s)
+Error: workflow failed with conclusion: failure
+Error: build failed: workflow failed with conclusion: failure
+Failed step: 13 - Build IPA
+[FAILURE] Process completed with exit code 65.
+[FAILURE] /Users/runner/work/glass-alarm-ios/glass-alarm-ios/GlassAlarm/Views/AnimatedClockCard.swift:69:13: error: cannot find 'SecretGameView' in scope
