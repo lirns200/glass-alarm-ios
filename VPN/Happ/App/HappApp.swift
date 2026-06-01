@@ -1,18 +1,17 @@
 import SwiftUI
-import UIKit
 
 @main
 struct HappApp: App {
     var body: some Scene {
         WindowGroup {
             TabView {
-                DashboardView()
+                ContentView()
                     .tabItem {
                         Label("Dashboard", systemImage: "speedometer")
                     }
                 
                 NavigationView {
-                    AlarmEditorView()
+                    SubscriptionView()
                 }
                 .tabItem {
                     Label("Servers", systemImage: "list.bullet")

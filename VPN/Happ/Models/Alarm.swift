@@ -16,6 +16,7 @@ struct VPNConfig: Identifiable, Codable {
     var security: String? // tls, reality, none
     var publicKey: String? // for reality
     var shortId: String? // for reality
+    var flow: String? // xtls-rprx-vision etc.
     var ping: Int?
     var traffic: String?
     var flag: String

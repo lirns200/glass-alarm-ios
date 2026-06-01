@@ -3,7 +3,6 @@ import SwiftUI
 struct SettingsView: View {
     @AppStorage("routing_mode") private var routingMode = "Global"
     @AppStorage("enable_ipv6") private var enableIPv6 = false
-    @State private var isDevMode = false
     
     var body: some View {
         ZStack {
@@ -17,50 +16,27 @@ struct SettingsView: View {
                         Text("Smart (GeoData)").tag("Smart")
                     }
                     .listRowBackground(Color(white: 0.05))
-                    
-                    NavigationLink(destination: Text("Rule Management").foregroundStyle(.white)) {
-                        Text("Custom Rules")
-                    }
-                    .listRowBackground(Color(white: 0.05))
                 }
                 
                 Section(header: Text("Network").foregroundStyle(.gray)) {
                     Toggle("Enable IPv6", isOn: $enableIPv6)
                         .listRowBackground(Color(white: 0.05))
-                    
-                    Picker("Protocol", selection: .constant("Automatic")) {
-                        Text("Automatic").tag("Automatic")
-                        Text("Force UDP").tag("UDP")
-                        Text("TCP only").tag("TCP")
-                    }
-                    .listRowBackground(Color(white: 0.05))
                 }
                 
                 Section(header: Text("About").foregroundStyle(.gray)) {
                     HStack {
                         Text("Version")
                         Spacer()
-                        Text("1.0.0 (Xray 26.3.27)")
-                            .foregroundStyle(.gray)
+                        Text("1.2.0 (STABLE)")
+                            .foregroundStyle(.blue)
+                            .fontWeight(.bold)
                     }
                     .listRowBackground(Color(white: 0.05))
-                    
-                    if isDevMode {
-                        Text("Developer Settings Enabled")
-                            .foregroundStyle(.green)
-                            .listRowBackground(Color(white: 0.05))
-                    }
                 }
             }
             .background(Color.black)
             .scrollContentBackground(.hidden)
         }
         .navigationTitle("Settings")
-        .onLongPressGesture(minimumDuration: 3) {
-            withAnimation {
-                isDevMode = true
-            }
-            UIImpactFeedbackGenerator(style: .heavy).impactOccurred()
-        }
     }
 }
