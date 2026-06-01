@@ -2,9 +2,18 @@ import SwiftUI
 
 struct HomeView: View {
     @Binding var selectedServer: Server
-    @State private var state: VPNState = .disconnected
+    @StateObject private var vpnManager = VPNManager.shared
     @State private var isPulsing = false
     @State private var waveAnimation = false
+    
+    // Преобразование статуса системы в наш UI статус
+    var uiState: VPNState {
+        switch vpnManager.status {
+        case .connected: return .connected
+        case .connecting, .reasserting: return .connecting
+        default: return .disconnected
+        }
+    }
     
     var body: some View {
         ZStack {
@@ -30,16 +39,16 @@ struct HomeView: View {
                 Spacer()
                 
                 ZStack {
-                    if state != .disconnected {
+                    if uiState != .disconnected {
                         Circle()
-                            .stroke(state.color.opacity(0.5), lineWidth: 2)
+                            .stroke(uiState.color.opacity(0.5), lineWidth: 2)
                             .frame(width: 200, height: 200)
                             .scaleEffect(waveAnimation ? 2.0 : 1.0)
                             .opacity(waveAnimation ? 0.0 : 1.0)
                             .animation(.easeOut(duration: 2.0).repeatForever(autoreverses: false), value: waveAnimation)
                         
                         Circle()
-                            .stroke(state.color.opacity(0.3), lineWidth: 2)
+                            .stroke(uiState.color.opacity(0.3), lineWidth: 2)
                             .frame(width: 200, height: 200)
                             .scaleEffect(waveAnimation ? 2.5 : 1.0)
                             .opacity(waveAnimation ? 0.0 : 1.0)
@@ -49,9 +58,9 @@ struct HomeView: View {
                     Button(action: toggleVPN) {
                         ZStack {
                             Circle()
-                                .fill(LinearGradient(colors: [state.color.opacity(0.8), state.color], startPoint: .topLeading, endPoint: .bottomTrailing))
+                                .fill(LinearGradient(colors: [uiState.color.opacity(0.8), uiState.color], startPoint: .topLeading, endPoint: .bottomTrailing))
                                 .frame(width: 180, height: 180)
-                                .shadow(color: state.color.opacity(0.5), radius: state == .disconnected ? 0 : 20, x: 0, y: 10)
+                                .shadow(color: uiState.color.opacity(0.5), radius: uiState == .disconnected ? 0 : 20, x: 0, y: 10)
                                 .scaleEffect(isPulsing ? 0.95 : 1.0)
                             
                             Image(systemName: "power")
@@ -62,10 +71,10 @@ struct HomeView: View {
                     .buttonStyle(PlainButtonStyle())
                 }
                 
-                Text(state.title)
+                Text(uiState.title)
                     .font(.system(size: 22, weight: .medium, design: .rounded))
                     .foregroundColor(.white)
-                    .animation(.easeInOut, value: state)
+                    .animation(.easeInOut, value: uiState)
                 
                 Spacer()
                 
@@ -85,13 +94,12 @@ struct HomeView: View {
             withAnimation(.spring(response: 0.3, dampingFraction: 0.6)) { isPulsing = false }
         }
         
-        if state == .disconnected {
-            withAnimation { state = .connecting }
-            DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) {
-                if state == .connecting { withAnimation { state = .connected } }
-            }
+        if uiState == .disconnected {
+            // Реальный вызов сетевого расширения
+            vpnManager.connect()
         } else {
-            withAnimation { state = .disconnected }
+            // Остановка
+            vpnManager.disconnect()
         }
     }
 }

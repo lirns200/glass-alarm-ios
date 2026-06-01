@@ -1,0 +1,22 @@
+[2026-06-01T20:47:42.705646] STEP: builder ios build
+CMD: C:\Users\sivma\Documents\Codex\2026-05-31\build-macos-apps-plugin-build-macos\outputs\GlassAlarm\VPN\VPN\V2RayXS-master\ios iphone\AI_Dev_Kit\builder.exe ios build -o C:\Users\sivma\Documents\Codex\2026-05-31\build-macos-apps-plugin-build-macos\outputs\GlassAlarm\VPN\VPN\V2RayXS-master\ios iphone\disain\SecureVPN\ipa_build_workspace\run-20260601-204742\artifacts --unsigned
+
+
+🏗️  Builder - Remote iOS Build
+   Build ID: cce7cf65
+
+
+🚀  Trigger: Triggering GitHub Actions build...
+✅ Trigger: Workflow triggered (3s)
+
+⏳  Start: Waiting for workflow to start...
+✅ Start: Workflow started (run #26771836526) (4s)
+
+🔨  Build: Building... (this may take several minutes)
+❌ Build: Failed (50s)
+   Error: workflow failed with conclusion: failure
+   Logs: https://github.com/lirns200/glass-alarm-ios/actions/runs/26771836526
+Error: build failed: workflow failed with conclusion: failure
+
+Exit code: 1
+

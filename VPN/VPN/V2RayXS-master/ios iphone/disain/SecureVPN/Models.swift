@@ -24,7 +24,7 @@ enum VPNState {
     }
 }
 
-// Модель сервера
+// Модель сервера (ноды)
 struct Server: Identifiable, Hashable {
     let id = UUID()
     let country: String
@@ -32,4 +32,22 @@ struct Server: Identifiable, Hashable {
     let flag: String
     let ping: Int
     let isPremium: Bool
+    
+    // Детали для Xray
+    var address: String = "example.com"
+    var port: Int = 443
+    var uuid: String = ""
+}
+
+// Поддерживаемые протоколы из V2RayXS
+enum ProxyProtocol: String, CaseIterable, Identifiable {
+    case vless = "VLESS (XTLS)"
+    case vmess = "VMess"
+    case trojan = "Trojan"
+    case shadowsocks = "Shadowsocks"
+    case wireguard = "Wireguard"
+    case socks = "Socks5"
+    case auto = "Auto"
+    
+    var id: String { self.rawValue }
 }

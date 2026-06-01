@@ -1,0 +1,4 @@
+❌ Build: Failed (50s)
+Error: workflow failed with conclusion: failure
+Error: build failed: workflow failed with conclusion: failure
+Failed step: 14 - Upload IPA artifact
