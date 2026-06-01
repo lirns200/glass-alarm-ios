@@ -1,6 +1,7 @@
 import SwiftUI
+import Foundation
 
-private class BlockBlastIPChecker: ObservableObject {
+class BlockBlastIPChecker: ObservableObject {
     @Published var isYukuVPN: Bool = false
     
     let yukuIPs: Set<String> = [
