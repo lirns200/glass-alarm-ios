@@ -169,8 +169,8 @@ enum AlarmRingtone: String, CaseIterable, Codable, Identifiable {
 
     var title: String {
         switch self {
-        case .pulse: return "Пульс"
-        case .sunrise: return "Рассвет"
+        case .pulse: return "Клик"
+        case .sunrise: return "Чик"
         case .pup: return "Пуп"
         case .classic: return "Классика"
         }

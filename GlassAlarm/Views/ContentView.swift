@@ -4,19 +4,35 @@ import AVFoundation
 // Sound Manager
 class SoundManager {
     static let instance = SoundManager()
-    private var player: AVAudioPlayer?
+    private var players: [String: AVAudioPlayer] = [:]
     
     func playSound(name: String) {
-        // Fallback to haptics if sound file is missing or generic
-        #if os(iOS)
-        let generator = UIImpactFeedbackGenerator(style: .medium)
-        generator.impactOccurred()
-        #endif
+        guard let url = Bundle.main.url(forResource: name, withExtension: "wav") else { return }
         
-        guard let url = Bundle.main.url(forResource: name, withExtension: "wav") else { 
-            print("Sound file \(name).wav not found")
-            return 
+        if let player = players[name] {
+            player.currentTime = 0
+            player.play()
+            
+            // For game sounds, stop after 0.3s to keep it punchy/short
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) {
+                player.stop()
+            }
+        } else {
+            do {
+                let player = try AVAudioPlayer(contentsOf: url)
+                player.prepareToPlay()
+                players[name] = player
+                player.play()
+                
+                DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) {
+                    player.stop()
+                }
+            } catch {
+                print("Error playing sound: \(error.localizedDescription)")
+            }
         }
+    }
+}
         do {
             player = try AVAudioPlayer(contentsOf: url)
             player?.play()
@@ -472,9 +488,9 @@ struct GameSettingsMenuView: View {
                     Toggle(vm.t("sound"), isOn: $vm.isSoundEnabled)
                     if vm.isSoundEnabled {
                         Picker("Звук игры", selection: $vm.selectedGameSound) {
-                            Text("Пуп").tag("pup")
-                            Text("Пульс").tag("pulse")
-                            Text("Рассвет").tag("sunrise")
+                            Text("Пуп (Короткий)").tag("pup")
+                            Text("Клик").tag("pulse")
+                            Text("Чик").tag("sunrise")
                         }
                         .pickerStyle(.menu)
                     }
