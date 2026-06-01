@@ -63,17 +63,46 @@ struct AlarmEditorView: View {
     
     private func importFromClipboard() {
         #if os(iOS)
-        if let string = UIPasteboard.general.string {
-            if let config = SubscriptionManager.shared.parse(link: string) {
-                store.add(config: config)
+        if let string = UIPasteboard.general.string?.trimmingCharacters(in: .whitespacesAndNewlines) {
+            if string.starts(with: "http") {
+                // Subscription URL
+                fetchSubscription(url: string)
+            } else {
+                // Direct link or Base64 content
+                let configs = SubscriptionManager.shared.decodeSubscription(string)
+                if configs.isEmpty, let single = SubscriptionManager.shared.parseSingle(link: string) {
+                    store.add(config: single)
+                } else {
+                    for config in configs {
+                        store.add(config: config)
+                    }
+                }
             }
         }
         #else
-        // Mock for simulator/preview
-        let mockVLESS = "vless://uuid@1.2.3.4:443?security=reality&sni=google.com#TestServer"
-        if let config = SubscriptionManager.shared.parse(link: mockVLESS) {
-            store.add(config: config)
-        }
+        // Mock for testing
+        let mockSub = "https://yuku-vpn.shop/sub/TWFrc3V0MiwxNzgwMTcwNTQ4NQIxSdY2-d"
+        fetchSubscription(url: mockSub)
         #endif
+    }
+    
+    private func fetchSubscription(url: String) {
+        guard let fetchURL = URL(string: url) else { return }
+        
+        Task {
+            do {
+                let (data, _) = try await URLSession.shared.data(from: fetchURL)
+                if let content = String(data: data, encoding: .utf8) {
+                    let configs = SubscriptionManager.shared.decodeSubscription(content)
+                    await MainActor.run {
+                        for config in configs {
+                            store.add(config: config)
+                        }
+                    }
+                }
+            } catch {
+                print("Fetch error: \(error)")
+            }
+        }
     }
 }
