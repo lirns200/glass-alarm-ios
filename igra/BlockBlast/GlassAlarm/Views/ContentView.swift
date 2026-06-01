@@ -338,7 +338,8 @@ struct ShapePreview: View {
     let scale: CGFloat
     var body: some View {
         ZStack {
-            ForEach(shape.blocks, id: \.self) { block in
+            ForEach(0..<shape.blocks.count, id: \.self) { i in
+                let block = shape.blocks[i]
                 RoundedRectangle(cornerRadius: 4)
                     .fill(shape.color)
                     .frame(width: 34 * scale, height: 34 * scale)
