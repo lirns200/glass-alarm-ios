@@ -1,9 +1,0 @@
-Sideloadly version 0.60, Windows 10.0, amd64
-App successfully prepared for auto-refresh
-Using IPA file: C:/Users/sivma/Documents/Codex/2026-05-31/build-macos-apps-plugin-build-macos/outputs/GlassAlarm/igra/BlockBlast/dist/GlassAlarm-7513ee7c.ipa: f41545ec2d2dfee20cee8e4bf14e57c2
-Will use Local Anisette (iTunes Anisette)
-Checking iOS version...
-iOS version 26.2, will mangle bundleID
-Prefetching Anisette...
-Sideloadly will be shown in your Apple ID as PC running Windows 10.0(0,0) with serial number DESKTOP-NT9PRE9
-Install failed: Guru Meditation b4822c@1441:4994f6 "There is no item named 'Payload/GlassAlarm.app/Info.plist' in the archive"

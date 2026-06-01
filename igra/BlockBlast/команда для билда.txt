@@ -1,1 +1,0 @@
-C:\Users\sivma\Documents\Codex\2026-05-31\build-macos-apps-plugin-build-macos\outputs\GlassAlarm\VPN>.\builder.exe ios build -o VPN\dist --unsigned

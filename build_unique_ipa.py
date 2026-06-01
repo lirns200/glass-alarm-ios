@@ -6,8 +6,8 @@ import re
 from pathlib import Path
 
 def main():
-    # 1. Modify the resource file in the VPN project
-    resource_path = Path("VPN/Happ/Resources/sunrise.wav")
+    # 1. Modify the resource file
+    resource_path = Path("GlassAlarm/Resources/crystal.wav")
     if not resource_path.exists():
         print(f"Error: {resource_path} not found.")
         return 1
@@ -19,14 +19,14 @@ def main():
         shutil.copy2(resource_path, backup_path)
         print(f"Created backup at {backup_path}")
 
-    # Add random padding (between 500KB and 1MB to ensure size change)
-    padding_size = random.randint(512000, 1048576)
+    # Add random padding (between 10KB and 100KB)
+    padding_size = random.randint(10240, 102400)
     print(f"Adding {padding_size} bytes of padding to {resource_path}")
     with open(resource_path, "ab") as f:
         f.write(os.urandom(padding_size))
 
-    # 2. Modify the Swift code in the VPN project
-    swift_path = Path("VPN/Happ/App/HappApp.swift")
+    # 2. Modify the Swift code
+    swift_path = Path("GlassAlarm/App/GlassAlarmApp.swift")
     if swift_path.exists():
         print(f"Updating unique build ID in {swift_path}")
         content = swift_path.read_text(encoding="utf-8")
@@ -39,8 +39,8 @@ def main():
         else:
             # Insert it if it doesn't exist
             new_content = content.replace(
-                "struct HappApp: App {",
-                f'struct HappApp: App {{\n    private static let buildUniqueId = "{unique_id}"'
+                "struct GlassAlarmApp: App {",
+                f'struct GlassAlarmApp: App {{\n    private static let buildUniqueId = "{unique_id}"'
             )
         swift_path.write_text(new_content, encoding="utf-8")
     else:
