@@ -374,17 +374,17 @@ struct ContentView: View {
                     Spacer()
                     
                     if vm.isYukuVPNActive {
-                        HStack(spacing: 6) {
+                        HStack(spacing: 8) {
                             Text("🇵🇱")
                                 .font(.system(size: 14))
-                            Text("yuku VPN")
-                                .font(.system(size: 10, weight: .bold, design: .rounded))
-                                .foregroundStyle(.white.opacity(0.8))
+                            Text("YUKU VPN")
+                                .font(.system(size: 10, weight: .black, design: .rounded))
+                                .tracking(1)
                         }
-                        .padding(.horizontal, 10)
-                        .padding(.vertical, 6)
-                        .background(Color.blue.opacity(0.2), in: Capsule())
-                        .overlay(Capsule().stroke(Color.blue.opacity(0.3), lineWidth: 0.5))
+                        .foregroundStyle(vm.isDarkMode ? .white : .black)
+                        .padding(.horizontal, 16)
+                        .padding(.vertical, 12)
+                        .background(vm.isDarkMode ? Color.white.opacity(0.1) : Color.black.opacity(0.05), in: Capsule())
                     }
                     
                     Button {
