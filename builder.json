@@ -1,13 +1,13 @@
 {
-  "project": "Happ",
+  "project": "GlassAlarm",
   "platform": "ios",
   "github": {
     "owner": "lirns200",
     "repo": "glass-alarm-ios"
   },
   "ios": {
-    "path": "VPN",
-    "scheme": "Happ"
+    "path": "igra/BlockBlast",
+    "scheme": "GlassAlarm"
   },
   "flutter": {
     "watch": {}
