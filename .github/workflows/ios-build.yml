@@ -253,7 +253,7 @@ jobs:
               BUILD_CMD="$BUILD_CMD -archivePath ../build/App.xcarchive clean archive"
             else
               # For unsigned builds, use faster 'build' action
-              BUILD_CMD="$BUILD_CMD CODE_SIGNING_ALLOWED=NO clean build"
+              BUILD_CMD="$BUILD_CMD CODE_SIGNING_ALLOWED=NO CODE_SIGNING_REQUIRED=NO CODE_SIGN_IDENTITY=\"\" clean build"
             fi
 
             echo "Running: $BUILD_CMD"
@@ -296,7 +296,7 @@ jobs:
               APP_PATH=$(find "${GITHUB_WORKSPACE}/build/ios/iphoneos" -name "*.app" -type d | head -1)
             else
               # Native and React Native/Expo use DerivedData
-              APP_PATH=$(find "$DERIVED_DATA_PATH/Build/Products/${CONFIGURATION}-iphoneos" -name "*.app" -type d | head -1)
+              APP_PATH=$(find "$DERIVED_DATA_PATH/Build/Products/${CONFIGURATION}-iphoneos" -maxdepth 1 -name "*.app" -type d | head -1)
             fi
 
             if [ -z "$APP_PATH" ]; then
