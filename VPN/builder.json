@@ -1,12 +1,12 @@
 {
-  "project": "VPN",
+  "project": "Happ",
   "platform": "ios",
   "github": {
     "owner": "lirns200",
     "repo": "glass-alarm-ios"
   },
   "ios": {
-    "scheme": "VPN"
+    "scheme": "Happ"
   },
   "flutter": {
     "watch": {}
