@@ -1,3 +1,0 @@
-❌ Start: Failed (2m4s)
-Error: timed out waiting for workflow to start
-Error: workflow failed to start: timed out waiting for workflow to start

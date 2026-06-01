@@ -1,5 +1,0 @@
-❌ Build: Failed (1m6s)
-Error: workflow failed with conclusion: failure
-Error: build failed: workflow failed with conclusion: failure
-Failed step: 13 - Build IPA
-[FAILURE] Process completed with exit code 65.

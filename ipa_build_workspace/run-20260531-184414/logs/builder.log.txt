@@ -1,9 +1,0 @@
-[2026-05-31T18:44:14.824635] STEP: builder auth github
-CMD: C:\Users\sivma\Documents\Codex\2026-05-31\build-macos-apps-plugin-build-macos\outputs\GlassAlarm\builder.exe auth github
-
-Authenticating with GitHub...
-
-  Open: https://github.com/login/device
-  Enter code: 78C0-A90F
-
-Waiting for authorization...
