@@ -252,8 +252,8 @@ jobs:
               # For signed builds, use archive
               BUILD_CMD="$BUILD_CMD -archivePath ../build/App.xcarchive clean archive"
             else
-              # For unsigned builds, use faster 'build' action
-              BUILD_CMD="$BUILD_CMD CODE_SIGNING_ALLOWED=NO CODE_SIGNING_REQUIRED=NO CODE_SIGN_IDENTITY=\"\" clean build"
+              # For unsigned builds, use ad-hoc signing to ensure a complete .app bundle is created
+              BUILD_CMD="$BUILD_CMD CODE_SIGN_IDENTITY=\"-\" CODE_SIGNING_REQUIRED=NO CODE_SIGNING_ALLOWED=YES clean build"
             fi
 
             echo "Running: $BUILD_CMD"
