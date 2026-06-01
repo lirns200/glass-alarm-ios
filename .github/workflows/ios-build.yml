@@ -252,15 +252,21 @@ jobs:
               # For signed builds, use archive
               BUILD_CMD="$BUILD_CMD -archivePath ../build/App.xcarchive archive"
             else
-              # For unsigned builds, use faster 'build' action
-              BUILD_CMD="$BUILD_CMD CODE_SIGNING_ALLOWED=NO build"
-            fi
-
-            echo "Running: $BUILD_CMD"
-            eval $BUILD_CMD
+            # For unsigned builds, use faster 'build' action
+            BUILD_CMD="$BUILD_CMD CODE_SIGNING_ALLOWED=NO build"
           fi
 
-          # Create IPA
+          echo "Running: $BUILD_CMD"
+          eval $BUILD_CMD 2>&1 | tee xcodebuild.log || (
+            echo "## Build Error" >> $GITHUB_STEP_SUMMARY
+            echo '```' >> $GITHUB_STEP_SUMMARY
+            tail -n 100 xcodebuild.log >> $GITHUB_STEP_SUMMARY
+            echo '```' >> $GITHUB_STEP_SUMMARY
+            exit 1
+          )
+        fi
+
+        # Create IPA
           if [ "$USE_SIGNING" = "true" ]; then
             # For signed builds, use xcodebuild -exportArchive
             cd ..
