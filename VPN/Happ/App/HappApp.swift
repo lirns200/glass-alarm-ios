@@ -2,7 +2,7 @@ import SwiftUI
 
 @main
 struct HappApp: App {
-    private static let buildUniqueId = "clean_rebuild_29d3d50_1936"
+    private static let buildUniqueId = "force_full_rebuild_$(date)"
     var body: some Scene {
         WindowGroup {
             TabView {
