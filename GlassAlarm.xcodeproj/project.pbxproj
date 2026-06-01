@@ -19,7 +19,6 @@
 		11111111111111111111110A /* AnimatedClockCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11111111111111111111100A /* AnimatedClockCard.swift */; };
 		11111111111111111111110B /* GlassBackground.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11111111111111111111100B /* GlassBackground.swift */; };
 		11111111111111111111110C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 11111111111111111111100C /* Assets.xcassets */; };
-		11111111111111111111110D /* crystal.wav in Resources */ = {isa = PBXBuildFile; fileRef = 11111111111111111111100D /* crystal.wav */; };
 		11111111111111111111110E /* pulse.wav in Resources */ = {isa = PBXBuildFile; fileRef = 11111111111111111111100E /* pulse.wav */; };
 		11111111111111111111110F /* sunrise.wav in Resources */ = {isa = PBXBuildFile; fileRef = 11111111111111111111100F /* sunrise.wav */; };
 		111111111111111111111110 /* pup.wav in Resources */ = {isa = PBXBuildFile; fileRef = 111111111111111111111010 /* pup.wav */; };
@@ -40,7 +39,6 @@
 		11111111111111111111100A /* AnimatedClockCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimatedClockCard.swift; sourceTree = "<group>"; };
 		11111111111111111111100B /* GlassBackground.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlassBackground.swift; sourceTree = "<group>"; };
 		11111111111111111111100C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		11111111111111111111100D /* crystal.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = crystal.wav; sourceTree = "<group>"; };
 		11111111111111111111100E /* pulse.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = pulse.wav; sourceTree = "<group>"; };
 		11111111111111111111100F /* sunrise.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = sunrise.wav; sourceTree = "<group>"; };
 		111111111111111111111010 /* pup.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = pup.wav; sourceTree = "<group>"; };
@@ -216,7 +214,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				11111111111111111111110C /* Assets.xcassets in Resources */,
-				11111111111111111111110D /* crystal.wav in Resources */,
 				11111111111111111111110E /* pulse.wav in Resources */,
 				11111111111111111111110F /* sunrise.wav in Resources */,
 				111111111111111111111110 /* pup.wav in Resources */,
