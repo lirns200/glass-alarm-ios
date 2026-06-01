@@ -1,0 +1,29 @@
+{
+  "timestamp": "2026-06-01T12:32:18.183163",
+  "status": "failed",
+  "exit_code": 1,
+  "project_dir": "C:\\Users\\sivma\\Documents\\Codex\\2026-05-31\\build-macos-apps-plugin-build-macos\\outputs\\GlassAlarm\\VPN",
+  "builder_path": "C:\\Users\\sivma\\Documents\\Codex\\2026-05-31\\build-macos-apps-plugin-build-macos\\outputs\\GlassAlarm\\builder.exe",
+  "workspace_dir": "C:\\Users\\sivma\\Documents\\Codex\\2026-05-31\\build-macos-apps-plugin-build-macos\\outputs\\GlassAlarm\\VPN\\ipa_build_workspace",
+  "run_dir": "C:\\Users\\sivma\\Documents\\Codex\\2026-05-31\\build-macos-apps-plugin-build-macos\\outputs\\GlassAlarm\\VPN\\ipa_build_workspace\\run-20260601-123139",
+  "artifacts_dir": "C:\\Users\\sivma\\Documents\\Codex\\2026-05-31\\build-macos-apps-plugin-build-macos\\outputs\\GlassAlarm\\VPN\\ipa_build_workspace\\run-20260601-123139\\artifacts",
+  "builder_log": "C:\\Users\\sivma\\Documents\\Codex\\2026-05-31\\build-macos-apps-plugin-build-macos\\outputs\\GlassAlarm\\VPN\\ipa_build_workspace\\run-20260601-123139\\logs\\builder.log.txt",
+  "diagnostics_log": "C:\\Users\\sivma\\Documents\\Codex\\2026-05-31\\build-macos-apps-plugin-build-macos\\outputs\\GlassAlarm\\VPN\\ipa_build_workspace\\run-20260601-123139\\logs\\github_diagnostics.log.txt",
+  "errors_log": "C:\\Users\\sivma\\Documents\\Codex\\2026-05-31\\build-macos-apps-plugin-build-macos\\outputs\\GlassAlarm\\VPN\\ipa_build_workspace\\run-20260601-123139\\logs\\errors_summary.txt",
+  "output_dir": "C:\\Users\\sivma\\Documents\\Codex\\2026-05-31\\build-macos-apps-plugin-build-macos\\outputs\\GlassAlarm\\VPN\\dist",
+  "latest_ipa": null,
+  "copied_to": null,
+  "run_context": {
+    "run_url": "https://github.com/lirns200/glass-alarm-ios/actions/runs/26746795563",
+    "run_id": "26746795563",
+    "repo": "lirns200/glass-alarm-ios"
+  },
+  "errors": [
+    "❌ Build: Failed (33s)",
+    "Error: workflow failed with conclusion: failure",
+    "Error: build failed: workflow failed with conclusion: failure",
+    "Failed step: 13 - Build IPA",
+    "[FAILURE] Process completed with exit code 65.",
+    "[FAILURE] xcodebuild: error: The project named \"GlassAlarm\" does not contain a scheme named \"Happ\". The \"-list\" option can be used to find the names of the schemes in the project."
+  ]
+}
