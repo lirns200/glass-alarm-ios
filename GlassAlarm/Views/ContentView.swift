@@ -150,7 +150,7 @@ class GameViewModel: ObservableObject {
     
     func place(shape: GameShape, at row: Int, col: Int, in rect: CGRect) {
         guard canPlace(shape: shape, at: row, col: col) else { return }
-        if isSoundEnabled { SoundManager.instance.playSound(name: vm.selectedGameSound) }
+        if isSoundEnabled { SoundManager.instance.playSound(name: selectedGameSound) }
         if isVibrationEnabled { triggerPlacementFeedback(style: .light) }
         for block in shape.blocks {
             let r = row + Int(block.y), c = col + Int(block.x)
@@ -204,7 +204,7 @@ class GameViewModel: ObservableObject {
                 try? await Task.sleep(nanoseconds: 20_000_000)
                 grid[coord.0][coord.1] = nil
                 if isVibrationEnabled { triggerPlacementFeedback(style: .soft) }
-                if isSoundEnabled { SoundManager.instance.playSound(name: vm.selectedGameSound) }
+                if isSoundEnabled { SoundManager.instance.playSound(name: selectedGameSound) }
             }
         } else { combo = 0 }
     }
