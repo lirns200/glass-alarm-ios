@@ -231,18 +231,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				111111111111111111111101 /* GlassAlarmApp.swift in Sources */,
-				111111111111111111111102 /* Alarm.swift in Sources */,
-				111111111111111111111103 /* AppTheme.swift in Sources */,
-				111111111111111111111104 /* AlarmStore.swift in Sources */,
-				111111111111111111111105 /* NotificationScheduler.swift in Sources */,
-				111111111111111111111106 /* DateFormatters.swift in Sources */,
 				111111111111111111111107 /* ContentView.swift in Sources */,
-				111111111111111111111108 /* AlarmRow.swift in Sources */,
-				111111111111111111111109 /* AlarmEditorView.swift in Sources */,
-				11111111111111111111110A /* AnimatedClockCard.swift in Sources */,
-				11111111111111111111110B /* GlassBackground.swift in Sources */,
-				111111111111111111111111 /* HapticsService.swift in Sources */,
-				111111111111111111111112 /* SettingsView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
