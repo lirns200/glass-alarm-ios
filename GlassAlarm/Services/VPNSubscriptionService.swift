@@ -133,32 +133,6 @@ class VPNSubscriptionService {
         
         return config
     }
-
-        }
-        
-        return configs
-    }
-    
-    func parseConfigLink(_ link: String) -> VPNConfig? {
-        if link.hasPrefix("vless://") {
-            return parseVlessLink(link)
-        } else if link.hasPrefix("vmess://") {
-            return parseVmessLink(link)
-        }
-        // Add more protocol parsers as needed
-        return nil
-    }
-    
-    private func parseVlessLink(_ link: String) -> VPNConfig? {
-        // vless://uuid@host:port?query#name
-        guard let url = URL(string: link),
-              let host = url.host,
-              let port = url.port else { return nil }
-        
-        let name = url.fragment?.removingPercentEncoding ?? "VLESS Server"
-        let flag = self.detectFlag(from: name)
-        return VPNConfig(name: name, type: "VLESS", address: host, port: port, flag: flag)
-    }
     
     private func detectFlag(from name: String) -> String {
         // First, try to find an existing emoji in the name
@@ -178,20 +152,6 @@ class VPNSubscriptionService {
         if nameLower.contains("великобритания") || nameLower.contains("uk") || nameLower.contains("britain") { return "🇬🇧" }
         
         return "🌐"
-    }
-    
-    private func parseVmessLink(_ link: String) -> VPNConfig? {
-        // vmess://base64(json)
-        let base64 = String(link.dropFirst(8))
-        guard let data = Data(base64Encoded: base64, options: .ignoreUnknownCharacters),
-              let json = try? JSONSerialization.jsonObject(with: data) as? [String: Any] else { return nil }
-        
-        let name = json["ps"] as? String ?? "VMess Server"
-        let address = json["add"] as? String ?? ""
-        let port = Int(json["port"] as? String ?? "443") ?? 443
-        let flag = self.detectFlag(from: name)
-        
-        return VPNConfig(name: name, type: "VMess", address: address, port: port, flag: flag)
     }
     
     private func decodeBase64(_ base64: String) -> String? {

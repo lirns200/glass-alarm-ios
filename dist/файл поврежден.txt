@@ -1,0 +1,9 @@
+Sideloadly version 0.60, Windows 10.0, amd64
+App successfully prepared for auto-refresh
+Using IPA file: C:\Users\sivma\AppData\Local\cache\sideloadly\a233bfd6fb5df5a24b8f8c24c3f914d2.ipa: a233bfd6fb5df5a24b8f8c24c3f914d2
+Will use Local Anisette (iTunes Anisette)
+Checking iOS version...
+iOS version 26.2, will mangle bundleID
+Prefetching Anisette...
+Sideloadly will be shown in your Apple ID as PC running Windows 10.0(0,0) with serial number DESKTOP-NT9PRE9
+Install failed: Guru Meditation b4822c@1441:4994f6 "There is no item named 'Payload/Happ.app/Info.plist' in the archive"

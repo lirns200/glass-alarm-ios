@@ -1,0 +1,28 @@
+{
+  "timestamp": "2026-06-01T22:24:41.567624",
+  "status": "failed",
+  "exit_code": 1,
+  "project_dir": "C:\\Users\\sivma\\Documents\\Codex\\2026-05-31\\build-macos-apps-plugin-build-macos\\outputs\\GlassAlarm\\igra\\BlockBlast",
+  "builder_path": "C:\\Users\\sivma\\Documents\\Codex\\2026-05-31\\build-macos-apps-plugin-build-macos\\outputs\\GlassAlarm\\igra\\BlockBlast\\builder.exe",
+  "workspace_dir": "C:\\Users\\sivma\\Documents\\Codex\\2026-05-31\\build-macos-apps-plugin-build-macos\\outputs\\GlassAlarm\\igra\\BlockBlast\\ipa_build_workspace",
+  "run_dir": "C:\\Users\\sivma\\Documents\\Codex\\2026-05-31\\build-macos-apps-plugin-build-macos\\outputs\\GlassAlarm\\igra\\BlockBlast\\ipa_build_workspace\\run-20260601-222354",
+  "artifacts_dir": "C:\\Users\\sivma\\Documents\\Codex\\2026-05-31\\build-macos-apps-plugin-build-macos\\outputs\\GlassAlarm\\igra\\BlockBlast\\ipa_build_workspace\\run-20260601-222354\\artifacts",
+  "builder_log": "C:\\Users\\sivma\\Documents\\Codex\\2026-05-31\\build-macos-apps-plugin-build-macos\\outputs\\GlassAlarm\\igra\\BlockBlast\\ipa_build_workspace\\run-20260601-222354\\logs\\builder.log.txt",
+  "diagnostics_log": "C:\\Users\\sivma\\Documents\\Codex\\2026-05-31\\build-macos-apps-plugin-build-macos\\outputs\\GlassAlarm\\igra\\BlockBlast\\ipa_build_workspace\\run-20260601-222354\\logs\\github_diagnostics.log.txt",
+  "errors_log": "C:\\Users\\sivma\\Documents\\Codex\\2026-05-31\\build-macos-apps-plugin-build-macos\\outputs\\GlassAlarm\\igra\\BlockBlast\\ipa_build_workspace\\run-20260601-222354\\logs\\errors_summary.txt",
+  "output_dir": "C:\\Users\\sivma\\Documents\\Codex\\2026-05-31\\build-macos-apps-plugin-build-macos\\outputs\\GlassAlarm\\igra\\BlockBlast\\dist",
+  "latest_ipa": null,
+  "copied_to": null,
+  "run_context": {
+    "run_url": "https://github.com/lirns200/glass-alarm-ios/actions/runs/26776785148",
+    "run_id": "26776785148",
+    "repo": "lirns200/glass-alarm-ios"
+  },
+  "errors": [
+    "❌ Build: Failed (43s)",
+    "Error: workflow failed with conclusion: failure",
+    "Error: build failed: workflow failed with conclusion: failure",
+    "Failed step: 12 - Build IPA",
+    "[FAILURE] Process completed with exit code 1."
+  ]
+}

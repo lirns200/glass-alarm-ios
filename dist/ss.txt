@@ -1,0 +1,1322 @@
+Jun  1 22:29:42 iPhone-sivma SpringBoard(UIKitCore)[35] <Notice>: performBacklightSceneUpdate isOn = 0 wasOn = 1
+Jun  1 22:29:42 iPhone-sivma SpringBoard(UIKitCore)[35] <Notice>: Non-animated transitionTraitsInUpdate about to call _componentDidUpdateTraitOverrides on <SBWindowScene: 0xcf1184f00; scene: "<FBSScene: 0xcf1370d20; identifier: com.apple.springboard>"; persistentIdentifier: com.apple.springboard>
+Jun  1 22:29:42 iPhone-sivma SpringBoard(UIKitCore)[35] <Notice>: Updated traitOverrides: <UITraitCollection: 0xced565b80; >
+Jun  1 22:29:42 iPhone-sivma SpringBoard(FrontBoard)[35] <Notice>: [xpcservice<com.apple.Posters.UnityPosterApp.Unity2025Poster>:281] Workspace state did change: FV-None[100] --> FV-Interactive[100] (assertion acquired).
+Jun  1 22:29:42 iPhone-sivma SpringBoard(UIKitCore)[35] <Notice>: Not push traits update to screen for new style 1, <SBWindowScene: 0xcf1184f00> (com.apple.springboard)
+Jun  1 22:29:42 iPhone-sivma SpringBoard(PaperBoardUI)[35] <Notice>: [lock] Poster last extant update changed 7891
+Jun  1 22:29:42 iPhone-sivma SpringBoard(PaperBoardUI)[35] <Notice>: [home] Poster last extant update changed 7891
+Jun  1 22:29:42 iPhone-sivma SpringBoard(FrontBoard)[35] <Notice>: [xpcservice<com.apple.Posters.UnityPosterApp.Unity2025Poster>:281] Setting process task state to: Running
+Jun  1 22:29:42 iPhone-sivma runningboardd(RunningBoard)[34] <Notice>: [xpcservice<com.apple.Posters.UnityPosterApp.Unity2025Poster([osservice<com.apple.SpringBoard>:35])>{vt hash: 159390857}[uuid:00000000-0000-0000-0000-000000000001]{definition:com.apple.Posters.UnityPosterApp.Unity2025Poster[extension][client]}:281] Set darwin role to: UserInteractiveNonFocal
+Jun  1 22:29:42 iPhone-sivma runningboardd(RunningBoardServices)[34] <Notice>: RBSCPUAccessGrant with role: 4
+Jun  1 22:29:42 iPhone-sivma SpringBoard(SpringBoard)[35] <Notice>: Backlight changed: newBacklightFactor=0.05, disable SS=NO
+Jun  1 22:29:42 iPhone-sivma SpringBoard(SpringBoard)[35] <Notice>: Setting SS disabled: NO, reason: Backlight, current assertions: (null)
+Jun  1 22:29:42 iPhone-sivma SpringBoard(SpringBoard)[35] <Notice>: No SS disable assertion found, reason: Backlight
+Jun  1 22:29:42 iPhone-sivma SpringBoard(FrontBoard)[35] <Notice>: Prevent idle sleep reasons: {(
+    backlight
+)}
+Jun  1 22:29:42 iPhone-sivma SpringBoard(SpringBoard)[35] <Notice>: attention event: looking for quickWarn:22 warn:20 total:30 expecting:warn -> quickWarn
+Jun  1 22:29:42 iPhone-sivma SpringBoard(PaperBoardUI)[35] <Notice>: [lock] Poster Extant update COULD change 7891 (7891)
+Jun  1 22:29:42 iPhone-sivma SpringBoard(PaperBoardUI)[35] <Notice>: [lock] Poster Extant update DID change
+Jun  1 22:29:42 iPhone-sivma SpringBoard(PaperBoardUI)[35] <Notice>: [lock] invalidateSnapshotPreconditions for reason: Poster Extant update DID change
+Jun  1 22:29:42 iPhone-sivma SpringBoard(PaperBoardUI)[35] <Notice>: [lock] Snapshot scheduled for Mon Jun  1 22:29:42 2026 for reason: snapshot preconditions invalidated for reason 'Poster Extant update DID change'; so scheduling a new snapshot
+Jun  1 22:29:42 iPhone-sivma SpringBoard(PaperBoardUI)[35] <Notice>: [home] Poster Extant update COULD change 7891 (7891)
+Jun  1 22:29:42 iPhone-sivma SpringBoard(PaperBoardUI)[35] <Notice>: [home] Poster Extant update DID change
+Jun  1 22:29:42 iPhone-sivma audiomxd(RunningBoardServices)[111] <Notice>: Received state update for 281 (xpcservice<com.apple.Posters.UnityPosterApp.Unity2025Poster([osservice<com.apple.SpringBoard>:35])>{vt hash: 159390857}[uuid:00000000-0000-0000-0000-000000000001]{definition:com.apple.Posters.UnityPosterApp.Unity2025Poster[extension][client]}, running-active-Visible
+Jun  1 22:29:42 iPhone-sivma runningboardd(RunningBoard)[34] <Notice>: Inheritance changeset: <RBSInheritanceChangeSet| gained:{(
+    <RBSInheritance| environment:(none) name:com.apple.frontboard.visibility origID:34-35-15000 0>
+)} lost:{(
+)}>
+Jun  1 22:29:42 iPhone-sivma runningboardd(RunningBoard)[34] <Notice>: Calculated state for xpcservice<com.apple.Posters.UnityPosterApp.Unity2025Poster([osservice<com.apple.SpringBoard>:35])>{vt hash: 159390857}[uuid:00000000-0000-0000-0000-000000000001]{definition:com.apple.Posters.UnityPosterApp.Unity2025Poster[extension][client]}: running-active (role: UserInteractiveNonFocal) (endowments: <private>)
+Jun  1 22:29:42 iPhone-sivma runningboardd(RunningBoard)[34] <Notice>: Acquiring assertion targeting [xpcservice<com.apple.Posters.UnityPosterApp.Unity2025Poster([osservice<com.apple.SpringBoard>:35])>{vt hash: 159390857}[uuid:00000000-0000-0000-0000-000000000001]{definition:com.apple.Posters.UnityPosterApp.Unity2025Poster[extension][client]}:281] from originator [osservice<com.apple.runningboardd>:34] with description <RBSAssertionDescriptor| "Will expire assertions soon" ID:34-34-15002 target:281 attributes:[
+	<RBSCPUAccessGrant| role:NonUserInteractive>,
+	<RBSDurationAttribute| invalidationDuration:2.65 warningDuration:0.00 startPolicy:Delayed-Fixed endPolicy:Invalidate>,
+	<RBSRunningReasonAttribute| runningReason:10101>
+	]>
+Jun  1 22:29:42 iPhone-sivma Unity2025Poster(UIKitCore)[281] <Notice>: RX keyboardChanged (isLocal:N source:(unspecified))
+Jun  1 22:29:42 iPhone-sivma Unity2025Poster(UIKitCore)[281] <Notice>: handleKeyboardChange: set currentKeyboard:N (wasKeyboard:N)
+Jun  1 22:29:42 iPhone-sivma runningboardd(RunningBoard)[34] <Notice>: Assertion 34-34-15002 (target:[xpcservice<com.apple.Posters.UnityPosterApp.Unity2025Poster([osservice<com.apple.SpringBoard>:35])>{vt hash: 159390857}[uuid:00000000-0000-0000-0000-000000000001]{definition:com.apple.Posters.UnityPosterApp.Unity2025Poster[extension][client]}:281]) will be created as inactive as start-time-defining assertions exist
+Jun  1 22:29:42 iPhone-sivma runningboardd(RunningBoard)[34] <Notice>: Invalidating assertion 34-35-14990 (target:[xpcservice<com.apple.Posters.UnityPosterApp.Unity2025Poster([osservice<com.apple.SpringBoard>:35])>{vt hash: 159390857}[uuid:00000000-0000-0000-0000-000000000001]{definition:com.apple.Posters.UnityPosterApp.Unity2025Poster[extension][client]}:281]) from originator [osservice<com.apple.SpringBoard>:35]
+Jun  1 22:29:42 iPhone-sivma runningboardd(RunningBoard)[34] <Notice>: Calculated state for xpcservice<com.apple.Posters.UnityPosterApp.Unity2025Poster([osservice<com.apple.SpringBoard>:35])>{vt hash: 159390857}[uuid:00000000-0000-0000-0000-000000000001]{definition:com.apple.Posters.UnityPosterApp.Unity2025Poster[extension][client]}: running-active (role: UserInteractiveNonFocal) (endowments: <private>)
+Jun  1 22:29:42 iPhone-sivma runningboardd(RunningBoard)[34] <Notice>: Invalidating assertion 34-35-15001 (target:[xpcservice<com.apple.Posters.UnityPosterApp.Unity2025Poster([osservice<com.apple.SpringBoard>:35])>{vt hash: 159390857}[uuid:00000000-0000-0000-0000-000000000001]{definition:com.apple.Posters.UnityPosterApp.Unity2025Poster[extension][client]}:281]) from originator [osservice<com.apple.SpringBoard>:35]
+Jun  1 22:29:42 iPhone-sivma Unity2025Poster(RunningBoardServices)[281] <Notice>: Hit the server for a process handle 9c530600000119 that resolved to: [xpcservice<com.apple.Posters.UnityPosterApp.Unity2025Poster([osservice<com.apple.SpringBoard>:35])>{vt hash: 159390857}[uuid:00000000-0000-0000-0000-000000000001]{definition:com.apple.Posters.UnityPosterApp.Unity2025Poster[extension][client]}:281]
+Jun  1 22:29:42 iPhone-sivma Unity2025Poster(RunningBoardServices)[281] <Notice>: Received state update for 281 (xpcservice<com.apple.Posters.UnityPosterApp.Unity2025Poster([osservice<com.apple.SpringBoard>:35])>{vt hash: 159390857}[uuid:00000000-0000-0000-0000-000000000001]{definition:com.apple.Posters.UnityPosterApp.Unity2025Poster[extension][client]}, unknown-NotVisible
+Jun  1 22:29:42 iPhone-sivma Unity2025Poster(RunningBoardServices)[281] <Notice>: Received process assertions expiration warning!
+Jun  1 22:29:42 iPhone-sivma Unity2025Poster(RunningBoardServices)[281] <Notice>: Notifying client of imminent expiration of assertion
+Jun  1 22:29:42 iPhone-sivma Unity2025Poster(RunningBoardServices)[281] <Notice>: Expiration notification complete
+Jun  1 22:29:42 iPhone-sivma Unity2025Poster(UIKitCore)[281] <Notice>: Firing background task expiration handlers
+Jun  1 22:29:42 iPhone-sivma Unity2025Poster(UIKitCore)[281] <Notice>: On backgroundTaskAssertionQueue, clearing shared assertion
+Jun  1 22:29:42 iPhone-sivma Unity2025Poster(UIKitCore)[281] <Notice>: No background tasks to fire expiration handlers for.
+Jun  1 22:29:42 iPhone-sivma Unity2025Poster(FrontBoardServices)[281] <Notice>: [PosterKit:6E095EC7-DE32-4B9E-8B65-4A977898A43E] Received action(s) in scene-update: <BLSBacklightSceneUpdateAction: 0x00230519>
+Jun  1 22:29:42 iPhone-sivma Unity2025Poster(UIKitCore)[281] <Notice>: sceneOfRecord: sceneID: 6E095EC7-DE32-4B9E-8B65-4A977898A43E  persistentID: 6E095EC7-DE32-4B9E-8B65-4A977898A43E
+Jun  1 22:29:42 iPhone-sivma Unity2025Poster(RunningBoardServices)[281] <Notice>: Received state update for 281 (xpcservice<com.apple.Posters.UnityPosterApp.Unity2025Poster([osservice<com.apple.SpringBoard>:35])>{vt hash: 159390857}[uuid:00000000-0000-0000-0000-000000000001]{definition:com.apple.Posters.UnityPosterApp.Unity2025Poster[extension][client]}, unknown-NotVisible
+Jun  1 22:29:42 iPhone-sivma WirelessRadioManagerd(RunningBoardServices)[51] <Notice>: Received state update for 281 (xpcservice<com.apple.Posters.UnityPosterApp.Unity2025Poster([osservice<com.apple.SpringBoard>:35])>{vt hash: 159390857}[uuid:00000000-0000-0000-0000-000000000001]{definition:com.apple.Posters.UnityPosterApp.Unity2025Poster[extension][client]}, running-active-Visible
+Jun  1 22:29:42 iPhone-sivma wifid(RunningBoardServices)[53] <Notice>: Received state update for 281 (xpcservice<com.apple.Posters.UnityPosterApp.Unity2025Poster([osservice<com.apple.SpringBoard>:35])>{vt hash: 159390857}[uuid:00000000-0000-0000-0000-000000000001]{definition:com.apple.Posters.UnityPosterApp.Unity2025Poster[extension][client]}, running-active-Visible
+Jun  1 22:29:42 iPhone-sivma Unity2025Poster(PosterKit)[281] <Notice>: Extending render session for reason: [296] delaySuspend
+Jun  1 22:29:42 iPhone-sivma Unity2025Poster(PosterKit)[281] <Notice>: Extend rendering session, reason: [296] delaySuspend, 5 seconds
+Jun  1 22:29:42 iPhone-sivma Unity2025Poster(UIKitCore)[281] <Notice>: performBacklightSceneUpdate isOn = 0 wasOn = 1
+Jun  1 22:29:42 iPhone-sivma Unity2025Poster(UIKitCore)[281] <Notice>: Non-animated transitionTraitsInUpdate about to call _componentDidUpdateTraitOverrides on <UIWindowScene: 0xc78d58200; role: UIWindowSceneSessionRoleApplication; persistentIdentifier: 6E095EC7-DE32-4B9E-8B65-4A977898A43E; activationState: UISceneActivationStateForegroundActive>
+Jun  1 22:29:42 iPhone-sivma Unity2025Poster(UIKitCore)[281] <Notice>: Not push traits update to screen for new style 1, <UIWindowScene: 0xc78d58200> (6E095EC7-DE32-4B9E-8B65-4A977898A43E)
+Jun  1 22:29:42 iPhone-sivma symptomsd(RunningBoardServices)[144] <Notice>: Received state update for 281 (xpcservice<com.apple.Posters.UnityPosterApp.Unity2025Poster([osservice<com.apple.SpringBoard>:35])>{vt hash: 159390857}[uuid:00000000-0000-0000-0000-000000000001]{definition:com.apple.Posters.UnityPosterApp.Unity2025Poster[extension][client]}, running-active-Visible
+Jun  1 22:29:42 iPhone-sivma runningboardd(RunningBoard)[34] <Notice>: Invalidating assertion 34-35-14999 (target:[xpcservice<com.apple.Posters.UnityPosterApp.Unity2025Poster([osservice<com.apple.SpringBoard>:35])>{vt hash: 159390857}[uuid:00000000-0000-0000-0000-000000000001]{definition:com.apple.Posters.UnityPosterApp.Unity2025Poster[extension][client]}:281]) from originator [osservice<com.apple.SpringBoard>:35]
+Jun  1 22:29:42 iPhone-sivma wifid(WiFiPolicy)[53] <Notice>: -[WiFiUserInteractionMonitor setApplicationRunningState:foregroundState:andNetworkingState:forBundleId:]: com.apple.Posters.UnityPosterApp.Unity2025Poster entered foreground
+Jun  1 22:29:42 iPhone-sivma UserEventAgent(RunningBoardServices)[32] <Notice>: Received state update for 281 (xpcservice<com.apple.Posters.UnityPosterApp.Unity2025Poster([osservice<com.apple.SpringBoard>:35])>{vt hash: 159390857}[uuid:00000000-0000-0000-0000-000000000001]{definition:com.apple.Posters.UnityPosterApp.Unity2025Poster[extension][client]}, running-active-Visible
+Jun  1 22:29:42 iPhone-sivma SpringBoard(PowerExperience)[35] <Notice>: ResourceConnection:updateResourceHint <private> with state 101
+Jun  1 22:29:42 iPhone-sivma backboardd[71] <Notice>: Setting CoreBrightness backlight factor:0.050000 with fade duration:0.500000
+Jun  1 22:29:42 iPhone-sivma backboardd[71] <Notice>: Set BrightnessSystem property:DisplayBrightnessFadePeriod to:0.5
+Jun  1 22:29:42 iPhone-sivma Unity2025Poster(PosterKit)[281] <Notice>: <PRRenderer 0xc79071e00> Acquiring extended rendering assertion 300
+Jun  1 22:29:42 iPhone-sivma backboardd[71] <Notice>: Set BrightnessSystem property:DisplayBrightnessFactorWithFade to:0.05
+Jun  1 22:29:42 iPhone-sivma backboardd(CoreBrightness)[71] <Notice>: Factor=0.0500 reasonActivateALS=0
+Jun  1 22:29:42 iPhone-sivma wifid(WiFiPolicy)[53] <Notice>: WifiDeviceManagerCatsUpdateEvent(): CATS Update en0: Enter deviceManager:0x8d720f800  source:1 enable:1 appPolicy:0 bitmap:0x0
+Jun  1 22:29:42 iPhone-sivma wifid(WiFiPolicy)[53] <Notice>: WiFiDeviceManagerCatsSetLowLatencyApp: CATSUpdate en0: fgApp:com.apple.Posters.UnityPosterApp.Unity2025Poster b=0x0 rc=0
+Jun  1 22:29:42 iPhone-sivma wifid(WiFiPolicy)[53] <Notice>: WiFiDeviceManagerCatsSetForegroundApp: CATSUpdate en0: fgApp:com.apple.Posters.UnityPosterApp.Unity2025Poster hs=1 t=1 rc=0
+Jun  1 22:29:42 iPhone-sivma wifid(WiFiPolicy)[53] <Notice>: WifiDeviceManagerCatsUpdateEvent: CATSUpdate en0: Exit deviceManager=0x8d720f800 Source:1 stateChange:0 (P:0-->0 B:0x0-->0x0)
+Jun  1 22:29:42 iPhone-sivma backboardd(CPMS)[71] <Notice>: <Notice> Ack from CPMS clientId 7. Budgets: {
+    "cpms_ts_100" = 3636;
+    "cpms_ts_1000" = 3636;
+    "cpms_ts_i" = 3636;
+}
+Jun  1 22:29:42 iPhone-sivma runningboardd(RunningBoard)[34] <Notice>: Acquiring assertion targeting [xpcservice<com.apple.Posters.UnityPosterApp.Unity2025Poster([osservice<com.apple.SpringBoard>:35])>{vt hash: 159390857}[uuid:00000000-0000-0000-0000-000000000001]{definition:com.apple.Posters.UnityPosterApp.Unity2025Poster[extension][client]}:281] from originator [xpcservice<com.apple.Posters.UnityPosterApp.Unity2025Poster([osservice<com.apple.SpringBoard>:35])>{vt hash: 159390857}[uuid:00000000-0000-0000-0000-000000000001]{definition:com.apple.Posters.UnityPosterApp.Unity2025Poster[extension][client]}:281] with description <RBSAssertionDescriptor| "FinishRender-ENT-Entitled--300" ID:34-281-15003 target:281 attributes:[
+	<RBSDomainAttribute| domain:"com.apple.PosterKit" name:"FinishRenderEntitled" sourceEnvironment:"(null)">
+	]>
+Jun  1 22:29:42 iPhone-sivma wifid(WiFiPolicy)[53] <Notice>: -[WiFiUsageApplicationSession applicationStateDidChange:withAttributes:]: application session resumed:<private>
+Jun  1 22:29:42 iPhone-sivma backboardd(CoreBrightness)[71] <Notice>: factor: 0.050000 fadePeriod: 0.500000
+Jun  1 22:29:42 iPhone-sivma backboardd(CoreBrightness)[71] <Notice>: [BRT update: Factor]: 1.000000 -> 0.050000 t: 0.500000
+Jun  1 22:29:42 iPhone-sivma backboardd[71] <Notice>: Update last requested backlight factor: 0.05 permanently:YES
+Jun  1 22:29:42 iPhone-sivma runningboardd(RunningBoard)[34] <Notice>: Assertion 34-281-15003 (target:[xpcservice<com.apple.Posters.UnityPosterApp.Unity2025Poster([osservice<com.apple.SpringBoard>:35])>{vt hash: 159390857}[uuid:00000000-0000-0000-0000-000000000001]{definition:com.apple.Posters.UnityPosterApp.Unity2025Poster[extension][client]}:281]) will be created as inactive as start-time-defining assertions exist
+Jun  1 22:29:42 iPhone-sivma SpringBoard(PaperBoardUI)[35] <Notice>: Requiring wallpaper for reason: in extended render session
+Jun  1 22:29:42 iPhone-sivma backboardd[71] <Notice>: canceling events for suppression reason: backlight dim/off
+Jun  1 22:29:42 iPhone-sivma backboardd(BaseBoard)[71] <Notice>: <BSCompoundAssertion:0x6d91253c0> (SuppressTouches-1000007A9) acquire for reason:backlight dim/off acq:0x6d9892500 count:1
+Jun  1 22:29:42 iPhone-sivma backboardd(BaseBoard)[71] <Notice>: <BSCompoundAssertion:0x6d9127440> (SuppressTouches-100000A09) acquire for reason:backlight dim/off acq:0x6d9892380 count:1
+Jun  1 22:29:42 iPhone-sivma backboardd(libEDR)[71] <Notice>: ScheduleSetBrightnessIn_block_invoke: enter WaitUntil late 0.030583 millisecond (22784 / 40869)
+Jun  1 22:29:42 iPhone-sivma backboardd(CoreBrightness)[71] <Notice>: [BRT update: Weak Cap]: Weak cap: 1200.000000, nits = 519.268982, P = 1.000000
+Jun  1 22:29:42 iPhone-sivma backboardd(CoreBrightness)[71] <Notice>: [BRT update: CPMS HDR Factor]: 0.490000 -> 1.000000 t: 1.000000 interval: 0.00 currentHDRNitCap: 1200.000000
+Jun  1 22:29:42 iPhone-sivma SpringBoard(PaperBoardUI)[35] <Notice>: Actively required was updated: YES
+Jun  1 22:29:42 iPhone-sivma SpringBoard(PaperBoardUI)[35] <Notice>: Poster scenes un-fenced update for reasons: UpdateForActiveVariant
+Jun  1 22:29:42 iPhone-sivma useractivityd(RunningBoardServices)[253] <Notice>: Received state update for 281 (xpcservice<com.apple.Posters.UnityPosterApp.Unity2025Poster([osservice<com.apple.SpringBoard>:35])>{vt hash: 159390857}[uuid:00000000-0000-0000-0000-000000000001]{definition:com.apple.Posters.UnityPosterApp.Unity2025Poster[extension][client]}, running-active-Visible
+Jun  1 22:29:42 iPhone-sivma locationd(RunningBoardServices)[77] <Notice>: Received state update for 281 (xpcservice<com.apple.Posters.UnityPosterApp.Unity2025Poster([osservice<com.apple.SpringBoard>:35])>{vt hash: 159390857}[uuid:00000000-0000-0000-0000-000000000001]{definition:com.apple.Posters.UnityPosterApp.Unity2025Poster[extension][client]}, running-active-Visible
+Jun  1 22:29:42 iPhone-sivma PerfPowerServices(RunningBoardServices)[1745] <Notice>: Received state update for 281 (xpcservice<com.apple.Posters.UnityPosterApp.Unity2025Poster([osservice<com.apple.SpringBoard>:35])>{vt hash: 159390857}[uuid:00000000-0000-0000-0000-000000000001]{definition:com.apple.Posters.UnityPosterApp.Unity2025Poster[extension][client]}, running-active-Visible
+Jun  1 22:29:42 iPhone-sivma locationd[77] <Notice>: {"msg":"RBS #AppMonitor process monitor update handler invoked", "pid":281, "bundleID":"com.apple.Posters.UnityPosterApp.Unity2025Poster", "state":"RunningScheduled"}
+Jun  1 22:29:42 iPhone-sivma locationd[77] <Notice>: {"msg":"RBS #AppMonitor Post Application State Change Notification", "notification":"ForegroundRunning", "pid":281, "bundleId":"com.apple.Posters.UnityPosterApp.Unity2025Poster"}
+Jun  1 22:29:42 iPhone-sivma locationd[77] <Notice>: {"msg":"#Warning #ClientResolution the passed keyPath is not registered. Resolving to #nullCKP", "InputCKP":"icom.apple.Posters.UnityPosterApp.Unity2025Poster:"}
+Jun  1 22:29:42 iPhone-sivma locationd[77] <Notice>: os_transaction created: (0x16daf5c40) GetIdentifyingInformation
+Jun  1 22:29:42 iPhone-sivma locationd[77] <Notice>: os_transaction releasing: (0x16daf5c40) GetIdentifyingInformation
+Jun  1 22:29:42 iPhone-sivma locationd[77] <Notice>: {"msg":"#CLIUA AppMonitor notification", "notification":"ForegroundRunning", "pid":281, "bundleId":"com.apple.Posters.UnityPosterApp.Unity2025Poster", "ClientKey":"icom.apple.Posters.UnityPosterApp:"}
+Jun  1 22:29:42 iPhone-sivma locationd[77] <Notice>: {"msg":"#CLIUA Marking change", "clientKey":"icom.apple.Posters.UnityPosterApp:", "reason":"Process state from RunningBoard", "AssertionLevel":"kCLClientInUseLevelDirectUserEngagement", "coming":1}
+Jun  1 22:29:42 iPhone-sivma locationd[77] <Notice>: {"msg":"#CLIUA updating AssertionRecord", "ClientKey":"icom.apple.Posters.UnityPosterApp:", "AssertionLevel":"kCLClientInUseLevelNotInUse"}
+Jun  1 22:29:42 iPhone-sivma locationd[77] <Notice>: {"msg":"#CLIUA AssertionRecord updated", "ClientKey":"icom.apple.Posters.UnityPosterApp:", "AssertionLevel":"kCLClientInUseLevelDirectUserEngagement"}
+Jun  1 22:29:42 iPhone-sivma locationd[77] <Notice>: {"msg":"#CLIUA in-use level changed for client", "ClientKey":"icom.apple.Posters.UnityPosterApp:"}
+Jun  1 22:29:42 iPhone-sivma locationd[77] <Notice>: {"msg":"#Warning #ClientResolution the passed keyPath is not registered. Resolving to #nullCKP", "InputCKP":"icom.apple.Posters.UnityPosterApp:"}
+Jun  1 22:29:42 iPhone-sivma symptomsd(SymptomEvaluator)[144] <Notice>: com.apple.Posters.UnityPosterApp.Unity2025Poster: Foreground: true
+Jun  1 22:29:42 iPhone-sivma symptomsd(SymptomEvaluator)[144] <Notice>: Failed to find process for com.apple.Posters.UnityPosterApp.Unity2025Poster
+Jun  1 22:29:42 iPhone-sivma kernel(ApplePPMCPMS)[0] <Notice>: ApplePPMPolicyCPMS::resolveClientBudgets:Budget Trace: clientId 11, Timescale 0, Requested Budget 3636, Granted Budget 3636, Thermal Budget 4579, PowerBudgetUPO 3636
+Jun  1 22:29:42 iPhone-sivma kernel(ApplePPMCPMS)[0] <Notice>: ApplePPMPolicyCPMS::resolveClientBudgets:Budget Trace: clientId 11, Timescale 1, Requested Budget 3636, Granted Budget 3636, Thermal Budget 4579, PowerBudgetUPO 3636
+Jun  1 22:29:42 iPhone-sivma kernel(ApplePPMCPMS)[0] <Notice>: ApplePPMPolicyCPMS::resolveClientBudgets:Budget Trace: clientId 11, Timescale 2, Requested Budget 3636, Granted Budget 3636, Thermal Budget 4579, PowerBudgetUPO 3636
+Jun  1 22:29:42 iPhone-sivma SpringBoard(PaperBoardUI)[35] <Notice>: [lock] Poster Extant update COULD change 0 (7890)
+Jun  1 22:29:42 iPhone-sivma SpringBoard(PaperBoardUI)[35] <Notice>: [home] Poster Extant update COULD change 0 (7890)
+Jun  1 22:29:42 iPhone-sivma backboardd(libEDR)[71] <Notice>: ScheduleSetBrightnessIn_block_invoke: enter WaitUntil late 0.206500 millisecond (22785 / 40870)
+Jun  1 22:29:42 iPhone-sivma PDFImporter(CoreSpotlight)[3561] <Notice>: [CSJob] completed job: <private>, index: (null), handler: <private>
+Jun  1 22:29:42 iPhone-sivma searchd(DuetActivityScheduler)[926] <Notice>: Task indexing: Battery level below 30 returning NO
+Jun  1 22:29:42 iPhone-sivma PDFImporter(ExtensionFoundation)[3561] <Notice>: preparing to call _completeRequestReturningItems:forExtensionContextWithUUID: UUID: 6A42BDCB-9BE5-4E18-ABA2-6F9C81F35DEF
+Jun  1 22:29:42 iPhone-sivma PDFImporter(ExtensionFoundation)[3561] <Notice>: call _completeRequestReturningItems:forExtensionContextWithUUID:
+Jun  1 22:29:42 iPhone-sivma searchd(CoreSpotlight)[926] <Notice>: [GMS] availability notification token 797
+Jun  1 22:29:42 iPhone-sivma backboardd(libEDR)[71] <Notice>: ScheduleSetBrightnessIn_block_invoke: enter WaitUntil late 0.065667 millisecond (22786 / 40871)
+Jun  1 22:29:42 iPhone-sivma searchd(SpotlightDaemon)[926] <Notice>: Throttling indexing reply for com.apple.CoreSpotlight.ImportExtension by 1.21316 s (2.42632 s) (bulk) (0)
+Jun  1 22:29:42 iPhone-sivma searchd(ExtensionFoundation)[926] <Notice>: in EXConcreteExtensionTearDownRequestCompletion for plugin pid 3561
+Jun  1 22:29:42 iPhone-sivma searchd(ExtensionFoundation)[926] <Notice>: tearing down extension request 6A42BDCB-9BE5-4E18-ABA2-6F9C81F35DEF to extension <EXConcreteExtension: 0x13c3fea00> {id = com.apple.PDFKit.PDFImporter} (last known pid 3561)
+Jun  1 22:29:42 iPhone-sivma searchd(libxpc.dylib)[926] <Notice>: [0x10fc2b600] invalidated because the current process cancelled the connection by calling xpc_connection_cancel()
+Jun  1 22:29:42 iPhone-sivma searchd(libxpc.dylib)[926] <Notice>: [0x107c09540] invalidated because the current process cancelled the connection by calling xpc_connection_cancel()
+Jun  1 22:29:42 iPhone-sivma searchd(libxpc.dylib)[926] <Notice>: [0x10fc2bd80] invalidated because the current process cancelled the connection by calling xpc_connection_cancel()
+Jun  1 22:29:42 iPhone-sivma PDFImporter(ExtensionFoundation)[3561] <Notice>: calling out to _completeRequestReturningItemsSecondHalf
+Jun  1 22:29:42 iPhone-sivma spotlightknowledged(SpotlightKnowledgeDaemon)[2485] <Notice>: ### RECEIVED EVENT <private> - <private>
+Jun  1 22:29:42 iPhone-sivma PDFImporter(ExtensionFoundation)[3561] <Notice>: in _NSExtensionCompleteRequestReturningItemsContinuation
+Jun  1 22:29:42 iPhone-sivma PDFImporter(libxpc.dylib)[3561] <Notice>: [0x8e10703c0] Re-initialization successful; calling out to event handler with XPC_ERROR_CONNECTION_INTERRUPTED
+Jun  1 22:29:42 iPhone-sivma spotlightknowledged(SpotlightKnowledgeDaemon)[2485] <Error>: ### <private> no dispatch group message <private>
+Jun  1 22:29:42 iPhone-sivma spotlightknowledged(SpotlightKnowledgeDaemon)[2485] <Error>: ### <private> no dispatch group message <private>
+Jun  1 22:29:42 iPhone-sivma PDFImporter(libxpc.dylib)[3561] <Notice>: [0x100f8f270] invalidated because the client process (pid 926) either cancelled the connection or exited
+Jun  1 22:29:42 iPhone-sivma PDFImporter(libxpc.dylib)[3561] <Notice>: [0x8e10703c0] invalidated because the current process cancelled the connection by calling xpc_connection_cancel()
+Jun  1 22:29:42 iPhone-sivma PDFImporter(ExtensionFoundation)[3561] <Notice>: tearing down context in extension due to invalidation
+Jun  1 22:29:42 iPhone-sivma backboardd(libEDR)[71] <Notice>: ScheduleSetBrightnessIn_block_invoke: enter WaitUntil late 0.007000 millisecond (22787 / 40872)
+Jun  1 22:29:42 iPhone-sivma backboardd(libEDR)[71] <Notice>: ScheduleSetBrightnessIn_block_invoke: enter WaitUntil late 0.111375 millisecond (22788 / 40873)
+Jun  1 22:29:42 iPhone-sivma backboardd(libEDR)[71] <Notice>: ScheduleSetBrightnessIn_block_invoke: enter WaitUntil late 0.079416 millisecond (22789 / 40874)
+Jun  1 22:29:42 iPhone-sivma SpringBoard(RunningBoardServices)[35] <Notice>: Received state update for 281 (xpcservice<com.apple.Posters.UnityPosterApp.Unity2025Poster([osservice<com.apple.SpringBoard>:35])>{vt hash: 159390857}[uuid:00000000-0000-0000-0000-000000000001]{definition:com.apple.Posters.UnityPosterApp.Unity2025Poster[extension][client]}, running-active-Visible
+Jun  1 22:29:42 iPhone-sivma audiomxd(RunningBoardServices)[111] <Notice>: Received state update for 281 (xpcservice<com.apple.Posters.UnityPosterApp.Unity2025Poster([osservice<com.apple.SpringBoard>:35])>{vt hash: 159390857}[uuid:00000000-0000-0000-0000-000000000001]{definition:com.apple.Posters.UnityPosterApp.Unity2025Poster[extension][client]}, running-active-Visible
+Jun  1 22:29:42 iPhone-sivma Unity2025Poster(RunningBoardServices)[281] <Notice>: Received state update for 281 (xpcservice<com.apple.Posters.UnityPosterApp.Unity2025Poster([osservice<com.apple.SpringBoard>:35])>{vt hash: 159390857}[uuid:00000000-0000-0000-0000-000000000001]{definition:com.apple.Posters.UnityPosterApp.Unity2025Poster[extension][client]}, unknown-NotVisible
+Jun  1 22:29:42 iPhone-sivma WirelessRadioManagerd(RunningBoardServices)[51] <Notice>: Received state update for 281 (xpcservice<com.apple.Posters.UnityPosterApp.Unity2025Poster([osservice<com.apple.SpringBoard>:35])>{vt hash: 159390857}[uuid:00000000-0000-0000-0000-000000000001]{definition:com.apple.Posters.UnityPosterApp.Unity2025Poster[extension][client]}, running-active-Visible
+Jun  1 22:29:42 iPhone-sivma wifid(RunningBoardServices)[53] <Notice>: Received state update for 281 (xpcservice<com.apple.Posters.UnityPosterApp.Unity2025Poster([osservice<com.apple.SpringBoard>:35])>{vt hash: 159390857}[uuid:00000000-0000-0000-0000-000000000001]{definition:com.apple.Posters.UnityPosterApp.Unity2025Poster[extension][client]}, running-active-Visible
+Jun  1 22:29:42 iPhone-sivma symptomsd(RunningBoardServices)[144] <Notice>: Received state update for 281 (xpcservice<com.apple.Posters.UnityPosterApp.Unity2025Poster([osservice<com.apple.SpringBoard>:35])>{vt hash: 159390857}[uuid:00000000-0000-0000-0000-000000000001]{definition:com.apple.Posters.UnityPosterApp.Unity2025Poster[extension][client]}, running-active-Visible
+Jun  1 22:29:42 iPhone-sivma locationd(RunningBoardServices)[77] <Notice>: Received state update for 281 (xpcservice<com.apple.Posters.UnityPosterApp.Unity2025Poster([osservice<com.apple.SpringBoard>:35])>{vt hash: 159390857}[uuid:00000000-0000-0000-0000-000000000001]{definition:com.apple.Posters.UnityPosterApp.Unity2025Poster[extension][client]}, running-active-Visible
+Jun  1 22:29:42 iPhone-sivma UserEventAgent(RunningBoardServices)[32] <Notice>: Received state update for 281 (xpcservice<com.apple.Posters.UnityPosterApp.Unity2025Poster([osservice<com.apple.SpringBoard>:35])>{vt hash: 159390857}[uuid:00000000-0000-0000-0000-000000000001]{definition:com.apple.Posters.UnityPosterApp.Unity2025Poster[extension][client]}, running-active-Visible
+Jun  1 22:29:42 iPhone-sivma PerfPowerServices(RunningBoardServices)[1745] <Notice>: Received state update for 281 (xpcservice<com.apple.Posters.UnityPosterApp.Unity2025Poster([osservice<com.apple.SpringBoard>:35])>{vt hash: 159390857}[uuid:00000000-0000-0000-0000-000000000001]{definition:com.apple.Posters.UnityPosterApp.Unity2025Poster[extension][client]}, running-active-Visible
+Jun  1 22:29:42 iPhone-sivma useractivityd(RunningBoardServices)[253] <Notice>: Received state update for 281 (xpcservice<com.apple.Posters.UnityPosterApp.Unity2025Poster([osservice<com.apple.SpringBoard>:35])>{vt hash: 159390857}[uuid:00000000-0000-0000-0000-000000000001]{definition:com.apple.Posters.UnityPosterApp.Unity2025Poster[extension][client]}, running-active-Visible
+Jun  1 22:29:42 iPhone-sivma backboardd(libEDR)[71] <Notice>: ScheduleSetBrightnessIn_block_invoke: enter WaitUntil late 0.049459 millisecond (22790 / 40875)
+Jun  1 22:29:42 iPhone-sivma runningboardd(RunningBoard)[34] <Notice>: Calculated state for xpcservice<com.apple.Posters.UnityPosterApp.Unity2025Poster([osservice<com.apple.SpringBoard>:35])>{vt hash: 159390857}[uuid:00000000-0000-0000-0000-000000000001]{definition:com.apple.Posters.UnityPosterApp.Unity2025Poster[extension][client]}: running-active (role: UserInteractiveNonFocal) (endowments: <private>)
+Jun  1 22:29:42 iPhone-sivma runningboardd(RunningBoard)[34] <Notice>: Inheritance changeset: <RBSInheritanceChangeSet| gained:{(
+)} lost:{(
+    <RBSInheritance| environment:(none) name:com.apple.frontboard.visibility origID:34-35-14990 0>
+)}>
+Jun  1 22:29:42 iPhone-sivma audiomxd(RunningBoardServices)[111] <Notice>: Received state update for 281 (xpcservice<com.apple.Posters.UnityPosterApp.Unity2025Poster([osservice<com.apple.SpringBoard>:35])>{vt hash: 159390857}[uuid:00000000-0000-0000-0000-000000000001]{definition:com.apple.Posters.UnityPosterApp.Unity2025Poster[extension][client]}, running-active-Visible
+Jun  1 22:29:42 iPhone-sivma SpringBoard(RunningBoardServices)[35] <Notice>: Received state update for 281 (xpcservice<com.apple.Posters.UnityPosterApp.Unity2025Poster([osservice<com.apple.SpringBoard>:35])>{vt hash: 159390857}[uuid:00000000-0000-0000-0000-000000000001]{definition:com.apple.Posters.UnityPosterApp.Unity2025Poster[extension][client]}, running-active-Visible
+Jun  1 22:29:42 iPhone-sivma Unity2025Poster(RunningBoardServices)[281] <Notice>: Received state update for 281 (xpcservice<com.apple.Posters.UnityPosterApp.Unity2025Poster([osservice<com.apple.SpringBoard>:35])>{vt hash: 159390857}[uuid:00000000-0000-0000-0000-000000000001]{definition:com.apple.Posters.UnityPosterApp.Unity2025Poster[extension][client]}, unknown-NotVisible
+Jun  1 22:29:42 iPhone-sivma WirelessRadioManagerd(RunningBoardServices)[51] <Notice>: Received state update for 281 (xpcservice<com.apple.Posters.UnityPosterApp.Unity2025Poster([osservice<com.apple.SpringBoard>:35])>{vt hash: 159390857}[uuid:00000000-0000-0000-0000-000000000001]{definition:com.apple.Posters.UnityPosterApp.Unity2025Poster[extension][client]}, running-active-Visible
+Jun  1 22:29:42 iPhone-sivma wifid(RunningBoardServices)[53] <Notice>: Received state update for 281 (xpcservice<com.apple.Posters.UnityPosterApp.Unity2025Poster([osservice<com.apple.SpringBoard>:35])>{vt hash: 159390857}[uuid:00000000-0000-0000-0000-000000000001]{definition:com.apple.Posters.UnityPosterApp.Unity2025Poster[extension][client]}, running-active-Visible
+Jun  1 22:29:42 iPhone-sivma symptomsd(RunningBoardServices)[144] <Notice>: Received state update for 281 (xpcservice<com.apple.Posters.UnityPosterApp.Unity2025Poster([osservice<com.apple.SpringBoard>:35])>{vt hash: 159390857}[uuid:00000000-0000-0000-0000-000000000001]{definition:com.apple.Posters.UnityPosterApp.Unity2025Poster[extension][client]}, running-active-Visible
+Jun  1 22:29:42 iPhone-sivma UserEventAgent(RunningBoardServices)[32] <Notice>: Received state update for 281 (xpcservice<com.apple.Posters.UnityPosterApp.Unity2025Poster([osservice<com.apple.SpringBoard>:35])>{vt hash: 159390857}[uuid:00000000-0000-0000-0000-000000000001]{definition:com.apple.Posters.UnityPosterApp.Unity2025Poster[extension][client]}, running-active-Visible
+Jun  1 22:29:42 iPhone-sivma PerfPowerServices(RunningBoardServices)[1745] <Notice>: Received state update for 281 (xpcservice<com.apple.Posters.UnityPosterApp.Unity2025Poster([osservice<com.apple.SpringBoard>:35])>{vt hash: 159390857}[uuid:00000000-0000-0000-0000-000000000001]{definition:com.apple.Posters.UnityPosterApp.Unity2025Poster[extension][client]}, running-active-Visible
+Jun  1 22:29:42 iPhone-sivma locationd(RunningBoardServices)[77] <Notice>: Received state update for 281 (xpcservice<com.apple.Posters.UnityPosterApp.Unity2025Poster([osservice<com.apple.SpringBoard>:35])>{vt hash: 159390857}[uuid:00000000-0000-0000-0000-000000000001]{definition:com.apple.Posters.UnityPosterApp.Unity2025Poster[extension][client]}, running-active-Visible
+Jun  1 22:29:42 iPhone-sivma useractivityd(RunningBoardServices)[253] <Notice>: Received state update for 281 (xpcservice<com.apple.Posters.UnityPosterApp.Unity2025Poster([osservice<com.apple.SpringBoard>:35])>{vt hash: 159390857}[uuid:00000000-0000-0000-0000-000000000001]{definition:com.apple.Posters.UnityPosterApp.Unity2025Poster[extension][client]}, running-active-Visible
+Jun  1 22:29:42 iPhone-sivma Unity2025Poster(PosterKit)[281] <Notice>: End rendering extension, reason: [296] delaySuspend
+Jun  1 22:29:42 iPhone-sivma SpringBoard(FrontBoard)[35] <Notice>: [0xceef84b40:PosterKit:6E095EC7-DE32-4B9E-8B65-4A977898A43E] Scene state did change: FV-None[100].
+Jun  1 22:29:42 iPhone-sivma Unity2025Poster(PosterKit)[281] <Notice>: <PRRenderer 0xc79071e00> Memory reclamation: Posting kCARenderMetalLayerMarkPurgeable notification.
+Jun  1 22:29:42 iPhone-sivma Unity2025Poster(PosterKit)[281] <Notice>: <PRRenderer 0xc79071e00> Memory reclamation: Posted kCARenderMetalLayerMarkPurgeable notification.
+Jun  1 22:29:42 iPhone-sivma Unity2025Poster(PosterKit)[281] <Notice>: <PRRenderer 0xc79071e00> Memory reclamation: Calling CABackingStoreCollect.
+Jun  1 22:29:42 iPhone-sivma runningboardd(RunningBoard)[34] <Notice>: Acquiring assertion targeting [xpcservice<com.apple.Posters.UnityPosterApp.Unity2025Poster([osservice<com.apple.SpringBoard>:35])>{vt hash: 159390857}[uuid:00000000-0000-0000-0000-000000000001]{definition:com.apple.Posters.UnityPosterApp.Unity2025Poster[extension][client]}:281] from originator [osservice<com.apple.SpringBoard>:35] with description <RBSAssertionDescriptor| "FBWorkspace (FV-None[100])" ID:34-35-15004 target:281 attributes:[
+	<RBSDomainAttribute| domain:"com.apple.frontboard" name:"SuspendableJetsamLimit-ActiveUI" sourceEnvironment:"(null)">,
+	<RBSDomainAttribute| domain:"com.apple.frontboard" name:"Visibility" sourceEnvironment:"(null)">,
+	<RBSDomainAttribute| domain:"com.apple.frontboard" name:"SuspendableJetsamPriority-Foreground" sourceEnvironment:"(null)">
+	]>
+Jun  1 22:29:42 iPhone-sivma runningboardd(RunningBoard)[34] <Notice>: Assertion 34-35-15004 (target:[xpcservice<com.apple.Posters.UnityPosterApp.Unity2025Poster([osservice<com.apple.SpringBoard>:35])>{vt hash: 159390857}[uuid:00000000-0000-0000-0000-000000000001]{definition:com.apple.Posters.UnityPosterApp.Unity2025Poster[extension][client]}:281]) will be created as active
+Jun  1 22:29:42 iPhone-sivma Unity2025Poster(PosterKit)[281] <Notice>: <PRRenderer 0xc79071e00> Memory reclamation: CABackingStoreCollect completed.
+Jun  1 22:29:42 iPhone-sivma SpringBoard(FrontBoard)[35] <Notice>: [xpcservice<com.apple.Posters.UnityPosterApp.Unity2025Poster>:281] Workspace state did change: FV-Interactive[100] --> FV-None[100] (assertion acquired).
+Jun  1 22:29:42 iPhone-sivma runningboardd(RunningBoard)[34] <Notice>: Invalidating assertion 34-35-15000 (target:[xpcservice<com.apple.Posters.UnityPosterApp.Unity2025Poster([osservice<com.apple.SpringBoard>:35])>{vt hash: 159390857}[uuid:00000000-0000-0000-0000-000000000001]{definition:com.apple.Posters.UnityPosterApp.Unity2025Poster[extension][client]}:281]) from originator [osservice<com.apple.SpringBoard>:35]
+Jun  1 22:29:42 iPhone-sivma runningboardd(RunningBoard)[34] <Notice>: Calculated state for xpcservice<com.apple.Posters.UnityPosterApp.Unity2025Poster([osservice<com.apple.SpringBoard>:35])>{vt hash: 159390857}[uuid:00000000-0000-0000-0000-000000000001]{definition:com.apple.Posters.UnityPosterApp.Unity2025Poster[extension][client]}: running-active (role: UserInteractiveNonFocal) (endowments: <private>)
+Jun  1 22:29:42 iPhone-sivma runningboardd(RunningBoard)[34] <Notice>: Inheritance changeset: <RBSInheritanceChangeSet| gained:{(
+    <RBSInheritance| environment:(none) name:com.apple.frontboard.visibility origID:34-35-15004 0>
+)} lost:{(
+)}>
+Jun  1 22:29:42 iPhone-sivma SpringBoard(PaperBoardUI)[35] <Notice>: [lock] invalidateSnapshotPreconditions for reason: didUpdateClientSettings with diff for variant lock; extendedRenderSessionDidChange YES inExtendedRenderSession NO
+Jun  1 22:29:42 iPhone-sivma SpringBoard(PaperBoardUI)[35] <Notice>: No longer requiring wallpaper for reason: in extended render session
+Jun  1 22:29:42 iPhone-sivma SpringBoard(PaperBoardUI)[35] <Notice>: Wallpaper is no longer required.
+Jun  1 22:29:42 iPhone-sivma SpringBoard(PaperBoardUI)[35] <Notice>: Actively required was updated: NO
+Jun  1 22:29:42 iPhone-sivma SpringBoard(PaperBoardUI)[35] <Notice>: Poster scenes un-fenced update for reasons: UpdateForActiveVariant
+Jun  1 22:29:42 iPhone-sivma backboardd(libEDR)[71] <Notice>: ScheduleSetBrightnessIn_block_invoke: enter WaitUntil late 0.076375 millisecond (22791 / 40876)
+Jun  1 22:29:42 iPhone-sivma backboardd(libEDR)[71] <Notice>: ScheduleSetBrightnessIn_block_invoke: enter WaitUntil late 0.199167 millisecond (22792 / 40877)
+Jun  1 22:29:42 iPhone-sivma backboardd(libEDR)[71] <Notice>: ScheduleSetBrightnessIn_block_invoke: enter WaitUntil late 0.128959 millisecond (22793 / 40878)
+Jun  1 22:29:42 iPhone-sivma backboardd(libEDR)[71] <Notice>: ScheduleSetBrightnessIn_block_invoke: enter WaitUntil late 0.027917 millisecond (22794 / 40879)
+Jun  1 22:29:42 iPhone-sivma backboardd(libEDR)[71] <Notice>: ScheduleSetBrightnessIn_block_invoke: enter WaitUntil late 0.029375 millisecond (22795 / 40880)
+Jun  1 22:29:42 iPhone-sivma backboardd(libEDR)[71] <Notice>: ScheduleSetBrightnessIn_block_invoke: enter WaitUntil late 0.031542 millisecond (22796 / 40881)
+Jun  1 22:29:42 iPhone-sivma SpringBoard(RunningBoardServices)[35] <Notice>: Received state update for 281 (xpcservice<com.apple.Posters.UnityPosterApp.Unity2025Poster([osservice<com.apple.SpringBoard>:35])>{vt hash: 159390857}[uuid:00000000-0000-0000-0000-000000000001]{definition:com.apple.Posters.UnityPosterApp.Unity2025Poster[extension][client]}, running-active-Visible
+Jun  1 22:29:42 iPhone-sivma audiomxd(RunningBoardServices)[111] <Notice>: Received state update for 281 (xpcservice<com.apple.Posters.UnityPosterApp.Unity2025Poster([osservice<com.apple.SpringBoard>:35])>{vt hash: 159390857}[uuid:00000000-0000-0000-0000-000000000001]{definition:com.apple.Posters.UnityPosterApp.Unity2025Poster[extension][client]}, running-active-Visible
+Jun  1 22:29:42 iPhone-sivma Unity2025Poster(RunningBoardServices)[281] <Notice>: Received state update for 281 (xpcservice<com.apple.Posters.UnityPosterApp.Unity2025Poster([osservice<com.apple.SpringBoard>:35])>{vt hash: 159390857}[uuid:00000000-0000-0000-0000-000000000001]{definition:com.apple.Posters.UnityPosterApp.Unity2025Poster[extension][client]}, unknown-NotVisible
+Jun  1 22:29:42 iPhone-sivma WirelessRadioManagerd(RunningBoardServices)[51] <Notice>: Received state update for 281 (xpcservice<com.apple.Posters.UnityPosterApp.Unity2025Poster([osservice<com.apple.SpringBoard>:35])>{vt hash: 159390857}[uuid:00000000-0000-0000-0000-000000000001]{definition:com.apple.Posters.UnityPosterApp.Unity2025Poster[extension][client]}, running-active-Visible
+Jun  1 22:29:42 iPhone-sivma wifid(RunningBoardServices)[53] <Notice>: Received state update for 281 (xpcservice<com.apple.Posters.UnityPosterApp.Unity2025Poster([osservice<com.apple.SpringBoard>:35])>{vt hash: 159390857}[uuid:00000000-0000-0000-0000-000000000001]{definition:com.apple.Posters.UnityPosterApp.Unity2025Poster[extension][client]}, running-active-Visible
+Jun  1 22:29:42 iPhone-sivma symptomsd(RunningBoardServices)[144] <Notice>: Received state update for 281 (xpcservice<com.apple.Posters.UnityPosterApp.Unity2025Poster([osservice<com.apple.SpringBoard>:35])>{vt hash: 159390857}[uuid:00000000-0000-0000-0000-000000000001]{definition:com.apple.Posters.UnityPosterApp.Unity2025Poster[extension][client]}, running-active-Visible
+Jun  1 22:29:42 iPhone-sivma kernel()[0] <Notice>: wlan0:com.apple.p2p: isInfraRealtimePacketThresholdAllowed allowed:1 option:32 threshold:50 noRegistrations:1 cachedPeerCount:0 fastDiscoveryInactive:1 fastDiscoveryOnSince:25281204
+Jun  1 22:29:42 iPhone-sivma kernel()[0] <Notice>: wlan0:com.apple.p2p: currentInfraTrafficType:9239 checking if realtime upgrade required with inputPackets:496 outputPackets:124 packetThreshold:50
+Jun  1 22:29:42 iPhone-sivma UserEventAgent(RunningBoardServices)[32] <Notice>: Received state update for 281 (xpcservice<com.apple.Posters.UnityPosterApp.Unity2025Poster([osservice<com.apple.SpringBoard>:35])>{vt hash: 159390857}[uuid:00000000-0000-0000-0000-000000000001]{definition:com.apple.Posters.UnityPosterApp.Unity2025Poster[extension][client]}, running-active-Visible
+Jun  1 22:29:42 iPhone-sivma locationd(RunningBoardServices)[77] <Notice>: Received state update for 281 (xpcservice<com.apple.Posters.UnityPosterApp.Unity2025Poster([osservice<com.apple.SpringBoard>:35])>{vt hash: 159390857}[uuid:00000000-0000-0000-0000-000000000001]{definition:com.apple.Posters.UnityPosterApp.Unity2025Poster[extension][client]}, running-active-Visible
+Jun  1 22:29:42 iPhone-sivma PerfPowerServices(RunningBoardServices)[1745] <Notice>: Received state update for 281 (xpcservice<com.apple.Posters.UnityPosterApp.Unity2025Poster([osservice<com.apple.SpringBoard>:35])>{vt hash: 159390857}[uuid:00000000-0000-0000-0000-000000000001]{definition:com.apple.Posters.UnityPosterApp.Unity2025Poster[extension][client]}, running-active-Visible
+Jun  1 22:29:42 iPhone-sivma useractivityd(RunningBoardServices)[253] <Notice>: Received state update for 281 (xpcservice<com.apple.Posters.UnityPosterApp.Unity2025Poster([osservice<com.apple.SpringBoard>:35])>{vt hash: 159390857}[uuid:00000000-0000-0000-0000-000000000001]{definition:com.apple.Posters.UnityPosterApp.Unity2025Poster[extension][client]}, running-active-Visible
+Jun  1 22:29:42 iPhone-sivma backboardd(libEDR)[71] <Notice>: ScheduleSetBrightnessIn_block_invoke: enter WaitUntil late 0.049167 millisecond (22797 / 40882)
+Jun  1 22:29:42 iPhone-sivma runningboardd(RunningBoard)[34] <Notice>: Removed last relative-start-date-defining assertion for process xpcservice<com.apple.Posters.UnityPosterApp.Unity2025Poster([osservice<com.apple.SpringBoard>:35])>{vt hash: 159390857}[uuid:00000000-0000-0000-0000-000000000001]{definition:com.apple.Posters.UnityPosterApp.Unity2025Poster[extension][client]}
+Jun  1 22:29:42 iPhone-sivma runningboardd(RunningBoard)[34] <Notice>: Activating delayed assertion 34-34-15002 (target:[xpcservice<com.apple.Posters.UnityPosterApp.Unity2025Poster([osservice<com.apple.SpringBoard>:35])>{vt hash: 159390857}[uuid:00000000-0000-0000-0000-000000000001]{definition:com.apple.Posters.UnityPosterApp.Unity2025Poster[extension][client]}:281])
+Jun  1 22:29:42 iPhone-sivma runningboardd(RunningBoard)[34] <Notice>: Activating delayed assertion 34-281-15003 (target:[xpcservice<com.apple.Posters.UnityPosterApp.Unity2025Poster([osservice<com.apple.SpringBoard>:35])>{vt hash: 159390857}[uuid:00000000-0000-0000-0000-000000000001]{definition:com.apple.Posters.UnityPosterApp.Unity2025Poster[extension][client]}:281])
+Jun  1 22:29:42 iPhone-sivma runningboardd(RunningBoard)[34] <Notice>: Calculated state for xpcservice<com.apple.Posters.UnityPosterApp.Unity2025Poster([osservice<com.apple.SpringBoard>:35])>{vt hash: 159390857}[uuid:00000000-0000-0000-0000-000000000001]{definition:com.apple.Posters.UnityPosterApp.Unity2025Poster[extension][client]}: running-active (role: UserInteractiveFocal) (endowments: <private>)
+Jun  1 22:29:42 iPhone-sivma runningboardd(RunningBoard)[34] <Notice>: [xpcservice<com.apple.Posters.UnityPosterApp.Unity2025Poster([osservice<com.apple.SpringBoard>:35])>{vt hash: 159390857}[uuid:00000000-0000-0000-0000-000000000001]{definition:com.apple.Posters.UnityPosterApp.Unity2025Poster[extension][client]}:281] Set darwin role to: UserInteractiveFocal
+Jun  1 22:29:42 iPhone-sivma runningboardd(RunningBoard)[34] <Notice>: Inheritance changeset: <RBSInheritanceChangeSet| gained:{(
+)} lost:{(
+    <RBSInheritance| environment:(none) name:com.apple.frontboard.visibility origID:34-35-15000 0>
+)}>
+Jun  1 22:29:42 iPhone-sivma powerd[48] <Notice>: Sleep revert state: 1
+Jun  1 22:29:42 iPhone-sivma powerd[48] <Notice>: Process runningboardd.34 Created SystemIsActive "xpcservice<com.apple.Posters.UnityPosterApp.Unity2025Poster([osservice<com.apple.SpringBoard>:35])>{vt hash: 159390857}[uuid:00000000-0000-0000-0000-000000000001]{definition:com.apple.Posters.UnityPosterApp.Unity2025Poster[extension][client]}34-281-15003:FinishRender-ENT-Entitled--300" age:00:00:00  id:51539643750 [System: PrevIdle SysAct]
+Jun  1 22:29:42 iPhone-sivma runningboardd(RunningBoard)[34] <Notice>: Acquired process power assertion with ID 36198 for pid 281
+Jun  1 22:29:42 iPhone-sivma SpringBoard(RunningBoardServices)[35] <Notice>: Received state update for 281 (xpcservice<com.apple.Posters.UnityPosterApp.Unity2025Poster([osservice<com.apple.SpringBoard>:35])>{vt hash: 159390857}[uuid:00000000-0000-0000-0000-000000000001]{definition:com.apple.Posters.UnityPosterApp.Unity2025Poster[extension][client]}, running-active-Visible
+Jun  1 22:29:42 iPhone-sivma audiomxd(RunningBoardServices)[111] <Notice>: Received state update for 281 (xpcservice<com.apple.Posters.UnityPosterApp.Unity2025Poster([osservice<com.apple.SpringBoard>:35])>{vt hash: 159390857}[uuid:00000000-0000-0000-0000-000000000001]{definition:com.apple.Posters.UnityPosterApp.Unity2025Poster[extension][client]}, running-active-Visible
+Jun  1 22:29:42 iPhone-sivma Unity2025Poster(RunningBoardServices)[281] <Notice>: Received state update for 281 (xpcservice<com.apple.Posters.UnityPosterApp.Unity2025Poster([osservice<com.apple.SpringBoard>:35])>{vt hash: 159390857}[uuid:00000000-0000-0000-0000-000000000001]{definition:com.apple.Posters.UnityPosterApp.Unity2025Poster[extension][client]}, unknown-NotVisible
+Jun  1 22:29:42 iPhone-sivma WirelessRadioManagerd(RunningBoardServices)[51] <Notice>: Received state update for 281 (xpcservice<com.apple.Posters.UnityPosterApp.Unity2025Poster([osservice<com.apple.SpringBoard>:35])>{vt hash: 159390857}[uuid:00000000-0000-0000-0000-000000000001]{definition:com.apple.Posters.UnityPosterApp.Unity2025Poster[extension][client]}, running-active-Visible
+Jun  1 22:29:42 iPhone-sivma wifid(RunningBoardServices)[53] <Notice>: Received state update for 281 (xpcservice<com.apple.Posters.UnityPosterApp.Unity2025Poster([osservice<com.apple.SpringBoard>:35])>{vt hash: 159390857}[uuid:00000000-0000-0000-0000-000000000001]{definition:com.apple.Posters.UnityPosterApp.Unity2025Poster[extension][client]}, running-active-Visible
+Jun  1 22:29:42 iPhone-sivma symptomsd(RunningBoardServices)[144] <Notice>: Received state update for 281 (xpcservice<com.apple.Posters.UnityPosterApp.Unity2025Poster([osservice<com.apple.SpringBoard>:35])>{vt hash: 159390857}[uuid:00000000-0000-0000-0000-000000000001]{definition:com.apple.Posters.UnityPosterApp.Unity2025Poster[extension][client]}, running-active-Visible
+Jun  1 22:29:42 iPhone-sivma UserEventAgent(RunningBoardServices)[32] <Notice>: Received state update for 281 (xpcservice<com.apple.Posters.UnityPosterApp.Unity2025Poster([osservice<com.apple.SpringBoard>:35])>{vt hash: 159390857}[uuid:00000000-0000-0000-0000-000000000001]{definition:com.apple.Posters.UnityPosterApp.Unity2025Poster[extension][client]}, running-active-Visible
+Jun  1 22:29:42 iPhone-sivma locationd(RunningBoardServices)[77] <Notice>: Received state update for 281 (xpcservice<com.apple.Posters.UnityPosterApp.Unity2025Poster([osservice<com.apple.SpringBoard>:35])>{vt hash: 159390857}[uuid:00000000-0000-0000-0000-000000000001]{definition:com.apple.Posters.UnityPosterApp.Unity2025Poster[extension][client]}, running-active-Visible
+Jun  1 22:29:42 iPhone-sivma PerfPowerServices(RunningBoardServices)[1745] <Notice>: Received state update for 281 (xpcservice<com.apple.Posters.UnityPosterApp.Unity2025Poster([osservice<com.apple.SpringBoard>:35])>{vt hash: 159390857}[uuid:00000000-0000-0000-0000-000000000001]{definition:com.apple.Posters.UnityPosterApp.Unity2025Poster[extension][client]}, running-active-Visible
+Jun  1 22:29:42 iPhone-sivma useractivityd(RunningBoardServices)[253] <Notice>: Received state update for 281 (xpcservice<com.apple.Posters.UnityPosterApp.Unity2025Poster([osservice<com.apple.SpringBoard>:35])>{vt hash: 159390857}[uuid:00000000-0000-0000-0000-000000000001]{definition:com.apple.Posters.UnityPosterApp.Unity2025Poster[extension][client]}, running-active-Visible
+Jun  1 22:29:42 iPhone-sivma backboardd(libEDR)[71] <Notice>: ScheduleSetBrightnessIn_block_invoke: enter WaitUntil late 0.241125 millisecond (22798 / 40883)
+Jun  1 22:29:42 iPhone-sivma SpringBoard(PaperBoardUI)[35] <Error>: [lock]	Snapshot attempt failed because preconditions failed:
+Jun  1 22:29:42 iPhone-sivma SpringBoard(PaperBoardUI)[35] <Error>: [lock]	--> snapshot failure reason 'Lock variant needs to be fully locked ((null)/(null))'
+Jun  1 22:29:42 iPhone-sivma backboardd(libEDR)[71] <Notice>: ScheduleSetBrightnessIn_block_invoke: enter WaitUntil late 0.205542 millisecond (22799 / 40884)
+Jun  1 22:29:43 iPhone-sivma backboardd(libEDR)[71] <Notice>: ScheduleSetBrightnessIn_block_invoke: enter WaitUntil late 0.022500 millisecond (22800 / 40885)
+Jun  1 22:29:43 iPhone-sivma backboardd(libEDR)[71] <Notice>: ScheduleSetBrightnessIn_block_invoke: enter WaitUntil late 0.224125 millisecond (22801 / 40886)
+Jun  1 22:29:43 iPhone-sivma backboardd(libEDR)[71] <Notice>: ScheduleSetBrightnessIn_block_invoke: enter WaitUntil late 0.033125 millisecond (22802 / 40887)
+Jun  1 22:29:43 iPhone-sivma backboardd(libEDR)[71] <Notice>: ScheduleSetBrightnessIn_block_invoke: enter WaitUntil late 0.202916 millisecond (22803 / 40888)
+Jun  1 22:29:43 iPhone-sivma Unity2025Poster(PosterKit)[281] <Notice>: <PRRenderer 0xc79071e00> Dropping extended rendering assertion 300
+Jun  1 22:29:43 iPhone-sivma backboardd(libEDR)[71] <Notice>: ScheduleSetBrightnessIn_block_invoke: enter WaitUntil late 0.186833 millisecond (22804 / 40889)
+Jun  1 22:29:43 iPhone-sivma Unity2025Poster(PosterKit)[281] <Notice>: <PRRenderer 0xc79071e00> Memory reclamation: Posting kCARenderMetalLayerMarkPurgeable notification.
+Jun  1 22:29:43 iPhone-sivma Unity2025Poster(PosterKit)[281] <Notice>: <PRRenderer 0xc79071e00> Memory reclamation: Posted kCARenderMetalLayerMarkPurgeable notification.
+Jun  1 22:29:43 iPhone-sivma Unity2025Poster(PosterKit)[281] <Notice>: <PRRenderer 0xc79071e00> Memory reclamation: Calling CABackingStoreCollect.
+Jun  1 22:29:43 iPhone-sivma Unity2025Poster(PosterKit)[281] <Notice>: <PRRenderer 0xc79071e00> Memory reclamation: CABackingStoreCollect completed.
+Jun  1 22:29:43 iPhone-sivma runningboardd(RunningBoard)[34] <Notice>: Invalidating assertion 34-281-15003 (target:[xpcservice<com.apple.Posters.UnityPosterApp.Unity2025Poster([osservice<com.apple.SpringBoard>:35])>{vt hash: 159390857}[uuid:00000000-0000-0000-0000-000000000001]{definition:com.apple.Posters.UnityPosterApp.Unity2025Poster[extension][client]}:281]) from originator [xpcservice<com.apple.Posters.UnityPosterApp.Unity2025Poster([osservice<com.apple.SpringBoard>:35])>{vt hash: 159390857}[uuid:00000000-0000-0000-0000-000000000001]{definition:com.apple.Posters.UnityPosterApp.Unity2025Poster[extension][client]}:281]
+Jun  1 22:29:43 iPhone-sivma backboardd(libEDR)[71] <Notice>: ScheduleSetBrightnessIn_block_invoke: enter WaitUntil late 0.221667 millisecond (22805 / 40890)
+Jun  1 22:29:43 iPhone-sivma backboardd(libEDR)[71] <Notice>: ScheduleSetBrightnessIn_block_invoke: enter WaitUntil late 0.029209 millisecond (22806 / 40891)
+Jun  1 22:29:43 iPhone-sivma backboardd(libEDR)[71] <Notice>: ScheduleSetBrightnessIn_block_invoke: enter WaitUntil late 0.142375 millisecond (22807 / 40892)
+Jun  1 22:29:43 iPhone-sivma locationd[77] <Notice>: {"msg":"adapter details", "adapterDescription":"usb host", "batteryChargerType":"kChargerTypeUsb", "level":13, "family":3758112768, "fullyCharged":0, "connected":1, "wasConnected":0}
+Jun  1 22:29:43 iPhone-sivma wifid(WiFiPolicy)[53] <Notice>: manager->wow.lpasSetting 1 CFSetGetCount(manager->wow.wowClients) 0 isWowActivityRegistered=0 manager->wow.overrideWoWState 0 manager->externalPower 1 manager->iokit.battery.chargeLevel 14
+Jun  1 22:29:43 iPhone-sivma wifid(WiFiPolicy)[53] <Notice>: Posting metrics for AJ
+Jun  1 22:29:43 iPhone-sivma wifid(WiFiPolicy)[53] <Notice>: External power state is 1
+Jun  1 22:29:43 iPhone-sivma wifid(WiFiPolicy)[53] <Notice>: External power state is same as before 1, bailing out
+Jun  1 22:29:43 iPhone-sivma backboardd(libEDR)[71] <Notice>: ScheduleSetBrightnessIn_block_invoke: enter WaitUntil late 0.043625 millisecond (22808 / 40893)
+Jun  1 22:29:43 iPhone-sivma UserEventAgent(IOAccessoryManager)[32] <Notice>: handle battery state update: isExtChg=1->1, enableHalogenMitigationsAndUI 1
+Jun  1 22:29:43 iPhone-sivma kernel(IOgPTPPlugin)[0] <Notice>: priorityCalculationInputs Using IOSkywalkLegacyEthernet as no other controller was found for en0
+Jun  1 22:29:43 iPhone-sivma symptomsd(SymptomEvaluator)[144] <Notice>: Power: battery-percentage 13.00 battery-power-connected 1 battery-charging 1 battery-warn 0 battery-critical 0 battery-absolute-capacity-mAh 253 battery-voltage-mV 3713 battery-current-capacity-% 13 battery-maximum-capacity-% 100 battery-design-capacity-mAh 2214 battery-time-remaining 23 battery-fully-charged 0 battery-temperature 3659 screen-brightness 1000000 battery-raw-current-capacity 217 battery-raw-maximum-capacity 1699 presentDOD 0
+Jun  1 22:29:43 iPhone-sivma powerd[48] <Notice>: Battery time remaining posted(0x10000001c4b0000) Time:0 Source:AC
+Jun  1 22:29:43 iPhone-sivma SpringBoard(BatteryCenter)[35] <Notice>: (<_BCPowerSourceController: 0xcf06aa640>) Received com.apple.system.powersources.timeremaining notification
+Jun  1 22:29:43 iPhone-sivma SpringBoard(SpringBoard)[35] <Notice>: isChimeDisabled: NO, isOnAC: YES, isConnectedToWirelessCharging: NO
+Jun  1 22:29:43 iPhone-sivma SpringBoard(BatteryCenter)[35] <Notice>: (<_BCPowerSourceController: 0xcf06aa640>) Query for connected devices
+Jun  1 22:29:43 iPhone-sivma SpringBoard(BatteryCenter)[35] <Notice>: (<_BCPowerSourceController: 0xcf06aa640>) Fetch connected devices
+Jun  1 22:29:43 iPhone-sivma SpringBoard(libxpc.dylib)[35] <Notice>: [0xced1af200] activating connection: mach=true listener=false peer=false name=com.apple.iokit.powerdxpc
+Jun  1 22:29:43 iPhone-sivma SpringBoard(SpringBoard)[35] <Notice>: Should chime: NO, charging enabled: YES, _powerSourceWantsToPlayChime: NO
+Jun  1 22:29:43 iPhone-sivma backboardd(libEDR)[71] <Notice>: ScheduleSetBrightnessIn_block_invoke: enter WaitUntil late 0.041583 millisecond (22809 / 40894)
+Jun  1 22:29:43 iPhone-sivma sharingd(libxpc.dylib)[75] <Notice>: [0xadb6a5e00] activating connection: mach=true listener=false peer=false name=com.apple.iokit.powerdxpc
+Jun  1 22:29:43 iPhone-sivma powerd(libxpc.dylib)[48] <Notice>: [0xb3d1f8d80] activating connection: mach=false listener=false peer=true name=com.apple.iokit.powerdxpc.peer[35].0xb3d1f8d80
+Jun  1 22:29:43 iPhone-sivma powerd(libxpc.dylib)[48] <Notice>: [0xb3d1f8900] activating connection: mach=false listener=false peer=true name=com.apple.iokit.powerdxpc.peer[75].0xb3d1f8900
+Jun  1 22:29:43 iPhone-sivma sharingd(libxpc.dylib)[75] <Notice>: [0xadb6a5e00] invalidated after the last release of the connection object
+Jun  1 22:29:43 iPhone-sivma sharingd(libxpc.dylib)[75] <Notice>: [0xadb6a7d40] activating connection: mach=true listener=false peer=false name=com.apple.iokit.powerdxpc
+Jun  1 22:29:43 iPhone-sivma powerd(libxpc.dylib)[48] <Notice>: [0xb3d1f8f00] activating connection: mach=false listener=false peer=true name=com.apple.iokit.powerdxpc.peer[75].0xb3d1f8f00
+Jun  1 22:29:43 iPhone-sivma powerd(libxpc.dylib)[48] <Notice>: [0xb3d1f8900] invalidated because the client process (pid 75) either cancelled the connection or exited
+Jun  1 22:29:43 iPhone-sivma sharingd(libxpc.dylib)[75] <Notice>: [0xadb6a7d40] invalidated after the last release of the connection object
+Jun  1 22:29:43 iPhone-sivma SpringBoard(libxpc.dylib)[35] <Notice>: [0xced1af200] invalidated after the last release of the connection object
+Jun  1 22:29:43 iPhone-sivma SpringBoard(BatteryCenter)[35] <Notice>: (<_BCPowerSourceController: 0xcf06aa640>) Got a list of 1 sources
+Jun  1 22:29:43 iPhone-sivma SpringBoard(BatteryCenter)[35] <Notice>: (<_BCPowerSourceController: 0xcf06aa640>) Found 1 power sources
+Jun  1 22:29:43 iPhone-sivma SpringBoard(BatteryCenter)[35] <Notice>: (<_BCPowerSourceController: 0xcf06aa640>) Found power source: {
+    "Battery Provides Time Remaining" = 1;
+    "Current Capacity" = 13;
+    "Cycle count" = 2649;
+    "Date of manufacture" = "2030-10-13 00:00:00 +0000";
+    "Is Charging" = 1;
+    "Is Finishing Charge" = 0;
+    "Is Present" = 1;
+    "LPM Active" = 1;
+    "Max Capacity" = 100;
+    Name = "InternalBattery-0";
+    "Play Charging Chime" = 1;
+    "Power Source ID" = 3145827;
+    "Power Source State" = "AC Power";
+    "Raw External Connected" = 1;
+    "Show Charging UI" = 1;
+    "Time to Empty" = 0;
+    "Time to Full Charge" = 0;
+    "Transport Type" = Internal;
+    "Trusted Battery Data" =     {
+        TrustedBatteryEnabled = 0;
+    };
+    Type = InternalBattery;
+}
+Jun  1 22:29:43 iPhone-sivma powerd(libxpc.dylib)[48] <Notice>: [0xb3d1f8f00] invalidated because the client process (pid 75) either cancelled the connection or exited
+Jun  1 22:29:43 iPhone-sivma powerd(libxpc.dylib)[48] <Notice>: [0xb3d1f8d80] invalidated because the client process (pid 35) either cancelled the connection or exited
+Jun  1 22:29:43 iPhone-sivma bluetoothd[98] <Notice>: Power notification: AnyPowerSource
+Jun  1 22:29:43 iPhone-sivma powerexperienced[3024] <Notice>: kMobileChargerContext is now : 0
+Jun  1 22:29:43 iPhone-sivma SpringBoard(libxpc.dylib)[35] <Notice>: [0xced5f9900] activating connection: mach=true listener=false peer=false name=com.apple.iokit.powerdxpc
+Jun  1 22:29:43 iPhone-sivma powerd(libxpc.dylib)[48] <Notice>: [0xb3d1f8d80] activating connection: mach=false listener=false peer=true name=com.apple.iokit.powerdxpc.peer[35].0xb3d1f8d80
+Jun  1 22:29:43 iPhone-sivma powerd[48] <Notice>: batteryChargingStateRequest received
+Jun  1 22:29:43 iPhone-sivma powerexperienced[3024] <Notice>: Evaluating power targets on DeviceContext change
+Jun  1 22:29:43 iPhone-sivma powerexperienced[3024] <Notice>: inUse displayOn 1, carPlaySession 0, cameraActive 0, hotspotActive 0, audioSession 0, phoneCall 0, onenessActive 0, siriAudio 0
+Jun  1 22:29:43 iPhone-sivma powerexperienced[3024] <Notice>: inUse displayOn 1, carPlaySession 0, cameraActive 0, hotspotActive 0, audioSession 0, phoneCall 0, onenessActive 0, siriAudio 0
+Jun  1 22:29:43 iPhone-sivma powerexperienced[3024] <Notice>: inUse displayOn 1, carPlaySession 0, cameraActive 0, hotspotActive 0, audioSession 0, phoneCall 0, onenessActive 0, siriAudio 0
+Jun  1 22:29:43 iPhone-sivma powerexperienced[3024] <Notice>: inUse displayOn 1, carPlaySession 0, cameraActive 0, hotspotActive 0, audioSession 0, phoneCall 0, onenessActive 0, siriAudio 0
+Jun  1 22:29:43 iPhone-sivma powerexperienced[3024] <Notice>: inUse displayOn 1, carPlaySession 0, cameraActive 0, hotspotActive 0, audioSession 0, phoneCall 0, onenessActive 0, siriAudio 0
+Jun  1 22:29:43 iPhone-sivma powerexperienced[3024] <Notice>: inUse displayOn 1, carPlaySession 0, cameraActive 0, hotspotActive 0, audioSession 0, phoneCall 0, onenessActive 0, siriAudio 0
+Jun  1 22:29:43 iPhone-sivma powerexperienced[3024] <Notice>: Updated CLPC with power target for workload 1 value 65.000000
+Jun  1 22:29:43 iPhone-sivma powerexperienced[3024] <Notice>: Updated CLPC with power target for workload 2 value 65.000000
+Jun  1 22:29:43 iPhone-sivma powerexperienced[3024] <Error>: Failed to update CLPC with power target for mode Prepickup status 0 option 0, CLPC option 0. Error: Error Domain=CLPCErrorDomain Code=-536870201 UserInfo={NSDebugDescription=<private>}
+Jun  1 22:29:43 iPhone-sivma powerexperienced[3024] <Notice>: Logging to powerlog <private>
+Jun  1 22:29:43 iPhone-sivma powerexperienced[3024] <Notice>: Clearing state
+Jun  1 22:29:43 iPhone-sivma powerexperienced[3024] <Notice>: Updated CLPC with power target for workload 1 value 65.000000
+Jun  1 22:29:43 iPhone-sivma powerd[48] <Notice>: kIOPSNotifyTimeRemaining state 72057594512605184
+Jun  1 22:29:43 iPhone-sivma powerexperienced[3024] <Notice>: Updated CLPC with power target for workload 2 value 65.000000
+Jun  1 22:29:43 iPhone-sivma powerexperienced[3024] <Error>: Failed to update CLPC with power target for mode Prepickup status 0 option 0, CLPC option 0. Error: Error Domain=CLPCErrorDomain Code=-536870201 UserInfo={NSDebugDescription=<private>}
+Jun  1 22:29:43 iPhone-sivma powerexperienced[3024] <Notice>: Logging to powerlog <private>
+Jun  1 22:29:43 iPhone-sivma powerexperienced[3024] <Notice>: No active mitigations
+Jun  1 22:29:43 iPhone-sivma powerexperienced[3024] <Notice>: Evaluating power modes on DeviceContext change
+Jun  1 22:29:43 iPhone-sivma powerexperienced[3024] <Notice>: evaluatePowerMode: <private>: 0 display 1, carPlaySession 0, nFCSession 0, audioSession 0, sleepInProgress 0, wakeInProgress 0, onenessSession 0, siriAudio 0, fitnessIntelligence 0, dataMigrationInProgress 0, pluggedIn 1 (allowOnCharger: 0)
+Jun  1 22:29:43 iPhone-sivma powerexperienced[3024] <Notice>: Updating SMC with debug mode ActiveWarmWorkload:0
+Jun  1 22:29:43 iPhone-sivma SpringBoard(libxpc.dylib)[35] <Notice>: [0xced5f9900] invalidated after the last release of the connection object
+Jun  1 22:29:43 iPhone-sivma SpringBoard(BatteryCenter)[35] <Notice>: (<_BCPowerSourceController: 0xcf06aa640>) Found device: <BCBatteryDevice: 0xcef093400; vendor = Apple; productIdentifier = 0; parts = (null); identifier = 3145827; matchIdentifier = (null); name = iPhone sivma; groupName =InternalBattery-0; percentCharge = 13; lowBattery = YES; lowPowerModeActive = YES; connected = YES; charging = YES; paused = NO; internal = YES; powerSource = YES; poweredSoureState = AC Power; transportType = Internal; accessoryIdentifier = (null); accessoryCategory = Unknown; modelNumber = (null); >
+Jun  1 22:29:43 iPhone-sivma SpringBoard(BatteryCenter)[35] <Notice>: (<_BCPowerSourceController: 0xcf06aa640>) Notifying observer: <SBSystemStatusBatteryDataProvider: 0xcf07a4480>
+Jun  1 22:29:43 iPhone-sivma SpringBoard(BatteryCenter)[35] <Notice>: (<_BCPowerSourceController: 0xcf06aa640>) Fetch connected devices
+Jun  1 22:29:43 iPhone-sivma SpringBoard(libxpc.dylib)[35] <Notice>: [0xced1af200] activating connection: mach=true listener=false peer=false name=com.apple.iokit.powerdxpc
+Jun  1 22:29:43 iPhone-sivma powerd(libxpc.dylib)[48] <Notice>: [0xb3d1f8f00] activating connection: mach=false listener=false peer=true name=com.apple.iokit.powerdxpc.peer[35].0xb3d1f8f00
+Jun  1 22:29:43 iPhone-sivma powerd[48] <Notice>: kIOPSNotifyTimeRemaining state 72057594512605184
+Jun  1 22:29:43 iPhone-sivma powerd(libxpc.dylib)[48] <Notice>: [0xb3d1f8d80] invalidated because the client process (pid 35) either cancelled the connection or exited
+Jun  1 22:29:43 iPhone-sivma powerd[48] <Notice>: Connected state changed to 3
+Jun  1 22:29:43 iPhone-sivma SpringBoard(libxpc.dylib)[35] <Notice>: [0xced1af200] invalidated after the last release of the connection object
+Jun  1 22:29:43 iPhone-sivma SpringBoard(BatteryCenter)[35] <Notice>: (<_BCPowerSourceController: 0xcf06aa640>) Got a list of 1 sources
+Jun  1 22:29:43 iPhone-sivma SpringBoard(BatteryCenter)[35] <Notice>: (<_BCPowerSourceController: 0xcf06aa640>) Found 1 power sources
+Jun  1 22:29:43 iPhone-sivma SpringBoard(BatteryCenter)[35] <Notice>: (<_BCPowerSourceController: 0xcf06aa640>) Found power source: {
+    "Battery Provides Time Remaining" = 1;
+    "Current Capacity" = 13;
+    "Cycle count" = 2649;
+    "Date of manufacture" = "2030-10-13 00:00:00 +0000";
+    "Is Charging" = 1;
+    "Is Finishing Charge" = 0;
+    "Is Present" = 1;
+    "LPM Active" = 1;
+    "Max Capacity" = 100;
+    Name = "InternalBattery-0";
+    "Play Charging Chime" = 1;
+    "Power Source ID" = 3145827;
+    "Power Source State" = "AC Power";
+    "Raw External Connected" = 1;
+    "Show Charging UI" = 1;
+    "Time to Empty" = 0;
+    "Time to Full Charge" = 0;
+    "Transport Type" = Internal;
+    "Trusted Battery Data" =     {
+        TrustedBatteryEnabled = 0;
+    };
+    Type = InternalBattery;
+}
+Jun  1 22:29:43 iPhone-sivma SpringBoard(libxpc.dylib)[35] <Notice>: [0xced5f9900] activating connection: mach=true listener=false peer=false name=com.apple.iokit.powerdxpc
+Jun  1 22:29:43 iPhone-sivma powerd(libxpc.dylib)[48] <Notice>: [0xb3d1f8d80] activating connection: mach=false listener=false peer=true name=com.apple.iokit.powerdxpc.peer[35].0xb3d1f8d80
+Jun  1 22:29:43 iPhone-sivma powerd(libxpc.dylib)[48] <Notice>: [0xb3d1f8f00] invalidated because the client process (pid 35) either cancelled the connection or exited
+Jun  1 22:29:43 iPhone-sivma powerd[48] <Notice>: batteryChargingStateRequest received
+Jun  1 22:29:43 iPhone-sivma SpringBoard(libxpc.dylib)[35] <Notice>: [0xced5f9900] invalidated after the last release of the connection object
+Jun  1 22:29:43 iPhone-sivma SpringBoard(BatteryCenter)[35] <Notice>: (<_BCPowerSourceController: 0xcf06aa640>) Found device: <BCBatteryDevice: 0xceff44d80; vendor = Apple; productIdentifier = 0; parts = (null); identifier = 3145827; matchIdentifier = (null); name = iPhone sivma; groupName =InternalBattery-0; percentCharge = 13; lowBattery = YES; lowPowerModeActive = YES; connected = YES; charging = YES; paused = NO; internal = YES; powerSource = YES; poweredSoureState = AC Power; transportType = Internal; accessoryIdentifier = (null); accessoryCategory = Unknown; modelNumber = (null); >
+Jun  1 22:29:43 iPhone-sivma SpringBoard(BatteryCenter)[35] <Notice>: (<_BCPowerSourceController: 0xcf06aa640>) Notifying observer: <SBBluetoothAccessoryBatteryMonitor: 0xcef5e3840>
+Jun  1 22:29:43 iPhone-sivma SpringBoard(BatteryCenter)[35] <Notice>: (<_BCPowerSourceController: 0xcf06aa640>) Notifying observer: <SBUIController: 0xcf13d7000>
+Jun  1 22:29:43 iPhone-sivma powerexperienced[3024] <Error>: Write failed for key '<private>' (0x0, 0x84)
+Jun  1 22:29:43 iPhone-sivma powerexperienced[3024] <Error>: Key not found
+Jun  1 22:29:43 iPhone-sivma powerexperienced[3024] <Notice>: Updating SMC with debug mode DefaultMode:0
+Jun  1 22:29:43 iPhone-sivma powerd(libxpc.dylib)[48] <Notice>: [0xb3d1f8d80] invalidated because the client process (pid 35) either cancelled the connection or exited
+Jun  1 22:29:43 iPhone-sivma backboardd(libEDR)[71] <Notice>: ScheduleSetBrightnessIn_block_invoke: enter WaitUntil late 0.016833 millisecond (22810 / 40895)
+Jun  1 22:29:43 iPhone-sivma powerexperienced[3024] <Error>: Write failed for key '<private>' (0x0, 0x84)
+Jun  1 22:29:43 iPhone-sivma powerexperienced[3024] <Error>: Key not found
+Jun  1 22:29:43 iPhone-sivma powerexperienced[3024] <Notice>: Updating SMC with debug mode ActiveWarmWorkload:0
+Jun  1 22:29:43 iPhone-sivma contextstored(CoreDuetContext)[68] <Notice>: Sending fired registration <private> to com.apple.dasd.trigger
+Jun  1 22:29:43 iPhone-sivma powerexperienced[3024] <Error>: Write failed for key '<private>' (0x0, 0x84)
+Jun  1 22:29:43 iPhone-sivma powerexperienced[3024] <Error>: Key not found
+Jun  1 22:29:43 iPhone-sivma powerexperienced[3024] <Notice>: Updating SMC with debug mode DefaultMode:0
+Jun  1 22:29:43 iPhone-sivma dasd(CoreDuetContext)[84] <Notice>: Registration fired for <private>
+Jun  1 22:29:43 iPhone-sivma dasd(CoreDuetContext)[84] <Notice>: Dispatching call to informative registration callback for <private>
+Jun  1 22:29:43 iPhone-sivma powerexperienced[3024] <Error>: Write failed for key '<private>' (0x0, 0x84)
+Jun  1 22:29:43 iPhone-sivma powerexperienced[3024] <Error>: Key not found
+Jun  1 22:29:43 iPhone-sivma dasd[84] <Notice>: Trigger: <private> is now [<private>]
+Jun  1 22:29:43 iPhone-sivma contextstored(CoreDuetContext)[68] <Notice>: Sending fired registration <private> to com.apple.powerui.smartChargeManager
+Jun  1 22:29:43 iPhone-sivma PowerUIAgent(CoreDuetContext)[2167] <Notice>: Registration fired for <private>
+Jun  1 22:29:43 iPhone-sivma PowerUIAgent(CoreDuetContext)[2167] <Notice>: Dispatching call to informative registration callback for <private>
+Jun  1 22:29:43 iPhone-sivma contextstored(CoreDuetContext)[68] <Notice>: Sending fired registration <private> to (null)
+Jun  1 22:29:43 iPhone-sivma contextstored(CoreDuetContext)[68] <Notice>: Registration fired for <private>
+Jun  1 22:29:43 iPhone-sivma PowerUIAgent(PowerUI)[2167] <Notice>: Handling data dictionary: <private>
+Jun  1 22:29:43 iPhone-sivma contextstored(CoreDuetContext)[68] <Error>: Dispatching call to deprecated registration callback for <private>, this may lead to priority problems. Switch to non-deprecated _CDContextualChangeRegistration APIs.
+Jun  1 22:29:43 iPhone-sivma runningboardd(RunningBoard)[34] <Notice>: Assertions for process will expire soon: [xpcservice<com.apple.Posters.UnityPosterApp.Unity2025Poster([osservice<com.apple.SpringBoard>:35])>{vt hash: 159390857}[uuid:00000000-0000-0000-0000-000000000001]{definition:com.apple.Posters.UnityPosterApp.Unity2025Poster[extension][client]}:281]
+Jun  1 22:29:43 iPhone-sivma runningboardd(RunningBoard)[34] <Notice>: [xpcservice<com.apple.Posters.UnityPosterApp.Unity2025Poster([osservice<com.apple.SpringBoard>:35])>{vt hash: 159390857}[uuid:00000000-0000-0000-0000-000000000001]{definition:com.apple.Posters.UnityPosterApp.Unity2025Poster[extension][client]}:281] Set darwin role to: NonUserInteractive
+Jun  1 22:29:43 iPhone-sivma runningboardd(RunningBoard)[34] <Notice>: Calculated state for xpcservice<com.apple.Posters.UnityPosterApp.Unity2025Poster([osservice<com.apple.SpringBoard>:35])>{vt hash: 159390857}[uuid:00000000-0000-0000-0000-000000000001]{definition:com.apple.Posters.UnityPosterApp.Unity2025Poster[extension][client]}: running-active (role: NonUserInteractive) (endowments: <private>)
+Jun  1 22:29:43 iPhone-sivma runningboardd(RunningBoard)[34] <Notice>: Released power assertion with ID 36198
+Jun  1 22:29:43 iPhone-sivma powerd[48] <Notice>: Process runningboardd.34 Released SystemIsActive "xpcservice<com.apple.Posters.UnityPosterApp.Unity2025Poster([osservice<com.apple.SpringBoard>:35])>{vt hash: 159390857}[uuid:00000000-0000-0000-0000-000000000001]{definition:com.apple.Posters.UnityPosterApp.Unity2025Poster[extension][client]}34-281-15003:FinishRender-ENT-Entitled--300" age:00:00:00  id:51539643750 [System: PrevIdle SysAct]
+Jun  1 22:29:43 iPhone-sivma SpringBoard(RunningBoardServices)[35] <Notice>: Received state update for 281 (xpcservice<com.apple.Posters.UnityPosterApp.Unity2025Poster([osservice<com.apple.SpringBoard>:35])>{vt hash: 159390857}[uuid:00000000-0000-0000-0000-000000000001]{definition:com.apple.Posters.UnityPosterApp.Unity2025Poster[extension][client]}, running-active-Visible
+Jun  1 22:29:43 iPhone-sivma audiomxd(RunningBoardServices)[111] <Notice>: Received state update for 281 (xpcservice<com.apple.Posters.UnityPosterApp.Unity2025Poster([osservice<com.apple.SpringBoard>:35])>{vt hash: 159390857}[uuid:00000000-0000-0000-0000-000000000001]{definition:com.apple.Posters.UnityPosterApp.Unity2025Poster[extension][client]}, running-active-Visible
+Jun  1 22:29:43 iPhone-sivma Unity2025Poster(RunningBoardServices)[281] <Notice>: Received state update for 281 (xpcservice<com.apple.Posters.UnityPosterApp.Unity2025Poster([osservice<com.apple.SpringBoard>:35])>{vt hash: 159390857}[uuid:00000000-0000-0000-0000-000000000001]{definition:com.apple.Posters.UnityPosterApp.Unity2025Poster[extension][client]}, unknown-NotVisible
+Jun  1 22:29:43 iPhone-sivma WirelessRadioManagerd(RunningBoardServices)[51] <Notice>: Received state update for 281 (xpcservice<com.apple.Posters.UnityPosterApp.Unity2025Poster([osservice<com.apple.SpringBoard>:35])>{vt hash: 159390857}[uuid:00000000-0000-0000-0000-000000000001]{definition:com.apple.Posters.UnityPosterApp.Unity2025Poster[extension][client]}, running-active-Visible
+Jun  1 22:29:43 iPhone-sivma wifid(RunningBoardServices)[53] <Notice>: Received state update for 281 (xpcservice<com.apple.Posters.UnityPosterApp.Unity2025Poster([osservice<com.apple.SpringBoard>:35])>{vt hash: 159390857}[uuid:00000000-0000-0000-0000-000000000001]{definition:com.apple.Posters.UnityPosterApp.Unity2025Poster[extension][client]}, running-active-Visible
+Jun  1 22:29:43 iPhone-sivma symptomsd(RunningBoardServices)[144] <Notice>: Received state update for 281 (xpcservice<com.apple.Posters.UnityPosterApp.Unity2025Poster([osservice<com.apple.SpringBoard>:35])>{vt hash: 159390857}[uuid:00000000-0000-0000-0000-000000000001]{definition:com.apple.Posters.UnityPosterApp.Unity2025Poster[extension][client]}, running-active-Visible
+Jun  1 22:29:43 iPhone-sivma locationd(RunningBoardServices)[77] <Notice>: Received state update for 281 (xpcservice<com.apple.Posters.UnityPosterApp.Unity2025Poster([osservice<com.apple.SpringBoard>:35])>{vt hash: 159390857}[uuid:00000000-0000-0000-0000-000000000001]{definition:com.apple.Posters.UnityPosterApp.Unity2025Poster[extension][client]}, running-active-Visible
+Jun  1 22:29:43 iPhone-sivma UserEventAgent(RunningBoardServices)[32] <Notice>: Received state update for 281 (xpcservice<com.apple.Posters.UnityPosterApp.Unity2025Poster([osservice<com.apple.SpringBoard>:35])>{vt hash: 159390857}[uuid:00000000-0000-0000-0000-000000000001]{definition:com.apple.Posters.UnityPosterApp.Unity2025Poster[extension][client]}, running-active-Visible
+Jun  1 22:29:43 iPhone-sivma PerfPowerServices(RunningBoardServices)[1745] <Notice>: Received state update for 281 (xpcservice<com.apple.Posters.UnityPosterApp.Unity2025Poster([osservice<com.apple.SpringBoard>:35])>{vt hash: 159390857}[uuid:00000000-0000-0000-0000-000000000001]{definition:com.apple.Posters.UnityPosterApp.Unity2025Poster[extension][client]}, running-active-Visible
+Jun  1 22:29:43 iPhone-sivma useractivityd(RunningBoardServices)[253] <Notice>: Received state update for 281 (xpcservice<com.apple.Posters.UnityPosterApp.Unity2025Poster([osservice<com.apple.SpringBoard>:35])>{vt hash: 159390857}[uuid:00000000-0000-0000-0000-000000000001]{definition:com.apple.Posters.UnityPosterApp.Unity2025Poster[extension][client]}, running-active-Visible
+Jun  1 22:29:43 iPhone-sivma powerd[48] <Notice>: Sending data to powerlog for group BDC_OBC
+Jun  1 22:29:43 iPhone-sivma backboardd(libEDR)[71] <Notice>: ScheduleSetBrightnessIn_block_invoke: enter WaitUntil late 0.122750 millisecond (22811 / 40896)
+Jun  1 22:29:43 iPhone-sivma powerd[48] <Notice>: Previous Battery Health: Flags:1048579 State:1 MaxCapacity:74 CycleCount:2358
+Jun  1 22:29:43 iPhone-sivma powerd[48] <Notice>: calib: svcFlags pre: 0x3
+Jun  1 22:29:43 iPhone-sivma powerd[48] <Notice>: calib: device not relevant
+Jun  1 22:29:43 iPhone-sivma powerd[48] <Notice>: calib: svcFlags post: 0x3
+Jun  1 22:29:43 iPhone-sivma powerd[48] <Notice>: Nominal Capacity percentage(74) is less than the threshold(80)
+Jun  1 22:29:43 iPhone-sivma powerd[48] <Notice>: Updated Battery Health: Flags:1048579
+Jun  1 22:29:43 iPhone-sivma powerd[48] <Notice>: Updated Battery Health: State:1
+Jun  1 22:29:43 iPhone-sivma powerd[48] <Notice>: Updated Battery Health: MaxCapacity:74
+Jun  1 22:29:43 iPhone-sivma powerd[48] <Notice>: Updated Battery Health: CycleCount:2358
+Jun  1 22:29:43 iPhone-sivma powerd[48] <Notice>: Previous Battery Health: Flags:1048579 State:1 MaxCapacity:74 CycleCount:2358
+Jun  1 22:29:43 iPhone-sivma powerd[48] <Notice>: calib: svcFlags pre: 0x3
+Jun  1 22:29:43 iPhone-sivma powerd[48] <Notice>: calib: device not relevant
+Jun  1 22:29:43 iPhone-sivma powerd[48] <Notice>: calib: svcFlags post: 0x3
+Jun  1 22:29:43 iPhone-sivma powerd[48] <Notice>: Nominal Capacity percentage(74) is less than the threshold(80)
+Jun  1 22:29:43 iPhone-sivma powerd[48] <Notice>: Updated Battery Health: Flags:1048579
+Jun  1 22:29:43 iPhone-sivma powerd[48] <Notice>: Updated Battery Health: State:1
+Jun  1 22:29:43 iPhone-sivma powerd[48] <Notice>: Updated Battery Health: MaxCapacity:74
+Jun  1 22:29:43 iPhone-sivma powerd[48] <Notice>: Updated Battery Health: CycleCount:2358
+Jun  1 22:29:43 iPhone-sivma backboardd(libEDR)[71] <Notice>: ScheduleSetBrightnessIn_block_invoke: enter WaitUntil late 0.169708 millisecond (22812 / 40897)
+Jun  1 22:29:43 iPhone-sivma kernel(IOgPTPPlugin)[0] <Notice>: priorityCalculationInputs Using IOSkywalkLegacyEthernet as no other controller was found for en0
+Jun  1 22:29:43 iPhone-sivma locationd[77] <Notice>: {"msg":"adapter details", "adapterDescription":"usb host", "batteryChargerType":"kChargerTypeUsb", "level":13, "family":3758112768, "fullyCharged":0, "connected":1, "wasConnected":0}
+Jun  1 22:29:43 iPhone-sivma wifid(WiFiPolicy)[53] <Notice>: manager->wow.lpasSetting 1 CFSetGetCount(manager->wow.wowClients) 0 isWowActivityRegistered=0 manager->wow.overrideWoWState 0 manager->externalPower 1 manager->iokit.battery.chargeLevel 14
+Jun  1 22:29:43 iPhone-sivma UserEventAgent(IOAccessoryManager)[32] <Notice>: handle battery state update: isExtChg=1->1, enableHalogenMitigationsAndUI 1
+Jun  1 22:29:43 iPhone-sivma wifid(WiFiPolicy)[53] <Notice>: Posting metrics for AJ
+Jun  1 22:29:43 iPhone-sivma bluetoothd[98] <Notice>: Power notification: AnyPowerSource
+Jun  1 22:29:43 iPhone-sivma sharingd(libxpc.dylib)[75] <Notice>: [0xadb6a7d40] activating connection: mach=true listener=false peer=false name=com.apple.iokit.powerdxpc
+Jun  1 22:29:43 iPhone-sivma wifid(WiFiPolicy)[53] <Notice>: External power state is 1
+Jun  1 22:29:43 iPhone-sivma wifid(WiFiPolicy)[53] <Notice>: External power state is same as before 1, bailing out
+Jun  1 22:29:43 iPhone-sivma powerd(libxpc.dylib)[48] <Notice>: [0xb3d1f8d80] activating connection: mach=false listener=false peer=true name=com.apple.iokit.powerdxpc.peer[75].0xb3d1f8d80
+Jun  1 22:29:43 iPhone-sivma sharingd(libxpc.dylib)[75] <Notice>: [0xadb6a7d40] invalidated after the last release of the connection object
+Jun  1 22:29:43 iPhone-sivma sharingd(libxpc.dylib)[75] <Notice>: [0xadb6a7d40] activating connection: mach=true listener=false peer=false name=com.apple.iokit.powerdxpc
+Jun  1 22:29:43 iPhone-sivma powerd(libxpc.dylib)[48] <Notice>: [0xb3d1f8d80] invalidated because the client process (pid 75) either cancelled the connection or exited
+Jun  1 22:29:43 iPhone-sivma powerd(libxpc.dylib)[48] <Notice>: [0xb3d1f8d80] activating connection: mach=false listener=false peer=true name=com.apple.iokit.powerdxpc.peer[75].0xb3d1f8d80
+Jun  1 22:29:43 iPhone-sivma sharingd(libxpc.dylib)[75] <Notice>: [0xadb6a7d40] invalidated after the last release of the connection object
+Jun  1 22:29:43 iPhone-sivma powerd(libxpc.dylib)[48] <Notice>: [0xb3d1f8d80] invalidated because the client process (pid 75) either cancelled the connection or exited
+Jun  1 22:29:43 iPhone-sivma symptomsd(SymptomEvaluator)[144] <Notice>: Power: battery-percentage 13.00 battery-power-connected 1 battery-charging 1 battery-warn 0 battery-critical 0 battery-absolute-capacity-mAh 253 battery-voltage-mV 3713 battery-current-capacity-% 13 battery-maximum-capacity-% 100 battery-design-capacity-mAh 2214 battery-time-remaining 23 battery-fully-charged 0 battery-temperature 3659 screen-brightness 1000000 battery-raw-current-capacity 217 battery-raw-maximum-capacity 1699 presentDOD 0
+Jun  1 22:29:43 iPhone-sivma backboardd(libEDR)[71] <Notice>: ScheduleSetBrightnessIn_block_invoke: enter WaitUntil late 0.105416 millisecond (22813 / 40898)
+Jun  1 22:29:43 iPhone-sivma backboardd(libEDR)[71] <Notice>: ScheduleSetBrightnessIn_block_invoke: enter WaitUntil late 0.010542 millisecond (22814 / 40899)
+Jun  1 22:29:43 iPhone-sivma backboardd(CoreBrightness)[71] <Notice>: [BRT update: Unknown]: End ramp: Ldevice = 2.136559, Lcurrent = 650.000000, Lmin = 2.000000, Lmax = 1200.000000, Factor = 0.050000
+Jun  1 22:29:43 iPhone-sivma SpringBoard(ScreenshotServices)[35] <Notice>: device lock state changed, 5
+Jun  1 22:29:43 iPhone-sivma SpringBoard(BacklightServicesHost)[35] <Notice>: BSM:0xcf1275f40 didCompleteUpdateToState:Dimmed elapsed:0.5240s forEvents:(1){ ActiveOn->Dimmed: "idle timer"(Idle) }
+Jun  1 22:29:43 iPhone-sivma dasd[84] <Notice>: BacklightState: 3.
+Jun  1 22:29:43 iPhone-sivma SpringBoard(SpringBoard)[35] <Notice>: Backlight did complete update to state Dimmed with pending completion: YES
+Jun  1 22:29:43 iPhone-sivma SpringBoard(SpringBoard)[35] <Notice>: Calling backlight change completion due to state update
+Jun  1 22:29:43 iPhone-sivma SpringBoard(SpringBoard)[35] <Notice>: policy: focus lock -- sbTarget:<com.apple.frontboard.systemappservices/FBSceneManager:com.apple.springboard pid:35> suppressRemoteDeferring:NO
+Jun  1 22:29:43 iPhone-sivma SpringBoard(CoreMotion)[35] <Notice>: setBacklightState,backlight,2,displayActive,1,prevDisplayActive,1
+Jun  1 22:29:43 iPhone-sivma SpringBoard(SpringBoard)[35] <Notice>: policy: outbound rule not allowed -- deferring to SB
+Jun  1 22:29:43 iPhone-sivma SpringBoard(SpringBoard)[35] <Notice>: _shouldDeferToNonSpringBoardProcess shouldSendToSpringBoard:YES
+Jun  1 22:29:43 iPhone-sivma SpringBoard(SpringBoard)[35] <Notice>: [com.apple.springboard] coalition says I have focus; enforcing policy: {
+    keyboardFocusTarget: <com.apple.frontboard.systemappservices/FBSceneManager:com.apple.springboard pid:35>;
+    selectionPolicy: SpringBoardOnly;
+    shouldSuppressRemoteDeferring: 1;
+    suppressCameraButtonDeferringToApplications: YES;
+}
+Jun  1 22:29:43 iPhone-sivma SpringBoard(SpringBoard)[35] <Notice>: rules: (keyboardFocus) removing outbound rule -- deferring to SpringBoard
+Jun  1 22:29:43 iPhone-sivma SpringBoard(UIKitCore)[35] <Notice>: [0xcf1399b90] Remote event deferring rule comparison requested by system shell behavior delegate: <SBKeyboardFocusCoordinator: 0xcf0cb1d00>; reason: SB rule update
+Jun  1 22:29:43 iPhone-sivma SpringBoard(SpringBoard)[35] <Notice>: [coordinator] new enforced policy: {
+    keyboardFocusTarget: <com.apple.frontboard.systemappservices/FBSceneManager:com.apple.springboard pid:35>;
+    selectionPolicy: SpringBoardOnly;
+    shouldSuppressRemoteDeferring: 1;
+    suppressCameraButtonDeferringToApplications: YES;
+}
+Jun  1 22:29:43 iPhone-sivma SpringBoard(PosterBoardUIServices)[35] <Notice>: PRUISDeviceMotionDisablementAssertionManager - Acquiring device motion disable assertion with reason BacklightDidDisableMotionEvents, already acquired reasons: <private>
+Jun  1 22:29:43 iPhone-sivma SpringBoard(SpringBoard)[35] <Notice>: [Recording Indicator] Should force high level layer off... forceOff: NO
+Jun  1 22:29:43 iPhone-sivma backboardd(BackBoardHIDEventFoundation)[71] <Notice>: new deferring rules for pid:35: [
+    [35-2DA]; <keyboardFocus; builtin; \M-b\M^@\M-&board.systemappservices/FBSceneManager:com.apple.springboard>; () -> <token: 0x8B2CCA81; pid: 35>; reason: \M-b\M^@\M-&gin event deferring in keyboardFocus for window: 0xcf221b400,
+    [35-2]; <system; builtin; SBMainSystemGestures>; () -> <token: 0x545EB667; pid: 35>; reason: systemGestureSymbol-Main,
+    [35-1]; <system; builtin>; () -> <token: 0x545EB667; pid: 35>; reason: systemGestures-Main,
+    [35-4]; <keyboardFocus; SBKeyboardFocus>; () -> <token: \M-b\M^@\M-&board.systemappservices/FBSceneManager:com.apple.springboard; pid: 35>; reason: SB incoming to root scene (symbol),
+    [35-5]; <systemKeyCommandOverlay>; () -> <token: 0xD3C2440D; pid: 35>; reason: systemKeyCommandOverlayEnvironment to root scene,
+    [35-3]; <keyboardFocus>; () -> <token: \M-b\M^@\M-&board.systemappservices/FBSceneManager:com.apple.springboard; pid: 35>; reason: SB incoming to root scene
+]
+Jun  1 22:29:43 iPhone-sivma backboardd(BackBoardHIDEventFoundation)[71] <Notice>: [systemKeyCommandOverlay 0x6d9945540] setRules:forPID(35): [[35-5]; <systemKeyCommandOverlay>; () -> <token: 0xD3C2440D; pid: 35>; reason: systemKeyCommandOverlayEnvironment to root scene]
+Jun  1 22:29:43 iPhone-sivma backboardd(BackBoardHIDEventFoundation)[71] <Notice>: [keyboardFocus 0x6d9945590] setRules:forPID(35): [
+    [35-2DA]; <keyboardFocus; builtin; com.apple.frontboard.systemappservices/FBSceneManager:com.apple.springboard>; () -> <token: 0x8B2CCA81; pid: 35>; reason: SBWindowScene: 0xcf1184f00: Begin event deferring in keyboardFocus for window: 0xcf221b400,
+    [35-4]; <keyboardFocus; SBKeyboardFocus>; () -> <token: com.apple.frontboard.systemappservices/FBSceneManager:com.apple.springboard; pid: 35>; reason: SB incoming to root scene (symbol),
+    [35-3]; <keyboardFocus>; () -> <token: com.apple.frontboard.systemappservices/FBSceneManager:com.apple.springboard; pid: 35>; reason: SB incoming to root scene
+]
+Jun  1 22:29:43 iPhone-sivma backboardd(BackBoardHIDEventFoundation)[71] <Notice>: [system 0x6d99455e0] setRules:forPID(35): [
+    [35-2]; <system; builtin; SBMainSystemGestures>; () -> <token: 0x545EB667; pid: 35>; reason: systemGestureSymbol-Main,
+    [35-1]; <system; builtin>; () -> <token: 0x545EB667; pid: 35>; reason: systemGestures-Main
+]
+Jun  1 22:29:43 iPhone-sivma backboardd(BackBoardHIDEventFoundation)[71] <Notice>: [keyboardFocus 0x6d9945630] setRules:forPID(35): [
+    [35-2DA]; <keyboardFocus; builtin; com.apple.frontboard.systemappservices/FBSceneManager:com.apple.springboard>; () -> <token: 0x8B2CCA81; pid: 35>; reason: SBWindowScene: 0xcf1184f00: Begin event deferring in keyboardFocus for window: 0xcf221b400,
+    [35-4]; <keyboardFocus; SBKeyboardFocus>; () -> <token: com.apple.frontboard.systemappservices/FBSceneManager:com.apple.springboard; pid: 35>; reason: SB incoming to root scene (symbol),
+    [35-3]; <keyboardFocus>; () -> <token: com.apple.frontboard.systemappservices/FBSceneManager:com.apple.springboard; pid: 35>; reason: SB incoming to root scene
+]
+Jun  1 22:29:43 iPhone-sivma SpringBoard(SpringBoard)[35] <Notice>: <SBAmbientWirelessChargingIdleTimer: 0xcef1ac500>: backlight state changed to active dimmed
+Jun  1 22:29:43 iPhone-sivma SpringBoard(SpringBoard)[35] <Notice>: <SBAmbientWirelessChargingIdleTimer: 0xcef1ac500>: Wireless charging idle timer requested = NO [ enabled:YES ; isOnQiPower:NO ; screenIsOn:YES ; ambientPresented:NO ]
+Jun  1 22:29:43 iPhone-sivma sharingd[75] <Notice>: SystemUI changed: <private> -> <private>
+Jun  1 22:29:43 iPhone-sivma backboardd(BackBoardHIDEventFoundation)[71] <Notice>: [systemKeyCommandOverlay 0x6d9945680] setRules:forPID(35): [[35-5]; <systemKeyCommandOverlay>; () -> <token: 0xD3C2440D; pid: 35>; reason: systemKeyCommandOverlayEnvironment to root scene]
+Jun  1 22:29:43 iPhone-sivma backboardd(BackBoardHIDEventFoundation)[71] <Notice>: [system 0x6d99456d0] setRules:forPID(35): [
+    [35-2]; <system; builtin; SBMainSystemGestures>; () -> <token: 0x545EB667; pid: 35>; reason: systemGestureSymbol-Main,
+    [35-1]; <system; builtin>; () -> <token: 0x545EB667; pid: 35>; reason: systemGestures-Main
+]
+Jun  1 22:29:43 iPhone-sivma backboardd(BackBoardHIDEventFoundation)[71] <Notice>: chain did update (setDeferringRules) <keyboardFocus; display: null; compatibilityDisplay: builtin> containsEndOfChain: YES; [
+    <token: com.apple.frontboard.systemappservices/FBSceneManager:com.apple.springboard; pid: 35>,
+    <token: 0x8B2CCA81; pid: 35>
+]
+Jun  1 22:29:43 iPhone-sivma SpringBoard(PowerExperience)[35] <Notice>: ResourceConnection:updateResourceHint <private> with state 101
+Jun  1 22:29:43 iPhone-sivma SpringBoard(SpringBoard)[35] <Notice>: rules: (scene setting) REMOVED keyboardFocus environment from scene: sceneID:com.HVYJM2AQC2.com.rileytestut.AltStore-15C0D751-D46F-4C89-B333-A3AFE17D59B9
+Jun  1 22:29:43 iPhone-sivma SpringBoard(BacklightServicesHost)[35] <Notice>: 0xcf12719d0 will cancel assertion:<BLSAssertion: 0xcf438a1b0; state: requestCanceled; acquired: 717165207741 approx:22:29:42.714; duration: 0 \M-Q\M^A 527ms; descriptor: <BLSAssertionDescriptor: 0xcedde0fe0; explanation: BacklightEvent> attributes = {
+    <BLSHDisableFlipbookPowerSavingAttribute: 0xcf3c54780; reasonCode: 1>;
+}; identifier: <BLSAssertionIdentifier: 0xcee528420; clientPid: 35; hostPid: 35; count: 552>; service: 0xcf12719d0; observerCount: 0> wasPaused:NO
+Jun  1 22:29:43 iPhone-sivma SpringBoard(SpringBoard)[35] <Notice>: rules: (scene setting) ADDED keyboardFocus environment to scene: com.apple.springboard
+Jun  1 22:29:43 iPhone-sivma SpringBoard(UIKitCore)[35] <Notice>: sceneOfRecord: sceneID: com.apple.springboard  persistentID: com.apple.springboard
+Jun  1 22:29:43 iPhone-sivma SpringBoard(PaperBoardUI)[35] <Notice>: [lock] Poster last extant update changed 7894
+Jun  1 22:29:43 iPhone-sivma SpringBoard(PaperBoardUI)[35] <Notice>: [home] Poster last extant update changed 7894
+Jun  1 22:29:43 iPhone-sivma SpringBoard(PaperBoardUI)[35] <Notice>: [lock] Poster Extant update COULD change 7894 (7894)
+Jun  1 22:29:43 iPhone-sivma SpringBoard(PaperBoardUI)[35] <Notice>: [lock] Poster Extant update DID change
+Jun  1 22:29:43 iPhone-sivma SpringBoard(PaperBoardUI)[35] <Notice>: [lock] invalidateSnapshotPreconditions for reason: Poster Extant update DID change
+Jun  1 22:29:43 iPhone-sivma SpringBoard(PaperBoardUI)[35] <Notice>: [lock] Snapshot scheduled for Mon Jun  1 22:29:43 2026 for reason: snapshot preconditions invalidated for reason 'Poster Extant update DID change'; so scheduling a new snapshot
+Jun  1 22:29:43 iPhone-sivma SpringBoard(PaperBoardUI)[35] <Notice>: [home] Poster Extant update COULD change 7894 (7894)
+Jun  1 22:29:43 iPhone-sivma SpringBoard(PaperBoardUI)[35] <Notice>: [home] Poster Extant update DID change
+Jun  1 22:29:43 iPhone-sivma runningboardd(RunningBoard)[34] <Notice>: PERF: Received lookupHandleForPredicate request from [osservice<com.apple.SpringBoard>:35] (euid 501, auid 501) (persona (null))
+Jun  1 22:29:43 iPhone-sivma backboardd(BackBoardHIDEventFoundation)[71] <Notice>: chain did update (setDeferringRules) <keyboardFocus; display: builtin> containsEndOfChain: YES; [
+    <token: com.apple.frontboard.systemappservices/FBSceneManager:com.apple.springboard; pid: 35>,
+    <token: 0x8B2CCA81; pid: 35>
+]
+Jun  1 22:29:43 iPhone-sivma cameracaptured(CMCapture)[69] <Notice>: <<<< FigCaptureDisplayLayoutMonitor >>>> -[FigCaptureDisplayLayoutMonitor _parseFBSDisplayLayout:]: <FigCaptureDisplayLayoutMonitor: 0xc6ec95200 Main Display> <FBSDisplayLayout: 0xc6ea11300; displayIdentity: Main> {    bounds = {{0, 0}, {375, 812}};    interfaceOrientation = "portrait (1)";    backlightLevel = 5;    backlightState = 3;    elements = {        <SBSDisplayLayoutElement: 0xc6e37df10; sceneID:com.HVYJM2AQC2.com.rileytestut.AltStore-15C0D751-D46F-4C89-B333-A3AFE17D59B9; bundleID: com.HVYJM2AQC2.com.rileytestut.AltStore; frame: {{0, 0}, {375, 812}}; level: 1; hasKeyboardFocus; role: primary>;    }    timestamp = 1. June 2026 at 22:29:43 GMT+6;}
+Jun  1 22:29:43 iPhone-sivma cameracaptured(CMCapture)[69] <Notice>: <<<< FigCaptureDisplayLayoutMonitor >>>> -[FigCaptureDisplayLayoutMonitor _updateObserversWithLayout:]: <FigCaptureDisplayLayoutMonitor: 0xc6ec95200 Main Display> <FigCaptureDisplayLayout: 0xc6ea100c0 06-01-2026 22:29:43, Main Display, foreground:[com.HVYJM2AQC2.com.rileytestut.AltStore]>
+Jun  1 22:29:43 iPhone-sivma AltStore(UIKitCore)[3414] <Notice>: sceneOfRecord: sceneID: sceneID:com.HVYJM2AQC2.com.rileytestut.AltStore-15C0D751-D46F-4C89-B333-A3AFE17D59B9  persistentID: 15C0D751-D46F-4C89-B333-A3AFE17D59B9
+Jun  1 22:29:43 iPhone-sivma AltStore(BackBoardServices)[3414] <Notice>: policyStatus:<BKSHIDEventDeliveryPolicyObserver: 0x1068465e0; token: com.apple.frontboard.systemappservices/FBSceneManager:sceneID%3Acom.HVYJM2AQC2.com.rileytestut.AltStore-15C0D751-D46F-4C89-B333-A3AFE17D59B9; status: none> was:ancestor
+Jun  1 22:29:43 iPhone-sivma AltStore(UIKitCore)[3414] <Notice>: Scene target of keyboard event deferring environment did change: 0; scene: UIWindowScene: 0x106aece00; scene identity: com.apple.frontboard.systemappservices/FBSceneManager:sceneID%3Acom.HVYJM2AQC2.com.rileytestut.AltStore-15C0D751-D46F-4C89-B333-A3AFE17D59B9
+Jun  1 22:29:43 iPhone-sivma runningboardd(RunningBoard)[34] <Notice>: _resolveProcessWithIdentifier pid 122 euid 501 auid 501
+Jun  1 22:29:43 iPhone-sivma runningboardd(RunningBoard)[34] <Notice>: Resolved pid 122 to [osservice<com.apple.lsd>:122]
+Jun  1 22:29:43 iPhone-sivma runningboardd(RunningBoardServices)[34] <Notice>: Full encoding handle <private>, with data 47f91cb10000007a, and pid 122
+Jun  1 22:29:43 iPhone-sivma runningboardd(RunningBoard)[34] <Notice>: [osservice<com.apple.lsd>:122] is not RunningBoard jetsam managed.
+Jun  1 22:29:43 iPhone-sivma runningboardd(RunningBoard)[34] <Notice>: [osservice<com.apple.lsd>:122] This process will not be managed.
+Jun  1 22:29:43 iPhone-sivma runningboardd(RunningBoard)[34] <Notice>: PERF: Received lookupHandleForPredicate request from [osservice<com.apple.CommCenter>:101] (euid 25, auid 25) (persona (null))
+Jun  1 22:29:43 iPhone-sivma CommCenter(RunningBoardServices)[101] <Notice>: unsubscribing configuration of monitor M101-887
+Jun  1 22:29:43 iPhone-sivma CommCenter[101] <Notice>: #I ActivationObserver: notifyAboutFrontAppsChange
+Jun  1 22:29:43 iPhone-sivma audioaccessoryd(CoreUtils)[3394] <Notice>: ScreenState changed: ActiveOn -> ActiveDimmed (raw 3)
+Jun  1 22:29:43 iPhone-sivma SpringBoard(SiriActivation)[35] <Notice>: -[SASSystemState init]_block_invoke #modes DisplayTransition called transition=<private>
+Jun  1 22:29:43 iPhone-sivma SpringBoard(SiriActivation)[35] <Notice>: -[SASSystemState init]_block_invoke #modes Device went to sleep or went through another transition setLiftToWake:NO
+Jun  1 22:29:43 iPhone-sivma audioaccessoryd(CoreUtils)[3394] <Notice>: Smart Routing iCloud is HSA2 yes
+Jun  1 22:29:43 iPhone-sivma SpringBoard(SiriActivation)[35] <Notice>: -[SASMyriadController initWithDelegate:]_block_invoke #myriad BTLE observerCalled. Screen is not activeOn. Ignoring transition=<private>
+Jun  1 22:29:43 iPhone-sivma audioaccessoryd(CoreUtils)[3394] <Notice>: SmartRoutingEnabledPhase3 no _totalCloudDeviceCount 1 _isHSA2Account yes _pairedDeviceSupportsSmartRouting yes _isFirstUpdated yes
+Jun  1 22:29:43 iPhone-sivma audioaccessoryd(CoreUtils)[3394] <Notice>: anySmartRouting no _powerMonitor.firstUnlocked yes _sleeping no, _powerMonitor.screenOn yes, _powerMonitor.screenState ActiveDimmed, _powerMonitor.screenActive yes, _powerMonitor.screenLocked no, _screenLockedLingerTimer no
+Jun  1 22:29:43 iPhone-sivma audioaccessoryd(CoreUtils)[3394] <Notice>: EvaluateNearbyDevicesForConnection paired 6 connectedWx 0 nearbyWx 0 srDisDeviceCount 0 nearbySource 0 btState PoweredOn audioRoute Speaker tipiScore Unknown sourceSRcapable no audioCategory 100 callStarted no OD Invalid
+Jun  1 22:29:43 iPhone-sivma audioaccessoryd(CoreUtils)[3394] <Notice>: FindHeadphoneToConnectStart: Skip, reason: source not SR capable
+Jun  1 22:29:43 iPhone-sivma audioaccessoryd(CoreUtils)[3394] <Notice>: anySmartRouting no _powerMonitor.firstUnlocked yes _sleeping no, _powerMonitor.screenOn yes, _powerMonitor.screenState ActiveDimmed, _powerMonitor.screenActive yes, _powerMonitor.screenLocked no, _screenLockedLingerTimer no
+Jun  1 22:29:43 iPhone-sivma audioaccessoryd(CoreUtils)[3394] <Notice>: EvaluateNearbyDevicesForConnection paired 6 connectedWx 0 nearbyWx 0 srDisDeviceCount 0 nearbySource 0 btState PoweredOn audioRoute Speaker tipiScore Unknown sourceSRcapable no audioCategory 100 callStarted no OD Invalid
+Jun  1 22:29:43 iPhone-sivma audioaccessoryd(CoreUtils)[3394] <Notice>: FindHeadphoneToConnectStart: Skip, reason: source not SR capable
+Jun  1 22:29:43 iPhone-sivma bluetoothd(CoreUtils)[98] <Notice>: SystemUI unknown identifier: 'sceneID:com.HVYJM2AQC2.com.rileytestut.AltStore-15C0D751-D46F-4C89-B333-A3AFE17D59B9' / 'com.HVYJM2AQC2.com.rileytestut.AltStore'
+Jun  1 22:29:43 iPhone-sivma bluetoothd(CoreUtils)[98] <Notice>: ScreenState changed: ActiveOn -> ActiveDimmed (raw 3)
+Jun  1 22:29:43 iPhone-sivma bluetoothd(CoreUtils)[98] <Notice>: SystemUI changed: 0x0 < >, diff 0x0 < >
+Jun  1 22:29:43 iPhone-sivma bluetoothd(CoreUtils)[98] <Notice>: ScreenState changed: ActiveDimmed
+Jun  1 22:29:43 iPhone-sivma SpringBoard(SpringBoard)[35] <Notice>: SBMainDisplaySceneManager requested idle timer behavior disabled? NO(null)
+Jun  1 22:29:43 iPhone-sivma SpringBoard(SpringBoard)[35] <Notice>: idleTimerDescriptorForBehavior: <SBIdleTimerBehavior: 0xcebdc1a10; duration: Unlocked; mode: Auto; warnMode: Warn>
+Jun  1 22:29:43 iPhone-sivma runningboardd(RunningBoard)[34] <Notice>: PERF: Received lookupHandleForPredicate request from [osservice<com.apple.SpringBoard>:35] (euid 501, auid 501) (persona (null))
+Jun  1 22:29:43 iPhone-sivma apsd(PersistentConnection)[137] <Notice>: SimpleTimer <PCSimpleTimer: 0x6bd047660> has fired
+Jun  1 22:29:43 iPhone-sivma apsd(PersistentConnection)[137] <Notice>: Invalidating simple timer <PCSimpleTimer: 0x6bd047660>
+Jun  1 22:29:43 iPhone-sivma apsd(PersistentConnection)[137] <Notice>: Disabling power monitoring for <PCSimpleTimer: 0x6bd047660> - 6 timers
+Jun  1 22:29:43 iPhone-sivma ptpd[2390] <Notice>:             PTPGroup | New uncollected groups present (0/1679) -- notifying
+Jun  1 22:29:43 iPhone-sivma ptpd[2390] <Notice>:             [0xc004] | <event> PTPEventCodeAppleGroupAdded
+Jun  1 22:29:43 iPhone-sivma softwareupdateservicesd(SoftwareUpdateCore)[3038] <Notice>: update_downloader[1.0.6](85BEB462-0942-58EB-9A12-237DDB60A6AE)] [Progress] 2527414957/5049086295 bytes downloaded; estimated speed: 0.56 MBps; estimated time remaining = 4517.81 secs
+Jun  1 22:29:43 iPhone-sivma softwareupdateservicesd(SoftwareUpdateCoreSupport)[3038] <Notice>: [FSM(update_downloader[1.0.6][85BEB462-0942-58EB-9A12-237DDB60A6AE])] >S> DownloadingSU >E> DownloadProgress >A> ReportDownloadProgress info:
+[>>>
+    progress: phase:Downloading stalled:NO portionComplete:0.765888 totalWrittenBytes:2527414957 totalExpectedBytes:3299980016 estimatedTimeRemaining:1271.567747 task:BackgroundDownloadTask <111F50B6-9F17-49FC-889E-51C1D8FF9508>.<7> actionText:(null)
+<<<]
+Jun  1 22:29:43 iPhone-sivma softwareupdateservicesd(SoftwareUpdateCoreSupport)[3038] <Notice>: [FSM(update[UUID(85BEB462-0942-58EB-9A12-237DDB60A6AE) 23C55(user)->23F77((null)) incr])] >S> DownloadingSU >E> DownloadProgress >A> ReportDownloadProgress info:
+[>>>
+        targetPhase: NO_CHANGE
+             policy: (null)
+   downloadProgress: phase:Downloading stalled:NO portionComplete:0.500569 totalWrittenBytes:2527414957 totalExpectedBytes:5049086295 estimatedTimeRemaining:4517.808105 task:BackgroundDownloadTask <111F50B6-9F17-49FC-889E-51C1D8FF9508>.<7> actionText:(null)
+    prepareProgress: (null)
+      applyProgress: (null)
+           rollback: (null)
+         resultCode: 0
+              error: (null)
+<<<]
+Jun  1 22:29:43 iPhone-sivma softwareupdateservicesd(SoftwareUpdateCoreSupport)[3038] <Notice>: [FSM(engine:26.2(23C55))] >S> DownloadAndPrepare >E> UpdateProgress >A> ReportDownloadProgress info:
+[>>>
+    paramType: Progress
+     progress: phase:Downloading stalled:NO portionComplete:0.500569 totalWrittenBytes:2527414957 totalExpectedBytes:5049086295 estimatedTimeRemaining:4517.808105 task:BackgroundDownloadTask <111F50B6-9F17-49FC-889E-51C1D8FF9508>.<7> actionText:(null)
+<<<]
+Jun  1 22:29:43 iPhone-sivma backboardd(BackBoardHIDEventFoundation)[71] <Notice>: cache miss for VendorDefined event
+Jun  1 22:29:43 iPhone-sivma symptomsd(SymptomEvaluator)[144] <Notice>: Data Usage for com.apple.nsurlsessiond on flow 271574 - WiFi in/out: 32222934170/1044970621, WiFi delta_in/delta_out: 762976/22480, Cell in/out: 81238924/31632771, Cell delta_in/delta_out: 0/0, RNF: 0, subscriber tag: 0, total duration: 1177.030
+Jun  1 22:29:43 iPhone-sivma SpringBoard(PaperBoardUI)[35] <Error>: [lock]	Snapshot attempt failed because preconditions failed:
+Jun  1 22:29:43 iPhone-sivma SpringBoard(PaperBoardUI)[35] <Error>: [lock]	--> snapshot failure reason 'Lock variant needs to be fully locked ((null)/(null))'
+Jun  1 22:29:43 iPhone-sivma ptpd[2390] <Notice>:             PTPGroup | New uncollected groups present (0/1679) -- notifying
+Jun  1 22:29:43 iPhone-sivma ptpd[2390] <Notice>:             [0xc004] | <event> PTPEventCodeAppleGroupAdded
+Jun  1 22:29:43 iPhone-sivma ptpd[2390] <Notice>:             [0xc004] | <event> PTPEventCodeAppleGroupAdded
+Jun  1 22:29:43 iPhone-sivma powerexceptionsd(ComputeSafeguards)[78] <Notice>: changedScenarios:<private> currentActiveScenarios<private>
+Jun  1 22:29:43 iPhone-sivma cameracaptured(CMCapture)[69] <Notice>: m11:24049, m12:25505, m21:908096, m22:43520, m23:1087632, m24:1055376, m25:689824
+Jun  1 22:29:43 iPhone-sivma kernel()[0] <Notice>: wlan0:com.apple.p2p: isInfraRealtimePacketThresholdAllowed allowed:1 option:32 threshold:50 noRegistrations:1 cachedPeerCount:0 fastDiscoveryInactive:1 fastDiscoveryOnSince:25282229
+Jun  1 22:29:43 iPhone-sivma kernel()[0] <Notice>: wlan0:com.apple.p2p: currentInfraTrafficType:9239 checking if realtime upgrade required with inputPackets:466 outputPackets:148 packetThreshold:50
+Jun  1 22:29:44 iPhone-sivma backboardd(CoreBrightness)[71] <Notice>: trusted Lux: 39.000000, trusted capped Lux: 39.000000
+Jun  1 22:29:44 iPhone-sivma backboardd(CoreBrightness)[71] <Notice>: trusted front Lux: 40.000000
+Jun  1 22:29:44 iPhone-sivma searchd(DuetActivityScheduler)[926] <Notice>: Task indexing: Battery level below 30 returning NO
+Jun  1 22:29:44 iPhone-sivma locationd[77] <Notice>: os_transaction created: (<private>) <private>
+Jun  1 22:29:44 iPhone-sivma locationd[77] <Notice>: os_transaction released: (<private>) <private>
+Jun  1 22:29:44 iPhone-sivma locationd[77] <Notice>: #Warning Input, <private>, time rolled back. Delta <private>, Previous Time <private>, Current Time <private>, Always Active <private>.
+Jun  1 22:29:44 iPhone-sivma softwareupdateservicesd(SoftwareUpdateCore)[3038] <Notice>: update_downloader[1.0.6](85BEB462-0942-58EB-9A12-237DDB60A6AE)] [Progress] 2527972013/5049086295 bytes downloaded; estimated speed: 0.56 MBps; estimated time remaining = 4492.59 secs
+Jun  1 22:29:44 iPhone-sivma softwareupdateservicesd(SoftwareUpdateCoreSupport)[3038] <Notice>: [FSM(update_downloader[1.0.6][85BEB462-0942-58EB-9A12-237DDB60A6AE])] >S> DownloadingSU >E> DownloadProgress >A> ReportDownloadProgress info:
+[>>>
+    progress: phase:Downloading stalled:NO portionComplete:0.766057 totalWrittenBytes:2527972013 totalExpectedBytes:3299980016 estimatedTimeRemaining:1277.771970 task:BackgroundDownloadTask <111F50B6-9F17-49FC-889E-51C1D8FF9508>.<7> actionText:(null)
+<<<]
+Jun  1 22:29:44 iPhone-sivma softwareupdateservicesd(SoftwareUpdateCoreSupport)[3038] <Notice>: [FSM(update[UUID(85BEB462-0942-58EB-9A12-237DDB60A6AE) 23C55(user)->23F77((null)) incr])] >S> DownloadingSU >E> DownloadProgress >A> ReportDownloadProgress info:
+[>>>
+        targetPhase: NO_CHANGE
+             policy: (null)
+   downloadProgress: phase:Downloading stalled:NO portionComplete:0.500679 totalWrittenBytes:2527972013 totalExpectedBytes:5049086295 estimatedTimeRemaining:4492.588867 task:BackgroundDownloadTask <111F50B6-9F17-49FC-889E-51C1D8FF9508>.<7> actionText:(null)
+    prepareProgress: (null)
+      applyProgress: (null)
+           rollback: (null)
+         resultCode: 0
+              error: (null)
+<<<]
+Jun  1 22:29:44 iPhone-sivma softwareupdateservicesd(SoftwareUpdateCoreSupport)[3038] <Notice>: [FSM(engine:26.2(23C55))] >S> DownloadAndPrepare >E> UpdateProgress >A> ReportDownloadProgress info:
+[>>>
+    paramType: Progress
+     progress: phase:Downloading stalled:NO portionComplete:0.500679 totalWrittenBytes:2527972013 totalExpectedBytes:5049086295 estimatedTimeRemaining:4492.588867 task:BackgroundDownloadTask <111F50B6-9F17-49FC-889E-51C1D8FF9508>.<7> actionText:(null)
+<<<]
+Jun  1 22:29:44 iPhone-sivma ptpd[2390] <Notice>:             PTPGroup | New uncollected groups present (0/1679) -- notifying
+Jun  1 22:29:44 iPhone-sivma ptpd[2390] <Notice>:             [0xc004] | <event> PTPEventCodeAppleGroupAdded
+Jun  1 22:29:44 iPhone-sivma identityservicesd[64] <Notice>: Beginning cleanup of outgoing message database
+Jun  1 22:29:44 iPhone-sivma identityservicesd[64] <Notice>: Cleaned up 0 expired messages
+Jun  1 22:29:44 iPhone-sivma identityservicesd[64] <Notice>: Beginning cleanup of outgoing message database for quickswitched messages
+Jun  1 22:29:44 iPhone-sivma identityservicesd[64] <Notice>: Ending cleanup of outgoing message database for quickswitched messages
+Jun  1 22:29:44 iPhone-sivma identityservicesd[64] <Notice>: Beginning cleanup of outgoing message database for messages older than 2 days past enqueue date
+Jun  1 22:29:44 iPhone-sivma identityservicesd[64] <Notice>: Using Time Interval 801851384.464160
+Jun  1 22:29:44 iPhone-sivma identityservicesd[64] <Notice>: Ending cleanup of 0 outgoing message database for older than 2 days past enqueue date
+Jun  1 22:29:44 iPhone-sivma identityservicesd[64] <Notice>: Beginning cleanup of outgoing message database
+Jun  1 22:29:44 iPhone-sivma identityservicesd[64] <Notice>: Cleaning last resort DB with date range Sat May  2 22:29:44 2026 to Wed Jul  1 22:29:44 2026
+Jun  1 22:29:44 iPhone-sivma identityservicesd[64] <Notice>: Ending cleanup of outgoing message database
+Jun  1 22:29:44 iPhone-sivma identityservicesd[64] <Notice>: RunawayCheck: Account Guid <private> has 3 messages
+Jun  1 22:29:44 iPhone-sivma identityservicesd[64] <Notice>: File path provided for model configuration: <private>
+Jun  1 22:29:44 iPhone-sivma identityservicesd[64] <Notice>: Loading model container with schema <private>
+Jun  1 22:29:44 iPhone-sivma identityservicesd[64] <Notice>: Successfully initialized ModelContainer {filePath: <private>}
+Jun  1 22:29:44 iPhone-sivma identityservicesd[64] <Notice>: Canceling cleanup timer.
+Jun  1 22:29:44 iPhone-sivma identityservicesd[64] <Notice>: Starting SD database cleanup timer.
+Jun  1 22:29:44 iPhone-sivma symptomsd(SymptomEvaluator)[144] <Notice>: Data Usage for com.apple.nsurlsessiond on flow 271574 - WiFi in/out: 32223593082/1044989821, WiFi delta_in/delta_out: 658912/19200, Cell in/out: 81238924/31632771, Cell delta_in/delta_out: 0/0, RNF: 0, subscriber tag: 0, total duration: 1178.128
+Jun  1 22:29:44 iPhone-sivma ptpd[2390] <Notice>:             PTPGroup | New uncollected groups present (0/1678) -- notifying
+Jun  1 22:29:44 iPhone-sivma ptpd[2390] <Notice>:             PTPGroup | New uncollected groups present (0/1679) -- notifying
+Jun  1 22:29:44 iPhone-sivma ptpd[2390] <Notice>:             [0xc004] | <event> PTPEventCodeAppleGroupAdded
+Jun  1 22:29:44 iPhone-sivma backboardd(AttentionAwareness)[71] <Notice>:   25282.96459: notify client com.apple.springboard.GlobalBacklightIdleTimer of <AWAttentionLostEvent: 0x6d914f140> (timestamp:   25282.96453 attentionLostTimeout      22.00000 tagIndex 585 (tag not present in server))
+Jun  1 22:29:44 iPhone-sivma SpringBoard(SpringBoard)[35] <Notice>: attention event with timeout: <ITIdleTimeout: 0xcefe6b080; identifier: 2; duration: 22.0s> for descriptor: <ITIdleTimerDescriptor: 0xcebdc1a10; attentionMaintenanceEventMask: 2654; attentionRecoveryEventMask: 2654; attentionSamplingPeriod: 0.0s; attentionSamplingStartDelay: 0.0s> timeouts = {
+    <ITIdleTimeout: 0xcef4b91c0; identifier: 1; duration: 20.0s>;
+    <ITIdleTimeout: 0xcee17bc00; identifier: 2; duration: 22.0s>;
+    <ITIdleTimeout: 0xcee178d00; identifier: 3; duration: 30.0s>;
+}
+Jun  1 22:29:44 iPhone-sivma SpringBoard(SpringBoard)[35] <Notice>: attention event: quickWarn @ 22 -- should be 22
+Jun  1 22:29:44 iPhone-sivma SpringBoard(SpringBoard)[35] <Notice>: attention event: looking for quickWarn:22 warn:20 total:30 expecting:quickWarn -> expiration
+Jun  1 22:29:44 iPhone-sivma locationd[77] <Notice>: os_transaction created: (0x16ddb2568) CLSensorRecorderDb::reduceFreePages
+Jun  1 22:29:44 iPhone-sivma locationd[77] <Notice>: os_transaction created: (0x16ddb2478) IncrementalVacuum
+Jun  1 22:29:44 iPhone-sivma locationd[77] <Notice>: {"msg":"reduceFreePages", "path":"\134/var\134/root\134/Library\134/Caches\134/locationd\134/sensorRecorder_encryptedC.db", "page_count":16, "freelist_count":0, "loadFactor":"1.000000", "incrementalVacuumPageLimit":1000}
+Jun  1 22:29:44 iPhone-sivma locationd[77] <Notice>: {"msg":"reduceFreePages", "event":"elapsed", "begin_mach":606793074723, "end_mach":606793119563, "elapsed_s":"0.001868333"}
+Jun  1 22:29:44 iPhone-sivma locationd[77] <Notice>: os_transaction releasing: (0x16ddb2478) IncrementalVacuum
+Jun  1 22:29:44 iPhone-sivma locationd[77] <Notice>: os_transaction releasing: (0x16ddb2568) CLSensorRecorderDb::reduceFreePages
+Jun  1 22:29:44 iPhone-sivma watchdogd[62] <Notice>: 25283189469916: <private>
+Jun  1 22:29:44 iPhone-sivma watchdogd[62] <Notice>: 25283189801916: <private>
+Jun  1 22:29:44 iPhone-sivma watchdogd[62] <Notice>: 25283190071416: <private>
+Jun  1 22:29:44 iPhone-sivma watchdogd[62] <Notice>: 25283190078500: <private>
+Jun  1 22:29:44 iPhone-sivma watchdogd[62] <Notice>: 25283190081333: <private>
+Jun  1 22:29:44 iPhone-sivma watchdogd[62] <Notice>: 25283190083708: <private>
+Jun  1 22:29:44 iPhone-sivma watchdogd[62] <Notice>: 25283190085833: <private>
+Jun  1 22:29:44 iPhone-sivma watchdogd[62] <Notice>: 25283190087875: <private>
+Jun  1 22:29:44 iPhone-sivma watchdogd[62] <Notice>: 25283190090041: <private>
+Jun  1 22:29:44 iPhone-sivma watchdogd[62] <Notice>: 25283190092000: <private>
+Jun  1 22:29:44 iPhone-sivma watchdogd[62] <Notice>: 25283190094000: <private>
+Jun  1 22:29:44 iPhone-sivma watchdogd[62] <Notice>: 25283190096291: <private>
+Jun  1 22:29:44 iPhone-sivma wifid(WiFiPolicy)[53] <Error>: WiFiLQAMgrLinkRecommendationNotify: channel score: chq=3, tx-lat=4, rx-lat=5, tx-loss=4, rx-loss=5, txPer=0.4%, p95-lat=2, RT=0x0, link-recommendation=0x1
+Jun  1 22:29:44 iPhone-sivma kernel()[0] <Notice>: wlan0:com.apple.p2p: isInfraRealtimePacketThresholdAllowed allowed:1 option:32 threshold:50 noRegistrations:1 cachedPeerCount:0 fastDiscoveryInactive:1 fastDiscoveryOnSince:25283257
+Jun  1 22:29:44 iPhone-sivma kernel()[0] <Notice>: wlan0:com.apple.p2p: currentInfraTrafficType:9239 checking if realtime upgrade required with inputPackets:361 outputPackets:151 packetThreshold:50
+Jun  1 22:29:45 iPhone-sivma kernel()[0] <Notice>: IO80211PeerMonitor::checkForDPS()  Enter
+Jun  1 22:29:45 iPhone-sivma kernel()[0] <Notice>: LQM-WiFi: BE : Count: 706 avgLatencyMs:3 maxLatencyMs:86
+Jun  1 22:29:45 iPhone-sivma kernel()[0] <Notice>: LQM-WiFi: BK : Count: 0 avgLatencyMs:0 maxLatencyMs:0
+Jun  1 22:29:45 iPhone-sivma kernel()[0] <Notice>: LQM-WiFi: VI : Count: 0 avgLatencyMs:0 maxLatencyMs:0
+Jun  1 22:29:45 iPhone-sivma kernel()[0] <Notice>: LQM-WiFi: VO : Count: 0 avgLatencyMs:0 maxLatencyMs:0
+Jun  1 22:29:45 iPhone-sivma kernel()[0] <Notice>: InfraPeers: Removing peer from infra peers database FA:4F:74:E6:36:08 (total peers: 0)
+Jun  1 22:29:45 iPhone-sivma kernel()[0] <Notice>: InfraPeers: UC (FA:4F:74:E6:36:08, ?) - RxMc [4 (B:4 O:0)]
+Jun  1 22:29:45 iPhone-sivma kernel()[0] <Notice>: InfraPeers: ---------- BEGIN ----------
+Jun  1 22:29:45 iPhone-sivma kernel()[0] <Notice>: InfraPeers: Gateway (A8:F9:4B:E2:82:40, 192.168.1.1) - Tx [S:705 (BE:705 BK:0 VI:0 VO:0), F:1 (BE:1 BK:0 VI:0 VO:0), PER:0.1%], TxRe [0 (0%)], Rx [2097 (BE:2097 BK:0 VI:0 VO:0)], RxRe [0 (0%)], RxUc [2097], RxMc [0 (B:0 O:0)]
+Jun  1 22:29:45 iPhone-sivma kernel()[0] <Notice>: InfraPeers: Bonjour MC (33:33:00:00:00:00) - Tx [S:0, F:0, PER: 0.0%]
+Jun  1 22:29:45 iPhone-sivma kernel()[0] <Notice>: InfraPeers: Other MC (01:00:00:00:00:00) - Tx [S:0, F:0, PER: 0.0%]
+Jun  1 22:29:45 iPhone-sivma kernel()[0] <Notice>: InfraPeers: BC (FF:FF:FF:FF:FF:FF) - Tx [S:0, F:0, PER: 0.0%]
+Jun  1 22:29:45 iPhone-sivma kernel()[0] <Notice>: InfraPeers: Total unicast peers: 0
+Jun  1 22:29:45 iPhone-sivma kernel()[0] <Notice>: InfraPeers: ----------- END -----------
+Jun  1 22:29:45 iPhone-sivma wifid(WiFiPolicy)[53] <Notice>: LQM-TX: Success:705(99.9%) FwFail:0(0.0%) FwMaxRetries:0(0.0%) NoACK:1(0.1%) MiscDrops:0(0.0%) NoBuf:0(0.0%) FwNoRes:0(0.0%) ChipErr:0(0.0%) Exp:0(0.0%) FwFcdExpiry:0(0.0%) FwFree:0(0.0%)
+Jun  1 22:29:45 iPhone-sivma CommCenter(libATCommandStudioDynamic.dylib)[101] <Notice>: QMI: Svc=0x03(NAS) Ind MsgId=0x5571 Bin=[<private>]
+Jun  1 22:29:45 iPhone-sivma CommCenter(libATCommandStudioDynamic.dylib)[101] <Notice>: QMI: Svc=0x03(NAS) Ind MsgId=0x5571 Bin=[<private>]
+Jun  1 22:29:45 iPhone-sivma CommCenter(libATCommandStudioDynamic.dylib)[101] <Notice>: QMI: Svc=0x03(NAS) Ind MsgId=0x0051 Sim=1 Bin=['01 48 00 80 03 09 04 0D 0B 51 00 3C 00 14 06 00 CD F1 A9 FF 58 00 17 04 00 00 80 00 80 18 02 00 00 80 A2 01 00 64 A4 20 00 02 64 00 00 39 03 00 00 B0 28 00 00 01 00 00 00 90 00 00 00 A9 FF FF FF F7 57 00 00 00 00 00 00']
+Jun  1 22:29:45 iPhone-sivma CommCenter(libATCommandStudioDynamic.dylib)[101] <Notice>: QMI: Svc=0x03(NAS) Ind MsgId=0x0051 Bin=['01 48 00 80 03 14 04 53 20 51 00 3C 00 14 06 00 CD F1 A9 FF 58 00 17 04 00 00 80 00 80 18 02 00 00 80 A2 01 00 64 A4 20 00 02 64 00 00 39 03 00 00 B0 28 00 00 01 00 00 00 90 00 00 00 A9 FF FF FF F7 57 00 00 00 00 00 00']
+Jun  1 22:29:45 iPhone-sivma CommCenter[101] <Notice>: #I   --------------> kCTEventVoiceLinkQualityUpdate (120) sent to 0 (of 76) clients.
+Jun  1 22:29:45 iPhone-sivma wifid(WiFiPolicy)[53] <Notice>: Copy current network requested by "WirelessRadioManagerd"
+Jun  1 22:29:45 iPhone-sivma wifid(WiFiPolicy)[53] <Notice>: __WiFiDeviceManagerEvaluateAPEnvironment: WiFiRoam : BSS List info for network : ELTEX-8240 : chanCount5GHz: [0] chanCount24GHz: [1] chanCount6GHz: [0]
+Jun  1 22:29:45 iPhone-sivma wifid(WiFiPolicy)[53] <Notice>: __WiFiDeviceManagerEvaluateAPEnvironment: WiFiRoam : AP environment is Single Band AP for ELTEX-8240(a8:f9:4b:e2:82:41). Last applied environment is Single Band AP. Early exit ? : [0]. augmented from scan results ? : [1]
+Jun  1 22:29:45 iPhone-sivma CommCenter[101] <Notice>: Sent notification to 1 (of 43) clients: <private>
+Jun  1 22:29:45 iPhone-sivma WirelessRadioManagerd[51] <Notice>: <private>
+Jun  1 22:29:45 iPhone-sivma WirelessRadioManagerd[51] <Notice>: <private>
+Jun  1 22:29:45 iPhone-sivma wifid(WiFiPolicy)[53] <Notice>: -[WiFiUserInteractionMonitor runPeriodicTasks]: cellular data did 0 bytes (0 packets) over 5.000 seconds
+Jun  1 22:29:45 iPhone-sivma wifid(WiFiPolicy)[53] <Notice>: -[WiFiUserInteractionMonitor runPeriodicTasks]: WiFi data did 3184507(input:3137115 output:47392) bytes, 2829(input:2128 output:701) packets over 5.000 seconds
+Jun  1 22:29:45 iPhone-sivma softwareupdateservicesd(SoftwareUpdateCore)[3038] <Notice>: update_downloader[1.0.6](85BEB462-0942-58EB-9A12-237DDB60A6AE)] [Progress] 2528479917/5049086295 bytes downloaded; estimated speed: 0.56 MBps; estimated time remaining = 4502.31 secs
+Jun  1 22:29:45 iPhone-sivma softwareupdateservicesd(SoftwareUpdateCoreSupport)[3038] <Notice>: [FSM(update_downloader[1.0.6][85BEB462-0942-58EB-9A12-237DDB60A6AE])] >S> DownloadingSU >E> DownloadProgress >A> ReportDownloadProgress info:
+[>>>
+    progress: phase:Downloading stalled:NO portionComplete:0.766211 totalWrittenBytes:2528479917 totalExpectedBytes:3299980016 estimatedTimeRemaining:1286.227001 task:BackgroundDownloadTask <111F50B6-9F17-49FC-889E-51C1D8FF9508>.<7> actionText:(null)
+<<<]
+Jun  1 22:29:45 iPhone-sivma softwareupdateservicesd(SoftwareUpdateCoreSupport)[3038] <Notice>: [FSM(update[UUID(85BEB462-0942-58EB-9A12-237DDB60A6AE) 23C55(user)->23F77((null)) incr])] >S> DownloadingSU >E> DownloadProgress >A> ReportDownloadProgress info:
+[>>>
+        targetPhase: NO_CHANGE
+             policy: (null)
+   downloadProgress: phase:Downloading stalled:NO portionComplete:0.500780 totalWrittenBytes:2528479917 totalExpectedBytes:5049086295 estimatedTimeRemaining:4502.312988 task:BackgroundDownloadTask <111F50B6-9F17-49FC-889E-51C1D8FF9508>.<7> actionText:(null)
+    prepareProgress: (null)
+      applyProgress: (null)
+           rollback: (null)
+         resultCode: 0
+              error: (null)
+<<<]
+Jun  1 22:29:45 iPhone-sivma softwareupdateservicesd(SoftwareUpdateCoreSupport)[3038] <Notice>: [FSM(engine:26.2(23C55))] >S> DownloadAndPrepare >E> UpdateProgress >A> ReportDownloadProgress info:
+[>>>
+    paramType: Progress
+     progress: phase:Downloading stalled:NO portionComplete:0.500780 totalWrittenBytes:2528479917 totalExpectedBytes:5049086295 estimatedTimeRemaining:4502.312988 task:BackgroundDownloadTask <111F50B6-9F17-49FC-889E-51C1D8FF9508>.<7> actionText:(null)
+<<<]
+Jun  1 22:29:45 iPhone-sivma ptpd[2390] <Notice>:             PTPGroup | New uncollected groups present (0/1679) -- notifying
+Jun  1 22:29:45 iPhone-sivma ptpd[2390] <Notice>:             [0xc004] | <event> PTPEventCodeAppleGroupAdded
+Jun  1 22:29:45 iPhone-sivma dasd[84] <Notice>: Attempting to suspend based on triggers: (     "com.apple.duetactivityscheduler.pluggedinpolicy.batteryStatus",     "com.apple.das.restartpolicy.backlightOn" )
+Jun  1 22:29:45 iPhone-sivma dasd[84] <Notice>: com.apple.fileprovider.indexing:443EE0, Decision: CP Score: 0.975841}
+Jun  1 22:29:45 iPhone-sivma dasd[84] <Notice>: Daemon <private> doing high-priority work!
+Jun  1 22:29:45 iPhone-sivma dasd[84] <Notice>: com.apple.CFNetwork-cc-225-1038-Task <111F50B6-9F17-49FC-889E-51C1D8FF9508>.<7>:8519FF, Decision: CP Score: 0.379391}
+Jun  1 22:29:45 iPhone-sivma dasd[84] <Notice>: Ignoring trigger com.apple.duetactivityscheduler.pluggedinpolicy.batteryStatus, conditions are worse (policy: Charger Plugged In Policy)
+Jun  1 22:29:45 iPhone-sivma dasd[84] <Notice>: Ignoring trigger com.apple.das.restartpolicy.backlightOn, conditions are worse (policy: Restart Required Activities Policy)
+Jun  1 22:29:45 iPhone-sivma dasd[84] <Notice>: Evaluating 0 activities based on triggers
+Jun  1 22:29:45 iPhone-sivma symptomsd(SymptomEvaluator)[144] <Notice>: Data Usage for com.apple.nsurlsessiond on flow 271574 - WiFi in/out: 32224260826/1045010861, WiFi delta_in/delta_out: 667744/21040, Cell in/out: 81238924/31632771, Cell delta_in/delta_out: 0/0, RNF: 0, subscriber tag: 0, total duration: 1179.165
+Jun  1 22:29:45 iPhone-sivma ptpd[2390] <Notice>:             [0xc004] | <event> PTPEventCodeAppleGroupAdded
+Jun  1 22:29:45 iPhone-sivma ptpd[2390] <Notice>:             PTPGroup | New uncollected groups present (0/1679) -- notifying
+Jun  1 22:29:45 iPhone-sivma ptpd[2390] <Notice>:             [0xc004] | <event> PTPEventCodeAppleGroupAdded
+Jun  1 22:29:45 iPhone-sivma wifid(WiFiPolicy)[53] <Notice>: __WiFiDeviceProcessRSSIEvent Feeding RSSI data to LQM - RSSI:-43 Core0-RSSI:-42 Core1-RSSI:-42
+Jun  1 22:29:45 iPhone-sivma wifid[53] <Notice>: __WiFiLQAMgrLogStats(<redacted>:Stationary): InfraUptime:6710.2secs Channel: 4 Bandwidth: 20Mhz Rssi: -43 {-42 -42} Cca: 30 (S:13 O:9 I:7) Snr: 35 BcnPer: 6.0% (50, 51.5%) TxFrameCnt: 680 TxPer: 0.1% TxReTrans: 201 TxRetryRatio: 29.6% RxFrameCnt: 2168 RxRetryFrames: 187 RxRetryRatio: 8.6% TxRate: 78000 RxRate: 104000 FBRate: 13000 TxFwFrms: 2 TxFwFail: 0 Noise: -90 {-93 -90 3} time: 15.0secs fgApp: com.apple.Posters.UnityPosterApp.Unity2025Poster V: T
+Jun  1 22:29:45 iPhone-sivma wifid(WiFiPolicy)[53] <Notice>: __WiFiDeviceManagerEvaluateAPEnvironment: WiFiRoam : BSS List info for network : ELTEX-8240 : chanCount5GHz: [0] chanCount24GHz: [1] chanCount6GHz: [0]
+Jun  1 22:29:45 iPhone-sivma wifid(WiFiPolicy)[53] <Notice>: __WiFiDeviceManagerEvaluateAPEnvironment: WiFiRoam : AP environment is Single Band AP for ELTEX-8240(a8:f9:4b:e2:82:41). Last applied environment is Single Band AP. Early exit ? : [0]. augmented from scan results ? : [1]
+Jun  1 22:29:45 iPhone-sivma wifid(WiFiPolicy)[53] <Notice>: __WiFiLQAMgrLogRoamCache: CurrentBSS {ELTEX-8240 - a8:f9:4b:e2:82:41} {-47 dbm, 0, 0 ms edgeBSS} RoamCache - {}, , CacheAge: 6707.75, Valid: YES
+Jun  1 22:29:45 iPhone-sivma wifid(WiFiPolicy)[53] <Error>: Tx failure is observed
+Jun  1 22:29:45 iPhone-sivma wifid(WiFiPolicy)[53] <Error>: LQM-WiFi: WeightAvgLQM rssi=-42 snr=35 txRate=101111 rxRate=91000
+Jun  1 22:29:45 iPhone-sivma wifid(WiFiPolicy)[53] <Error>: LQM-WiFi:  (2G) rxCrsGlitch=639 rxBphyCrsGlitch=448 rxStart=3345 rxBadPLCP=1990 rxBphyBadPLCP=3 rxBadFCS=605 rxFifo0Ovfl=0 rxFifo1Ovfl=0 rx_nobuf=0 rxAnyErr=2137 rxResponseTimeout=409 rxNoDelim=12 rxFrmTooLong=0 rxFrmTooShort=112
+Jun  1 22:29:45 iPhone-sivma wifid(WiFiPolicy)[53] <Error>: LQM-WiFi: (2G) txRTSFrm=794 txRTSFail=5 rxCTSUcast=580 rxRTSUcast=689 txCTSFrm=684 txAMPDU=625 rxBACK=484 txPhyError=0 txAllFrm=2819 txMPDU=112 txUcast=742 rxACKUcast=51 OfdmDesense=0 dB
+Jun  1 22:29:45 iPhone-sivma wifid(WiFiPolicy)[53] <Error>: LQM-WiFi: (2G) rxBeaconMbss=47 rxBeaconObss=4 rxDataUcastMbss=2024 rxMgmtUcastMbss=0 rxCNTRLUcast=1804 txACKFrm=0 txBACK=590 ctxFifoFull=0 ctxFifo2Full=0 rxDataMcast=9 rxMgmtMcast=60
+Jun  1 22:29:45 iPhone-sivma wifid(WiFiPolicy)[53] <Error>: LQM-WiFi: RX AMPDU (2G) rxAmpdu=576 txBACK(Ucode)=590 rxMpduInAmpdu=2047 rxholes=0 rxdup=40 rxstuck=0 rxoow=0 rxoos=120 rxaddbareq=0 txaddbaresp=0 rxbar=0 txdelba=0 rxdelba=0 rxQueued=119 rxRetryNoBA=0
+Jun  1 22:29:45 iPhone-sivma wifid(WiFiPolicy)[53] <Error>: LQM-WiFi: WME RX MPDUs (rxPER 0 %) in tids 0:2001, 1:0, 2:0, 3:0, 4:0, 5:0, 6:0, 7:0
+Jun  1 22:29:45 iPhone-sivma wifid(WiFiPolicy)[53] <Error>: LQM-WiFi: Stats11: btDur=125ms(2%) status=0xc00023 reqTypeMap=0x301040 req=118 gnt=75 abort=67 rx1ovfl=6 latency=0 pmAttempt=44 sucPM=5 sucCTS2S=0 wlanTXPreempt=59 wlanRXPreempt=56 apTXafterPM=0 gntAudio=0 denyAudio=0 gntA2DP=0 denyA2DP=0
+Jun  1 22:29:45 iPhone-sivma wifid(WiFiPolicy)[53] <Error>: LQM-WiFi: Stats11: CrtPriCnt=113 PriCnt=17 gntSniff=0 denySniff=0 antGrant0~10ms=157 antGrant10~30ms=4 antGrant30~60ms=0 antGrant>60ms=0 APLeakiness=0 rr_cnt=0 rr_succ_cnt=0
+Jun  1 22:29:45 iPhone-sivma wifid(WiFiPolicy)[53] <Error>: LQM-WiFi:  (2G) rxToss=0 rxLastTossRsn=0 rxNoFrag=0 rxNoCmplId=0 rxNoHaddr=0 rxMulti=0 rxUndec=0
+Jun  1 22:29:45 iPhone-sivma wifid(WiFiPolicy)[53] <Error>: LQM-WiFi: Stats11: btDurAir=126ms(2%) desenseMode=0 wlrssi=0 btrssi=0 profile2gActive=-1 profile5gActive=-1 inactiveDur=76 btPmAttemptNoackCnt=23 status2=0x0 [5074ms]
+Jun  1 22:29:45 iPhone-sivma wifid(WiFiPolicy)[53] <Error>: LQM-WiFi: TX(00:00:00:00:00:00) AC<SU MS NB NRS NA CM EX TF FFP MRET FLE> BE<705 0 0 0 1 0 0 0 0 0 0> (4999ms)
+Jun  1 22:29:45 iPhone-sivma wifid(WiFiPolicy)[53] <Error>: LQM-WiFi: TX(00:00:00:00:00:00) AC<SU MS NB NRS NA CM EX TF FFP MRET FLE> BK<0 0 0 0 0 0 0 0 0 0 0> (4999ms)
+Jun  1 22:29:45 iPhone-sivma wifid(WiFiPolicy)[53] <Error>: LQM-WiFi: TX(00:00:00:00:00:00) AC<SU MS NB NRS NA CM EX TF FFP MRET FLE> VI<0 0 0 0 0 0 0 0 0 0 0> (4999ms)
+Jun  1 22:29:45 iPhone-sivma wifid(WiFiPolicy)[53] <Error>: LQM-WiFi: TX(00:00:00:00:00:00) AC<SU MS NB NRS NA CM EX TF FFP MRET FLE> VO<0 0 0 0 0 0 0 0 0 0 0> (4999ms)
+Jun  1 22:29:45 iPhone-sivma wifid(WiFiPolicy)[53] <Error>: LQM-WiFi: L3 Control VO TX(00:00:00:00:00:00) Success=0 NoACK=0 Expired=0 OtherErr=0
+Jun  1 22:29:45 iPhone-sivma wifid(WiFiPolicy)[53] <Notice>: WiFiDeviceManagerGetAppState: app state for DPS action : Foreground isAnyAppInFG:yes isFTactive:no isLatencySensitiveAppActive:no
+Jun  1 22:29:45 iPhone-sivma wifid(WiFiPolicy)[53] <Error>: __WiFiLQAMgrCheckForPossibleRoam waitForRoam: 1, plausibleRoamCandidateFound: 0, lastScanAge: 6707.75, largeNetworkEnvironment: 0, isRealTimeApplication: 0, isEdgeBss: 1
+Jun  1 22:29:45 iPhone-sivma wifid(WiFiPolicy)[53] <Notice>: WiFiLQAMgrCopyCoalescedUndispatchedLQMEvent: Rssi: -43 Snr:35 Cca: 30 TxFrames: 680 TxFail: 1 BcnRx: 47 BcnSch: 50  RxFrames: 2168 RxRetries: 187 TxRate: 78000 RxRate: 104000 FBRate: 13000 TxFwFrms: 2 TxFwFail:0 TxRetries: 201
+Jun  1 22:29:45 iPhone-sivma wifid(WiFiPolicy)[53] <Notice>: __WiFiDeviceManagerEvaluateAPEnvironment: WiFiRoam : BSS List info for network : ELTEX-8240 : chanCount5GHz: [0] chanCount24GHz: [1] chanCount6GHz: [0]
+Jun  1 22:29:45 iPhone-sivma wifid(WiFiPolicy)[53] <Notice>: __WiFiDeviceManagerEvaluateAPEnvironment: WiFiRoam : AP environment is Single Band AP for ELTEX-8240(a8:f9:4b:e2:82:41). Last applied environment is Single Band AP. Early exit ? : [0]. augmented from scan results ? : [1]
+Jun  1 22:29:45 iPhone-sivma WirelessRadioManagerd[51] <Notice>: <private>
+Jun  1 22:29:45 iPhone-sivma WirelessRadioManagerd[51] <Notice>: <private>
+Jun  1 22:29:45 iPhone-sivma WirelessRadioManagerd[51] <Notice>: <private>
+Jun  1 22:29:45 iPhone-sivma WirelessRadioManagerd[51] <Notice>: <private>
+Jun  1 22:29:45 iPhone-sivma wifid(WiFiPolicy)[53] <Notice>: Copy current network requested by "WirelessRadioManagerd"
+Jun  1 22:29:45 iPhone-sivma wifid(WiFiPolicy)[53] <Notice>: __WiFiDeviceManagerEvaluateAPEnvironment: WiFiRoam : BSS List info for network : ELTEX-8240 : chanCount5GHz: [0] chanCount24GHz: [1] chanCount6GHz: [0]
+Jun  1 22:29:45 iPhone-sivma wifid(WiFiPolicy)[53] <Notice>: __WiFiDeviceManagerEvaluateAPEnvironment: WiFiRoam : AP environment is Single Band AP for ELTEX-8240(a8:f9:4b:e2:82:41). Last applied environment is Single Band AP. Early exit ? : [0]. augmented from scan results ? : [1]
+Jun  1 22:29:45 iPhone-sivma wifid(CoreWiFi)[53] <Notice>: [corewifi] BEGIN REQ [GET INTF NAME] (pid=144 proc=symptomsd bundleID=com.apple.symptomsd codesignID=com.apple.symptomsd service=com.apple.private.corewifi-xpc qos=17 intf=(null) uuid=88F97 info=(null))
+Jun  1 22:29:45 iPhone-sivma wifid(CoreWiFi)[53] <Notice>: [corewifi] [88F97] Incoming QoS is less than 'default', promoting to 'default'
+Jun  1 22:29:45 iPhone-sivma wifid(CoreWiFi)[53] <Notice>: [corewifi] END REQ [GET INTF NAME] took 0.000755333s (pid=144 proc=symptomsd bundleID=com.apple.symptomsd codesignID=com.apple.symptomsd service=com.apple.private.corewifi-xpc qos=21 intf=(null) uuid=88F97 err=0 reply=<redacted>
+Jun  1 22:29:45 iPhone-sivma WirelessRadioManagerd[51] <Notice>: <private>
+Jun  1 22:29:45 iPhone-sivma WirelessRadioManagerd[51] <Notice>: <private>
+Jun  1 22:29:45 iPhone-sivma WirelessRadioManagerd[51] <Notice>: <private>
+Jun  1 22:29:45 iPhone-sivma WirelessRadioManagerd[51] <Notice>: <private>
+Jun  1 22:29:45 iPhone-sivma WirelessRadioManagerd[51] <Notice>: <private>
+Jun  1 22:29:45 iPhone-sivma WirelessRadioManagerd[51] <Notice>: <private>
+Jun  1 22:29:45 iPhone-sivma WirelessRadioManagerd[51] <Notice>: <private>
+Jun  1 22:29:45 iPhone-sivma symptomsd(SymptomEvaluator)[144] <Notice>: L2 Metrics on en0: rssi: -43 [-42,-42] -> -43, snr: 35 (cca [wake/total] self/other/intf): [13,13]/[9,9]/[7,7]/30 (txFrames/txReTx/txFail): 680/201/1 -> (was/is) 0/0, txRate: 78.0, rxRate: 104.0
+Jun  1 22:29:45 iPhone-sivma WirelessRadioManagerd[51] <Notice>: <private>
+Jun  1 22:29:45 iPhone-sivma WirelessRadioManagerd[51] <Notice>: <private>
+Jun  1 22:29:45 iPhone-sivma WirelessRadioManagerd[51] <Notice>: <private>
+Jun  1 22:29:45 iPhone-sivma WirelessRadioManagerd[51] <Notice>: <private>
+Jun  1 22:29:45 iPhone-sivma WirelessRadioManagerd[51] <Notice>: <private>
+Jun  1 22:29:45 iPhone-sivma remindd[3163] <Notice>: os_transaction INIT {name: com.apple.remindd.storecontroller.readwrite}
+Jun  1 22:29:45 iPhone-sivma remindd[3163] <Notice>: os_transaction RELEASE {name: com.apple.remindd.storecontroller.readwrite}
+Jun  1 22:29:45 iPhone-sivma backupd(UserManagement)[3457] <Notice>: (0) No persona found for the type 2
+Jun  1 22:29:45 iPhone-sivma backupd[3457] <Notice>: Nothing to unmount at /.b/4
+Jun  1 22:29:45 iPhone-sivma backupd[3457] <Notice>: Nothing to unmount at /.b/5
+Jun  1 22:29:45 iPhone-sivma backupd[3457] <Notice>: Nothing to unmount at /.b/0
+Jun  1 22:29:45 iPhone-sivma backupd[3457] <Notice>: Nothing to unmount at /.b/1
+Jun  1 22:29:45 iPhone-sivma backupd(UserManagement)[3457] <Notice>: (0) No persona found for the type 2
+Jun  1 22:29:45 iPhone-sivma backupd(UserManagement)[3457] <Notice>: (0) No persona found for the type 2
+Jun  1 22:29:45 iPhone-sivma backupd[3457] <Notice>: Nothing to unmount at /.b/4
+Jun  1 22:29:45 iPhone-sivma backupd[3457] <Notice>: Nothing to unmount at /.b/5
+Jun  1 22:29:45 iPhone-sivma backupd[3457] <Notice>: Nothing to unmount at /.b/0
+Jun  1 22:29:45 iPhone-sivma backupd[3457] <Notice>: Nothing to unmount at /.b/1
+Jun  1 22:29:45 iPhone-sivma backupd(UserManagement)[3457] <Notice>: (0) No persona found for the type 2
+Jun  1 22:29:45 iPhone-sivma UserEventAgent(libxpc.dylib)[32] <Notice>: [0xc9ef2c500] Re-initialization successful; calling out to event handler with XPC_ERROR_CONNECTION_INTERRUPTED
+Jun  1 22:29:45 iPhone-sivma UserEventAgent(MobileBackup)[32] <Notice>: Informing client connection was interrupted: <private>
+Jun  1 22:29:45 iPhone-sivma CommCenter(libxpc.dylib)[101] <Notice>: [0xd9501e700] invalidated because the client process (pid 3457) either cancelled the connection or exited
+Jun  1 22:29:45 iPhone-sivma CommCenter[101] <Notice>: Client [<private>] disconnected (cid=515), client list size 42
+Jun  1 22:29:45 iPhone-sivma cfprefsd(libxpc.dylib)[109] <Notice>: [0x7d717ea00] invalidated because the client process (pid 3457) either cancelled the connection or exited
+Jun  1 22:29:45 iPhone-sivma distnoted(libxpc.dylib)[105] <Notice>: [0x7a8c1fa80] invalidated because the client process (pid 3457) either cancelled the connection or exited
+Jun  1 22:29:45 iPhone-sivma cfprefsd(libxpc.dylib)[108] <Notice>: [0x8ff047d80] invalidated because the client process (pid 3457) either cancelled the connection or exited
+Jun  1 22:29:45 iPhone-sivma followupd(libxpc.dylib)[974] <Notice>: [0x6bcd09080] invalidated because the client process (pid 3457) either cancelled the connection or exited
+Jun  1 22:29:45 iPhone-sivma accountsd(libxpc.dylib)[40] <Notice>: [0x8ccde4180] invalidated because the client process (pid 3457) either cancelled the connection or exited
+Jun  1 22:29:45 iPhone-sivma runningboardd(AppServerSupport)[34] <Notice>: 00D60679-B8E8-4DC2-9AB8-C097FDFB38E0 monitor: got an update with info exited, wait4() status=0
+Jun  1 22:29:45 iPhone-sivma runningboardd(RunningBoard)[34] <Notice>: [osservice<com.apple.backupd>:3457] termination reported by launchd (0, 0, 0)
+Jun  1 22:29:45 iPhone-sivma runningboardd(RunningBoard)[34] <Notice>: Removing process: [osservice<com.apple.backupd>:3457]
+Jun  1 22:29:45 iPhone-sivma runningboardd(RunningBoard)[34] <Notice>: Existing process in RBProcessIndex is: (null)
+Jun  1 22:29:45 iPhone-sivma runningboardd(RunningBoard)[34] <Notice>: removeJobWithInstance called for identity without existing job [osservice<com.apple.backupd>:3457]
+Jun  1 22:29:45 iPhone-sivma runningboardd(RunningBoard)[34] <Notice>: Removing assertions for terminated process: [osservice<com.apple.backupd>:3457]
+Jun  1 22:29:45 iPhone-sivma SpringBoard(RunningBoardServices)[35] <Notice>: Received state update for 3457 (osservice<com.apple.backupd>, none-NotVisible
+Jun  1 22:29:45 iPhone-sivma audiomxd(RunningBoardServices)[111] <Notice>: Received state update for 3457 (osservice<com.apple.backupd>, none-NotVisible
+Jun  1 22:29:45 iPhone-sivma powerexceptionsd(ComputeSafeguards)[78] <Notice>: recordTerminationForPID: Process:<private> (3457) exited
+Jun  1 22:29:45 iPhone-sivma UserEventAgent(RunningBoardServices)[32] <Notice>: Received state update for 3457 (osservice<com.apple.backupd>, none-NotVisible
+Jun  1 22:29:45 iPhone-sivma runningboardd(RunningBoard)[34] <Notice>: Assertion did invalidate due to timeout: 34-34-15002 (target:[xpcservice<com.apple.Posters.UnityPosterApp.Unity2025Poster([osservice<com.apple.SpringBoard>:35])>{vt hash: 159390857}[uuid:00000000-0000-0000-0000-000000000001]{definition:com.apple.Posters.UnityPosterApp.Unity2025Poster[extension][client]}:281])
+Jun  1 22:29:46 iPhone-sivma kernel()[0] <Notice>: wlan0:com.apple.p2p: isInfraRealtimePacketThresholdAllowed allowed:1 option:32 threshold:50 noRegistrations:1 cachedPeerCount:0 fastDiscoveryInactive:1 fastDiscoveryOnSince:25284281
+Jun  1 22:29:46 iPhone-sivma kernel()[0] <Notice>: wlan0:com.apple.p2p: currentInfraTrafficType:9239 checking if realtime upgrade required with inputPackets:471 outputPackets:177 packetThreshold:50
+Jun  1 22:29:46 iPhone-sivma runningboardd(RunningBoard)[34] <Notice>: [xpcservice<com.apple.Posters.UnityPosterApp.Unity2025Poster([osservice<com.apple.SpringBoard>:35])>{vt hash: 159390857}[uuid:00000000-0000-0000-0000-000000000001]{definition:com.apple.Posters.UnityPosterApp.Unity2025Poster[extension][client]}:281] Suspending task.
+Jun  1 22:29:46 iPhone-sivma runningboardd(RunningBoard)[34] <Notice>: Calculated state for xpcservice<com.apple.Posters.UnityPosterApp.Unity2025Poster([osservice<com.apple.SpringBoard>:35])>{vt hash: 159390857}[uuid:00000000-0000-0000-0000-000000000001]{definition:com.apple.Posters.UnityPosterApp.Unity2025Poster[extension][client]}: running-suspended (role: None) (endowments: <private>)
+Jun  1 22:29:46 iPhone-sivma runningboardd(RunningBoard)[34] <Notice>: [xpcservice<com.apple.Posters.UnityPosterApp.Unity2025Poster([osservice<com.apple.SpringBoard>:35])>{vt hash: 159390857}[uuid:00000000-0000-0000-0000-000000000001]{definition:com.apple.Posters.UnityPosterApp.Unity2025Poster[extension][client]}:281] Shutdown sockets (SVC)
+Jun  1 22:29:46 iPhone-sivma runningboardd(RunningBoard)[34] <Notice>: [xpcservice<com.apple.Posters.UnityPosterApp.Unity2025Poster([osservice<com.apple.SpringBoard>:35])>{vt hash: 159390857}[uuid:00000000-0000-0000-0000-000000000001]{definition:com.apple.Posters.UnityPosterApp.Unity2025Poster[extension][client]}:281] Set darwin role to: None
+Jun  1 22:29:46 iPhone-sivma runningboardd(RunningBoard)[34] <Notice>: [xpcservice<com.apple.Posters.UnityPosterApp.Unity2025Poster([osservice<com.apple.SpringBoard>:35])>{vt hash: 159390857}[uuid:00000000-0000-0000-0000-000000000001]{definition:com.apple.Posters.UnityPosterApp.Unity2025Poster[extension][client]}:281] check if suspended process is holding locks
+Jun  1 22:29:46 iPhone-sivma SpringBoard(RunningBoardServices)[35] <Notice>: Received state update for 281 (xpcservice<com.apple.Posters.UnityPosterApp.Unity2025Poster([osservice<com.apple.SpringBoard>:35])>{vt hash: 159390857}[uuid:00000000-0000-0000-0000-000000000001]{definition:com.apple.Posters.UnityPosterApp.Unity2025Poster[extension][client]}, running-suspended-Visible
+Jun  1 22:29:46 iPhone-sivma audiomxd(RunningBoardServices)[111] <Notice>: Received state update for 281 (xpcservice<com.apple.Posters.UnityPosterApp.Unity2025Poster([osservice<com.apple.SpringBoard>:35])>{vt hash: 159390857}[uuid:00000000-0000-0000-0000-000000000001]{definition:com.apple.Posters.UnityPosterApp.Unity2025Poster[extension][client]}, running-suspended-Visible
+Jun  1 22:29:46 iPhone-sivma WirelessRadioManagerd(RunningBoardServices)[51] <Notice>: Received state update for 281 (xpcservice<com.apple.Posters.UnityPosterApp.Unity2025Poster([osservice<com.apple.SpringBoard>:35])>{vt hash: 159390857}[uuid:00000000-0000-0000-0000-000000000001]{definition:com.apple.Posters.UnityPosterApp.Unity2025Poster[extension][client]}, running-suspended-Visible
+Jun  1 22:29:46 iPhone-sivma wifid(RunningBoardServices)[53] <Notice>: Received state update for 281 (xpcservice<com.apple.Posters.UnityPosterApp.Unity2025Poster([osservice<com.apple.SpringBoard>:35])>{vt hash: 159390857}[uuid:00000000-0000-0000-0000-000000000001]{definition:com.apple.Posters.UnityPosterApp.Unity2025Poster[extension][client]}, running-suspended-Visible
+Jun  1 22:29:46 iPhone-sivma symptomsd(RunningBoardServices)[144] <Notice>: Received state update for 281 (xpcservice<com.apple.Posters.UnityPosterApp.Unity2025Poster([osservice<com.apple.SpringBoard>:35])>{vt hash: 159390857}[uuid:00000000-0000-0000-0000-000000000001]{definition:com.apple.Posters.UnityPosterApp.Unity2025Poster[extension][client]}, running-suspended-Visible
+Jun  1 22:29:46 iPhone-sivma SpringBoard(FrontBoard)[35] <Notice>: [xpcservice<com.apple.Posters.UnityPosterApp.Unity2025Poster>:281] Setting process task state to: Suspended
+Jun  1 22:29:46 iPhone-sivma locationd(RunningBoardServices)[77] <Notice>: Received state update for 281 (xpcservice<com.apple.Posters.UnityPosterApp.Unity2025Poster([osservice<com.apple.SpringBoard>:35])>{vt hash: 159390857}[uuid:00000000-0000-0000-0000-000000000001]{definition:com.apple.Posters.UnityPosterApp.Unity2025Poster[extension][client]}, running-suspended-Visible
+Jun  1 22:29:46 iPhone-sivma locationd[77] <Notice>: {"msg":"RBS #AppMonitor process monitor update handler invoked", "pid":281, "bundleID":"com.apple.Posters.UnityPosterApp.Unity2025Poster", "state":"RunningSuspended"}
+Jun  1 22:29:46 iPhone-sivma locationd[77] <Notice>: {"msg":"RBS #AppMonitor Post Application State Change Notification", "notification":"BackgroundTaskSuspended", "pid":281, "bundleId":"com.apple.Posters.UnityPosterApp.Unity2025Poster"}
+Jun  1 22:29:46 iPhone-sivma locationd[77] <Notice>: {"msg":"#Warning #ClientResolution the passed keyPath is not registered. Resolving to #nullCKP", "InputCKP":"icom.apple.Posters.UnityPosterApp.Unity2025Poster:"}
+Jun  1 22:29:46 iPhone-sivma locationd[77] <Notice>: os_transaction created: (0x16daf5c40) GetIdentifyingInformation
+Jun  1 22:29:46 iPhone-sivma UserEventAgent(RunningBoardServices)[32] <Notice>: Received state update for 281 (xpcservice<com.apple.Posters.UnityPosterApp.Unity2025Poster([osservice<com.apple.SpringBoard>:35])>{vt hash: 159390857}[uuid:00000000-0000-0000-0000-000000000001]{definition:com.apple.Posters.UnityPosterApp.Unity2025Poster[extension][client]}, running-suspended-Visible
+Jun  1 22:29:46 iPhone-sivma locationd[77] <Notice>: os_transaction releasing: (0x16daf5c40) GetIdentifyingInformation
+Jun  1 22:29:46 iPhone-sivma locationd[77] <Notice>: {"msg":"#CLIUA AppMonitor notification", "notification":"BackgroundTaskSuspended", "pid":281, "bundleId":"com.apple.Posters.UnityPosterApp.Unity2025Poster", "ClientKey":"icom.apple.Posters.UnityPosterApp:"}
+Jun  1 22:29:46 iPhone-sivma locationd[77] <Notice>: {"msg":"#CLIUA Marking change", "clientKey":"icom.apple.Posters.UnityPosterApp:", "reason":"Decaying in-use status from process state", "AssertionLevel":"kCLClientInUseLevelDecayingUserEngagement", "coming":1}
+Jun  1 22:29:46 iPhone-sivma locationd[77] <Notice>: {"msg":"#CLIUA updating AssertionRecord", "ClientKey":"icom.apple.Posters.UnityPosterApp:", "AssertionLevel":"kCLClientInUseLevelDirectUserEngagement"}
+Jun  1 22:29:46 iPhone-sivma locationd[77] <Notice>: {"msg":"#CLIUA AssertionRecord updated", "ClientKey":"icom.apple.Posters.UnityPosterApp:", "AssertionLevel":"kCLClientInUseLevelDirectUserEngagement"}
+Jun  1 22:29:46 iPhone-sivma locationd[77] <Notice>: {"msg":"#CLIUA Marking change", "clientKey":"icom.apple.Posters.UnityPosterApp:", "reason":"Process state from RunningBoard", "AssertionLevel":"kCLClientInUseLevelDirectUserEngagement", "coming":0}
+Jun  1 22:29:46 iPhone-sivma locationd[77] <Notice>: {"msg":"#CLIUA updating AssertionRecord", "ClientKey":"icom.apple.Posters.UnityPosterApp:", "AssertionLevel":"kCLClientInUseLevelDirectUserEngagement"}
+Jun  1 22:29:46 iPhone-sivma locationd[77] <Notice>: {"msg":"#CLIUA AssertionRecord updated", "ClientKey":"icom.apple.Posters.UnityPosterApp:", "AssertionLevel":"kCLClientInUseLevelDecayingUserEngagement"}
+Jun  1 22:29:46 iPhone-sivma locationd[77] <Notice>: {"msg":"#CLIUA in-use level changed for client", "ClientKey":"icom.apple.Posters.UnityPosterApp:"}
+Jun  1 22:29:46 iPhone-sivma locationd[77] <Notice>: {"msg":"#Warning #ClientResolution the passed keyPath is not registered. Resolving to #nullCKP", "InputCKP":"icom.apple.Posters.UnityPosterApp:"}
+Jun  1 22:29:46 iPhone-sivma PerfPowerServices(RunningBoardServices)[1745] <Notice>: Received state update for 281 (xpcservice<com.apple.Posters.UnityPosterApp.Unity2025Poster([osservice<com.apple.SpringBoard>:35])>{vt hash: 159390857}[uuid:00000000-0000-0000-0000-000000000001]{definition:com.apple.Posters.UnityPosterApp.Unity2025Poster[extension][client]}, running-suspended-Visible
+Jun  1 22:29:46 iPhone-sivma wifid(WiFiPolicy)[53] <Notice>: -[WiFiUserInteractionMonitor setApplicationRunningState:foregroundState:andNetworkingState:forBundleId:]: com.apple.Posters.UnityPosterApp.Unity2025Poster entered background
+Jun  1 22:29:46 iPhone-sivma wifid(WiFiPolicy)[53] <Notice>: WifiDeviceManagerCatsUpdateEvent(): CATS Update en0: Enter deviceManager:0x8d720f800  source:1 enable:1 appPolicy:0 bitmap:0x0
+Jun  1 22:29:46 iPhone-sivma wifid(WiFiPolicy)[53] <Notice>: WiFiDeviceManagerCatsSetLowLatencyApp: CATSUpdate en0: fgApp:com.HVYJM2AQC2.com.rileytestut.AltStore b=0x0 rc=0
+Jun  1 22:29:46 iPhone-sivma wifid(WiFiPolicy)[53] <Notice>: WiFiDeviceManagerCatsSetForegroundApp: CATSUpdate en0: fgApp:com.HVYJM2AQC2.com.rileytestut.AltStore hs=1 t=1 rc=0
+Jun  1 22:29:46 iPhone-sivma wifid(WiFiPolicy)[53] <Notice>: WifiDeviceManagerCatsUpdateEvent: CATSUpdate en0: Exit deviceManager=0x8d720f800 Source:1 stateChange:0 (P:0-->0 B:0x0-->0x0)
+Jun  1 22:29:46 iPhone-sivma wifid(WiFiPolicy)[53] <Notice>: -[WiFiUsageApplicationSession applicationStateDidChange:withAttributes:]: application session resumed:<private>
+Jun  1 22:29:46 iPhone-sivma useractivityd(RunningBoardServices)[253] <Notice>: Received state update for 281 (xpcservice<com.apple.Posters.UnityPosterApp.Unity2025Poster([osservice<com.apple.SpringBoard>:35])>{vt hash: 159390857}[uuid:00000000-0000-0000-0000-000000000001]{definition:com.apple.Posters.UnityPosterApp.Unity2025Poster[extension][client]}, running-suspended-Visible
+Jun  1 22:29:46 iPhone-sivma symptomsd(SymptomEvaluator)[144] <Notice>: com.apple.Posters.UnityPosterApp.Unity2025Poster: Foreground: false
+Jun  1 22:29:46 iPhone-sivma symptomsd(SymptomEvaluator)[144] <Notice>: Failed to find process for com.apple.Posters.UnityPosterApp.Unity2025Poster
+Jun  1 22:29:46 iPhone-sivma locationd[77] <Notice>: visitKFFilteredPressure,nowAP,802024186.257502,nowAOP,29885426504,filteredPressure,99536.460938,pressureTimestamp,29882663048,kfElevation,115.563324,wallTimePressureCorrected,802024183.491186,wallTimeKFCorrected,802024186.209736,temperatureDerivative,0.000000,absAltUnc,3.786249
+Jun  1 22:29:46 iPhone-sivma softwareupdateservicesd(SoftwareUpdateCore)[3038] <Notice>: update_downloader[1.0.6](85BEB462-0942-58EB-9A12-237DDB60A6AE)] [Progress] 2529184429/5049086295 bytes downloaded; estimated speed: 0.57 MBps; estimated time remaining = 4423.71 secs
+Jun  1 22:29:46 iPhone-sivma softwareupdateservicesd(SoftwareUpdateCoreSupport)[3038] <Notice>: [FSM(update_downloader[1.0.6][85BEB462-0942-58EB-9A12-237DDB60A6AE])] >S> DownloadingSU >E> DownloadProgress >A> ReportDownloadProgress info:
+[>>>
+    progress: phase:Downloading stalled:NO portionComplete:0.766424 totalWrittenBytes:2529184429 totalExpectedBytes:3299980016 estimatedTimeRemaining:1290.342512 task:BackgroundDownloadTask <111F50B6-9F17-49FC-889E-51C1D8FF9508>.<7> actionText:(null)
+<<<]
+Jun  1 22:29:46 iPhone-sivma softwareupdateservicesd(SoftwareUpdateCoreSupport)[3038] <Notice>: [FSM(update[UUID(85BEB462-0942-58EB-9A12-237DDB60A6AE) 23C55(user)->23F77((null)) incr])] >S> DownloadingSU >E> DownloadProgress >A> ReportDownloadProgress info:
+[>>>
+        targetPhase: NO_CHANGE
+             policy: (null)
+   downloadProgress: phase:Downloading stalled:NO portionComplete:0.500919 totalWrittenBytes:2529184429 totalExpectedBytes:5049086295 estimatedTimeRemaining:4423.707520 task:BackgroundDownloadTask <111F50B6-9F17-49FC-889E-51C1D8FF9508>.<7> actionText:(null)
+    prepareProgress: (null)
+      applyProgress: (null)
+           rollback: (null)
+         resultCode: 0
+              error: (null)
+<<<]
+Jun  1 22:29:46 iPhone-sivma softwareupdateservicesd(SoftwareUpdateCoreSupport)[3038] <Notice>: [FSM(engine:26.2(23C55))] >S> DownloadAndPrepare >E> UpdateProgress >A> ReportDownloadProgress info:
+[>>>
+    paramType: Progress
+     progress: phase:Downloading stalled:NO portionComplete:0.500919 totalWrittenBytes:2529184429 totalExpectedBytes:5049086295 estimatedTimeRemaining:4423.707520 task:BackgroundDownloadTask <111F50B6-9F17-49FC-889E-51C1D8FF9508>.<7> actionText:(null)
+<<<]
+Jun  1 22:29:46 iPhone-sivma kernel(AppleSMC)[0] <Notice>: /Library/Caches/com.apple.xbs/Sources/AppleSMC/AppleSMCEmbeddedCharger/AppleSMCCharger.cpp:338 _smcNotifyChargerCallout(smcReadKey-BNOC) (84)
+Jun  1 22:29:46 iPhone-sivma kernel(IOgPTPPlugin)[0] <Notice>: priorityCalculationInputs Using IOSkywalkLegacyEthernet as no other controller was found for en0
+Jun  1 22:29:46 iPhone-sivma locationd[77] <Notice>: {"msg":"adapter details", "adapterDescription":"usb host", "batteryChargerType":"kChargerTypeUsb", "level":14, "family":3758112768, "fullyCharged":0, "connected":1, "wasConnected":0}
+Jun  1 22:29:46 iPhone-sivma wifid(WiFiPolicy)[53] <Notice>: manager->wow.lpasSetting 1 CFSetGetCount(manager->wow.wowClients) 0 isWowActivityRegistered=0 manager->wow.overrideWoWState 0 manager->externalPower 1 manager->iokit.battery.chargeLevel 14
+Jun  1 22:29:46 iPhone-sivma wifid(WiFiPolicy)[53] <Notice>: Posting metrics for AJ
+Jun  1 22:29:46 iPhone-sivma wifid(WiFiPolicy)[53] <Notice>: External power state is 1
+Jun  1 22:29:46 iPhone-sivma wifid(WiFiPolicy)[53] <Notice>: External power state is same as before 1, bailing out
+Jun  1 22:29:46 iPhone-sivma powerd[48] <Notice>: Battery capacity change posted(0xb000e). Capacity:14 Source:AC
+Jun  1 22:29:46 iPhone-sivma powerd[48] <Notice>: posted 'com.apple.system.powersources.timeremaining'
+Jun  1 22:29:46 iPhone-sivma UserEventAgent(IOAccessoryManager)[32] <Notice>: handle battery state update: isExtChg=1->1, enableHalogenMitigationsAndUI 1
+Jun  1 22:29:46 iPhone-sivma SpringBoard(SpringBoard)[35] <Notice>: isChimeDisabled: NO, isOnAC: YES, isConnectedToWirelessCharging: NO
+Jun  1 22:29:46 iPhone-sivma SpringBoard(SpringBoard)[35] <Notice>: Should chime: NO, charging enabled: YES, _powerSourceWantsToPlayChime: NO
+Jun  1 22:29:46 iPhone-sivma bluetoothd[98] <Notice>: Power notification: AnyPowerSource
+Jun  1 22:29:46 iPhone-sivma powerd(libxpc.dylib)[48] <Notice>: [0xb3d1f8d80] activating connection: mach=false listener=false peer=true name=com.apple.iokit.powerdxpc.peer[75].0xb3d1f8d80
+Jun  1 22:29:46 iPhone-sivma locationd[77] <Notice>: #LCStats,battery charging,1
+Jun  1 22:29:46 iPhone-sivma CommCenter(libBasebandManager.dylib)[101] <Notice>: #I Battery Info Update:
+   chargeLevel:        14
+   charging:           TRUE
+   fully charged:      FALSE
+   reportToBaseband:   TRUE
+Jun  1 22:29:46 iPhone-sivma CommCenter(libBasebandCommandDriversQMI.dylib)[101] <Notice>: #I Sending battery info update
+Jun  1 22:29:46 iPhone-sivma sharingd(libxpc.dylib)[75] <Notice>: [0xadb6a7d40] activating connection: mach=true listener=false peer=false name=com.apple.iokit.powerdxpc
+Jun  1 22:29:46 iPhone-sivma sharingd(libxpc.dylib)[75] <Notice>: [0xadb6a7d40] invalidated after the last release of the connection object
+Jun  1 22:29:46 iPhone-sivma sharingd(libxpc.dylib)[75] <Notice>: [0xadb6a5e00] activating connection: mach=true listener=false peer=false name=com.apple.iokit.powerdxpc
+Jun  1 22:29:46 iPhone-sivma locationd[77] <Notice>: {"msg":"#EmergCon,onDaemonStatusNotification", "chargerType":<private>, "batteryLevel":14}
+Jun  1 22:29:46 iPhone-sivma powerd(libxpc.dylib)[48] <Notice>: [0xb3d1f8f00] activating connection: mach=false listener=false peer=true name=com.apple.iokit.powerdxpc.peer[75].0xb3d1f8f00
+Jun  1 22:29:46 iPhone-sivma powerd[48] <Notice>: LPM: monitor: batteryPercentage=14%
+Jun  1 22:29:46 iPhone-sivma powerd[48] <Notice>: LPM: autoDisableCheck: pluggedIn 1, autoDisableWhenPluggedIn 0, batteryChargeWhenEnabled 9%, autoDisableThreshold 80%, batteryPercentage 14%, autoDisableThreshold 80%, dippedBelow 1
+Jun  1 22:29:46 iPhone-sivma powerd(libxpc.dylib)[48] <Notice>: [0xb3d1f8d80] invalidated because the client process (pid 75) either cancelled the connection or exited
+Jun  1 22:29:46 iPhone-sivma SpringBoard(BatteryCenter)[35] <Notice>: (<_BCPowerSourceController: 0xcf06aa640>) Received com.apple.system.powersources.percent notification
+Jun  1 22:29:46 iPhone-sivma SpringBoard(BatteryCenter)[35] <Notice>: (<_BCPowerSourceController: 0xcf06aa640>) Query for connected devices
+Jun  1 22:29:46 iPhone-sivma SpringBoard(BatteryCenter)[35] <Notice>: (<_BCPowerSourceController: 0xcf06aa640>) Fetch connected devices
+Jun  1 22:29:46 iPhone-sivma SpringBoard(libxpc.dylib)[35] <Notice>: [0xced5f9900] activating connection: mach=true listener=false peer=false name=com.apple.iokit.powerdxpc
+Jun  1 22:29:46 iPhone-sivma powerd(libxpc.dylib)[48] <Notice>: [0xb3d1f8f00] invalidated because the client process (pid 75) either cancelled the connection or exited
+Jun  1 22:29:46 iPhone-sivma powerd(libxpc.dylib)[48] <Notice>: [0xb3d1f8900] activating connection: mach=false listener=false peer=true name=com.apple.iokit.powerdxpc.peer[35].0xb3d1f8900
+Jun  1 22:29:46 iPhone-sivma sharingd(libxpc.dylib)[75] <Notice>: [0xadb6a5e00] invalidated after the last release of the connection object
+Jun  1 22:29:46 iPhone-sivma sharingd[75] <Notice>: Companion link connected devices <private>
+Jun  1 22:29:46 iPhone-sivma sharingd[75] <Notice>: Local power source updated <private>, IOPS details <private> link connected <private>
+Jun  1 22:29:46 iPhone-sivma sharingd(CoreUtils)[75] <Notice>: Advertiser state: Pref no, Client Count 0, Family Count 3, Supported yes, SysMon yes, Max Cnx no, D2D Available yes, WombatStream no
+Jun  1 22:29:46 iPhone-sivma sharingd(CoreUtils)[75] <Notice>: Updating battery level while charging
+Jun  1 22:29:46 iPhone-sivma sharingd(CoreUtils)[75] <Notice>: Companion link state: Pref no, Host Count 0, Family Count 3, ManateeAvailable yes, SysMon no, Browser yes, Inactive no
+Jun  1 22:29:46 iPhone-sivma sharingd(CoreUtils)[75] <Notice>: Legacy browser state: Pref no, Hosts 0, Clients 0, Total 0, SysMon yes, IDS yes, HS yes, ManateeAvailable yes
+Jun  1 22:29:46 iPhone-sivma powerexperienced[3024] <Notice>: kBatteryLevelContext is now : 14
+Jun  1 22:29:46 iPhone-sivma powerexperienced[3024] <Notice>: Evaluating power targets on DeviceContext change
+Jun  1 22:29:46 iPhone-sivma powerexperienced[3024] <Notice>: inUse displayOn 1, carPlaySession 0, cameraActive 0, hotspotActive 0, audioSession 0, phoneCall 0, onenessActive 0, siriAudio 0
+Jun  1 22:29:46 iPhone-sivma powerexperienced[3024] <Notice>: inUse displayOn 1, carPlaySession 0, cameraActive 0, hotspotActive 0, audioSession 0, phoneCall 0, onenessActive 0, siriAudio 0
+Jun  1 22:29:46 iPhone-sivma powerexperienced[3024] <Notice>: inUse displayOn 1, carPlaySession 0, cameraActive 0, hotspotActive 0, audioSession 0, phoneCall 0, onenessActive 0, siriAudio 0
+Jun  1 22:29:46 iPhone-sivma powerexperienced[3024] <Notice>: inUse displayOn 1, carPlaySession 0, cameraActive 0, hotspotActive 0, audioSession 0, phoneCall 0, onenessActive 0, siriAudio 0
+Jun  1 22:29:46 iPhone-sivma locationd[77] <Notice>: {"msg":"#ADR,handleBatteryStatusChange", "battery level":"14.0", "battery charged":0, "battery connected":1, "battery was connected":1}
+Jun  1 22:29:46 iPhone-sivma CommCenter(libATCommandStudioDynamic.dylib)[101] <Notice>: #I [<private>] queueing qmux pdu for svc=226 client=3 (txid=74 msgid=0xe029) [tx-slot=1, rx-pending=0]
+Jun  1 22:29:46 iPhone-sivma CommCenter(libATCommandStudioDynamic.dylib)[101] <Notice>: QMI: Svc=0xe2(BSP) Req MsgId=0xe029 Bin=[<private>]
+Jun  1 22:29:46 iPhone-sivma locationd(libxpc.dylib)[77] <Notice>: [0xbd977cc80] activating connection: mach=true listener=false peer=false name=com.apple.tccd
+Jun  1 22:29:46 iPhone-sivma SpringBoard(libxpc.dylib)[35] <Notice>: [0xced5f9900] invalidated after the last release of the connection object
+Jun  1 22:29:46 iPhone-sivma SpringBoard(BatteryCenter)[35] <Notice>: (<_BCPowerSourceController: 0xcf06aa640>) Got a list of 1 sources
+Jun  1 22:29:46 iPhone-sivma SpringBoard(BatteryCenter)[35] <Notice>: (<_BCPowerSourceController: 0xcf06aa640>) Found 1 power sources
+Jun  1 22:29:46 iPhone-sivma SpringBoard(BatteryCenter)[35] <Notice>: (<_BCPowerSourceController: 0xcf06aa640>) Found power source: {
+    "Battery Provides Time Remaining" = 1;
+    "Current Capacity" = 14;
+    "Cycle count" = 2649;
+    "Date of manufacture" = "2030-10-13 00:00:00 +0000";
+    "Is Charging" = 1;
+    "Is Finishing Charge" = 0;
+    "Is Present" = 1;
+    "LPM Active" = 1;
+    "Max Capacity" = 100;
+    Name = "InternalBattery-0";
+    "Play Charging Chime" = 1;
+    "Power Source ID" = 3145827;
+    "Power Source State" = "AC Power";
+    "Raw External Connected" = 1;
+    "Show Charging UI" = 1;
+    "Time to Empty" = 0;
+    "Time to Full Charge" = 0;
+    "Transport Type" = Internal;
+    "Trusted Battery Data" =     {
+        TrustedBatteryEnabled = 0;
+    };
+    Type = InternalBattery;
+}
+Jun  1 22:29:46 iPhone-sivma powerd[48] <Notice>: kIOPSNotifyTimeRemaining state 72057594512605184
+Jun  1 22:29:46 iPhone-sivma powerexperienced[3024] <Notice>: inUse displayOn 1, carPlaySession 0, cameraActive 0, hotspotActive 0, audioSession 0, phoneCall 0, onenessActive 0, siriAudio 0
+Jun  1 22:29:46 iPhone-sivma powerexperienced[3024] <Notice>: inUse displayOn 1, carPlaySession 0, cameraActive 0, hotspotActive 0, audioSession 0, phoneCall 0, onenessActive 0, siriAudio 0
+Jun  1 22:29:46 iPhone-sivma powerexperienced[3024] <Notice>: Updated CLPC with power target for workload 1 value 65.000000
+Jun  1 22:29:46 iPhone-sivma powerexperienced[3024] <Notice>: Updated CLPC with power target for workload 2 value 65.000000
+Jun  1 22:29:46 iPhone-sivma powerexperienced[3024] <Error>: Failed to update CLPC with power target for mode Prepickup status 0 option 0, CLPC option 0. Error: Error Domain=CLPCErrorDomain Code=-536870201 UserInfo={NSDebugDescription=<private>}
+Jun  1 22:29:46 iPhone-sivma powerexperienced[3024] <Notice>: Logging to powerlog <private>
+Jun  1 22:29:46 iPhone-sivma powerd(libxpc.dylib)[48] <Notice>: [0xb3d1f8900] invalidated because the client process (pid 35) either cancelled the connection or exited
+Jun  1 22:29:46 iPhone-sivma powerexperienced[3024] <Notice>: Clearing state
+Jun  1 22:29:46 iPhone-sivma powerexperienced[3024] <Notice>: Updated CLPC with power target for workload 1 value 65.000000
+Jun  1 22:29:46 iPhone-sivma powerexperienced[3024] <Notice>: Updated CLPC with power target for workload 2 value 65.000000
+Jun  1 22:29:46 iPhone-sivma powerexperienced[3024] <Error>: Failed to update CLPC with power target for mode Prepickup status 0 option 0, CLPC option 0. Error: Error Domain=CLPCErrorDomain Code=-536870201 UserInfo={NSDebugDescription=<private>}
+Jun  1 22:29:46 iPhone-sivma powerexperienced[3024] <Notice>: Logging to powerlog <private>
+Jun  1 22:29:46 iPhone-sivma powerexperienced[3024] <Notice>: No active mitigations
+Jun  1 22:29:46 iPhone-sivma powerexperienced[3024] <Notice>: Evaluating power modes on DeviceContext change
+Jun  1 22:29:46 iPhone-sivma powerexperienced[3024] <Notice>: evaluatePowerMode: <private>: 0 display 1, carPlaySession 0, nFCSession 0, audioSession 0, sleepInProgress 0, wakeInProgress 0, onenessSession 0, siriAudio 0, fitnessIntelligence 0, dataMigrationInProgress 0, pluggedIn 1 (allowOnCharger: 0)
+Jun  1 22:29:46 iPhone-sivma tccd(libxpc.dylib)[47] <Notice>: [0x6aec7a800] activating connection: mach=false listener=false peer=true name=com.apple.tccd.peer[77].0x6aec7a800
+Jun  1 22:29:46 iPhone-sivma tccd[47] <Notice>: REQUEST: tccd_uid=501, sender_pid=77, sender_uid=0, sender_auid=-1, function=TCCAccessCopyInformation, msgID=77.1432
+Jun  1 22:29:46 iPhone-sivma PerfPowerServices(PowerlogLiteOperators)[1745] <Notice>: Data changed <private>
+Jun  1 22:29:46 iPhone-sivma SpringBoard(libxpc.dylib)[35] <Notice>: [0xced1af200] activating connection: mach=true listener=false peer=false name=com.apple.iokit.powerdxpc
+Jun  1 22:29:46 iPhone-sivma powerd[48] <Notice>: kIOPSNotifyTimeRemaining state 72057594512605184
+Jun  1 22:29:46 iPhone-sivma lockdownd[2388] <Notice>: handle_get_value: <private>
+Jun  1 22:29:46 iPhone-sivma powerexperienced[3024] <Notice>: kMobileChargerContext is now : 0
+Jun  1 22:29:46 iPhone-sivma powerd(libxpc.dylib)[48] <Notice>: [0xb3d1f8900] activating connection: mach=false listener=false peer=true name=com.apple.iokit.powerdxpc.peer[35].0xb3d1f8900
+Jun  1 22:29:46 iPhone-sivma powerd[48] <Notice>: batteryChargingStateRequest received
+Jun  1 22:29:46 iPhone-sivma SpringBoard(libxpc.dylib)[35] <Notice>: [0xced1af200] invalidated after the last release of the connection object
+Jun  1 22:29:46 iPhone-sivma SpringBoard(BatteryCenter)[35] <Notice>: (<_BCPowerSourceController: 0xcf06aa640>) Found device: <BCBatteryDevice: 0xcef316f80; vendor = Apple; productIdentifier = 0; parts = (null); identifier = 3145827; matchIdentifier = (null); name = iPhone sivma; groupName =InternalBattery-0; percentCharge = 14; lowBattery = YES; lowPowerModeActive = YES; connected = YES; charging = YES; paused = NO; internal = YES; powerSource = YES; poweredSoureState = AC Power; transportType = Internal; accessoryIdentifier = (null); accessoryCategory = Unknown; modelNumber = (null); >
+Jun  1 22:29:46 iPhone-sivma SpringBoard(BatteryCenter)[35] <Notice>: (<_BCPowerSourceController: 0xcf06aa640>) Received com.apple.system.powersources.timeremaining notification
+Jun  1 22:29:46 iPhone-sivma SpringBoard(BatteryCenter)[35] <Notice>: (<_BCPowerSourceController: 0xcf06aa640>) Notifying observer: <SBSystemStatusBatteryDataProvider: 0xcf07a4480>
+Jun  1 22:29:46 iPhone-sivma SpringBoard(BatteryCenter)[35] <Notice>: (<_BCPowerSourceController: 0xcf06aa640>) Query for connected devices
+Jun  1 22:29:46 iPhone-sivma SpringBoard(BatteryCenter)[35] <Notice>: (<_BCPowerSourceController: 0xcf06aa640>) Fetch connected devices
+Jun  1 22:29:46 iPhone-sivma SpringBoard(BatteryCenter)[35] <Notice>: (<_BCPowerSourceController: 0xcf06aa640>) Fetch connected devices
+Jun  1 22:29:46 iPhone-sivma SpringBoard(libxpc.dylib)[35] <Notice>: [0xced5f9900] activating connection: mach=true listener=false peer=false name=com.apple.iokit.powerdxpc
+Jun  1 22:29:46 iPhone-sivma tccd[47] <Notice>: REPLY: (501) function=TCCAccessCopyInformation, msgID=77.1432
+Jun  1 22:29:46 iPhone-sivma lockdownd[2388] <Notice>: handle_get_value: <private>
+Jun  1 22:29:46 iPhone-sivma locationd(libxpc.dylib)[77] <Notice>: [0xbd977cc80] invalidated after the last release of the connection object
+Jun  1 22:29:46 iPhone-sivma SpringBoard(libxpc.dylib)[35] <Notice>: [0xced1af200] activating connection: mach=true listener=false peer=false name=com.apple.iokit.powerdxpc
+Jun  1 22:29:46 iPhone-sivma SpringBoard(libxpc.dylib)[35] <Notice>: [0xced5f9900] invalidated after the last release of the connection object
+Jun  1 22:29:46 iPhone-sivma SpringBoard(BatteryCenter)[35] <Notice>: (<_BCPowerSourceController: 0xcf06aa640>) Got a list of 1 sources
+Jun  1 22:29:46 iPhone-sivma SpringBoard(BatteryCenter)[35] <Notice>: (<_BCPowerSourceController: 0xcf06aa640>) Found 1 power sources
+Jun  1 22:29:46 iPhone-sivma SpringBoard(BatteryCenter)[35] <Notice>: (<_BCPowerSourceController: 0xcf06aa640>) Found power source: {
+    "Battery Provides Time Remaining" = 1;
+    "Current Capacity" = 14;
+    "Cycle count" = 2649;
+    "Date of manufacture" = "2030-10-13 00:00:00 +0000";
+    "Is Charging" = 1;
+    "Is Finishing Charge" = 0;
+    "Is Present" = 1;
+    "LPM Active" = 1;
+    "Max Capacity" = 100;
+    Name = "InternalBattery-0";
+    "Play Charging Chime" = 1;
+    "Power Source ID" = 3145827;
+    "Power Source State" = "AC Power";
+    "Raw External Connected" = 1;
+    "Show Charging UI" = 1;
+    "Time to Empty" = 0;
+    "Time to Full Charge" = 0;
+    "Transport Type" = Internal;
+    "Trusted Battery Data" =     {
+        TrustedBatteryEnabled = 0;
+    };
+    Type = InternalBattery;
+}
+Jun  1 22:29:46 iPhone-sivma SpringBoard(libxpc.dylib)[35] <Notice>: [0xced5f9900] activating connection: mach=true listener=false peer=false name=com.apple.iokit.powerdxpc
+Jun  1 22:29:46 iPhone-sivma powerd(libxpc.dylib)[48] <Notice>: [0xb3d1f8f00] activating connection: mach=false listener=false peer=true name=com.apple.iokit.powerdxpc.peer[35].0xb3d1f8f00
+Jun  1 22:29:46 iPhone-sivma powerd(libxpc.dylib)[48] <Notice>: [0xb3d1f8900] invalidated because the client process (pid 35) either cancelled the connection or exited
+Jun  1 22:29:46 iPhone-sivma powerd(libxpc.dylib)[48] <Notice>: [0xb3d1f8900] activating connection: mach=false listener=false peer=true name=com.apple.iokit.powerdxpc.peer[35].0xb3d1f8900
+Jun  1 22:29:46 iPhone-sivma powerd(libxpc.dylib)[48] <Notice>: [0xb3d1f8f00] invalidated because the client process (pid 35) either cancelled the connection or exited
+Jun  1 22:29:46 iPhone-sivma powerd[48] <Notice>: batteryChargingStateRequest received
+Jun  1 22:29:46 iPhone-sivma SpringBoard(libxpc.dylib)[35] <Notice>: [0xced5f9900] invalidated after the last release of the connection object
+Jun  1 22:29:46 iPhone-sivma SpringBoard(BatteryCenter)[35] <Notice>: (<_BCPowerSourceController: 0xcf06aa640>) Found device: <BCBatteryDevice: 0xcef317880; vendor = Apple; productIdentifier = 0; parts = (null); identifier = 3145827; matchIdentifier = (null); name = iPhone sivma; groupName =InternalBattery-0; percentCharge = 14; lowBattery = YES; lowPowerModeActive = YES; connected = YES; charging = YES; paused = NO; internal = YES; powerSource = YES; poweredSoureState = AC Power; transportType = Internal; accessoryIdentifier = (null); accessoryCategory = Unknown; modelNumber = (null); >
+Jun  1 22:29:46 iPhone-sivma powerd(libxpc.dylib)[48] <Notice>: [0xb3d1f8d80] activating connection: mach=false listener=false peer=true name=com.apple.iokit.powerdxpc.peer[35].0xb3d1f8d80
+Jun  1 22:29:46 iPhone-sivma powerd(libxpc.dylib)[48] <Notice>: [0xb3d1f8900] invalidated because the client process (pid 35) either cancelled the connection or exited
+Jun  1 22:29:46 iPhone-sivma locationd[77] <Notice>: CLGMTPS,received battery notification,level,14.0,charging,<private>,wifi,<private>,xpcInt,301,startTime,801994326.1,dT,29860.3,callBack,0,intervalChng,0,dwnldReq,0,success,0,store,0,home,0,work,0,school,0,tourist,0,nploi,0,road,0,bldg,0
+Jun  1 22:29:46 iPhone-sivma SpringBoard(libxpc.dylib)[35] <Notice>: [0xced1af200] invalidated after the last release of the connection object
+Jun  1 22:29:46 iPhone-sivma SpringBoard(BatteryCenter)[35] <Notice>: (<_BCPowerSourceController: 0xcf06aa640>) Got a list of 1 sources
+Jun  1 22:29:46 iPhone-sivma SpringBoard(BatteryCenter)[35] <Notice>: (<_BCPowerSourceController: 0xcf06aa640>) Found 1 power sources
+Jun  1 22:29:46 iPhone-sivma SpringBoard(BatteryCenter)[35] <Notice>: (<_BCPowerSourceController: 0xcf06aa640>) Notifying observer: <SBBluetoothAccessoryBatteryMonitor: 0xcef5e3840>
+Jun  1 22:29:46 iPhone-sivma SpringBoard(BatteryCenter)[35] <Notice>: (<_BCPowerSourceController: 0xcf06aa640>) Notifying observer: <SBUIController: 0xcf13d7000>
+Jun  1 22:29:46 iPhone-sivma SpringBoard(BatteryCenter)[35] <Notice>: (<_BCPowerSourceController: 0xcf06aa640>) Found power source: {
+    "Battery Provides Time Remaining" = 1;
+    "Current Capacity" = 14;
+    "Cycle count" = 2649;
+    "Date of manufacture" = "2030-10-13 00:00:00 +0000";
+    "Is Charging" = 1;
+    "Is Finishing Charge" = 0;
+    "Is Present" = 1;
+    "LPM Active" = 1;
+    "Max Capacity" = 100;
+    Name = "InternalBattery-0";
+    "Play Charging Chime" = 1;
+    "Power Source ID" = 3145827;
+    "Power Source State" = "AC Power";
+    "Raw External Connected" = 1;
+    "Show Charging UI" = 1;
+    "Time to Empty" = 0;
+    "Time to Full Charge" = 0;
+    "Transport Type" = Internal;
+    "Trusted Battery Data" =     {
+        TrustedBatteryEnabled = 0;
+    };
+    Type = InternalBattery;
+}
+Jun  1 22:29:46 iPhone-sivma SpringBoard(SpringBoard)[35] <Notice>: battery info changed to (charging 14) with detail='14\M-B\240%', low power mode='1'
+Jun  1 22:29:46 iPhone-sivma lockdownd[2388] <Notice>: handle_get_value: <private>
+Jun  1 22:29:46 iPhone-sivma ptpd[2390] <Notice>:             [0xc004] | <event> PTPEventCodeAppleGroupAdded
+Jun  1 22:29:46 iPhone-sivma ptpd[2390] <Notice>:             PTPGroup | New uncollected groups present (0/1679) -- notifying
+Jun  1 22:29:46 iPhone-sivma powerexperienced[3024] <Notice>: Updating SMC with debug mode ActiveWarmWorkload:0
+Jun  1 22:29:46 iPhone-sivma powerexperienced[3024] <Error>: Write failed for key '<private>' (0x0, 0x84)
+Jun  1 22:29:46 iPhone-sivma powerexperienced[3024] <Error>: Key not found
+Jun  1 22:29:46 iPhone-sivma powerexperienced[3024] <Notice>: Updating SMC with debug mode DefaultMode:0
+Jun  1 22:29:46 iPhone-sivma powerd(libxpc.dylib)[48] <Notice>: [0xb3d1f8d80] invalidated because the client process (pid 35) either cancelled the connection or exited
+Jun  1 22:29:46 iPhone-sivma SpringBoard(libxpc.dylib)[35] <Notice>: [0xced1af200] activating connection: mach=true listener=false peer=false name=com.apple.iokit.powerdxpc
+Jun  1 22:29:46 iPhone-sivma powerexperienced[3024] <Error>: Write failed for key '<private>' (0x0, 0x84)
+Jun  1 22:29:46 iPhone-sivma powerexperienced[3024] <Error>: Key not found
+Jun  1 22:29:46 iPhone-sivma powerexperienced[3024] <Notice>: Updating SMC with debug mode ActiveWarmWorkload:0
+Jun  1 22:29:46 iPhone-sivma powerd(libxpc.dylib)[48] <Notice>: [0xb3d1f8d80] activating connection: mach=false listener=false peer=true name=com.apple.iokit.powerdxpc.peer[35].0xb3d1f8d80
+Jun  1 22:29:46 iPhone-sivma powerd[48] <Notice>: batteryChargingStateRequest received
+Jun  1 22:29:46 iPhone-sivma powerexperienced[3024] <Error>: Write failed for key '<private>' (0x0, 0x84)
+Jun  1 22:29:46 iPhone-sivma powerexperienced[3024] <Error>: Key not found
+Jun  1 22:29:46 iPhone-sivma SpringBoard(libxpc.dylib)[35] <Notice>: [0xced1af200] invalidated after the last release of the connection object
+Jun  1 22:29:46 iPhone-sivma powerexperienced[3024] <Notice>: Updating SMC with debug mode DefaultMode:0
+Jun  1 22:29:46 iPhone-sivma powerd(libxpc.dylib)[48] <Notice>: [0xb3d1f8d80] invalidated because the client process (pid 35) either cancelled the connection or exited
+Jun  1 22:29:46 iPhone-sivma SpringBoard(BatteryCenter)[35] <Notice>: (<_BCPowerSourceController: 0xcf06aa640>) Found device: <BCBatteryDevice: 0xced5d2900; vendor = Apple; productIdentifier = 0; parts = (null); identifier = 3145827; matchIdentifier = (null); name = iPhone sivma; groupName =InternalBattery-0; percentCharge = 14; lowBattery = YES; lowPowerModeActive = YES; connected = YES; charging = YES; paused = NO; internal = YES; powerSource = YES; poweredSoureState = AC Power; transportType = Internal; accessoryIdentifier = (null); accessoryCategory = Unknown; modelNumber = (null); >
+Jun  1 22:29:46 iPhone-sivma CommCenter(libATCommandStudioDynamic.dylib)[101] <Notice>: QMI: Svc=0xe2(BSP) Resp MsgId=0xe029 Bin=[<private>]
+Jun  1 22:29:46 iPhone-sivma CommCenter(libBasebandManager.dylib)[101] <Notice>: #I Success sending battery info update
+Jun  1 22:29:46 iPhone-sivma powerexperienced[3024] <Error>: Write failed for key '<private>' (0x0, 0x84)
+Jun  1 22:29:46 iPhone-sivma powerexperienced[3024] <Error>: Key not found
+Jun  1 22:29:46 iPhone-sivma powerexperienced[3024] <Notice>: Evaluating power targets on DeviceContext change
+Jun  1 22:29:46 iPhone-sivma powerexperienced[3024] <Notice>: inUse displayOn 1, carPlaySession 0, cameraActive 0, hotspotActive 0, audioSession 0, phoneCall 0, onenessActive 0, siriAudio 0
+Jun  1 22:29:46 iPhone-sivma powerexperienced[3024] <Notice>: inUse displayOn 1, carPlaySession 0, cameraActive 0, hotspotActive 0, audioSession 0, phoneCall 0, onenessActive 0, siriAudio 0
+Jun  1 22:29:46 iPhone-sivma powerexperienced[3024] <Notice>: inUse displayOn 1, carPlaySession 0, cameraActive 0, hotspotActive 0, audioSession 0, phoneCall 0, onenessActive 0, siriAudio 0
+Jun  1 22:29:46 iPhone-sivma powerexperienced[3024] <Notice>: inUse displayOn 1, carPlaySession 0, cameraActive 0, hotspotActive 0, audioSession 0, phoneCall 0, onenessActive 0, siriAudio 0
+Jun  1 22:29:46 iPhone-sivma powerexperienced[3024] <Notice>: inUse displayOn 1, carPlaySession 0, cameraActive 0, hotspotActive 0, audioSession 0, phoneCall 0, onenessActive 0, siriAudio 0
+Jun  1 22:29:46 iPhone-sivma powerexperienced[3024] <Notice>: inUse displayOn 1, carPlaySession 0, cameraActive 0, hotspotActive 0, audioSession 0, phoneCall 0, onenessActive 0, siriAudio 0
+Jun  1 22:29:46 iPhone-sivma powerexperienced[3024] <Notice>: Updated CLPC with power target for workload 1 value 65.000000
+Jun  1 22:29:46 iPhone-sivma powerexperienced[3024] <Notice>: Updated CLPC with power target for workload 2 value 65.000000
+Jun  1 22:29:46 iPhone-sivma powerexperienced[3024] <Error>: Failed to update CLPC with power target for mode Prepickup status 0 option 0, CLPC option 0. Error: Error Domain=CLPCErrorDomain Code=-536870201 UserInfo={NSDebugDescription=<private>}
+Jun  1 22:29:46 iPhone-sivma powerexperienced[3024] <Notice>: Logging to powerlog <private>
+Jun  1 22:29:46 iPhone-sivma powerexperienced[3024] <Notice>: Clearing state
+Jun  1 22:29:46 iPhone-sivma powerexperienced[3024] <Notice>: Updated CLPC with power target for workload 1 value 65.000000
+Jun  1 22:29:46 iPhone-sivma powerexperienced[3024] <Notice>: Updated CLPC with power target for workload 2 value 65.000000
+Jun  1 22:29:46 iPhone-sivma powerexperienced[3024] <Error>: Failed to update CLPC with power target for mode Prepickup status 0 option 0, CLPC option 0. Error: Error Domain=CLPCErrorDomain Code=-536870201 UserInfo={NSDebugDescription=<private>}
+Jun  1 22:29:46 iPhone-sivma powerexperienced[3024] <Notice>: Logging to powerlog <private>
+Jun  1 22:29:46 iPhone-sivma SpringBoard(BatteryCenter)[35] <Notice>: (<_BCPowerSourceController: 0xcf06aa640>) Notifying observer: <SBSystemStatusBatteryDataProvider: 0xcf07a4480>
+Jun  1 22:29:46 iPhone-sivma SpringBoard(BatteryCenter)[35] <Notice>: (<_BCPowerSourceController: 0xcf06aa640>) Fetch connected devices
+Jun  1 22:29:46 iPhone-sivma SpringBoard(libxpc.dylib)[35] <Notice>: [0xcec89e300] activating connection: mach=true listener=false peer=false name=com.apple.iokit.powerdxpc
+Jun  1 22:29:46 iPhone-sivma powerd(libxpc.dylib)[48] <Notice>: [0xb3d1f8d80] activating connection: mach=false listener=false peer=true name=com.apple.iokit.powerdxpc.peer[35].0xb3d1f8d80
+Jun  1 22:29:46 iPhone-sivma SpringBoard(libxpc.dylib)[35] <Notice>: [0xcec89e300] invalidated after the last release of the connection object
+Jun  1 22:29:46 iPhone-sivma SpringBoard(BatteryCenter)[35] <Notice>: (<_BCPowerSourceController: 0xcf06aa640>) Got a list of 1 sources
+Jun  1 22:29:46 iPhone-sivma SpringBoard(BatteryCenter)[35] <Notice>: (<_BCPowerSourceController: 0xcf06aa640>) Found 1 power sources
+Jun  1 22:29:46 iPhone-sivma powerexperienced[3024] <Notice>: No active mitigations
+Jun  1 22:29:46 iPhone-sivma powerexperienced[3024] <Notice>: Evaluating power modes on DeviceContext change
+Jun  1 22:29:46 iPhone-sivma powerexperienced[3024] <Notice>: evaluatePowerMode: <private>: 0 display 1, carPlaySession 0, nFCSession 0, audioSession 0, sleepInProgress 0, wakeInProgress 0, onenessSession 0, siriAudio 0, fitnessIntelligence 0, dataMigrationInProgress 0, pluggedIn 1 (allowOnCharger: 0)
+Jun  1 22:29:46 iPhone-sivma powerexperienced[3024] <Notice>: Updating SMC with debug mode ActiveWarmWorkload:0
+Jun  1 22:29:46 iPhone-sivma SpringBoard(BatteryCenter)[35] <Notice>: (<_BCPowerSourceController: 0xcf06aa640>) Found power source: {
+    "Battery Provides Time Remaining" = 1;
+    "Current Capacity" = 14;
+    "Cycle count" = 2649;
+    "Date of manufacture" = "2030-10-13 00:00:00 +0000";
+    "Is Charging" = 1;
+    "Is Finishing Charge" = 0;
+    "Is Present" = 1;
+    "LPM Active" = 1;
+    "Max Capacity" = 100;
+    Name = "InternalBattery-0";
+    "Play Charging Chime" = 1;
+    "Power Source ID" = 3145827;
+    "Power Source State" = "AC Power";
+    "Raw External Connected" = 1;
+    "Show Charging UI" = 1;
+    "Time to Empty" = 0;
+    "Time to Full Charge" = 0;
+    "Transport Type" = Internal;
+    "Trusted Battery Data" =     {
+        TrustedBatteryEnabled = 0;
+    };
+    Type = InternalBattery;
+}
+Jun  1 22:29:46 iPhone-sivma SpringBoard(libxpc.dylib)[35] <Notice>: [0xced1af200] activating connection: mach=true listener=false peer=false name=com.apple.iokit.powerdxpc
+Jun  1 22:29:46 iPhone-sivma SpringBoard(libxpc.dylib)[35] <Notice>: [0xced1af200] invalidated after the last release of the connection object
+Jun  1 22:29:46 iPhone-sivma SpringBoard(BatteryCenter)[35] <Notice>: (<_BCPowerSourceController: 0xcf06aa640>) Found device: <BCBatteryDevice: 0xcf0efc500; vendor = Apple; productIdentifier = 0; parts = (null); identifier = 3145827; matchIdentifier = (null); name = iPhone sivma; groupName =InternalBattery-0; percentCharge = 14; lowBattery = YES; lowPowerModeActive = YES; connected = YES; charging = YES; paused = NO; internal = YES; powerSource = YES; poweredSoureState = AC Power; transportType = Internal; accessoryIdentifier = (null); accessoryCategory = Unknown; modelNumber = (null); >
+Jun  1 22:29:46 iPhone-sivma powerd(libxpc.dylib)[48] <Notice>: [0xb3d1f8d80] invalidated because the client process (pid 35) either cancelled the connection or exited
+Jun  1 22:29:46 iPhone-sivma powerd(libxpc.dylib)[48] <Notice>: [0xb3d1f8d80] activating connection: mach=false listener=false peer=true name=com.apple.iokit.powerdxpc.peer[35].0xb3d1f8d80
+Jun  1 22:29:46 iPhone-sivma powerd[48] <Notice>: batteryChargingStateRequest received
+Jun  1 22:29:46 iPhone-sivma powerexperienced[3024] <Error>: Write failed for key '<private>' (0x0, 0x84)
+Jun  1 22:29:46 iPhone-sivma powerexperienced[3024] <Error>: Key not found
+Jun  1 22:29:46 iPhone-sivma powerexperienced[3024] <Notice>: Updating SMC with debug mode DefaultMode:0
+Jun  1 22:29:46 iPhone-sivma powerexperienced[3024] <Error>: Write failed for key '<private>' (0x0, 0x84)
+Jun  1 22:29:46 iPhone-sivma powerexperienced[3024] <Error>: Key not found
+Jun  1 22:29:46 iPhone-sivma powerexperienced[3024] <Notice>: Updating SMC with debug mode ActiveWarmWorkload:0
+Jun  1 22:29:46 iPhone-sivma SpringBoard(BatteryCenter)[35] <Notice>: (<_BCPowerSourceController: 0xcf06aa640>) Notifying observer: <SBBluetoothAccessoryBatteryMonitor: 0xcef5e3840>
+Jun  1 22:29:46 iPhone-sivma SpringBoard(BatteryCenter)[35] <Notice>: (<_BCPowerSourceController: 0xcf06aa640>) Notifying observer: <SBUIController: 0xcf13d7000>
+Jun  1 22:29:46 iPhone-sivma powerd(libxpc.dylib)[48] <Notice>: [0xb3d1f8d80] invalidated because the client process (pid 35) either cancelled the connection or exited
+Jun  1 22:29:46 iPhone-sivma powerexperienced[3024] <Error>: Write failed for key '<private>' (0x0, 0x84)
+Jun  1 22:29:46 iPhone-sivma lockdownd(Security)[2388] <Notice>: SecSecurityClientGet new thread!
+Jun  1 22:29:46 iPhone-sivma powerexperienced[3024] <Error>: Key not found
+Jun  1 22:29:46 iPhone-sivma powerexperienced[3024] <Notice>: Updating SMC with debug mode DefaultMode:0
+Jun  1 22:29:46 iPhone-sivma powerexperienced[3024] <Error>: Write failed for key '<private>' (0x0, 0x84)
+Jun  1 22:29:46 iPhone-sivma powerexperienced[3024] <Error>: Key not found
+Jun  1 22:29:46 iPhone-sivma lockdownd[2388] <Notice>: handle_get_value: <private>
+Jun  1 22:29:46 iPhone-sivma symptomsd(SymptomEvaluator)[144] <Notice>: Power: battery-percentage 14.00 battery-power-connected 1 battery-charging 1 battery-warn 0 battery-critical 0 battery-absolute-capacity-mAh 254 battery-voltage-mV 3763 battery-current-capacity-% 14 battery-maximum-capacity-% 100 battery-design-capacity-mAh 2214 battery-time-remaining 23 battery-fully-charged 0 battery-temperature 3650 screen-brightness 1000000 battery-raw-current-capacity 224 battery-raw-maximum-capacity 1705 presentDOD 0
+Jun  1 22:29:46 iPhone-sivma lockdownd[2388] <Notice>: handle_get_value: <private>
+Jun  1 22:29:46 iPhone-sivma tccd(libxpc.dylib)[47] <Notice>: [0x6aec7a800] invalidated because the client process (pid 77) either cancelled the connection or exited
+Jun  1 22:29:46 iPhone-sivma contextstored(CoreDuetContext)[68] <Notice>: Sending fired registration <private> to com.apple.dasd.trigger
+Jun  1 22:29:46 iPhone-sivma dasd(CoreDuetContext)[84] <Notice>: Registration fired for <private>
+Jun  1 22:29:46 iPhone-sivma dasd(CoreDuetContext)[84] <Notice>: Dispatching call to informative registration callback for <private>
+Jun  1 22:29:46 iPhone-sivma contextstored(CoreDuetContext)[68] <Notice>: Sending fired registration <private> to com.apple.powerui.smartChargeManager
+Jun  1 22:29:46 iPhone-sivma dasd[84] <Notice>: Trigger: <private> is now [<private>]
+Jun  1 22:29:46 iPhone-sivma PowerUIAgent(CoreDuetContext)[2167] <Notice>: Registration fired for <private>
+Jun  1 22:29:46 iPhone-sivma PowerUIAgent(CoreDuetContext)[2167] <Notice>: Dispatching call to informative registration callback for <private>
+Jun  1 22:29:46 iPhone-sivma contextstored(CoreDuetContext)[68] <Notice>: Sending fired registration <private> to com.apple.dasd.trigger
+Jun  1 22:29:46 iPhone-sivma dasd(CoreDuetContext)[84] <Notice>: Registration fired for <private>
+Jun  1 22:29:46 iPhone-sivma dasd(CoreDuetContext)[84] <Notice>: Dispatching call to informative registration callback for <private>
+Jun  1 22:29:46 iPhone-sivma contextstored(CoreDuetContext)[68] <Notice>: Sending fired registration <private> to com.apple.dasd.trigger
+Jun  1 22:29:46 iPhone-sivma dasd(CoreDuetContext)[84] <Notice>: Registration fired for <private>
+Jun  1 22:29:46 iPhone-sivma dasd(CoreDuetContext)[84] <Notice>: Dispatching call to informative registration callback for <private>
+Jun  1 22:29:46 iPhone-sivma contextstored(CoreDuetContext)[68] <Notice>: Sending fired registration <private> to (null)
+Jun  1 22:29:46 iPhone-sivma dasd[84] <Notice>: Trigger: <private> is now [14]
+Jun  1 22:29:46 iPhone-sivma lockdownd(libxpc.dylib)[2388] <Notice>: [0x8b1048f00] activating connection: mach=true listener=false peer=false name=com.apple.trustd
+Jun  1 22:29:46 iPhone-sivma biomed(IntelligencePlatformCore)[52] <Notice>: SourceUpdater: <private> triggered 89 to run on the live schedule
+Jun  1 22:29:46 iPhone-sivma dasd[84] <Notice>: Trigger: <private> is now [14]
+Jun  1 22:29:46 iPhone-sivma atc(iTunesCloud)[50] <Notice>: Battery level changed. batteryLevel=0.14
+Jun  1 22:29:46 iPhone-sivma trustd(libxpc.dylib)[131] <Notice>: [0x7ff04ad00] activating connection: mach=false listener=false peer=true name=com.apple.trustd.peer[2388].0x7ff04ad00
+Jun  1 22:29:46 iPhone-sivma trustd(Security)[131] <Error>: SecKeyVerifySignature failed: Error Domain=NSOSStatusErrorDomain Code=-67808 "RSA signature verification failed, no match" UserInfo={numberOfErrorsDeep=0, NSDescription=RSA signature verification failed, no match}
+Jun  1 22:29:46 iPhone-sivma contextstored(CoreDuetContext)[68] <Notice>: Registration fired for <private>
+Jun  1 22:29:46 iPhone-sivma trustd[131] <Notice>: cert[0]: MissingIntermediate =(leaf)[force]> 0
+Jun  1 22:29:46 iPhone-sivma trustd[131] <Notice>: cert[0]: NonEmptySubject =(path)[]> 0
+Jun  1 22:29:46 iPhone-sivma contextstored(CoreDuetContext)[68] <Error>: Dispatching call to deprecated registration callback for <private>, this may lead to priority problems. Switch to non-deprecated _CDContextualChangeRegistration APIs.
+Jun  1 22:29:46 iPhone-sivma lockdownd(libxpc.dylib)[2388] <Notice>: [0x8b1048f00] invalidated because the current process cancelled the connection by calling xpc_connection_cancel()
+Jun  1 22:29:46 iPhone-sivma trustd(libxpc.dylib)[131] <Notice>: [0x7ff04ad00] invalidated because the client process (pid 2388) either cancelled the connection or exited
+Jun  1 22:29:46 iPhone-sivma lockdownd(libxpc.dylib)[2388] <Notice>: [0x8b1048f00] activating connection: mach=true listener=false peer=false name=com.apple.trustd
+Jun  1 22:29:46 iPhone-sivma itunescloudd(iTunesCloud)[176] <Notice>: Battery level changed. batteryLevel=0.14
+Jun  1 22:29:46 iPhone-sivma trustd(libxpc.dylib)[131] <Notice>: [0x7ff04ad00] activating connection: mach=false listener=false peer=true name=com.apple.trustd.peer[2388].0x7ff04ad00
+Jun  1 22:29:46 iPhone-sivma contextstored(CoreDuetContext)[68] <Notice>: Sending fired registration com.apple.ids.trafficAdmissionCheck.system.pairedSystemContext to com.apple.ids.trafficAdmissionCheck
+Jun  1 22:29:46 iPhone-sivma PowerUIAgent(PowerUI)[2167] <Notice>: Handling data dictionary: <private>
+Jun  1 22:29:46 iPhone-sivma trustd(Security)[131] <Error>: SecKeyVerifySignature failed: Error Domain=NSOSStatusErrorDomain Code=-67808 "RSA signature verification failed, no match" UserInfo={numberOfErrorsDeep=0, NSDescription=RSA signature verification failed, no match}
+Jun  1 22:29:46 iPhone-sivma identityservicesd(CoreDuetContext)[64] <Notice>: Registration fired for com.apple.ids.trafficAdmissionCheck.system.pairedSystemContext
+Jun  1 22:29:46 iPhone-sivma identityservicesd(CoreDuetContext)[64] <Notice>: Dispatching call to informative registration callback for com.apple.ids.trafficAdmissionCheck.system.pairedSystemContext
+Jun  1 22:29:46 iPhone-sivma lockdownd(libxpc.dylib)[2388] <Notice>: [0x8b1048f00] invalidated because the current process cancelled the connection by calling xpc_connection_cancel()
+Jun  1 22:29:46 iPhone-sivma trustd(libxpc.dylib)[131] <Notice>: [0x7ff04ad00] invalidated because the client process (pid 2388) either cancelled the connection or exited
+Jun  1 22:29:46 iPhone-sivma powerd[48] <Notice>: Previous Battery Health: Flags:1048579 State:1 MaxCapacity:74 CycleCount:2358
+Jun  1 22:29:46 iPhone-sivma powerd[48] <Notice>: calib: svcFlags pre: 0x3
+Jun  1 22:29:46 iPhone-sivma powerd[48] <Notice>: calib: device not relevant
+Jun  1 22:29:46 iPhone-sivma powerd[48] <Notice>: calib: svcFlags post: 0x3
+Jun  1 22:29:46 iPhone-sivma powerd[48] <Notice>: Nominal Capacity percentage(74) is less than the threshold(80)
+Jun  1 22:29:46 iPhone-sivma powerd[48] <Notice>: Updated Battery Health: Flags:1048579
+Jun  1 22:29:46 iPhone-sivma powerd[48] <Notice>: Updated Battery Health: State:1
+Jun  1 22:29:46 iPhone-sivma powerd[48] <Notice>: Updated Battery Health: MaxCapacity:74
+Jun  1 22:29:46 iPhone-sivma powerd[48] <Notice>: Updated Battery Health: CycleCount:2358
+Jun  1 22:29:46 iPhone-sivma powerd[48] <Notice>: Previous Battery Health: Flags:1048579 State:1 MaxCapacity:74 CycleCount:2358
+Jun  1 22:29:46 iPhone-sivma powerd[48] <Notice>: calib: svcFlags pre: 0x3
+Jun  1 22:29:46 iPhone-sivma powerd[48] <Notice>: calib: device not relevant
+Jun  1 22:29:46 iPhone-sivma powerd[48] <Notice>: calib: svcFlags post: 0x3
+Jun  1 22:29:46 iPhone-sivma powerd[48] <Notice>: Nominal Capacity percentage(74) is less than the threshold(80)
+Jun  1 22:29:46 iPhone-sivma powerd[48] <Notice>: Updated Battery Health: Flags:1048579
+Jun  1 22:29:46 iPhone-sivma powerd[48] <Notice>: Updated Battery Health: State:1
+Jun  1 22:29:46 iPhone-sivma powerd[48] <Notice>: Updated Battery Health: MaxCapacity:74
+Jun  1 22:29:46 iPhone-sivma powerd[48] <Notice>: Updated Battery Health: CycleCount:2358
+Jun  1 22:29:46 iPhone-sivma biomed(IntelligencePlatformCore)[52] <Notice>: ViewUpdate: Beginning update job for live [runMode: update, checkSLA: true]
+Jun  1 22:29:46 iPhone-sivma biomed(IntelligencePlatformCore)[52] <Notice>: ViewUpdate: Starting schedule run <private>
+Jun  1 22:29:46 iPhone-sivma biomed(IntelligencePlatformCore)[52] <Notice>: ViewUpdate: Initially have 1 views that may need updating
+Jun  1 22:29:46 iPhone-sivma biomed(IntelligencePlatformCore)[52] <Notice>: ViewUpdate: 89:MinBatteryMatView: Beginning view update attempt
+Jun  1 22:29:46 iPhone-sivma lockdownd[2388] <Notice>: handle_get_value: <private>
+Jun  1 22:29:46 iPhone-sivma lockdownd[2388] <Notice>: handle_get_value: <private>
+Jun  1 22:29:46 iPhone-sivma biomed(BiomeStorage)[52] <Notice>: Enumerator for Device.Power.BatteryLevel starting from <private>/<private>+0x13db0
+Jun  1 22:29:46 iPhone-sivma biomed(IntelligencePlatformCompute)[52] <Notice>: GDCComputeService: updateViewWithName called: <private>
+Jun  1 22:29:46 iPhone-sivma biomed(IntelligencePlatformCompute)[52] <Notice>: GDCComputeService: updateViewWithName: request: <private> <private>
+Jun  1 22:29:46 iPhone-sivma biomed(IntelligencePlatformCompute)[52] <Notice>: GDCComputeService: updateViewWithName: request: <private> <private>
+Jun  1 22:29:46 iPhone-sivma biomed(IntelligencePlatformCompute)[52] <Notice>: GDCComputeService: updateViewWithName: request: <private> <private>
+Jun  1 22:29:46 iPhone-sivma IntelligencePlatformComputeService[2767] <Notice>: IntelligencePlatformComputeService: updateViewWithName MinBatteryMatView called
+Jun  1 22:29:46 iPhone-sivma IntelligencePlatformComputeService[2767] <Notice>: IntelligencePlatformComputeService: updateViewWithName MinBatteryMatView begining update
+Jun  1 22:29:46 iPhone-sivma lockdownd(libxpc.dylib)[2388] <Notice>: [0x8b1048f00] activating connection: mach=true listener=false peer=false name=com.apple.trustd
+Jun  1 22:29:46 iPhone-sivma trustd(libxpc.dylib)[131] <Notice>: [0x7ff04ad00] activating connection: mach=false listener=false peer=true name=com.apple.trustd.peer[2388].0x7ff04ad00
+Jun  1 22:29:46 iPhone-sivma trustd(Security)[131] <Error>: SecKeyVerifySignature failed: Error Domain=NSOSStatusErrorDomain Code=-67808 "RSA signature verification failed, no match" UserInfo={numberOfErrorsDeep=0, NSDescription=RSA signature verification failed, no match}
+Jun  1 22:29:46 iPhone-sivma IntelligencePlatformComputeService(BiomeStorage)[2767] <Notice>: Enumerator for Device.Power.BatteryLevel starting from <private>/<private>+0x13db0
+Jun  1 22:29:46 iPhone-sivma trustd[131] <Notice>: cert[0]: MissingIntermediate =(leaf)[force]> 0
+Jun  1 22:29:46 iPhone-sivma trustd[131] <Notice>: cert[0]: NonEmptySubject =(path)[]> 0
+Jun  1 22:29:46 iPhone-sivma lockdownd(libxpc.dylib)[2388] <Notice>: [0x8b1048f00] invalidated because the current process cancelled the connection by calling xpc_connection_cancel()
+Jun  1 22:29:46 iPhone-sivma trustd(libxpc.dylib)[131] <Notice>: [0x7ff04ad00] invalidated because the client process (pid 2388) either cancelled the connection or exited
+Jun  1 22:29:46 iPhone-sivma lockdownd(libxpc.dylib)[2388] <Notice>: [0x8b1048f00] activating connection: mach=true listener=false peer=false name=com.apple.trustd
+Jun  1 22:29:46 iPhone-sivma trustd(libxpc.dylib)[131] <Notice>: [0x7ff04ad00] activating connection: mach=false listener=false peer=true name=com.apple.trustd.peer[2388].0x7ff04ad00
+Jun  1 22:29:46 iPhone-sivma trustd(Security)[131] <Error>: SecKeyVerifySignature failed: Error Domain=NSOSStatusErrorDomain Code=-67808 "RSA signature verification failed, no match" UserInfo={numberOfErrorsDeep=0, NSDescription=RSA signature verification failed, no match}
+Jun  1 22:29:46 iPhone-sivma lockdownd(libxpc.dylib)[2388] <Notice>: [0x8b1048f00] invalidated because the current process cancelled the connection by calling xpc_connection_cancel()
+Jun  1 22:29:46 iPhone-sivma trustd(libxpc.dylib)[131] <Notice>: [0x7ff04ad00] invalidated because the client process (pid 2388) either cancelled the connection or exited
+Jun  1 22:29:46 iPhone-sivma lockdownd[2388] <Notice>: handle_get_value: <private>
+Jun  1 22:29:46 iPhone-sivma IntelligencePlatformComputeService(IntelligencePlatformCore)[2767] <Notice>: ViewUpdate: <private>: Finished update
+Jun  1 22:29:46 iPhone-sivma IntelligencePlatformComputeService(IntelligencePlatformCore)[2767] <Notice>: ViewUpdate: <private>: <private>: Finished update
+Jun  1 22:29:46 iPhone-sivma IntelligencePlatformComputeService[2767] <Notice>: IntelligencePlatformComputeService: update MinBatteryMatView returning responses
+Jun  1 22:29:46 iPhone-sivma biomed(IntelligencePlatformCore)[52] <Notice>: ViewUpdate: 89:MinBatteryMatView: View was updated
+Jun  1 22:29:46 iPhone-sivma biomed(IntelligencePlatformCore)[52] <Notice>: ViewUpdate: completed update
+Jun  1 22:29:46 iPhone-sivma biomed(IntelligencePlatformCore)[52] <Notice>: ViewUpdate: 89:MinBatteryMatView: Ending view update attempt
+Jun  1 22:29:46 iPhone-sivma biomed(IntelligencePlatformCore)[52] <Notice>: ViewUpdate: Finished update job for live
+Jun  1 22:29:46 iPhone-sivma kernel()[0] <Notice>: I [dk] <private>@28844: DTIM missed count: p2p(122), iovar(0), scan(219), roam(0), homechan(10395), sleep(13102), misc(0)
+Jun  1 22:29:46 iPhone-sivma WirelessRadioManagerd[51] <Notice>: <private>
+Jun  1 22:29:46 iPhone-sivma sharingd[75] <Notice>: Sync action handler called
+Jun  1 22:29:46 iPhone-sivma sharingd[75] <Notice>: Default paired device: <private>
+Jun  1 22:29:46 iPhone-sivma ptpd[2390] <Notice>:             PTPGroup | New uncollected groups present (0/1678) -- notifying
+Jun  1 22:29:46 iPhone-sivma ptpd[2390] <Notice>:             PTPGroup | New uncollected groups present (0/1679) -- notifying
+Jun  1 22:29:46 iPhone-sivma ptpd[2390] <Notice>:             [0xc004] | <event> PTPEventCodeAppleGroupAdded
+Jun  1 22:29:46 iPhone-sivma symptomsd(SymptomEvaluator)[144] <Notice>: Data Usage for com.apple.nsurlsessiond on flow 271574 - WiFi in/out: 32225032634/1045035741, WiFi delta_in/delta_out: 771808/24880, Cell in/out: 81238924/31632771, Cell delta_in/delta_out: 0/0, RNF: 0, subscriber tag: 0, total duration: 1180.268
+Jun  1 22:29:46 iPhone-sivma locationd[77] <Notice>: os_transaction created: (<private>) <private>
+Jun  1 22:29:46 iPhone-sivma locationd[77] <Notice>: os_transaction released: (<private>) <private>
+Jun  1 22:29:47 iPhone-sivma kernel()[0] <Notice>: wlan0:com.apple.p2p: isInfraRealtimePacketThresholdAllowed allowed:1 option:32 threshold:50 noRegistrations:1 cachedPeerCount:0 fastDiscoveryInactive:1 fastDiscoveryOnSince:25285305
+Jun  1 22:29:47 iPhone-sivma kernel()[0] <Notice>: wlan0:com.apple.p2p: currentInfraTrafficType:9239 checking if realtime upgrade required with inputPackets:500 outputPackets:180 packetThreshold:50
+Jun  1 22:29:47 iPhone-sivma locationd[77] <Notice>: os_transaction created: (0x16daf3478) wifi1Event
+Jun  1 22:29:47 iPhone-sivma locationd[77] <Notice>: {"msg":"#EmergCon,handleAssistanceMotion,", "mountState":<private>}
+Jun  1 22:29:47 iPhone-sivma locationd[77] <Notice>: GPSODOM<private>,Set motion activity,3
+Jun  1 22:29:47 iPhone-sivma locationd[77] <Notice>: GPSODOM<private>,Set motion activity,3
+Jun  1 22:29:47 iPhone-sivma locationd[77] <Notice>: @WifiLogic, handleInput, System::CoarseMotion
+Jun  1 22:29:47 iPhone-sivma locationd[77] <Notice>: #CLProactiveLoc,rvo,Motion,ped,0,veh,0,mov,1,stationary,0,likelyBoardedVeh,0,walkRunDur,0.00
+Jun  1 22:29:47 iPhone-sivma locationd[77] <Notice>: #CLProactiveLoc,rvo,updateOverrideVisit,visit,1,timeFromLastCheck,20.23
+Jun  1 22:29:47 iPhone-sivma locationd[77] <Notice>: #CLProactiveLoc,rvo,visitExitLikely,0,inVisitLocUseful,0,wifi,1,io,0,motion,0,cdX,-19.7,cdY,-11.9,cdZ,-0.5,attemptsLeft,3,walkRun,0,currWalkRun,0,sigDur,26697.08,walkRunFrac,0.00,wifiContDisassociated,0
+Jun  1 22:29:47 iPhone-sivma backboardd(AttentionAwareness)[71] <Notice>:   25285.33153: Device IS NOT stationary
+Jun  1 22:29:47 iPhone-sivma locationd[77] <Notice>: WifiTimer, nextscan, 6, haveLoc, 1, codepath, Motion
+Jun  1 22:29:47 iPhone-sivma locationd[77] <Notice>: os_transaction releasing: (0x16daf3478) wifi1Event
+Jun  1 22:29:47 iPhone-sivma sharingd(CoreUtils)[75] <Notice>: Stationary: yes -> no
+Jun  1 22:29:47 iPhone-sivma locationd[77] <Notice>: os_transaction released: (<private>) <private>
+Jun  1 22:29:47 iPhone-sivma locationd(libxpc.dylib)[77] <Notice>: [0xbd977c140] invalidated because the current process cancelled the connection by calling xpc_connection_cancel()
+Jun  1 22:29:47 iPhone-sivma geod(libxpc.dylib)[2762] <Notice>: [0x7cd236080] invalidated because the client process (pid 77) either cancelled the connection or exited
+Jun  1 22:29:47 iPhone-sivma safetyalertsd[95] <Notice>: {"msg":"#motion,cb", "isStationary":<private>, "walking":<private>, "automotive":<private>, "cycling":<private>, "fMotionState":<private>}
+Jun  1 22:29:47 iPhone-sivma safetyalertsd[95] <Notice>: {"msg":"#blecore,onMotionStateChange"}
+Jun  1 22:29:47 iPhone-sivma safetyalertsd[95] <Notice>: {"msg":"#blecore,getBleEnablementStatus"}
+Jun  1 22:29:47 iPhone-sivma safetyalertsd[95] <Notice>: {"msg":"#saSettingsProd,isBluetoothEnabled"}
+Jun  1 22:29:47 iPhone-sivma bluetoothd(CoreUtils)[98] <Notice>: GetControllerInfo: , BlSt PoweredOn, DcsS Off, Chip BCM_4387, FastLE v1, Allowed: no, FrmN BCM4387C2_23.3.630.4852_PCIE_Pistachio_CLPC_OS_USI_20251008.bin, FrmV 23.3.630.4852, HWAd FC:66:CF:F2:6A:DA, PID: 0x740F, VID: 0x004C, VIDS: Bluetooth, HCIT PCIe, InqS Off, LMPv 12 (5.3), SSrv: 0x11D3BBB < HFP PhoneBook AVRCP A2DP HID WirelessiAP NetSharing MAP Gaming NetworkConsumer Braille LEA CarPlay AACP GATT SCO >
+Jun  1 22:29:47 iPhone-sivma safetyalertsd[95] <Notice>: {"msg":"#saSettingsProd,cb", "fIsBluetoothStateCached":<private>}
+Jun  1 22:29:47 iPhone-sivma safetyalertsd[95] <Notice>: {"msg":"#blecore,getBleEnablementStatus,cb", "isBleEnabled":<private>}
+Jun  1 22:29:47 iPhone-sivma safetyalertsd[95] <Notice>: {"msg":"#assetConfig,currentCountryAssetConfig", "currentCountryAssetKey":<private>}
+Jun  1 22:29:47 iPhone-sivma safetyalertsd[95] <Notice>: {"msg":"#assetConfig,currentCountryAssetConfig", "currentCountryAssetKey":<private>}
+Jun  1 22:29:47 iPhone-sivma safetyalertsd[95] <Notice>: {"msg":"#fs,isBLERelaySupported", "isSupported":0}
+Jun  1 22:29:47 iPhone-sivma safetyalertsd[95] <Notice>: {"msg":"#saSettingsProd,getEarthquakeAlertSwitchState", "fIsEarthquakeAlertsSwitchState":<private>}
+Jun  1 22:29:47 iPhone-sivma safetyalertsd[95] <Notice>: {"msg":"#blecore,areAllGatesOpenForDiscovery", "isBluetoothEnabled":<private>, "isHWAllowed":<private>, "isLocationAuth":<private>, "isEarthquakeAllowed":<private>, "isBLERelayFeatureEnabled":<private>}
+Jun  1 22:29:47 iPhone-sivma safetyalertsd[95] <Notice>: {"msg":"#blecore,evaluateBLEQDiscoverability", "motionState":<private>, "isSystemReadyForDiscovery":<private>}
+Jun  1 22:29:47 iPhone-sivma safetyalertsd[95] <Notice>: {"msg":"#blecore,evaluateBLEQDiscoverability,BLE relay not possible"}
+Jun  1 22:29:47 iPhone-sivma softwareupdateservicesd(SoftwareUpdateCore)[3038] <Notice>: update_downloader[1.0.6](85BEB462-0942-58EB-9A12-237DDB60A6AE)] [Progress] 2529905325/5049086295 bytes downloaded; estimated speed: 0.58 MBps; estimated time remaining = 4334.94 secs
+Jun  1 22:29:47 iPhone-sivma softwareupdateservicesd(SoftwareUpdateCoreSupport)[3038] <Notice>: [FSM(update_downloader[1.0.6][85BEB462-0942-58EB-9A12-237DDB60A6AE])] >S> DownloadingSU >E> DownloadProgress >A> ReportDownloadProgress info:
+[>>>
+    progress: phase:Downloading stalled:NO portionComplete:0.766643 totalWrittenBytes:2529905325 totalExpectedBytes:3299980016 estimatedTimeRemaining:1297.529130 task:BackgroundDownloadTask <111F50B6-9F17-49FC-889E-51C1D8FF9508>.<7> actionText:(null)
+<<<]
+Jun  1 22:29:47 iPhone-sivma softwareupdateservicesd(SoftwareUpdateCoreSupport)[3038] <Notice>: [FSM(update[UUID(85BEB462-0942-58EB-9A12-237DDB60A6AE) 23C55(user)->23F77((null)) incr])] >S> DownloadingSU >E> DownloadProgress >A> ReportDownloadProgress info:
+[>>>
+        targetPhase: NO_CHANGE
+             policy: (null)
+   downloadProgress: phase:Downloading stalled:NO portionComplete:0.501062 totalWrittenBytes:2529905325 totalExpectedBytes:5049086295 estimatedTimeRemaining:4334.937012 task:BackgroundDownloadTask <111F50B6-9F17-49FC-889E-51C1D8FF9508>.<7> actionText:(null)
+    prepareProgress: (null)
+      applyProgress: (null)
+           rollback: (null)
+         resultCode: 0
+              error: (null)
+<<<]
+Jun  1 22:29:47 iPhone-sivma softwareupdateservicesd(SoftwareUpdateCoreSupport)[3038] <Notice>: [FSM(engine:26.2(23C55))] >S> DownloadAndPrepare >E> UpdateProgress >A> ReportDownloadProgress info:
+[>>>
+    paramType: Progress
+     progress: phase:Downloading stalled:NO portionComplete:0.501062 totalWrittenBytes:2529905325 totalExpectedBytes:5049086295 estimatedTimeRemaining:4334.937012 task:BackgroundDownloadTask <111F50B6-9F17-49FC-889E-51C1D8FF9508>.<7> actionText:(null)
+<<<]
+Jun  1 22:29:47 iPhone-sivma ptpd[2390] <Notice>:             [0xc004] | <event> PTPEventCodeAppleGroupAdded

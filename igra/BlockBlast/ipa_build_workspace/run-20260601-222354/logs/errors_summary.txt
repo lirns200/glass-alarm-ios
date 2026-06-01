@@ -1,0 +1,5 @@
+❌ Build: Failed (43s)
+Error: workflow failed with conclusion: failure
+Error: build failed: workflow failed with conclusion: failure
+Failed step: 12 - Build IPA
+[FAILURE] Process completed with exit code 1.
