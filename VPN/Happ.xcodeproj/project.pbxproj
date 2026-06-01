@@ -186,8 +186,10 @@
 				LastUpgradeCheck = 1530;
 				TargetAttributes = {
 					111111111111111111111401 = {
-						CreatedOnToolsVersion = 15.3;
+						CreatedOnToolsVersion = 15.0;
 					};
+				};
+
 				};
 			};
 			buildConfigurationList = 111111111111111111111702 /* Build configuration list for PBXProject "Happ" */;
