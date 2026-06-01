@@ -12,7 +12,7 @@ struct HappApp: App {
                     }
                 
                 NavigationView {
-                    SubscriptionView()
+                    AlarmEditorView()
                 }
                 .tabItem {
                     Label("Servers", systemImage: "list.bullet")

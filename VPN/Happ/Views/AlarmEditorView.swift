@@ -1,6 +1,6 @@
 import SwiftUI
 
-struct SubscriptionView: View {
+struct AlarmEditorView: View {
     @State private var url: String = ""
     @State private var configs: [VPNConfig] = [
         VPNConfig(name: "Warsaw Premium", type: "VLESS", address: "2.26.5.82", port: 443, flag: "🇵🇱"),
