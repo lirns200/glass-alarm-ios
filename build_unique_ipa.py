@@ -7,7 +7,7 @@ from pathlib import Path
 
 def main():
     # 1. Modify the resource file
-    resource_path = Path("GlassAlarm/Resources/crystal.wav")
+    resource_path = Path("GlassAlarm/Resources/sunrise.wav")
     if not resource_path.exists():
         print(f"Error: {resource_path} not found.")
         return 1
