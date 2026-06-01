@@ -6,7 +6,6 @@
     "repo": "glass-alarm-ios"
   },
   "ios": {
-    "path": "VPN",
     "scheme": "Happ"
   },
   "flutter": {
