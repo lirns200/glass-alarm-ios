@@ -2,7 +2,7 @@ import SwiftUI
 
 @main
 struct GlassAlarmApp: App {
-    private static let buildUniqueId = "b95614ee5f21a92a67f436efd229d844"
+    private static let buildUniqueId = "52375540cf85232b195529432a627a1e"
     var body: some Scene {
         WindowGroup {
             ContentView()
