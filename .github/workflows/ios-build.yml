@@ -47,14 +47,14 @@ jobs:
         with:
           xcode-version: latest-stable
 
-#      - name: Restore DerivedData cache
-#        uses: actions/cache/restore@v4
-#        id: cache-deriveddata
-#        with:
-#          path: DerivedData
-#          key: deriveddata-${{ github.run_id }}
-#          restore-keys: |
-#            deriveddata-
+      - name: Restore DerivedData cache
+        uses: actions/cache/restore@v4
+        id: cache-deriveddata
+        with:
+          path: DerivedData
+          key: deriveddata-${{ github.run_id }}
+          restore-keys: |
+            deriveddata-
 
       - name: Detect project type
         id: detect
@@ -242,7 +242,7 @@ jobs:
             BUILD_CMD="$BUILD_CMD COMPILER_INDEX_STORE_ENABLE=NO"
             BUILD_CMD="$BUILD_CMD DEBUG_INFORMATION_FORMAT=dwarf"
             BUILD_CMD="$BUILD_CMD ONLY_ACTIVE_ARCH=YES"
-            # BUILD_CMD="$BUILD_CMD -quiet"
+            BUILD_CMD="$BUILD_CMD -quiet"
 
             # Xcode 16+ native compilation caching
             BUILD_CMD="$BUILD_CMD SWIFT_ENABLE_COMPILE_CACHE=YES"
@@ -250,26 +250,20 @@ jobs:
 
             if [ "$USE_SIGNING" = "true" ]; then
               # For signed builds, use archive
-              BUILD_CMD="$BUILD_CMD -archivePath ../build/App.xcarchive clean archive"
+              BUILD_CMD="$BUILD_CMD -archivePath ../build/App.xcarchive archive"
             else
-              # For unsigned builds, use ad-hoc signing to ensure a complete .app bundle is created
-              BUILD_CMD="$BUILD_CMD CODE_SIGN_IDENTITY=\"-\" CODE_SIGNING_REQUIRED=NO CODE_SIGNING_ALLOWED=YES clean build"
+              # For unsigned builds, use faster 'build' action
+              BUILD_CMD="$BUILD_CMD CODE_SIGNING_ALLOWED=NO build"
             fi
 
             echo "Running: $BUILD_CMD"
-            eval $BUILD_CMD 2>&1 | tee xcodebuild.log || (
-              echo "## Build Error" >> $GITHUB_STEP_SUMMARY
-              echo '```' >> $GITHUB_STEP_SUMMARY
-              tail -n 100 xcodebuild.log >> $GITHUB_STEP_SUMMARY
-              echo '```' >> $GITHUB_STEP_SUMMARY
-              exit 1
-            )
+            eval $BUILD_CMD
           fi
 
           # Create IPA
           if [ "$USE_SIGNING" = "true" ]; then
             # For signed builds, use xcodebuild -exportArchive
-            cd "${GITHUB_WORKSPACE}"
+            cd ..
             printf '%s\n' \
               '<?xml version="1.0" encoding="UTF-8"?>' \
               '<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">' \
@@ -296,7 +290,7 @@ jobs:
               APP_PATH=$(find "${GITHUB_WORKSPACE}/build/ios/iphoneos" -name "*.app" -type d | head -1)
             else
               # Native and React Native/Expo use DerivedData
-              APP_PATH=$(find "$DERIVED_DATA_PATH/Build/Products/${CONFIGURATION}-iphoneos" -maxdepth 1 -name "*.app" -type d | head -1)
+              APP_PATH=$(find "$DERIVED_DATA_PATH/Build/Products/${CONFIGURATION}-iphoneos" -name "*.app" -type d | head -1)
             fi
 
             if [ -z "$APP_PATH" ]; then
@@ -304,7 +298,7 @@ jobs:
               exit 1
             fi
             echo "Found app at: $APP_PATH"
-            cd "${GITHUB_WORKSPACE}"
+            cd ..
             mkdir -p build/Payload
             cp -R "$APP_PATH" build/Payload/
             cd build
@@ -321,12 +315,12 @@ jobs:
           retention-days: 7
           if-no-files-found: error
 
-#      - name: Save DerivedData cache
-#        uses: actions/cache/save@v4
-#        if: always()
-#        with:
-#          path: DerivedData
-#          key: deriveddata-${{ github.run_id }}
+      - name: Save DerivedData cache
+        uses: actions/cache/save@v4
+        if: always()
+        with:
+          path: DerivedData
+          key: deriveddata-${{ github.run_id }}
 
       - name: Cleanup signing
         if: always() && inputs.use_signing
