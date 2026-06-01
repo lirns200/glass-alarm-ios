@@ -108,12 +108,13 @@ struct ContentView: View {
     
     var body: some View {
         ZStack {
-            Color(red: 0.1, green: 0.12, blue: 0.15).ignoresSafeArea()
+            Color(red: 0.05, green: 0.08, blue: 0.12).ignoresSafeArea()
             
             VStack(spacing: 30) {
                 // Header
                 HStack {
                     VStack(alignment: .leading) {
+                        Text("BLOCK BLAST V2").font(.caption.bold()).foregroundStyle(.blue)
                         Text("SCORE").font(.caption.bold()).foregroundStyle(.gray)
                         Text("\(vm.score)").font(.system(size: 36, weight: .black, design: .rounded)).foregroundStyle(.white)
                     }
