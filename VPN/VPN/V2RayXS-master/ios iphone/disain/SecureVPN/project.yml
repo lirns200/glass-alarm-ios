@@ -1,0 +1,17 @@
+name: SecureVPN
+options:
+  bundleIdPrefix: com.example
+targets:
+  SecureVPN:
+    type: application
+    platform: iOS
+    deploymentTarget: "16.0"
+    sources:
+      - path: .
+    info:
+      path: Info.plist
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.example.SecureVPN
+        PRODUCT_NAME: SecureVPN
+        SWIFT_VERSION: 5.0

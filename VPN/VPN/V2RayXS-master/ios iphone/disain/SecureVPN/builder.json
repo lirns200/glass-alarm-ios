@@ -6,7 +6,8 @@
     "repo": "glass-alarm-ios"
   },
   "ios": {
-    "scheme": "SecureVPN"
+    "scheme": "SecureVPN",
+    "path": "VPN/VPN/V2RayXS-master/ios iphone/disain/SecureVPN"
   },
   "flutter": {
     "watch": {}

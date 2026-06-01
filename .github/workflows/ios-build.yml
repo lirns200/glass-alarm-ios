@@ -69,6 +69,13 @@ jobs:
             echo "type=native" >> $GITHUB_OUTPUT
           fi
 
+      - name: Generate Xcode Project with XcodeGen
+        if: steps.detect.outputs.type == 'native'
+        run: |
+          brew install xcodegen
+          cd "${{ inputs.ios_path }}"
+          xcodegen
+
       - name: Setup Flutter
         if: steps.detect.outputs.type == 'flutter'
         uses: subosito/flutter-action@v2
