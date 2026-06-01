@@ -289,11 +289,24 @@ def sync_git(config: Config, paths: Paths) -> int:
         safe_print("[WARN] Не найден remote origin, пропускаю push")
         return 0
 
-    # Стадия всех файлов в папке проекта
-    add_cmd = ["git", "add", "."]
-    add_result = run_command(add_cmd, config.project_dir, paths.builder_log, config.dry_run, "git add all")
-    if add_result.code != 0:
-        return add_result.code
+    # Стадия только релевантных файлов проекта/сборки
+    targets = [
+        ".github",
+        "builder.json",
+        "GlassAlarm",
+        "GlassAlarm.xcodeproj",
+        "BlockBlast",
+        "buildIPA.py",
+        "build_ipa.py",
+        "build_ipa_wizard.cmd",
+    ]
+
+    existing_targets = [str((config.project_dir / t).relative_to(config.project_dir)) for t in targets if (config.project_dir / t).exists()]
+    if existing_targets:
+        add_cmd = ["git", "add", "-A", *existing_targets]
+        add_result = run_command(add_cmd, config.project_dir, paths.builder_log, config.dry_run, "git add")
+        if add_result.code != 0:
+            return add_result.code
 
     check_staged = run_command(["git", "diff", "--cached", "--name-only"], config.project_dir, paths.builder_log, config.dry_run, "git diff --cached")
     if check_staged.code != 0:
