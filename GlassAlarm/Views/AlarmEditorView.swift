@@ -35,8 +35,8 @@ struct AlarmEditorView: View {
 
         switch mode {
         case .create:
-            let defaultRingtoneRaw = UserDefaults.standard.string(forKey: AppSettingsKeys.defaultRingtone) ?? AlarmRingtone.crystal.rawValue
-            let defaultRingtone = AlarmRingtone(rawValue: defaultRingtoneRaw) ?? .crystal
+            let defaultRingtoneRaw = UserDefaults.standard.string(forKey: AppSettingsKeys.defaultRingtone) ?? AlarmRingtone.pup.rawValue
+            let defaultRingtone = AlarmRingtone(rawValue: defaultRingtoneRaw) ?? .pup
             let defaultVibration = UserDefaults.standard.object(forKey: AppSettingsKeys.defaultVibration) as? Bool ?? true
 
             _title = State(initialValue: "Будильник")

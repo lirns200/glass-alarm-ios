@@ -3,7 +3,7 @@ import SwiftUI
 struct SettingsView: View {
     @EnvironmentObject private var alarmStore: AlarmStore
     @AppStorage(AppSettingsKeys.selectedTheme) private var selectedTheme = AppTheme.dark.rawValue
-    @AppStorage(AppSettingsKeys.defaultRingtone) private var defaultRingtone = AlarmRingtone.crystal.rawValue
+    @AppStorage(AppSettingsKeys.defaultRingtone) private var defaultRingtone = AlarmRingtone.pup.rawValue
     @AppStorage(AppSettingsKeys.defaultVibration) private var defaultVibration = true
     @State private var statusMessage: String?
     @State private var isSchedulingTest = false
@@ -50,7 +50,7 @@ struct SettingsView: View {
     }
 
     private var selectedRingtone: AlarmRingtone {
-        AlarmRingtone(rawValue: defaultRingtone) ?? .crystal
+        AlarmRingtone(rawValue: defaultRingtone) ?? .pup
     }
 
     private var themeCard: some View {
@@ -100,7 +100,7 @@ struct SettingsView: View {
                 .pickerStyle(.menu)
                 .tint(.white.opacity(0.7))
                 .onChange(of: defaultRingtone) { _, newValue in
-                    let ringtone = AlarmRingtone(rawValue: newValue) ?? .crystal
+                    let ringtone = AlarmRingtone(rawValue: newValue) ?? .pup
                     alarmStore.previewRingtone(ringtone)
                 }
             }

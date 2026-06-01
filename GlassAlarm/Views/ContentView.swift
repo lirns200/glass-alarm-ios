@@ -185,9 +185,9 @@ class GameViewModel: ObservableObject {
             let points = (linesCleared * 100 + (combo - 1) * 50) * linesCleared
             
             // Calculate center position for the popup relative to the grid view
-            let cellSize = rect.width / CGFloat(gridSize)
-            let popupX = CGFloat(lastCol) * cellSize + cellSize / 2
-            let popupY = CGFloat(lastRow) * cellSize + cellSize / 2
+            // Use 100 as a base coordinate system, then scale in the view
+            let popupX = (CGFloat(lastCol) + 0.5) / CGFloat(gridSize)
+            let popupY = (CGFloat(lastRow) + 0.5) / CGFloat(gridSize)
             
             let popup = ScorePopup(score: points, position: CGPoint(x: popupX, y: popupY))
             popups.append(popup)
@@ -384,29 +384,32 @@ struct ContentView: View {
                 }
                 
                 // Grid
-                ZStack {
-                    GridView(grid: vm.grid, size: vm.gridSize, preview: vm.previewInfo, canPlace: vm.canPlace, isDarkMode: vm.isDarkMode)
-                        .background(
-                            GeometryReader { geo in
-                                Color.clear.onAppear {
-                                    gridRect = geo.frame(in: .global)
-                                }
-                                .onChange(of: geo.frame(in: .global)) { _, newFrame in
-                                    gridRect = newFrame
-                                }
+                GridView(grid: vm.grid, size: vm.gridSize, preview: vm.previewInfo, canPlace: vm.canPlace, isDarkMode: vm.isDarkMode)
+                    .background(
+                        GeometryReader { geo in
+                            Color.clear.onAppear {
+                                gridRect = geo.frame(in: .global)
                             }
-                        )
-                    
-                    // Floating scores
-                    ForEach(vm.popups) { popup in
-                        Text("+\(popup.score)")
-                            .font(.system(size: 20, weight: .black, design: .rounded))
-                            .foregroundStyle(.orange)
-                            .shadow(radius: 2)
-                            .position(popup.position)
-                            .transition(.asymmetric(insertion: .scale, removal: .move(edge: .top).combined(with: .opacity)))
+                            .onChange(of: geo.frame(in: .global)) { _, newFrame in
+                                gridRect = newFrame
+                            }
+                        }
+                    )
+                    .overlay {
+                        // Floating scores - Using normalized coordinates to prevent layout shifts
+                        GeometryReader { geo in
+                            ForEach(vm.popups) { popup in
+                                Text("+\(popup.score)")
+                                    .font(.system(size: 24, weight: .black, design: .rounded))
+                                    .foregroundStyle(.orange)
+                                    .shadow(color: .black.opacity(0.3), radius: 2)
+                                    .position(x: popup.position.x * geo.size.width,
+                                              y: popup.position.y * geo.size.height)
+                                    .transition(.asymmetric(insertion: .scale, removal: .move(edge: .top).combined(with: .opacity)))
+                            }
+                        }
+                        .allowsHitTesting(false)
                     }
-                }
                 .padding(12)
                 .background(vm.isDarkMode ? Color.white.opacity(0.03) : Color.black.opacity(0.02), in: RoundedRectangle(cornerRadius: 20))
                 .padding(.horizontal, 16)

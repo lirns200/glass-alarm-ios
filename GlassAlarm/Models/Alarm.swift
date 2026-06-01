@@ -17,7 +17,7 @@ struct Alarm: Identifiable, Codable, Equatable {
         minute: Int,
         isEnabled: Bool = true,
         repeatDays: Set<Weekday> = [],
-        ringtone: AlarmRingtone = .crystal,
+        ringtone: AlarmRingtone = .pup,
         vibrates: Bool = true
     ) {
         self.id = id
