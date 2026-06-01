@@ -27,7 +27,7 @@ struct SettingsView: View {
                     HStack {
                         Text("Version")
                         Spacer()
-                        Text("1.0.0 (Xray 26.3.27)")
+                        Text("1.1.0 (Xray 26.3.27)")
                             .foregroundStyle(.gray)
                     }
                     .listRowBackground(Color(white: 0.05))
