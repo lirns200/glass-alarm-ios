@@ -1,4 +1,5 @@
 import SwiftUI
+import Foundation
 
 class IPChecker: ObservableObject {
     @Published var isYukuVPN: Bool = false
