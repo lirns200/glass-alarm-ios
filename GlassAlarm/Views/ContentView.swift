@@ -33,14 +33,6 @@ class SoundManager {
         }
     }
 }
-        do {
-            player = try AVAudioPlayer(contentsOf: url)
-            player?.play()
-        } catch {
-            print("Error playing sound: \(error.localizedDescription)")
-        }
-    }
-}
 
 enum Language: String, CaseIterable, Identifiable {
     case english = "en", russian = "ru", chinese = "zh"
@@ -98,7 +90,6 @@ class GameViewModel: ObservableObject {
     @Published var grid: [[Color?]] = []
     @Published var currentShapes: [GameShape?] = []
     @Published var score: Int = 0
-    @Published var highscore: Int = UserDefaults.standard.integer(forKey: "highscore")
     @Published var isGameOver: Bool = false
     @Published var combo: Int = 0
     @Published var previewInfo: (row: Int, col: Int, shape: GameShape)?
@@ -111,6 +102,14 @@ class GameViewModel: ObservableObject {
     @Published var isDarkMode: Bool = true
     @Published var language: Language = .english
     
+    var highscore: Int {
+        UserDefaults.standard.integer(forKey: "highscore_\(gridSize)")
+    }
+    
+    func getHighscore(for size: Int) -> Int {
+        UserDefaults.standard.integer(forKey: "highscore_\(size)")
+    }
+    
     init() {
         setupGrid(size: 8)
     }
@@ -122,6 +121,7 @@ class GameViewModel: ObservableObject {
         combo = 0
         isGameOver = false
         startNewRound()
+        objectWillChange.send()
     }
     
     func startNewRound() {
@@ -210,7 +210,10 @@ class GameViewModel: ObservableObject {
             DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) { self.popups.removeAll { $0.id == popup.id } }
             withAnimation(.spring()) {
                 score += points
-                if score > highscore { highscore = score; UserDefaults.standard.set(highscore, forKey: "highscore") }
+                if score > highscore {
+                    UserDefaults.standard.set(score, forKey: "highscore_\(gridSize)")
+                    objectWillChange.send()
+                }
             }
             var coords: [(Int, Int)] = []
             for r in rowsToClear { for c in 0..<gridSize { coords.append((r, c)) } }
@@ -284,7 +287,15 @@ struct ModeSelectorView: View {
                             VStack {
                                 gridIcon(size: size).frame(width: 80, height: 80).padding()
                                     .background(vm.isDarkMode ? Color.white.opacity(0.1) : Color.black.opacity(0.05), in: RoundedRectangle(cornerRadius: 15))
-                                Text("\(size)x\(size)").font(.headline).foregroundStyle(vm.isDarkMode ? .white : .black)
+                                VStack(spacing: 2) {
+                                    Text("\(size)x\(size)").font(.headline).foregroundStyle(vm.isDarkMode ? .white : .black)
+                                    let best = vm.getHighscore(for: size)
+                                    if best > 0 {
+                                        Text("BEST: \(best)")
+                                            .font(.system(size: 10, weight: .bold, design: .monospaced))
+                                            .foregroundStyle(.orange.opacity(0.8))
+                                    }
+                                }
                             }
                         }
                     }
