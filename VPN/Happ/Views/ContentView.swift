@@ -2,9 +2,15 @@ import SwiftUI
 
 struct DashboardView: View {
     @State private var status: VPNStatus = .disconnected
-    @State private var selectedConfig: VPNConfig?
     @State private var sessionTime: TimeInterval = 0
+    @ObservedObject var store = AlarmStore.shared
+    @AppStorage("selected_config_id") private var selectedConfigId: String = ""
+    
     let timer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
+    
+    var selectedConfig: VPNConfig? {
+        store.configs.first { $0.id.uuidString == selectedConfigId } ?? store.configs.first
+    }
     
     var body: some View {
         ZStack {
@@ -13,7 +19,7 @@ struct DashboardView: View {
             VStack(spacing: 30) {
                 // Header / Status
                 VStack(spacing: 5) {
-                    Text(status == .connected ? "CONNECTED" : "NOT CONNECTED")
+                    Text(status == .connected ? "CONNECTED" : (status == .connecting ? "CONNECTING..." : "NOT CONNECTED"))
                         .font(.system(size: 14, weight: .bold, design: .monospaced))
                         .foregroundStyle(statusColor.opacity(0.8))
                     
@@ -47,6 +53,7 @@ struct DashboardView: View {
                     }
                 }
                 .buttonStyle(PlainButtonStyle())
+                .disabled(selectedConfig == nil)
                 
                 Spacer()
                 
@@ -80,7 +87,7 @@ struct DashboardView: View {
                     .cornerRadius(20)
                     .padding(.horizontal, 20)
                 } else {
-                    Text("Select a server to connect")
+                    Text("Paste a config in Subscriptions tab")
                         .foregroundStyle(.gray)
                         .padding(.bottom, 20)
                 }
@@ -92,6 +99,11 @@ struct DashboardView: View {
             if status == .connected {
                 sessionTime += 1
             }
+        }
+        .refreshable {
+            // Placeholder for subscription refresh
+            UIImpactFeedbackGenerator(style: .medium).impactOccurred()
+            try? await Task.sleep(nanoseconds: 1_000_000_000)
         }
     }
     
@@ -108,6 +120,7 @@ struct DashboardView: View {
         withAnimation(.spring()) {
             if status == .disconnected {
                 status = .connecting
+                // Simulate Xray Core startup
                 DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
                     status = .connected
                 }

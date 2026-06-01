@@ -6,13 +6,19 @@ enum VPNStatus {
 
 struct VPNConfig: Identifiable, Codable {
     let id: UUID
-    let name: String
-    let type: String // VLESS, VMess, etc.
-    let address: String
-    let port: Int
+    var name: String
+    var type: String // VLESS, VMess, Trojan, Shadowsocks, Hysteria2
+    var address: String
+    var port: Int
+    var uuid: String?
+    var sni: String?
+    var path: String?
+    var security: String? // tls, reality, none
+    var publicKey: String? // for reality
+    var shortId: String? // for reality
     var ping: Int?
     var traffic: String?
-    let flag: String // Emoji flag
+    var flag: String
     
     init(id: UUID = UUID(), name: String, type: String, address: String, port: Int, flag: String = "🌐") {
         self.id = id

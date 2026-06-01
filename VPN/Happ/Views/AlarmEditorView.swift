@@ -2,10 +2,7 @@ import SwiftUI
 
 struct AlarmEditorView: View {
     @State private var url: String = ""
-    @State private var configs: [VPNConfig] = [
-        VPNConfig(name: "Warsaw Premium", type: "VLESS", address: "2.26.5.82", port: 443, flag: "🇵🇱"),
-        VPNConfig(name: "Frankfurt Auto", type: "VMess", address: "de1.yuku.vpn", port: 8080, flag: "🇩🇪")
-    ]
+    @ObservedObject var store = AlarmStore.shared
     
     var body: some View {
         ZStack {
@@ -33,7 +30,7 @@ struct AlarmEditorView: View {
                 // List of Configs
                 ScrollView {
                     VStack(spacing: 15) {
-                        ForEach(configs) { config in
+                        ForEach(store.configs) { config in
                             HStack {
                                 Text(config.flag)
                                     .font(.title2)
@@ -67,8 +64,15 @@ struct AlarmEditorView: View {
     private func importFromClipboard() {
         #if os(iOS)
         if let string = UIPasteboard.general.string {
-            // Basic parsing logic would go here
-            print("Importing: \(string)")
+            if let config = SubscriptionManager.shared.parse(link: string) {
+                store.add(config: config)
+            }
+        }
+        #else
+        // Mock for simulator/preview
+        let mockVLESS = "vless://uuid@1.2.3.4:443?security=reality&sni=google.com#TestServer"
+        if let config = SubscriptionManager.shared.parse(link: mockVLESS) {
+            store.add(config: config)
         }
         #endif
     }

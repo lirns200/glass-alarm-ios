@@ -24,6 +24,7 @@
 		111111111111111111111110 /* pup.wav in Resources */ = {isa = PBXBuildFile; fileRef = 111111111111111111111010 /* pup.wav */; };
 		111111111111111111111111 /* HapticsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 111111111111111111111012 /* HapticsService.swift */; };
 		111111111111111111111112 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 111111111111111111111013 /* SettingsView.swift */; };
+		111111111111111111111113 /* SubscriptionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 111111111111111111111014 /* SubscriptionManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -45,6 +46,7 @@
 		111111111111111111111011 /* Happ.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Happ.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		111111111111111111111012 /* HapticsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HapticsService.swift; sourceTree = "<group>"; };
 		111111111111111111111013 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		111111111111111111111014 /* SubscriptionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubscriptionManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -119,6 +121,7 @@
 			children = (
 				111111111111111111111005 /* NotificationScheduler.swift */,
 				111111111111111111111012 /* HapticsService.swift */,
+				111111111111111111111014 /* SubscriptionManager.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -239,6 +242,7 @@
 				11111111111111111111110B /* GlassBackground.swift in Sources */,
 				111111111111111111111111 /* HapticsService.swift in Sources */,
 				111111111111111111111112 /* SettingsView.swift in Sources */,
+				111111111111111111111113 /* SubscriptionManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

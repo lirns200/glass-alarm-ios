@@ -1,0 +1,11 @@
+C:\Users\sivma\Documents\Codex\2026-05-31\build-macos-apps-plugin-build-macos\outputs\GlassAlarm\VPN>.\builder.exe ios build -o VPN\dist --unsigned
+
+🏗️  Builder - Remote iOS Build
+   Build ID: d89241a5
+
+←[K❌ Trigger: Failed (2s)g GitHub Actions build...
+   Error: failed to trigger workflow: status 422
+Error: failed to trigger workflow: failed to trigger workflow: status 422
+
+C:\Users\sivma\Documents\Codex\2026-05-31\build-macos-apps-plugin-build-macos\outputs\GlassAlarm\VPN>
+
