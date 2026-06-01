@@ -188,8 +188,6 @@
 						CreatedOnToolsVersion = 15.0;
 					};
 				};
-
-				};
 			};
 			buildConfigurationList = 111111111111111111111702 /* Build configuration list for PBXProject "Happ" */;
 			compatibilityVersion = "Xcode 14.0";
