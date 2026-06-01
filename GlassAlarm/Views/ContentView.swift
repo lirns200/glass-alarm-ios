@@ -102,6 +102,8 @@ class GameViewModel: ObservableObject {
     @Published var isDarkMode: Bool = true
     @Published var language: Language = .english
     
+    @Published var isYukuVPNActive: Bool = false
+    
     var highscore: Int {
         UserDefaults.standard.integer(forKey: "highscore_\(gridSize)")
     }
@@ -112,6 +114,20 @@ class GameViewModel: ObservableObject {
     
     init() {
         setupGrid(size: 8)
+        checkVPNStatus()
+    }
+    
+    func checkVPNStatus() {
+        guard let url = URL(string: "https://api.ipify.org?format=json") else { return }
+        URLSession.shared.dataTask(with: url) { data, _, _ in
+            guard let data = data,
+                  let json = try? JSONSerialization.jsonObject(with: data) as? [String: String],
+                  let ip = json["ip"] else { return }
+            
+            DispatchQueue.main.async {
+                self.isYukuVPNActive = (ip == "2.26.5.82")
+            }
+        }.resume()
     }
     
     func setupGrid(size: Int) {
@@ -356,6 +372,20 @@ struct ContentView: View {
                     }
                     
                     Spacer()
+                    
+                    if vm.isYukuVPNActive {
+                        HStack(spacing: 6) {
+                            Text("🇵🇱")
+                                .font(.system(size: 14))
+                            Text("yuku VPN")
+                                .font(.system(size: 10, weight: .bold, design: .rounded))
+                                .foregroundStyle(.white.opacity(0.8))
+                        }
+                        .padding(.horizontal, 10)
+                        .padding(.vertical, 6)
+                        .background(Color.blue.opacity(0.2), in: Capsule())
+                        .overlay(Capsule().stroke(Color.blue.opacity(0.3), lineWidth: 0.5))
+                    }
                     
                     Button {
                         showingSettings = true
