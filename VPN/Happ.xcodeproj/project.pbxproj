@@ -47,6 +47,7 @@
 		111111111111111111111012 /* HapticsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HapticsService.swift; sourceTree = "<group>"; };
 		111111111111111111111013 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		111111111111111111111014 /* SubscriptionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubscriptionManager.swift; sourceTree = "<group>"; };
+		111111111111111111111015 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,6 +78,7 @@
 				111111111111111111111307 /* Services */,
 				111111111111111111111308 /* Support */,
 				111111111111111111111309 /* Views */,
+				111111111111111111111015 /* Info.plist */,
 				11111111111111111111100C /* Assets.xcassets */,
 				11111111111111111111130A /* Resources */,
 			);
@@ -368,7 +370,8 @@
 				DEVELOPMENT_ASSET_PATHS = "";
 				DEVELOPMENT_TEAM = "";
 				ENABLE_PREVIEWS = YES;
-				GENERATE_INFOPLIST_FILE = YES;
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = Happ/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = Happ;
 				INFOPLIST_KEY_CFBundleName = Happ;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
@@ -400,7 +403,8 @@
 				DEVELOPMENT_ASSET_PATHS = "";
 				DEVELOPMENT_TEAM = "";
 				ENABLE_PREVIEWS = YES;
-				GENERATE_INFOPLIST_FILE = YES;
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = Happ/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = Happ;
 				INFOPLIST_KEY_CFBundleName = Happ;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
