@@ -22,28 +22,93 @@ class SubscriptionManager {
     }
     
     func parseSingle(link: String) -> VPNConfig? {
-        if link.starts(with: "vless://") {
+        let decodedLink = link.removingPercentEncoding ?? link
+        if decodedLink.starts(with: "vless://") {
             return parseVLESS(link: link)
-        } else if link.starts(with: "vmess://") {
+        } else if decodedLink.starts(with: "vmess://") {
             return parseVMess(link: link)
-        } else if link.starts(with: "trojan://") {
+        } else if decodedLink.starts(with: "trojan://") {
             return parseTrojan(link: link)
         }
         return nil
     }
+
+    private func parseVLESS(link: String) -> VPNConfig? {
+        guard let components = URLComponents(string: link.trimmingCharacters(in: .whitespacesAndNewlines)) else { return nil }
+        
+        let host = components.host ?? ""
+        let port = components.port ?? 443
+        let name = components.fragment?.removingPercentEncoding ?? "VLESS Server"
+        
+        // Try to extract flag from name
+        var flag = "🌐"
+        if let firstEmoji = name.unicodeScalars.first(where: { $0.properties.isEmoji }) {
+            flag = String(firstEmoji)
+        }
+        
+        var config = VPNConfig(name: name, 
+                               type: "VLESS", 
+                               address: host, 
+                               port: port,
+                               flag: flag)
+        
+        config.uuid = components.user
+...
+    private func parseTrojan(link: String) -> VPNConfig? {
+        guard let components = URLComponents(string: link.trimmingCharacters(in: .whitespacesAndNewlines)) else { return nil }
+        
+        let host = components.host ?? ""
+        let port = components.port ?? 443
+        let name = components.fragment?.removingPercentEncoding ?? "Trojan Server"
+        
+        var flag = "🌐"
+        if let firstEmoji = name.unicodeScalars.first(where: { $0.properties.isEmoji }) {
+            flag = String(firstEmoji)
+        }
+        
+        var config = VPNConfig(name: name, 
+                               type: "Trojan", 
+                               address: host, 
+                               port: port,
+                               flag: flag)
+        config.uuid = components.user
+        return config
+    }
+
+        
+        return config
+    }
+
+        return nil
+    }
     
     func decodeSubscription(_ data: String) -> [VPNConfig] {
-        // Base64 or plain text list of links
-        let content: String
-        if let decodedData = Data(base64Encoded: data.trimmingCharacters(in: .whitespacesAndNewlines)),
+        let cleanedData = data.trimmingCharacters(in: .whitespacesAndNewlines)
+            .replacingOccurrences(of: "\r", with: "")
+            .replacingOccurrences(of: "\n", with: "")
+        
+        var content: String = ""
+        
+        // Try Base64 decoding first
+        if let decodedData = Data(base64Encoded: cleanedData),
            let decodedString = String(data: decodedData, encoding: .utf8) {
             content = decodedString
         } else {
-            content = data
+            // Fallback: try adding padding if needed
+            let padded = cleanedData.padding(toLength: ((cleanedData.count + 3) / 4) * 4, 
+                                            withPad: "=", 
+                                            startingAt: 0)
+            if let decodedData = Data(base64Encoded: padded),
+               let decodedString = String(data: decodedData, encoding: .utf8) {
+                content = decodedString
+            } else {
+                // If Base64 fails, assume it's already plaintext (e.g. list of links)
+                content = data
+            }
         }
         
-        let lines = content.components(separatedBy: .newlines)
-        return lines.compactMap { parseSingle(link: $0.trimmingCharacters(in: .whitespacesAndNewlines)) }
+        let lines = content.components(separatedBy: .whitespacesAndNewlines)
+        return lines.filter { !$0.isEmpty }.compactMap { parseSingle(link: $0) }
     }
     
     private func parseTrojan(link: String) -> VPNConfig? {

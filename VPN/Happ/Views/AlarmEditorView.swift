@@ -3,6 +3,7 @@ import SwiftUI
 struct AlarmEditorView: View {
     @State private var url: String = ""
     @ObservedObject var store = AlarmStore.shared
+    @State private var isLoading = false
     
     var body: some View {
         ZStack {
@@ -14,8 +15,14 @@ struct AlarmEditorView: View {
                     importFromClipboard()
                 } label: {
                     HStack {
-                        Image(systemName: "doc.on.clipboard")
-                        Text("Paste from Clipboard")
+                        if isLoading {
+                            ProgressView()
+                                .tint(.white)
+                                .padding(.trailing, 10)
+                        } else {
+                            Image(systemName: "doc.on.clipboard")
+                        }
+                        Text(isLoading ? "Fetching..." : "Paste from Clipboard")
                             .fontWeight(.bold)
                     }
                     .frame(maxWidth: .infinity)
@@ -26,6 +33,17 @@ struct AlarmEditorView: View {
                 }
                 .padding(.horizontal, 20)
                 .padding(.top, 20)
+                .disabled(isLoading)
+                
+                if !store.configs.isEmpty {
+                    Button {
+                        store.configs.removeAll()
+                    } label: {
+                        Text("Clear All")
+                            .foregroundColor(.red)
+                            .font(.caption)
+                    }
+                }
                 
                 // List of Configs
                 ScrollView {
@@ -89,9 +107,23 @@ struct AlarmEditorView: View {
     private func fetchSubscription(url: String) {
         guard let fetchURL = URL(string: url) else { return }
         
+        var request = URLRequest(url: fetchURL)
+        request.setValue("v2rayNG/1.8.5", forHTTPHeaderField: "User-Agent")
+        
+        isLoading = true
+        
         Task {
+            defer { 
+                Task { @MainActor in isLoading = false }
+            }
             do {
-                let (data, _) = try await URLSession.shared.data(from: fetchURL)
+                let (data, response) = try await URLSession.shared.data(for: request)
+                
+                // Debug response if needed
+                if let httpResponse = response as? HTTPURLResponse {
+                    print("Status code: \(httpResponse.statusCode)")
+                }
+                
                 if let content = String(data: data, encoding: .utf8) {
                     let configs = SubscriptionManager.shared.decodeSubscription(content)
                     await MainActor.run {
