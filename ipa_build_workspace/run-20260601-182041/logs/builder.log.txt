@@ -15,3 +15,512 @@ Exit code: 0
 [2026-06-01T18:20:41.589986] STEP: git add all
 CMD: git add .
 
+warning: in the working copy of 'GlassAlarm/Models/Alarm.swift', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'GlassAlarm/Stores/AlarmStore.swift', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'GlassAlarm/Views/AlarmEditorView.swift', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'GlassAlarm/Views/ContentView.swift', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'build_unique_ipa.py', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'GlassAlarm/Core/PacketTunnelProvider.swift', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'GlassAlarm/Services/VPNManager.swift', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'GlassAlarm/Services/VPNSubscriptionService.swift', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'GlassAlarm/Services/XrayConfigGenerator.swift', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'VPN/V2RayXS-master/.github/ISSUE_TEMPLATE.md', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'VPN/V2RayXS-master/.github/workflows/build-actions.yml', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'VPN/V2RayXS-master/.gitignore', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'VPN/V2RayXS-master/.gitmodules', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'VPN/V2RayXS-master/.travis.yml', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'VPN/V2RayXS-master/LICENSE', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'VPN/V2RayXS-master/Librarys/Tun2socks.xcframework/Info.plist', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'VPN/V2RayXS-master/Librarys/Tun2socks.xcframework/ios-arm64/Tun2socks.framework/Versions/A/Headers/Tun2socks.h', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'VPN/V2RayXS-master/Librarys/Tun2socks.xcframework/ios-arm64/Tun2socks.framework/Versions/A/Headers/Tun2socks.objc.h', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'VPN/V2RayXS-master/Librarys/Tun2socks.xcframework/ios-arm64/Tun2socks.framework/Versions/A/Headers/Universe.objc.h', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'VPN/V2RayXS-master/Librarys/Tun2socks.xcframework/ios-arm64/Tun2socks.framework/Versions/A/Headers/ref.h', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'VPN/V2RayXS-master/Librarys/Tun2socks.xcframework/ios-arm64/Tun2socks.framework/Versions/A/Modules/module.modulemap', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'VPN/V2RayXS-master/Librarys/Tun2socks.xcframework/ios-arm64/Tun2socks.framework/Versions/A/Resources/Info.plist', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'VPN/V2RayXS-master/Librarys/Tun2socks.xcframework/ios-arm64_x86_64-simulator/Tun2socks.framework/Versions/A/Headers/Tun2socks.h', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'VPN/V2RayXS-master/Librarys/Tun2socks.xcframework/ios-arm64_x86_64-simulator/Tun2socks.framework/Versions/A/Headers/Tun2socks.objc.h', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'VPN/V2RayXS-master/Librarys/Tun2socks.xcframework/ios-arm64_x86_64-simulator/Tun2socks.framework/Versions/A/Headers/Universe.objc.h', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'VPN/V2RayXS-master/Librarys/Tun2socks.xcframework/ios-arm64_x86_64-simulator/Tun2socks.framework/Versions/A/Headers/ref.h', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'VPN/V2RayXS-master/Librarys/Tun2socks.xcframework/ios-arm64_x86_64-simulator/Tun2socks.framework/Versions/A/Modules/module.modulemap', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'VPN/V2RayXS-master/Librarys/Tun2socks.xcframework/ios-arm64_x86_64-simulator/Tun2socks.framework/Versions/A/Resources/Info.plist', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'VPN/V2RayXS-master/Librarys/Tun2socks.xcframework/macos-arm64_x86_64/Tun2socks.framework/Versions/A/Headers/Tun2socks.h', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'VPN/V2RayXS-master/Librarys/Tun2socks.xcframework/macos-arm64_x86_64/Tun2socks.framework/Versions/A/Headers/Tun2socks.objc.h', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'VPN/V2RayXS-master/Librarys/Tun2socks.xcframework/macos-arm64_x86_64/Tun2socks.framework/Versions/A/Headers/Universe.objc.h', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'VPN/V2RayXS-master/Librarys/Tun2socks.xcframework/macos-arm64_x86_64/Tun2socks.framework/Versions/A/Headers/ref.h', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'VPN/V2RayXS-master/Librarys/Tun2socks.xcframework/macos-arm64_x86_64/Tun2socks.framework/Versions/A/Modules/module.modulemap', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'VPN/V2RayXS-master/Librarys/Tun2socks.xcframework/macos-arm64_x86_64/Tun2socks.framework/Versions/A/Resources/Info.plist', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'VPN/V2RayXS-master/README.md', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'VPN/V2RayXS-master/V2RayX/AdvancedWindow.xib', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'VPN/V2RayXS-master/V2RayX/AdvancedWindowController.h', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'VPN/V2RayXS-master/V2RayX/AdvancedWindowController.m', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'VPN/V2RayXS-master/V2RayX/AppDelegate.h', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'VPN/V2RayXS-master/V2RayX/AppDelegate.m', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'VPN/V2RayXS-master/V2RayX/Assets.xcassets/AppIcon.appiconset/Contents.json', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'VPN/V2RayXS-master/V2RayX/Assets.xcassets/Contents.json', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'VPN/V2RayXS-master/V2RayX/Assets.xcassets/config_duplicate.imageset/Contents.json', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'VPN/V2RayXS-master/V2RayX/Assets.xcassets/statusBarIcon.imageset/Contents.json', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'VPN/V2RayXS-master/V2RayX/Assets.xcassets/statusBarIcon_disabled.imageset/Contents.json', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'VPN/V2RayXS-master/V2RayX/Base.lproj/MainMenu.xib', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'VPN/V2RayXS-master/V2RayX/ConfigImporter.h', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'VPN/V2RayXS-master/V2RayX/ConfigImporter.m', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'VPN/V2RayXS-master/V2RayX/ConfigWindow.xib', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'VPN/V2RayXS-master/V2RayX/ConfigWindowController.h', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'VPN/V2RayXS-master/V2RayX/ConfigWindowController.m', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'VPN/V2RayXS-master/V2RayX/Credits.rtf', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'VPN/V2RayXS-master/V2RayX/HelperClient.h', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'VPN/V2RayXS-master/V2RayX/HelperClient.m', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'VPN/V2RayXS-master/V2RayX/Info.plist', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'VPN/V2RayXS-master/V2RayX/MutableDeepCopying.h', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'VPN/V2RayXS-master/V2RayX/NSData+AES256Encryption.h', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'VPN/V2RayXS-master/V2RayX/NSData+AES256Encryption.m', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'VPN/V2RayXS-master/V2RayX/ServerProfile.h', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'VPN/V2RayXS-master/V2RayX/ServerProfile.m', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'VPN/V2RayXS-master/V2RayX/TLSCertSha256.h', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'VPN/V2RayXS-master/V2RayX/TLSCertSha256.m', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'VPN/V2RayXS-master/V2RayX/TransportWindow.xib', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'VPN/V2RayXS-master/V2RayX/TransportWindowController.h', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'VPN/V2RayXS-master/V2RayX/TransportWindowController.m', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'VPN/V2RayXS-master/V2RayX/config-sample.plist', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'VPN/V2RayXS-master/V2RayX/config-sample_new.plist', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'VPN/V2RayXS-master/V2RayX/dlcore.sh', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'VPN/V2RayXS-master/V2RayX/dlcorex.sh', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'VPN/V2RayXS-master/V2RayX/install_helper.sh', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'VPN/V2RayXS-master/V2RayX/main.m', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'VPN/V2RayXS-master/V2RayX/simple.pac', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'VPN/V2RayXS-master/V2RayX/tcp_http_header_example.txt', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'VPN/V2RayXS-master/V2RayX/utilities.h', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'VPN/V2RayXS-master/V2RayX/utilities.m', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'VPN/V2RayXS-master/V2RayX/zh-Hans.lproj/AdvancedWindow.strings', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'VPN/V2RayXS-master/V2RayX/zh-Hans.lproj/ConfigWindow.strings', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'VPN/V2RayXS-master/V2RayX/zh-Hans.lproj/MainMenu.strings', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'VPN/V2RayXS-master/V2RayX/zh-Hans.lproj/TransportWindow.strings', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'VPN/V2RayXS-master/V2RayXS.xcodeproj/project.pbxproj', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'VPN/V2RayXS-master/V2RayXS.xcodeproj/project.xcworkspace/contents.xcworkspacedata', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'VPN/V2RayXS-master/V2RayXS.xcodeproj/project.xcworkspace/xcshareddata/IDEWorkspaceChecks.plist', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'VPN/V2RayXS-master/V2RayXS.xcodeproj/xcuserdata/bin.xcuserdatad/xcschemes/xcschememanagement.plist', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'VPN/V2RayXS-master/V2RayXS.xcodeproj/xcuserdata/uxiu.xcuserdatad/xcschemes/xcschememanagement.plist', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'VPN/V2RayXS-master/build.sh', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'VPN/V2RayXS-master/compilefromsource.sh', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'VPN/V2RayXS-master/jsonplist/main.m', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'VPN/V2RayXS-master/prepare_zip.sh', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'VPN/V2RayXS-master/update_pac.sh', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'VPN/V2RayXS-master/v2rayx_sysconf/README.md', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'VPN/V2RayXS-master/v2rayx_sysconf/active_route_reconciler.h', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'VPN/V2RayXS-master/v2rayx_sysconf/active_route_reconciler.m', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'VPN/V2RayXS-master/v2rayx_sysconf/control_socket_transport.h', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'VPN/V2RayXS-master/v2rayx_sysconf/control_socket_transport.m', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'VPN/V2RayXS-master/v2rayx_sysconf/daemon_rpc.h', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'VPN/V2RayXS-master/v2rayx_sysconf/daemon_rpc.m', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'VPN/V2RayXS-master/v2rayx_sysconf/daemon_service.h', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'VPN/V2RayXS-master/v2rayx_sysconf/daemon_service.m', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'VPN/V2RayXS-master/v2rayx_sysconf/daemon_state.h', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'VPN/V2RayXS-master/v2rayx_sysconf/daemon_state.m', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'VPN/V2RayXS-master/v2rayx_sysconf/helper_paths.h', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'VPN/V2RayXS-master/v2rayx_sysconf/helper_paths.m', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'VPN/V2RayXS-master/v2rayx_sysconf/helper_runtime_context.h', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'VPN/V2RayXS-master/v2rayx_sysconf/helper_runtime_context.m', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'VPN/V2RayXS-master/v2rayx_sysconf/main.m', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'VPN/V2RayXS-master/v2rayx_sysconf/proxy_manager.h', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'VPN/V2RayXS-master/v2rayx_sysconf/proxy_manager.m', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'VPN/V2RayXS-master/v2rayx_sysconf/route_command_service.h', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'VPN/V2RayXS-master/v2rayx_sysconf/route_command_service.m', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'VPN/V2RayXS-master/v2rayx_sysconf/route_entry_normalizer.h', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'VPN/V2RayXS-master/v2rayx_sysconf/route_entry_normalizer.m', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'VPN/V2RayXS-master/v2rayx_sysconf/route_helper.h', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'VPN/V2RayXS-master/v2rayx_sysconf/route_helper.m', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'VPN/V2RayXS-master/v2rayx_sysconf/route_whitelist_store.h', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'VPN/V2RayXS-master/v2rayx_sysconf/route_whitelist_store.m', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'VPN/V2RayXS-master/v2rayx_sysconf/session_backup_store.h', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'VPN/V2RayXS-master/v2rayx_sysconf/session_backup_store.m', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'VPN/V2RayXS-master/v2rayx_sysconf/session_state.h', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'VPN/V2RayXS-master/v2rayx_sysconf/session_state.m', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'VPN/V2RayXS-master/v2rayx_sysconf/sysconf_version.h', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'VPN/V2RayXS-master/v2rayx_sysconf/tun_command_service.h', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'VPN/V2RayXS-master/v2rayx_sysconf/tun_command_service.m', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'VPN/V2RayXS-master/v2rayx_sysconf/tun_device.h', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'VPN/V2RayXS-master/v2rayx_sysconf/tun_device.m', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'VPN/V2RayXS-master/v2rayx_sysconf/tun_session_controller.h', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'VPN/V2RayXS-master/v2rayx_sysconf/tun_session_controller.m', LF will be replaced by CRLF the next time Git touches it
+
+Exit code: 0
+
+[2026-06-01T18:20:42.311161] STEP: git diff --cached
+CMD: git diff --cached --name-only
+
+GlassAlarm/Core/PacketTunnelProvider.swift
+GlassAlarm/Models/Alarm.swift
+GlassAlarm/Resources/sunrise.wav
+GlassAlarm/Resources/sunrise.wav.bak
+GlassAlarm/Services/VPNManager.swift
+GlassAlarm/Services/VPNSubscriptionService.swift
+GlassAlarm/Services/XrayConfigGenerator.swift
+GlassAlarm/Stores/AlarmStore.swift
+GlassAlarm/Views/AlarmEditorView.swift
+GlassAlarm/Views/ContentView.swift
+VPN/V2RayXS-master/.github/ISSUE_TEMPLATE.md
+VPN/V2RayXS-master/.github/workflows/build-actions.yml
+VPN/V2RayXS-master/.gitignore
+VPN/V2RayXS-master/.gitmodules
+VPN/V2RayXS-master/.travis.yml
+VPN/V2RayXS-master/LICENSE
+VPN/V2RayXS-master/Librarys/Tun2socks.xcframework/Info.plist
+VPN/V2RayXS-master/Librarys/Tun2socks.xcframework/ios-arm64/Tun2socks.framework/Headers
+VPN/V2RayXS-master/Librarys/Tun2socks.xcframework/ios-arm64/Tun2socks.framework/Modules
+VPN/V2RayXS-master/Librarys/Tun2socks.xcframework/ios-arm64/Tun2socks.framework/Resources
+VPN/V2RayXS-master/Librarys/Tun2socks.xcframework/ios-arm64/Tun2socks.framework/Tun2socks
+VPN/V2RayXS-master/Librarys/Tun2socks.xcframework/ios-arm64/Tun2socks.framework/Versions/A/Headers/Tun2socks.h
+VPN/V2RayXS-master/Librarys/Tun2socks.xcframework/ios-arm64/Tun2socks.framework/Versions/A/Headers/Tun2socks.objc.h
+VPN/V2RayXS-master/Librarys/Tun2socks.xcframework/ios-arm64/Tun2socks.framework/Versions/A/Headers/Universe.objc.h
+VPN/V2RayXS-master/Librarys/Tun2socks.xcframework/ios-arm64/Tun2socks.framework/Versions/A/Headers/ref.h
+VPN/V2RayXS-master/Librarys/Tun2socks.xcframework/ios-arm64/Tun2socks.framework/Versions/A/Modules/module.modulemap
+VPN/V2RayXS-master/Librarys/Tun2socks.xcframework/ios-arm64/Tun2socks.framework/Versions/A/Resources/Info.plist
+VPN/V2RayXS-master/Librarys/Tun2socks.xcframework/ios-arm64/Tun2socks.framework/Versions/A/Tun2socks
+VPN/V2RayXS-master/Librarys/Tun2socks.xcframework/ios-arm64/Tun2socks.framework/Versions/Current
+VPN/V2RayXS-master/Librarys/Tun2socks.xcframework/ios-arm64_x86_64-simulator/Tun2socks.framework/Headers
+VPN/V2RayXS-master/Librarys/Tun2socks.xcframework/ios-arm64_x86_64-simulator/Tun2socks.framework/Modules
+VPN/V2RayXS-master/Librarys/Tun2socks.xcframework/ios-arm64_x86_64-simulator/Tun2socks.framework/Resources
+VPN/V2RayXS-master/Librarys/Tun2socks.xcframework/ios-arm64_x86_64-simulator/Tun2socks.framework/Tun2socks
+VPN/V2RayXS-master/Librarys/Tun2socks.xcframework/ios-arm64_x86_64-simulator/Tun2socks.framework/Versions/A/Headers/Tun2socks.h
+VPN/V2RayXS-master/Librarys/Tun2socks.xcframework/ios-arm64_x86_64-simulator/Tun2socks.framework/Versions/A/Headers/Tun2socks.objc.h
+VPN/V2RayXS-master/Librarys/Tun2socks.xcframework/ios-arm64_x86_64-simulator/Tun2socks.framework/Versions/A/Headers/Universe.objc.h
+VPN/V2RayXS-master/Librarys/Tun2socks.xcframework/ios-arm64_x86_64-simulator/Tun2socks.framework/Versions/A/Headers/ref.h
+VPN/V2RayXS-master/Librarys/Tun2socks.xcframework/ios-arm64_x86_64-simulator/Tun2socks.framework/Versions/A/Modules/module.modulemap
+VPN/V2RayXS-master/Librarys/Tun2socks.xcframework/ios-arm64_x86_64-simulator/Tun2socks.framework/Versions/A/Resources/Info.plist
+VPN/V2RayXS-master/Librarys/Tun2socks.xcframework/ios-arm64_x86_64-simulator/Tun2socks.framework/Versions/A/Tun2socks
+VPN/V2RayXS-master/Librarys/Tun2socks.xcframework/ios-arm64_x86_64-simulator/Tun2socks.framework/Versions/Current
+VPN/V2RayXS-master/Librarys/Tun2socks.xcframework/macos-arm64_x86_64/Tun2socks.framework/Headers
+VPN/V2RayXS-master/Librarys/Tun2socks.xcframework/macos-arm64_x86_64/Tun2socks.framework/Modules
+VPN/V2RayXS-master/Librarys/Tun2socks.xcframework/macos-arm64_x86_64/Tun2socks.framework/Resources
+VPN/V2RayXS-master/Librarys/Tun2socks.xcframework/macos-arm64_x86_64/Tun2socks.framework/Tun2socks
+VPN/V2RayXS-master/Librarys/Tun2socks.xcframework/macos-arm64_x86_64/Tun2socks.framework/Versions/A/Headers/Tun2socks.h
+VPN/V2RayXS-master/Librarys/Tun2socks.xcframework/macos-arm64_x86_64/Tun2socks.framework/Versions/A/Headers/Tun2socks.objc.h
+VPN/V2RayXS-master/Librarys/Tun2socks.xcframework/macos-arm64_x86_64/Tun2socks.framework/Versions/A/Headers/Universe.objc.h
+VPN/V2RayXS-master/Librarys/Tun2socks.xcframework/macos-arm64_x86_64/Tun2socks.framework/Versions/A/Headers/ref.h
+VPN/V2RayXS-master/Librarys/Tun2socks.xcframework/macos-arm64_x86_64/Tun2socks.framework/Versions/A/Modules/module.modulemap
+VPN/V2RayXS-master/Librarys/Tun2socks.xcframework/macos-arm64_x86_64/Tun2socks.framework/Versions/A/Resources/Info.plist
+VPN/V2RayXS-master/Librarys/Tun2socks.xcframework/macos-arm64_x86_64/Tun2socks.framework/Versions/A/Tun2socks
+VPN/V2RayXS-master/Librarys/Tun2socks.xcframework/macos-arm64_x86_64/Tun2socks.framework/Versions/Current
+VPN/V2RayXS-master/README.md
+VPN/V2RayXS-master/V2RayX/AdvancedWindow.xib
+VPN/V2RayXS-master/V2RayX/AdvancedWindowController.h
+VPN/V2RayXS-master/V2RayX/AdvancedWindowController.m
+VPN/V2RayXS-master/V2RayX/AppDelegate.h
+VPN/V2RayXS-master/V2RayX/AppDelegate.m
+VPN/V2RayXS-master/V2RayX/Assets.xcassets/AppIcon.appiconset/Contents.json
+VPN/V2RayXS-master/V2RayX/Assets.xcassets/AppIcon.appiconset/icon_128x128.png
+VPN/V2RayXS-master/V2RayX/Assets.xcassets/AppIcon.appiconset/icon_128x128@2x.png
+VPN/V2RayXS-master/V2RayX/Assets.xcassets/AppIcon.appiconset/icon_16x16.png
+VPN/V2RayXS-master/V2RayX/Assets.xcassets/AppIcon.appiconset/icon_16x16@2x.png
+VPN/V2RayXS-master/V2RayX/Assets.xcassets/AppIcon.appiconset/icon_256x256.png
+VPN/V2RayXS-master/V2RayX/Assets.xcassets/AppIcon.appiconset/icon_256x256@2x.png
+VPN/V2RayXS-master/V2RayX/Assets.xcassets/AppIcon.appiconset/icon_32x32.png
+VPN/V2RayXS-master/V2RayX/Assets.xcassets/AppIcon.appiconset/icon_32x32@2x.png
+VPN/V2RayXS-master/V2RayX/Assets.xcassets/AppIcon.appiconset/icon_512x512.png
+VPN/V2RayXS-master/V2RayX/Assets.xcassets/AppIcon.appiconset/icon_512x512@2x.png
+VPN/V2RayXS-master/V2RayX/Assets.xcassets/Contents.json
+VPN/V2RayXS-master/V2RayX/Assets.xcassets/config_duplicate.imageset/Contents.json
+VPN/V2RayXS-master/V2RayX/Assets.xcassets/config_duplicate.imageset/duplicate-document.png
+VPN/V2RayXS-master/V2RayX/Assets.xcassets/config_duplicate.imageset/duplicate-document16.png
+VPN/V2RayXS-master/V2RayX/Assets.xcassets/statusBarIcon.imageset/Contents.json
+VPN/V2RayXS-master/V2RayX/Assets.xcassets/statusBarIcon.imageset/vx_16_h.png
+VPN/V2RayXS-master/V2RayX/Assets.xcassets/statusBarIcon.imageset/vx_32_h.png
+VPN/V2RayXS-master/V2RayX/Assets.xcassets/statusBarIcon_disabled.imageset/Contents.json
+VPN/V2RayXS-master/V2RayX/Assets.xcassets/statusBarIcon_disabled.imageset/vx_16_h.png
+VPN/V2RayXS-master/V2RayX/Assets.xcassets/statusBarIcon_disabled.imageset/vx_32_h.png
+VPN/V2RayXS-master/V2RayX/Base.lproj/MainMenu.xib
+VPN/V2RayXS-master/V2RayX/ConfigImporter.h
+VPN/V2RayXS-master/V2RayX/ConfigImporter.m
+VPN/V2RayXS-master/V2RayX/ConfigWindow.xib
+VPN/V2RayXS-master/V2RayX/ConfigWindowController.h
+VPN/V2RayXS-master/V2RayX/ConfigWindowController.m
+VPN/V2RayXS-master/V2RayX/Credits.rtf
+VPN/V2RayXS-master/V2RayX/HelperClient.h
+VPN/V2RayXS-master/V2RayX/HelperClient.m
+VPN/V2RayXS-master/V2RayX/Info.plist
+VPN/V2RayXS-master/V2RayX/MutableDeepCopying.h
+VPN/V2RayXS-master/V2RayX/NSData+AES256Encryption.h
+VPN/V2RayXS-master/V2RayX/NSData+AES256Encryption.m
+VPN/V2RayXS-master/V2RayX/ServerProfile.h
+VPN/V2RayXS-master/V2RayX/ServerProfile.m
+VPN/V2RayXS-master/V2RayX/TLSCertSha256.h
+VPN/V2RayXS-master/V2RayX/TLSCertSha256.m
+VPN/V2RayXS-master/V2RayX/TransportWindow.xib
+VPN/V2RayXS-master/V2RayX/TransportWindowController.h
+VPN/V2RayXS-master/V2RayX/TransportWindowController.m
+VPN/V2RayXS-master/V2RayX/config-sample.plist
+VPN/V2RayXS-master/V2RayX/config-sample_new.plist
+VPN/V2RayXS-master/V2RayX/dlcore.sh
+VPN/V2RayXS-master/V2RayX/dlcorex.sh
+VPN/V2RayXS-master/V2RayX/en.lproj/Localizable.strings
+VPN/V2RayXS-master/V2RayX/install_helper.sh
+VPN/V2RayXS-master/V2RayX/main.m
+VPN/V2RayXS-master/V2RayX/simple.pac
+VPN/V2RayXS-master/V2RayX/tcp_http_header_example.txt
+VPN/V2RayXS-master/V2RayX/utilities.h
+VPN/V2RayXS-master/V2RayX/utilities.m
+VPN/V2RayXS-master/V2RayX/zh-Hans.lproj/AdvancedWindow.strings
+VPN/V2RayXS-master/V2RayX/zh-Hans.lproj/ConfigWindow.strings
+VPN/V2RayXS-master/V2RayX/zh-Hans.lproj/Localizable.strings
+VPN/V2RayXS-master/V2RayX/zh-Hans.lproj/MainMenu.strings
+VPN/V2RayXS-master/V2RayX/zh-Hans.lproj/TransportWindow.strings
+VPN/V2RayXS-master/V2RayXS.xcodeproj/project.pbxproj
+VPN/V2RayXS-master/V2RayXS.xcodeproj/project.xcworkspace/contents.xcworkspacedata
+VPN/V2RayXS-master/V2RayXS.xcodeproj/project.xcworkspace/xcshareddata/IDEWorkspaceChecks.plist
+VPN/V2RayXS-master/V2RayXS.xcodeproj/project.xcworkspace/xcuserdata/bin.xcuserdatad/UserInterfaceState.xcuserstate
+VPN/V2RayXS-master/V2RayXS.xcodeproj/project.xcworkspace/xcuserdata/uxiu.xcuserdatad/UserInterfaceState.xcuserstate
+VPN/V2RayXS-master/V2RayXS.xcodeproj/xcuserdata/bin.xcuserdatad/xcschemes/xcschememanagement.plist
+VPN/V2RayXS-master/V2RayXS.xcodeproj/xcuserdata/uxiu.xcuserdatad/xcschemes/xcschememanagement.plist
+VPN/V2RayXS-master/build.sh
+VPN/V2RayXS-master/compilefromsource.sh
+VPN/V2RayXS-master/jsonplist/main.m
+VPN/V2RayXS-master/logic.png
+VPN/V2RayXS-master/prepare_zip.sh
+VPN/V2RayXS-master/update_pac.sh
+VPN/V2RayXS-master/v2rayx_sysconf/README.md
+VPN/V2RayXS-master/v2rayx_sysconf/active_route_reconciler.h
+VPN/V2RayXS-master/v2rayx_sysconf/active_route_reconciler.m
+VPN/V2RayXS-master/v2rayx_sysconf/control_socket_transport.h
+VPN/V2RayXS-master/v2rayx_sysconf/control_socket_transport.m
+VPN/V2RayXS-master/v2rayx_sysconf/daemon_rpc.h
+VPN/V2RayXS-master/v2rayx_sysconf/daemon_rpc.m
+VPN/V2RayXS-master/v2rayx_sysconf/daemon_service.h
+VPN/V2RayXS-master/v2rayx_sysconf/daemon_service.m
+VPN/V2RayXS-master/v2rayx_sysconf/daemon_state.h
+VPN/V2RayXS-master/v2rayx_sysconf/daemon_state.m
+VPN/V2RayXS-master/v2rayx_sysconf/helper_paths.h
+VPN/V2RayXS-master/v2rayx_sysconf/helper_paths.m
+VPN/V2RayXS-master/v2rayx_sysconf/helper_runtime_context.h
+VPN/V2RayXS-master/v2rayx_sysconf/helper_runtime_context.m
+VPN/V2RayXS-master/v2rayx_sysconf/main.m
+VPN/V2RayXS-master/v2rayx_sysconf/proxy_manager.h
+VPN/V2RayXS-master/v2rayx_sysconf/proxy_manager.m
+VPN/V2RayXS-master/v2rayx_sysconf/route_command_service.h
+VPN/V2RayXS-master/v2rayx_sysconf/route_command_service.m
+VPN/V2RayXS-master/v2rayx_sysconf/route_entry_normalizer.h
+VPN/V2RayXS-master/v2rayx_sysconf/route_entry_normalizer.m
+VPN/V2RayXS-master/v2rayx_sysconf/route_helper.h
+VPN/V2RayXS-master/v2rayx_sysconf/route_helper.m
+VPN/V2RayXS-master/v2rayx_sysconf/route_whitelist_store.h
+VPN/V2RayXS-master/v2rayx_sysconf/route_whitelist_store.m
+VPN/V2RayXS-master/v2rayx_sysconf/session_backup_store.h
+VPN/V2RayXS-master/v2rayx_sysconf/session_backup_store.m
+VPN/V2RayXS-master/v2rayx_sysconf/session_state.h
+VPN/V2RayXS-master/v2rayx_sysconf/session_state.m
+VPN/V2RayXS-master/v2rayx_sysconf/sysconf_version.h
+VPN/V2RayXS-master/v2rayx_sysconf/tun_command_service.h
+VPN/V2RayXS-master/v2rayx_sysconf/tun_command_service.m
+VPN/V2RayXS-master/v2rayx_sysconf/tun_device.h
+VPN/V2RayXS-master/v2rayx_sysconf/tun_device.m
+VPN/V2RayXS-master/v2rayx_sysconf/tun_session_controller.h
+VPN/V2RayXS-master/v2rayx_sysconf/tun_session_controller.m
+VPN/V2RayXS-master/vx.ggb
+build_unique_ipa.py
+dist/Happ-be1b1b53.ipa
+ipa_build_workspace/run-20260601-182041/logs/builder.log.txt
+
+Exit code: 0
+
+[2026-06-01T18:20:42.370490] STEP: git commit
+CMD: git commit -m chore: auto sync ipa build files (2026-06-01 18:20:42)
+
+[main 91a5fb8] chore: auto sync ipa build files (2026-06-01 18:20:42)
+ 170 files changed, 20563 insertions(+), 44 deletions(-)
+ create mode 100644 GlassAlarm/Core/PacketTunnelProvider.swift
+ create mode 100644 GlassAlarm/Resources/sunrise.wav.bak
+ create mode 100644 GlassAlarm/Services/VPNManager.swift
+ create mode 100644 GlassAlarm/Services/VPNSubscriptionService.swift
+ create mode 100644 GlassAlarm/Services/XrayConfigGenerator.swift
+ create mode 100644 VPN/V2RayXS-master/.github/ISSUE_TEMPLATE.md
+ create mode 100644 VPN/V2RayXS-master/.github/workflows/build-actions.yml
+ create mode 100644 VPN/V2RayXS-master/.gitignore
+ create mode 100644 VPN/V2RayXS-master/.gitmodules
+ create mode 100644 VPN/V2RayXS-master/.travis.yml
+ create mode 100644 VPN/V2RayXS-master/LICENSE
+ create mode 100644 VPN/V2RayXS-master/Librarys/Tun2socks.xcframework/Info.plist
+ create mode 100644 VPN/V2RayXS-master/Librarys/Tun2socks.xcframework/ios-arm64/Tun2socks.framework/Headers
+ create mode 100644 VPN/V2RayXS-master/Librarys/Tun2socks.xcframework/ios-arm64/Tun2socks.framework/Modules
+ create mode 100644 VPN/V2RayXS-master/Librarys/Tun2socks.xcframework/ios-arm64/Tun2socks.framework/Resources
+ create mode 100644 VPN/V2RayXS-master/Librarys/Tun2socks.xcframework/ios-arm64/Tun2socks.framework/Tun2socks
+ create mode 100644 VPN/V2RayXS-master/Librarys/Tun2socks.xcframework/ios-arm64/Tun2socks.framework/Versions/A/Headers/Tun2socks.h
+ create mode 100644 VPN/V2RayXS-master/Librarys/Tun2socks.xcframework/ios-arm64/Tun2socks.framework/Versions/A/Headers/Tun2socks.objc.h
+ create mode 100644 VPN/V2RayXS-master/Librarys/Tun2socks.xcframework/ios-arm64/Tun2socks.framework/Versions/A/Headers/Universe.objc.h
+ create mode 100644 VPN/V2RayXS-master/Librarys/Tun2socks.xcframework/ios-arm64/Tun2socks.framework/Versions/A/Headers/ref.h
+ create mode 100644 VPN/V2RayXS-master/Librarys/Tun2socks.xcframework/ios-arm64/Tun2socks.framework/Versions/A/Modules/module.modulemap
+ create mode 100644 VPN/V2RayXS-master/Librarys/Tun2socks.xcframework/ios-arm64/Tun2socks.framework/Versions/A/Resources/Info.plist
+ create mode 100644 VPN/V2RayXS-master/Librarys/Tun2socks.xcframework/ios-arm64/Tun2socks.framework/Versions/A/Tun2socks
+ create mode 100644 VPN/V2RayXS-master/Librarys/Tun2socks.xcframework/ios-arm64/Tun2socks.framework/Versions/Current
+ create mode 100644 VPN/V2RayXS-master/Librarys/Tun2socks.xcframework/ios-arm64_x86_64-simulator/Tun2socks.framework/Headers
+ create mode 100644 VPN/V2RayXS-master/Librarys/Tun2socks.xcframework/ios-arm64_x86_64-simulator/Tun2socks.framework/Modules
+ create mode 100644 VPN/V2RayXS-master/Librarys/Tun2socks.xcframework/ios-arm64_x86_64-simulator/Tun2socks.framework/Resources
+ create mode 100644 VPN/V2RayXS-master/Librarys/Tun2socks.xcframework/ios-arm64_x86_64-simulator/Tun2socks.framework/Tun2socks
+ create mode 100644 VPN/V2RayXS-master/Librarys/Tun2socks.xcframework/ios-arm64_x86_64-simulator/Tun2socks.framework/Versions/A/Headers/Tun2socks.h
+ create mode 100644 VPN/V2RayXS-master/Librarys/Tun2socks.xcframework/ios-arm64_x86_64-simulator/Tun2socks.framework/Versions/A/Headers/Tun2socks.objc.h
+ create mode 100644 VPN/V2RayXS-master/Librarys/Tun2socks.xcframework/ios-arm64_x86_64-simulator/Tun2socks.framework/Versions/A/Headers/Universe.objc.h
+ create mode 100644 VPN/V2RayXS-master/Librarys/Tun2socks.xcframework/ios-arm64_x86_64-simulator/Tun2socks.framework/Versions/A/Headers/ref.h
+ create mode 100644 VPN/V2RayXS-master/Librarys/Tun2socks.xcframework/ios-arm64_x86_64-simulator/Tun2socks.framework/Versions/A/Modules/module.modulemap
+ create mode 100644 VPN/V2RayXS-master/Librarys/Tun2socks.xcframework/ios-arm64_x86_64-simulator/Tun2socks.framework/Versions/A/Resources/Info.plist
+ create mode 100644 VPN/V2RayXS-master/Librarys/Tun2socks.xcframework/ios-arm64_x86_64-simulator/Tun2socks.framework/Versions/A/Tun2socks
+ create mode 100644 VPN/V2RayXS-master/Librarys/Tun2socks.xcframework/ios-arm64_x86_64-simulator/Tun2socks.framework/Versions/Current
+ create mode 100644 VPN/V2RayXS-master/Librarys/Tun2socks.xcframework/macos-arm64_x86_64/Tun2socks.framework/Headers
+ create mode 100644 VPN/V2RayXS-master/Librarys/Tun2socks.xcframework/macos-arm64_x86_64/Tun2socks.framework/Modules
+ create mode 100644 VPN/V2RayXS-master/Librarys/Tun2socks.xcframework/macos-arm64_x86_64/Tun2socks.framework/Resources
+ create mode 100644 VPN/V2RayXS-master/Librarys/Tun2socks.xcframework/macos-arm64_x86_64/Tun2socks.framework/Tun2socks
+ create mode 100644 VPN/V2RayXS-master/Librarys/Tun2socks.xcframework/macos-arm64_x86_64/Tun2socks.framework/Versions/A/Headers/Tun2socks.h
+ create mode 100644 VPN/V2RayXS-master/Librarys/Tun2socks.xcframework/macos-arm64_x86_64/Tun2socks.framework/Versions/A/Headers/Tun2socks.objc.h
+ create mode 100644 VPN/V2RayXS-master/Librarys/Tun2socks.xcframework/macos-arm64_x86_64/Tun2socks.framework/Versions/A/Headers/Universe.objc.h
+ create mode 100644 VPN/V2RayXS-master/Librarys/Tun2socks.xcframework/macos-arm64_x86_64/Tun2socks.framework/Versions/A/Headers/ref.h
+ create mode 100644 VPN/V2RayXS-master/Librarys/Tun2socks.xcframework/macos-arm64_x86_64/Tun2socks.framework/Versions/A/Modules/module.modulemap
+ create mode 100644 VPN/V2RayXS-master/Librarys/Tun2socks.xcframework/macos-arm64_x86_64/Tun2socks.framework/Versions/A/Resources/Info.plist
+ create mode 100644 VPN/V2RayXS-master/Librarys/Tun2socks.xcframework/macos-arm64_x86_64/Tun2socks.framework/Versions/A/Tun2socks
+ create mode 100644 VPN/V2RayXS-master/Librarys/Tun2socks.xcframework/macos-arm64_x86_64/Tun2socks.framework/Versions/Current
+ create mode 100644 VPN/V2RayXS-master/README.md
+ create mode 100644 VPN/V2RayXS-master/V2RayX/AdvancedWindow.xib
+ create mode 100644 VPN/V2RayXS-master/V2RayX/AdvancedWindowController.h
+ create mode 100644 VPN/V2RayXS-master/V2RayX/AdvancedWindowController.m
+ create mode 100644 VPN/V2RayXS-master/V2RayX/AppDelegate.h
+ create mode 100644 VPN/V2RayXS-master/V2RayX/AppDelegate.m
+ create mode 100644 VPN/V2RayXS-master/V2RayX/Assets.xcassets/AppIcon.appiconset/Contents.json
+ create mode 100644 VPN/V2RayXS-master/V2RayX/Assets.xcassets/AppIcon.appiconset/icon_128x128.png
+ create mode 100644 VPN/V2RayXS-master/V2RayX/Assets.xcassets/AppIcon.appiconset/icon_128x128@2x.png
+ create mode 100644 VPN/V2RayXS-master/V2RayX/Assets.xcassets/AppIcon.appiconset/icon_16x16.png
+ create mode 100644 VPN/V2RayXS-master/V2RayX/Assets.xcassets/AppIcon.appiconset/icon_16x16@2x.png
+ create mode 100644 VPN/V2RayXS-master/V2RayX/Assets.xcassets/AppIcon.appiconset/icon_256x256.png
+ create mode 100644 VPN/V2RayXS-master/V2RayX/Assets.xcassets/AppIcon.appiconset/icon_256x256@2x.png
+ create mode 100644 VPN/V2RayXS-master/V2RayX/Assets.xcassets/AppIcon.appiconset/icon_32x32.png
+ create mode 100644 VPN/V2RayXS-master/V2RayX/Assets.xcassets/AppIcon.appiconset/icon_32x32@2x.png
+ create mode 100644 VPN/V2RayXS-master/V2RayX/Assets.xcassets/AppIcon.appiconset/icon_512x512.png
+ create mode 100644 VPN/V2RayXS-master/V2RayX/Assets.xcassets/AppIcon.appiconset/icon_512x512@2x.png
+ create mode 100644 VPN/V2RayXS-master/V2RayX/Assets.xcassets/Contents.json
+ create mode 100644 VPN/V2RayXS-master/V2RayX/Assets.xcassets/config_duplicate.imageset/Contents.json
+ create mode 100644 VPN/V2RayXS-master/V2RayX/Assets.xcassets/config_duplicate.imageset/duplicate-document.png
+ create mode 100644 VPN/V2RayXS-master/V2RayX/Assets.xcassets/config_duplicate.imageset/duplicate-document16.png
+ create mode 100644 VPN/V2RayXS-master/V2RayX/Assets.xcassets/statusBarIcon.imageset/Contents.json
+ create mode 100644 VPN/V2RayXS-master/V2RayX/Assets.xcassets/statusBarIcon.imageset/vx_16_h.png
+ create mode 100644 VPN/V2RayXS-master/V2RayX/Assets.xcassets/statusBarIcon.imageset/vx_32_h.png
+ create mode 100644 VPN/V2RayXS-master/V2RayX/Assets.xcassets/statusBarIcon_disabled.imageset/Contents.json
+ create mode 100644 VPN/V2RayXS-master/V2RayX/Assets.xcassets/statusBarIcon_disabled.imageset/vx_16_h.png
+ create mode 100644 VPN/V2RayXS-master/V2RayX/Assets.xcassets/statusBarIcon_disabled.imageset/vx_32_h.png
+ create mode 100644 VPN/V2RayXS-master/V2RayX/Base.lproj/MainMenu.xib
+ create mode 100644 VPN/V2RayXS-master/V2RayX/ConfigImporter.h
+ create mode 100644 VPN/V2RayXS-master/V2RayX/ConfigImporter.m
+ create mode 100644 VPN/V2RayXS-master/V2RayX/ConfigWindow.xib
+ create mode 100644 VPN/V2RayXS-master/V2RayX/ConfigWindowController.h
+ create mode 100644 VPN/V2RayXS-master/V2RayX/ConfigWindowController.m
+ create mode 100644 VPN/V2RayXS-master/V2RayX/Credits.rtf
+ create mode 100644 VPN/V2RayXS-master/V2RayX/HelperClient.h
+ create mode 100644 VPN/V2RayXS-master/V2RayX/HelperClient.m
+ create mode 100644 VPN/V2RayXS-master/V2RayX/Info.plist
+ create mode 100644 VPN/V2RayXS-master/V2RayX/MutableDeepCopying.h
+ create mode 100644 VPN/V2RayXS-master/V2RayX/NSData+AES256Encryption.h
+ create mode 100644 VPN/V2RayXS-master/V2RayX/NSData+AES256Encryption.m
+ create mode 100644 VPN/V2RayXS-master/V2RayX/ServerProfile.h
+ create mode 100644 VPN/V2RayXS-master/V2RayX/ServerProfile.m
+ create mode 100644 VPN/V2RayXS-master/V2RayX/TLSCertSha256.h
+ create mode 100644 VPN/V2RayXS-master/V2RayX/TLSCertSha256.m
+ create mode 100644 VPN/V2RayXS-master/V2RayX/TransportWindow.xib
+ create mode 100644 VPN/V2RayXS-master/V2RayX/TransportWindowController.h
+ create mode 100644 VPN/V2RayXS-master/V2RayX/TransportWindowController.m
+ create mode 100644 VPN/V2RayXS-master/V2RayX/config-sample.plist
+ create mode 100644 VPN/V2RayXS-master/V2RayX/config-sample_new.plist
+ create mode 100644 VPN/V2RayXS-master/V2RayX/dlcore.sh
+ create mode 100644 VPN/V2RayXS-master/V2RayX/dlcorex.sh
+ create mode 100644 VPN/V2RayXS-master/V2RayX/en.lproj/Localizable.strings
+ create mode 100644 VPN/V2RayXS-master/V2RayX/install_helper.sh
+ create mode 100644 VPN/V2RayXS-master/V2RayX/main.m
+ create mode 100644 VPN/V2RayXS-master/V2RayX/simple.pac
+ create mode 100644 VPN/V2RayXS-master/V2RayX/tcp_http_header_example.txt
+ create mode 100644 VPN/V2RayXS-master/V2RayX/utilities.h
+ create mode 100644 VPN/V2RayXS-master/V2RayX/utilities.m
+ create mode 100644 VPN/V2RayXS-master/V2RayX/zh-Hans.lproj/AdvancedWindow.strings
+ create mode 100644 VPN/V2RayXS-master/V2RayX/zh-Hans.lproj/ConfigWindow.strings
+ create mode 100644 VPN/V2RayXS-master/V2RayX/zh-Hans.lproj/Localizable.strings
+ create mode 100644 VPN/V2RayXS-master/V2RayX/zh-Hans.lproj/MainMenu.strings
+ create mode 100644 VPN/V2RayXS-master/V2RayX/zh-Hans.lproj/TransportWindow.strings
+ create mode 100644 VPN/V2RayXS-master/V2RayXS.xcodeproj/project.pbxproj
+ create mode 100644 VPN/V2RayXS-master/V2RayXS.xcodeproj/project.xcworkspace/contents.xcworkspacedata
+ create mode 100644 VPN/V2RayXS-master/V2RayXS.xcodeproj/project.xcworkspace/xcshareddata/IDEWorkspaceChecks.plist
+ create mode 100644 VPN/V2RayXS-master/V2RayXS.xcodeproj/project.xcworkspace/xcuserdata/bin.xcuserdatad/UserInterfaceState.xcuserstate
+ create mode 100644 VPN/V2RayXS-master/V2RayXS.xcodeproj/project.xcworkspace/xcuserdata/uxiu.xcuserdatad/UserInterfaceState.xcuserstate
+ create mode 100644 VPN/V2RayXS-master/V2RayXS.xcodeproj/xcuserdata/bin.xcuserdatad/xcschemes/xcschememanagement.plist
+ create mode 100644 VPN/V2RayXS-master/V2RayXS.xcodeproj/xcuserdata/uxiu.xcuserdatad/xcschemes/xcschememanagement.plist
+ create mode 100644 VPN/V2RayXS-master/build.sh
+ create mode 100644 VPN/V2RayXS-master/compilefromsource.sh
+ create mode 100644 VPN/V2RayXS-master/jsonplist/main.m
+ create mode 100644 VPN/V2RayXS-master/logic.png
+ create mode 100644 VPN/V2RayXS-master/prepare_zip.sh
+ create mode 100644 VPN/V2RayXS-master/update_pac.sh
+ create mode 100644 VPN/V2RayXS-master/v2rayx_sysconf/README.md
+ create mode 100644 VPN/V2RayXS-master/v2rayx_sysconf/active_route_reconciler.h
+ create mode 100644 VPN/V2RayXS-master/v2rayx_sysconf/active_route_reconciler.m
+ create mode 100644 VPN/V2RayXS-master/v2rayx_sysconf/control_socket_transport.h
+ create mode 100644 VPN/V2RayXS-master/v2rayx_sysconf/control_socket_transport.m
+ create mode 100644 VPN/V2RayXS-master/v2rayx_sysconf/daemon_rpc.h
+ create mode 100644 VPN/V2RayXS-master/v2rayx_sysconf/daemon_rpc.m
+ create mode 100644 VPN/V2RayXS-master/v2rayx_sysconf/daemon_service.h
+ create mode 100644 VPN/V2RayXS-master/v2rayx_sysconf/daemon_service.m
+ create mode 100644 VPN/V2RayXS-master/v2rayx_sysconf/daemon_state.h
+ create mode 100644 VPN/V2RayXS-master/v2rayx_sysconf/daemon_state.m
+ create mode 100644 VPN/V2RayXS-master/v2rayx_sysconf/helper_paths.h
+ create mode 100644 VPN/V2RayXS-master/v2rayx_sysconf/helper_paths.m
+ create mode 100644 VPN/V2RayXS-master/v2rayx_sysconf/helper_runtime_context.h
+ create mode 100644 VPN/V2RayXS-master/v2rayx_sysconf/helper_runtime_context.m
+ create mode 100644 VPN/V2RayXS-master/v2rayx_sysconf/main.m
+ create mode 100644 VPN/V2RayXS-master/v2rayx_sysconf/proxy_manager.h
+ create mode 100644 VPN/V2RayXS-master/v2rayx_sysconf/proxy_manager.m
+ create mode 100644 VPN/V2RayXS-master/v2rayx_sysconf/route_command_service.h
+ create mode 100644 VPN/V2RayXS-master/v2rayx_sysconf/route_command_service.m
+ create mode 100644 VPN/V2RayXS-master/v2rayx_sysconf/route_entry_normalizer.h
+ create mode 100644 VPN/V2RayXS-master/v2rayx_sysconf/route_entry_normalizer.m
+ create mode 100644 VPN/V2RayXS-master/v2rayx_sysconf/route_helper.h
+ create mode 100644 VPN/V2RayXS-master/v2rayx_sysconf/route_helper.m
+ create mode 100644 VPN/V2RayXS-master/v2rayx_sysconf/route_whitelist_store.h
+ create mode 100644 VPN/V2RayXS-master/v2rayx_sysconf/route_whitelist_store.m
+ create mode 100644 VPN/V2RayXS-master/v2rayx_sysconf/session_backup_store.h
+ create mode 100644 VPN/V2RayXS-master/v2rayx_sysconf/session_backup_store.m
+ create mode 100644 VPN/V2RayXS-master/v2rayx_sysconf/session_state.h
+ create mode 100644 VPN/V2RayXS-master/v2rayx_sysconf/session_state.m
+ create mode 100644 VPN/V2RayXS-master/v2rayx_sysconf/sysconf_version.h
+ create mode 100644 VPN/V2RayXS-master/v2rayx_sysconf/tun_command_service.h
+ create mode 100644 VPN/V2RayXS-master/v2rayx_sysconf/tun_command_service.m
+ create mode 100644 VPN/V2RayXS-master/v2rayx_sysconf/tun_device.h
+ create mode 100644 VPN/V2RayXS-master/v2rayx_sysconf/tun_device.m
+ create mode 100644 VPN/V2RayXS-master/v2rayx_sysconf/tun_session_controller.h
+ create mode 100644 VPN/V2RayXS-master/v2rayx_sysconf/tun_session_controller.m
+ create mode 100644 VPN/V2RayXS-master/vx.ggb
+ create mode 100644 dist/Happ-be1b1b53.ipa
+ create mode 100644 ipa_build_workspace/run-20260601-182041/logs/builder.log.txt
+
+Exit code: 0
+
+[2026-06-01T18:20:42.658052] STEP: get current branch
+CMD: git rev-parse --abbrev-ref HEAD
+
+main
+
+Exit code: 0
+
+[2026-06-01T18:20:42.680182] STEP: git push
+CMD: git push origin main
+
+To https://github.com/lirns200/glass-alarm-ios.git
+   ec29baf..91a5fb8  main -> main
+
+Exit code: 0
+
+[2026-06-01T18:20:52.148427] STEP: builder ios build
+CMD: C:\Users\sivma\Documents\Codex\2026-05-31\build-macos-apps-plugin-build-macos\outputs\GlassAlarm\builder.exe ios build -o C:\Users\sivma\Documents\Codex\2026-05-31\build-macos-apps-plugin-build-macos\outputs\GlassAlarm\ipa_build_workspace\run-20260601-182041\artifacts --unsigned
+
+
+🏗️  Builder - Remote iOS Build
+   Build ID: 994cf73c
+
+
+🚀  Trigger: Triggering GitHub Actions build...
+✅ Trigger: Workflow triggered (3s)
+
+⏳  Start: Waiting for workflow to start...
+✅ Start: Workflow started (run #26764217807) (4s)
+
+🔨  Build: Building... (this may take several minutes)
+✅ Build: Build completed successfully (44s)
+
