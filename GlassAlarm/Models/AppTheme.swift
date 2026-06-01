@@ -1,6 +1,40 @@
 import SwiftUI
 
+enum AppSettingsKeys {
+    static let selectedTheme = "selectedTheme"
+    static let defaultRingtone = "defaultRingtone"
+    static let defaultVibration = "defaultVibration"
+    static let didForceDarkThemeV1 = "didForceDarkThemeV1"
+}
+
 enum AppTheme: String, CaseIterable, Identifiable {
+    case system
+    case light
     case dark
+
     var id: String { rawValue }
+
+    var title: String {
+        switch self {
+        case .system: return "Система"
+        case .light: return "Светлая"
+        case .dark: return "Тёмная"
+        }
+    }
+
+    var icon: String {
+        switch self {
+        case .system: return "circle.lefthalf.filled"
+        case .light: return "sun.max.fill"
+        case .dark: return "moon.fill"
+        }
+    }
+
+    var colorScheme: ColorScheme? {
+        switch self {
+        case .system: return nil
+        case .light: return .light
+        case .dark: return .dark
+        }
+    }
 }

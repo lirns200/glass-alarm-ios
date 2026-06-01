@@ -1,4 +1,13 @@
 import Foundation
+import UIKit
+import AudioToolbox
 
-struct HapticsService {
+enum HapticsService {
+    static func playAlarmPreview() {
+        AudioServicesPlaySystemSound(kSystemSoundID_Vibrate)
+
+        let feedback = UINotificationFeedbackGenerator()
+        feedback.prepare()
+        feedback.notificationOccurred(.warning)
+    }
 }
