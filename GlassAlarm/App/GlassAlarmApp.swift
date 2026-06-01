@@ -5,7 +5,7 @@ struct HappApp: App {
     var body: some Scene {
         WindowGroup {
             TabView {
-                DashboardView()
+                ContentView()
                     .tabItem {
                         Label("Dashboard", systemImage: "speedometer")
                     }

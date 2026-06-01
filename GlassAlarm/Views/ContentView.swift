@@ -1,6 +1,6 @@
 import SwiftUI
 
-struct DashboardView: View {
+struct ContentView: View {
     @State private var status: VPNStatus = .disconnected
     @State private var selectedConfig: VPNConfig?
     @State private var sessionTime: TimeInterval = 0
