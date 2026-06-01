@@ -160,7 +160,6 @@ enum Weekday: Int, CaseIterable, Codable, Identifiable {
 }
 
 enum AlarmRingtone: String, CaseIterable, Codable, Identifiable {
-    case crystal
     case pulse
     case sunrise
     case pup
@@ -170,7 +169,6 @@ enum AlarmRingtone: String, CaseIterable, Codable, Identifiable {
 
     var title: String {
         switch self {
-        case .crystal: return "Кристалл"
         case .pulse: return "Пульс"
         case .sunrise: return "Рассвет"
         case .pup: return "Пуп"
@@ -180,7 +178,6 @@ enum AlarmRingtone: String, CaseIterable, Codable, Identifiable {
 
     var notificationSoundName: String? {
         switch self {
-        case .crystal: return "crystal.wav"
         case .pulse: return "pulse.wav"
         case .sunrise: return "sunrise.wav"
         case .pup: return "pup.wav"

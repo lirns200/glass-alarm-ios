@@ -88,6 +88,8 @@ class GameViewModel: ObservableObject {
     @Published var previewInfo: (row: Int, col: Int, shape: GameShape)?
     @Published var popups: [ScorePopup] = []
     
+    @Published var selectedGameSound: String = "pup"
+    
     @Published var isSoundEnabled: Bool = true
     @Published var isVibrationEnabled: Bool = true
     @Published var isDarkMode: Bool = true
@@ -148,7 +150,7 @@ class GameViewModel: ObservableObject {
     
     func place(shape: GameShape, at row: Int, col: Int, in rect: CGRect) {
         guard canPlace(shape: shape, at: row, col: col) else { return }
-        if isSoundEnabled { SoundManager.instance.playSound(name: "pup") }
+        if isSoundEnabled { SoundManager.instance.playSound(name: vm.selectedGameSound) }
         if isVibrationEnabled { triggerPlacementFeedback(style: .light) }
         for block in shape.blocks {
             let r = row + Int(block.y), c = col + Int(block.x)
@@ -202,7 +204,7 @@ class GameViewModel: ObservableObject {
                 try? await Task.sleep(nanoseconds: 20_000_000)
                 grid[coord.0][coord.1] = nil
                 if isVibrationEnabled { triggerPlacementFeedback(style: .soft) }
-                if isSoundEnabled { SoundManager.instance.playSound(name: "pup") }
+                if isSoundEnabled { SoundManager.instance.playSound(name: vm.selectedGameSound) }
             }
         } else { combo = 0 }
     }
@@ -465,6 +467,14 @@ struct GameSettingsMenuView: View {
             List {
                 Section(vm.t("gameplay")) {
                     Toggle(vm.t("sound"), isOn: $vm.isSoundEnabled)
+                    if vm.isSoundEnabled {
+                        Picker("Звук игры", selection: $vm.selectedGameSound) {
+                            Text("Пуп").tag("pup")
+                            Text("Пульс").tag("pulse")
+                            Text("Рассвет").tag("sunrise")
+                        }
+                        .pickerStyle(.menu)
+                    }
                     Toggle(vm.t("vibration"), isOn: $vm.isVibrationEnabled)
                 }
                 Section(vm.t("appearance")) {
