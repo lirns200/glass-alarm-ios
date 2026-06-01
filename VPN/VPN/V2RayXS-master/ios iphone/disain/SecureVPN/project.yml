@@ -7,7 +7,12 @@ targets:
     platform: iOS
     deploymentTarget: "16.0"
     sources:
-      - path: .
+      - path: SecureVPNApp.swift
+      - path: ContentView.swift
+      - path: HomeView.swift
+      - path: Models.swift
+      - path: ServerListView.swift
+      - path: SettingsView.swift
     info:
       path: Info.plist
     settings:

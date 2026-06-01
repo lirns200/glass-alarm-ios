@@ -25,6 +25,10 @@
 		111111111111111111111111 /* HapticsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 111111111111111111111012 /* HapticsService.swift */; };
 		111111111111111111111112 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 111111111111111111111013 /* SettingsView.swift */; };
 		111111111111111111111113 /* SubscriptionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 111111111111111111111014 /* SubscriptionManager.swift */; };
+		111111111111111111111114 /* PacketTunnelProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 111111111111111111111016 /* PacketTunnelProvider.swift */; };
+		111111111111111111111115 /* VPNManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 111111111111111111111017 /* VPNManager.swift */; };
+		111111111111111111111116 /* VPNSubscriptionService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 111111111111111111111018 /* VPNSubscriptionService.swift */; };
+		111111111111111111111117 /* XrayConfigGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 111111111111111111111019 /* XrayConfigGenerator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -48,6 +52,11 @@
 		111111111111111111111013 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		111111111111111111111014 /* SubscriptionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubscriptionManager.swift; sourceTree = "<group>"; };
 		111111111111111111111015 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		111111111111111111111016 /* PacketTunnelProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PacketTunnelProvider.swift; sourceTree = "<group>"; };
+		111111111111111111111017 /* VPNManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VPNManager.swift; sourceTree = "<group>"; };
+		111111111111111111111018 /* VPNSubscriptionService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VPNSubscriptionService.swift; sourceTree = "<group>"; };
+		111111111111111111111019 /* XrayConfigGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XrayConfigGenerator.swift; sourceTree = "<group>"; };
+		111111111111111111111020 /* Tun2socks.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = Tun2socks.xcframework; path = "../V2RayXS-master/Librarys/Tun2socks.xcframework"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,6 +82,7 @@
 			isa = PBXGroup;
 			children = (
 				111111111111111111111304 /* App */,
+				11111111111111111111130B /* Core */,
 				111111111111111111111305 /* Models */,
 				111111111111111111111306 /* Stores */,
 				111111111111111111111307 /* Services */,
@@ -110,6 +120,14 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
+		11111111111111111111130B /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				111111111111111111111016 /* PacketTunnelProvider.swift */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
 		111111111111111111111306 /* Stores */ = {
 			isa = PBXGroup;
 			children = (
@@ -124,6 +142,9 @@
 				111111111111111111111005 /* NotificationScheduler.swift */,
 				111111111111111111111012 /* HapticsService.swift */,
 				111111111111111111111014 /* SubscriptionManager.swift */,
+				111111111111111111111017 /* VPNManager.swift */,
+				111111111111111111111018 /* VPNSubscriptionService.swift */,
+				111111111111111111111019 /* XrayConfigGenerator.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -245,6 +266,10 @@
 				111111111111111111111111 /* HapticsService.swift in Sources */,
 				111111111111111111111112 /* SettingsView.swift in Sources */,
 				111111111111111111111113 /* SubscriptionManager.swift in Sources */,
+				111111111111111111111114 /* PacketTunnelProvider.swift in Sources */,
+				111111111111111111111115 /* VPNManager.swift in Sources */,
+				111111111111111111111116 /* VPNSubscriptionService.swift in Sources */,
+				111111111111111111111117 /* XrayConfigGenerator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -384,7 +409,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.2;
+				MARKETING_VERSION = 1.2.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.yuku.happ.new;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -417,7 +442,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.2;
+				MARKETING_VERSION = 1.2.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.yuku.happ.new;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
