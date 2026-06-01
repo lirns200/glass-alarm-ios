@@ -47,14 +47,14 @@ jobs:
         with:
           xcode-version: latest-stable
 
-      - name: Restore DerivedData cache
-        uses: actions/cache/restore@v4
-        id: cache-deriveddata
-        with:
-          path: DerivedData
-          key: deriveddata-${{ github.run_id }}
-          restore-keys: |
-            deriveddata-
+#      - name: Restore DerivedData cache
+#        uses: actions/cache/restore@v4
+#        id: cache-deriveddata
+#        with:
+#          path: DerivedData
+#          key: deriveddata-${{ github.run_id }}
+#          restore-keys: |
+#            deriveddata-
 
       - name: Detect project type
         id: detect
@@ -321,12 +321,12 @@ jobs:
           retention-days: 7
           if-no-files-found: error
 
-      - name: Save DerivedData cache
-        uses: actions/cache/save@v4
-        if: always()
-        with:
-          path: DerivedData
-          key: deriveddata-${{ github.run_id }}
+#      - name: Save DerivedData cache
+#        uses: actions/cache/save@v4
+#        if: always()
+#        with:
+#          path: DerivedData
+#          key: deriveddata-${{ github.run_id }}
 
       - name: Cleanup signing
         if: always() && inputs.use_signing
