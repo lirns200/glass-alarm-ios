@@ -1,5 +1,31 @@
 import SwiftUI
 
+class IPChecker: ObservableObject {
+    @Published var isYukuVPN: Bool = false
+    
+    let yukuIPs: Set<String> = [
+        "144.31.14.206",
+        "94.156.179.163",
+        "144.31.79.78",
+        "2.26.7.25",
+        "51.250.38.20",
+        "158.160.86.13",
+        "185.133.173.106",
+        "167.17.180.164"
+    ]
+    
+    func checkIP() {
+        guard let url = URL(string: "https://api.ipify.org") else { return }
+        URLSession.shared.dataTask(with: url) { data, _, _ in
+            if let data = data, let ip = String(data: data, encoding: .utf8) {
+                DispatchQueue.main.async {
+                    self.isYukuVPN = self.yukuIPs.contains(ip)
+                }
+            }
+        }.resume()
+    }
+}
+
 struct GameShape: Identifiable {
     let id = UUID()
     let blocks: [CGPoint]
@@ -117,6 +143,7 @@ class GameViewModel: ObservableObject {
 
 struct ContentView: View {
     @StateObject private var vm = GameViewModel()
+    @StateObject private var ipChecker = IPChecker()
     @State private var gridRect: CGRect = .zero
     
     var body: some View {
@@ -124,6 +151,13 @@ struct ContentView: View {
             Color(red: 0.05, green: 0.07, blue: 0.1).ignoresSafeArea()
             
             VStack(spacing: 20) {
+                if ipChecker.isYukuVPN {
+                    Text("YUKU VPN")
+                        .font(.caption.bold())
+                        .foregroundStyle(.green)
+                        .padding(.top, 10)
+                }
+                
                 // Header
                 HStack {
                     VStack(alignment: .leading) {
@@ -179,6 +213,9 @@ struct ContentView: View {
                 
                 Spacer()
             }
+        }
+        .onAppear {
+            ipChecker.checkIP()
         }
         .overlay {
             if vm.isGameOver {

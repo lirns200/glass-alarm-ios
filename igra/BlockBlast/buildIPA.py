@@ -295,6 +295,7 @@ def sync_git(config: Config, paths: Paths) -> int:
         "builder.json",
         "GlassAlarm",
         "GlassAlarm.xcodeproj",
+        "BlockBlast",
         "buildIPA.py",
         "build_ipa.py",
         "build_ipa_wizard.cmd",
