@@ -298,7 +298,7 @@ jobs:
               exit 1
             fi
             echo "Found app at: $APP_PATH"
-            cd ..
+            cd "${GITHUB_WORKSPACE}"
             mkdir -p build/Payload
             cp -R "$APP_PATH" build/Payload/
             cd build
